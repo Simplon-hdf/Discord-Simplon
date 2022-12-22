@@ -54,18 +54,10 @@ sont inhérentes à ces rôles spécifiques.
 
 # 📃 Proposition de stratégie d'amélioration de la communication interne à Simplon HDF
 
-Notre équipe travaille sur une proposition de stratégie d'amélioration de l'organisation<br>
-de Simplon. Nous aborderons certaines problématiques que nous avons identifiées afin de<br>
-proposer des solutions adaptées, nous dresserons une liste de problématiques et y répondront<br> 
-point par point.<br>
-
-# 📝 Problèmatiques et Propositions de solutions
-
-Nous avons identifié certaines problématiques au sein de l'organisation de Simplon.<br>
-Dans l'optique d'élaborer des solutions à ces différents problèmes, nous avons établis<br>
-un dossier afin de reprendre chaque problématiques et de détailler les solutions possibles.<br>
-
-Notre proposition s'articule autour de l'utilisation de l'outil de communication Discord.<br>
+Dans le cadre de ce projet, notre équipe a réaliser un travail de recherche et d'analyse afin de concevoir des solutions aux différentes problématiques.
+Nous avons dans un premier temps discuté avec différents membres des équipes Simplon afin d'identifier clairement les problématiques rencontrées par les membres des équipes au sein de Simplon HDF.
+Nous avons ensuite réfléchis à des solutions d'améliorations de ces différentes problématiques par le biais de travaux d'analyse.
+Notre proposition de stratégie s'articule autour de l'outil de communication Discord, ce présent document fait office de présentation de cette proposition.
 
 ## 👁‍🗨 Identification des problèmes et de potentielles solutions
 
