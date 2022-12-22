@@ -28,14 +28,10 @@
     ainsi qu'une amélioration du sourcing, de ce fait découle un accroissement des bénéfices
     de l'organisation.
 
-    Le principal canal de discussion Apprenant - Equipes Simplon est Discord,
-    Simplon crée un nouveau serveur Discord pour chaque nouvelle promotion qui
-    commence, ce qui amène à un nombre très élevé de serveur Discord à terme.
-
-    De cela découlent plusieurs phénomènes nefastes tels qu'une communication
-    amoindrie ainsi qu'un manque de Sentiment d'appartenance à Simplon HDF.
-    Il n'existe actuellement pas de sentiment de communauté forte pour les
-    apprenants suivant des formations auprès de Simplon.
+    Le principal canal de discussion Apprenant - Equipes Simplon HDF est un grand
+    nombre de serveur Discord, ce qui n'est pas propice à l'instauration
+    d'une communication entre tous les acteurs Simplon HDF et rends alors opaque
+    les différentes entités constituants l'organisme.
 
 # 👥 Identification de l'équipe en charge du projet
 
