@@ -156,8 +156,6 @@ Il existe cependant une limite à cette solution, toutes les tâches ne peuvent 
 
 ## 💻 Optimisation de l'utilisation de Discord <a id="improve-discord-ergonomics"></a>
 
-![](https://www.ergo-site.com/wp-content/uploads/2021/04/ergonomie-poste-1400x700.jpg)
-
 Discord est un outil de communication encore très jeune, dont l'érgonomie laisse encore beaucoup à désirer, l'une de nos missions pour ce projet consiste à améliorer la prise en main de Discord par le biais d'outils tels que des bots.
 Aussi, nous avons observés une utilisation de Discord inadéquate de la part des membres des équipes Simplon HDF au cours d'échanges avec ces derniers et avons donc réfléchis à des solutions d'optimisation de l'utilisation de l'outil.
 
@@ -173,7 +171,7 @@ Enfin, dans l'optique d'optimiser l'utilisation de Discord nous formerons les me
 
 ## 📵 Réduction du nombre de messages inutiles <a id="useless-messages"></a>
 
-![](https://www.monequerre.fr/wp-content/uploads/2017/11/r%C3%A9duction-dimp%C3%B4t.jpg)
+![](https://static.vecteezy.com/system/resources/previews/010/171/236/original/businessmen-get-advertising-phishing-spreading-malware-irrelevant-unsolicited-spam-message-spam-unsolicited-messages-malware-spreading-concept-illustration-vector.jpg)
 
 Au cours des différents échanges que nous avons eu avec les membres des équipes Simplon HDF, nous avons compris que ces derniers était confrontés à un afflux de messages de relances notament lors d'échanges avec des apprenants suite à un manque de réponse.
 Etant nous même utilisateur régulier de Discord, nous constatons régulièrement ce phénomène de messages hors-propos ou simplement inutiles, nous avons donc réfléchis et avons élaborer une solution à ce problème bien connu.
@@ -231,7 +229,7 @@ L'utilisation d'un bot effectuant ces tâches permettra alors de réduire grande
 
 ## 📂 Amélioration du sourcing via Discord <a id="improve-sourcing"></a>
 
-![Sourcing image](https://i.imgur.com/d9xHEse.png)
+![Sourcing image](https://images.prismic.io/coresignal-website/1078e0e9-b7bf-47c0-af94-958f1dfe6b2b_05.%20Data%20Sourcing%20-%20Benefits_%20Source%20Types,%20Providers,%20Challenges,%20and%20More.png?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&q=75&w=785&h=561)
 
 Dans le cadre de ce projet, nous avons discuté avec différents membres des équipes Simplon HDF concernant le sourcing et avons compris qu'il existe des difficultés concernant cet aspect.
 Le sourcing est un domaine crucial pour un organisme de formation tel que celui-ci. Les financements et donc les formations dispensées par Simplon HDF dépendent du Sourcing, il s'agit d'ailleurs d'un sujet de discussion récurrent au sein des équipes Simplon, c'est pourquoi nous avons porté une attention particulière à ce sujet. Suite à ces discussions ainsi qu'à nos analyses nous avons réfléchis aux améliorations techniques que nous pourrions apporter quant à cet aspect.
