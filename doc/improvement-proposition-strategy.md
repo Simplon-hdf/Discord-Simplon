@@ -82,7 +82,7 @@ Notre proposition de stratégie s'articule autour de l'outil de communication Di
     </tr>
     <tr>
         <td>Manque d'ergonomie de Discord</td>
-        <td><a href="#improve-discord-ergonomics">Amélioration de l'ergonomie de Discord</a></td>
+        <td><a href="#improve-discord-ergonomics">Optimisation de l'utilisation de Discord</a></td>
     </tr>
     <tr>
         <td rowspan="4">Communication inefficace</td>
