@@ -4,30 +4,38 @@
 
     Simplon est un centre de formation orienté dans le milieu de l'informatique,
     il dispense de nombreuses formations de tous types et pour tous niveaux.
-    Simplon c'est 21 000 membres dont 38,8% d'apprenants, 73,6% de sorties positives,
+    Simplon c'est 21 000 membres dont 38,8% d'apprenantes, 73,6% de sorties positives,
     44,3% d'apprenants dont le niveau de diplôme est infra-bac ou bac mais c'est aussi
     123 fabriques numériques.
+
+    Le sourcing est un des enjeux cruciaux pour Simplon HDF, il s'agit d'un aspect 
+    vital à la pereinité de Simplon HDF notamment dans le cadre du remplissage
+    des formations dispensées par l'organisme et de fait pour le financement de ce dernier.
+    
+    L'un des points mis en avant dans la stratégie d'amélioration du sourcing de Simplon est
+    l'inclusivité, cette inclusivité ouvre les portes à de nombreuses communautés ce qui représente
+    un atout majeur.
+    
+    Aussi la communauté des apprenants de Simplon est composée à 38,8% de femmes, 
+    ce qui signifie que Simplon ouvre le domaine de l'apprentissage informatique
+    aux femmes qui sont encore peu présente dans ce domaine.
+    Cela apporte une réelle diversité au sein des formations dispensées par l'organisme.
+
+    La communication est aussi un enjeu majeur pour Simplon HDF, la communication
+    représente un aspect névralgique pour toutes organisations.
+    Une bonne communication apporte de nombreux avantages, tels 
+    que l'amélioration de la productivité des employé(e)s
+    ainsi qu'une amélioration du sourcing, de ce fait découle un accroissement des bénéfices
+    de l'organisation.
 
     Le principal canal de discussion Apprenant - Equipes Simplon est Discord,
     Simplon crée un nouveau serveur Discord pour chaque nouvelle promotion qui
     commence, ce qui amène à un nombre très élevé de serveur Discord à terme.
 
-    De cela découlent plusieurs phénomènes un bon exemple est la pollution des espaces Discord
-    des formateurs, des apprenants et de tous les acteurs qui entrent en contact avec
-    les promotions.
-
-    Ce présent document fait office de proposition de solutions à différentes
-    problématiques identifiées au sein des fabriques Hauts-De-France.
-
-    Ce projet soulève différents enjeux concernant la communication de Simplon HDF, 
-    il mettra en lumière se sentiments de communauté de Simploniens souvent mis en avant 
-    avec difficultés. Il est aussi question d'organisation pour améliorer la vie des apprenants et
-    des équipes Simplon. Un énorme gain de temps est aussi de mise, ce projet permettra aux équipes de se 
-    recentrer sur les objectis principaux sans s'occuper du superflux, donc minimiser toute les tâches 
-    répété, ameliorer la resolution de problème d'apprenants par les équipes administratives lorsqu'une demande est faite, améliorer le 
-    futur des apprenants en favorisant le suivi post-formation, trouver les meilleurs profils pour les formations, améliorer 
-    les conditions d'apprentissage des apprenants.
-
+    De cela découlent plusieurs phénomènes nefastes tels qu'une communication
+    amoindrie ainsi qu'un manque de Sentiment d'appartenance à Simplon HDF.
+    Il n'existe actuellement pas de sentiment de communauté forte pour les
+    apprenants suivant des formations auprès de Simplon.
 
 # 👥 Identification de l'équipe en charge du projet
 
