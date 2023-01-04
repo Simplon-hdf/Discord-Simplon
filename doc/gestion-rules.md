@@ -103,6 +103,13 @@
 
 # Bot feedback
 
+- Le bot doit mettre à disposition un canal dédié aux apprenants afin de faire un retour sur leur formation
+- Ce canal est affilié à la catégorie de la formation
+- Ce canal est affiché à la vue des apprenants lors de la dernière semaine de formation
+- Les apprenants peuvent poster un message dans ce canal afin d'intéragir avec le bot
+- Le canal devient invisible pour un apprenant lorsqu'il a posté son feedback
+- Le bot doit supprimer le message du canal et le reposter afin d'assurer l'anonymité du message
+
 ## Configuration
 
 - Le bot doit mettre à disposition une commande permettant son activation
