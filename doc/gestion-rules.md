@@ -65,10 +65,7 @@
   - La liste box doit être utilisé uniquement par le staff
 
 
-# pôle
-  - Lors de l'arrive d'un nouvel apprenant, le bot doit envoyer un message de demande de verification (dans un canal) dedié à ça formation.
-  - Lors de l'arrive d'un nouveau staff, le bot doit envoyer un message de demande de verification (dans un canal) dedié au staff.
-    - Une fois la verification de l'identité validée, le role doit etre attribué par le bot à l'utilisateur du lien.
+# Pôle
 
 - Un pole est composé de 1 à n membres
 - Un pole est représenté par un rôle au sein de l'organisation de Simplon-HDF
@@ -103,3 +100,10 @@
   - D'un champ de texte permettant de renseigner le nom du ticket
   - D'une listbox permettant de selectionner le pôle de destination du ticket
   - D'un bouton permettant de confirmer l'ouverture du ticket
+
+# Bot feedback
+
+## Configuration
+
+- Le bot doit mettre à disposition une commande permettant son activation
+- Le bot doit mettre à disposition une commande permettant sa désactivation
