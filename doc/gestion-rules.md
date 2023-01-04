@@ -114,3 +114,5 @@
 
 - Le bot doit mettre à disposition une commande permettant son activation
 - Le bot doit mettre à disposition une commande permettant sa désactivation
+- Le bot doit mettre à disposition un embed permettant d'activer ou non les feedbacks selon les formations
+  - Cet embed doit être composée d'une listbox permettant la sélection d'une formation spécifique
