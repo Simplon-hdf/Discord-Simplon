@@ -4,12 +4,13 @@
   "description": "",
   "scripts": {
     "onboarding": "node ./onboarding/index.ts",
-    "signature" : "node ./signature/index.js"
+    "signature": "node ./signature/index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3",
     "eslint": "^8.32.0",
     "typescript": "^4.9.4"
   }
