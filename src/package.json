@@ -8,6 +8,7 @@
     "lint_oboarding": "eslint . --ext /onboarding/*.ts",
     "onboarding" : "node ./onboarding/dist/index.js",
     "signature": "node ./signature/index.js"
+
   },
   "author": "",
   "license": "ISC",
