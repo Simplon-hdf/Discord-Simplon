@@ -23,9 +23,3 @@
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode
 
 follow-mail.md
-<<<<<<< HEAD
-=======
-
-*/node_modules/
-*/package-lock.json
->>>>>>> 88e680b (fix(common) : remove conflict)
