@@ -4,16 +4,11 @@
   "description": "",
   "type": "module",
   "scripts": {
-<<<<<<< HEAD
     "ts_onboarding": "tsc  --skipLibCheck --moduleResolution node16 --module ES2022 onboarding/*.ts --outDir onboarding/dist/ ",
     "lint_oboarding": "eslint . --ext /onboarding/*.ts",
     "onboarding" : "node ./onboarding/dist/index.js",
     "signature": "node ./signature/index.js"
 
-=======
-    "onboarding": "node ./onboarding/index.ts",
-    "signature" : "node ./signature/index.js"
->>>>>>> 5ae2a1e (build(bot) : add run command)
   },
   "author": "",
   "license": "ISC",
