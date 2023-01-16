@@ -25,12 +25,4 @@
 follow-mail.md
 
 */node_modules/
-<<<<<<< HEAD
-<<<<<<< HEAD
 */package-lock.json
-=======
-package-lock.json
->>>>>>> 11bbac4 (build(common) : add nodemodules in gitignore)
-=======
-*/package-lock.json
->>>>>>> 801498e (build(common) : add package-lock in gitignore)
