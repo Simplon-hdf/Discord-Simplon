@@ -8,3 +8,5 @@ Notez aussi qu'il faut creer un fichier .env à partir du fichier d'exemple avec
 
 - npm install : permet d'installer les dépendances des projets
 - npm <Nom du bot> : permet de lancer le processus du bot
+
+
