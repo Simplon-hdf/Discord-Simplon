@@ -1,3 +1,4 @@
+/// <reference path="../commands/ping_cmd.ts"/>
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -34,61 +35,54 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-import { Client, Events, GatewayIntentBits, Collection } from "discord.js";
+import { REST, Routes } from "discord.js";
+import * as fs from "fs";
 import * as dotenv from "dotenv";
-import commands_handler from "./handlers/commands_handler.js";
-import * as fs from "node:fs";
-import * as path from "node:path";
-dotenv.config();
-var DISCORD_TOKEN = process.env.DISCORD_TOKEN;
-var DISCORD_ID = process.env.DISCORD_ID;
-var client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.DirectMessages, GatewayIntentBits.GuildMessages] });
-client.commands = new Collection();
-var commandsPath = path.join(__dirname, 'commands');
-var commandFiles = fs.readdirSync(commandsPath).filter(function (file) { return file.endsWith('.js'); });
-for (var _i = 0, commandFiles_1 = commandFiles; _i < commandFiles_1.length; _i++) {
-    var file = commandFiles_1[_i];
-    var filePath = path.join(commandsPath, file);
-    var command = require(filePath);
-    client.commands.set(command.data.name, command);
-}
-client.once(Events.ClientReady, function () {
-    console.log('Ready!');
-});
-client.on('ready', function () {
-    if (client.user != undefined) {
-        console.log("Logged in as ".concat(client.user.tag, "!"));
-    }
-});
-client.on(Events.InteractionCreate, function (interaction) { return __awaiter(void 0, void 0, void 0, function () {
-    var command, error_1;
+export default (function (client, discord_token, discord_client_id) { return __awaiter(void 0, void 0, void 0, function () {
+    var commandFiles, commands, _i, commandFiles_1, file, cmd, rest;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                if (!interaction.isChatInputCommand()) return [3 /*break*/, 5];
-                console.log(commands);
-                command = commands.get(interaction.commandName);
-                if (!command) {
-                    console.error("No command matching ".concat(interaction.commandName, " was found."));
-                    return [2 /*return*/];
-                }
+                dotenv.config();
+                commandFiles = fs.readdirSync('./onboarding/dist/commands/');
+                commands = [];
+                _i = 0, commandFiles_1 = commandFiles;
                 _a.label = 1;
             case 1:
-                _a.trys.push([1, 3, , 5]);
-                return [4 /*yield*/, command.execute(interaction)];
+                if (!(_i < commandFiles_1.length)) return [3 /*break*/, 4];
+                file = commandFiles_1[_i];
+                return [4 /*yield*/, import("../commands/".concat(file))];
             case 2:
-                _a.sent();
-                return [3 /*break*/, 5];
+                cmd = _a.sent();
+                commands.push(cmd["default"].data);
+                console.log(commands);
+                _a.label = 3;
             case 3:
-                error_1 = _a.sent();
-                console.error(error_1);
-                return [4 /*yield*/, interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true })];
+                _i++;
+                return [3 /*break*/, 1];
             case 4:
-                _a.sent();
-                return [3 /*break*/, 5];
-            case 5: return [2 /*return*/];
+                rest = new REST({ version: '10' }).setToken(discord_token);
+                (function () { return __awaiter(void 0, void 0, void 0, function () {
+                    var error_1;
+                    return __generator(this, function (_a) {
+                        switch (_a.label) {
+                            case 0:
+                                _a.trys.push([0, 2, , 3]);
+                                console.log('Started refreshing application (/) commands.');
+                                return [4 /*yield*/, rest.put(Routes.applicationCommands(discord_client_id), { body: commands })];
+                            case 1:
+                                _a.sent();
+                                console.log('Successfully reloaded application (/) commands.');
+                                return [3 /*break*/, 3];
+                            case 2:
+                                error_1 = _a.sent();
+                                console.error(error_1);
+                                return [3 /*break*/, 3];
+                            case 3: return [2 /*return*/];
+                        }
+                    });
+                }); })();
+                return [2 /*return*/];
         }
     });
 }); });
-commands_handler(client, DISCORD_TOKEN, DISCORD_ID);
-client.login(DISCORD_TOKEN);
