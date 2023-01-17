@@ -1,4 +1,4 @@
-/// <reference path="../events/ready.ts"/>
+/// <reference path="../commands/ping_cmd.ts"/>
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -35,54 +35,57 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-import { REST, Routes, Collection } from "discord.js";
 import * as fs from "fs";
-import * as dotenv from "dotenv";
-export default (function (client, discord_token, discord_client_id) { return __awaiter(void 0, void 0, void 0, function () {
-    var commandFiles, _i, commandFiles_1, file, cmd, rest;
+export default (function (client) { return __awaiter(void 0, void 0, void 0, function () {
+    var eventFiles, _loop_1, _i, eventFiles_1, file;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                dotenv.config();
-                commandFiles = fs.readdirSync('./onboarding/dist/commands/');
-                client.commands = new Collection();
-                _i = 0, commandFiles_1 = commandFiles;
+                eventFiles = fs.readdirSync('./onboarding/dist/events').filter(function (e) { return e.endsWith('.js'); });
+                _loop_1 = function (file) {
+                    var event_1;
+                    return __generator(this, function (_b) {
+                        switch (_b.label) {
+                            case 0: return [4 /*yield*/, import('../events/' + file)];
+                            case 1:
+                                event_1 = _b.sent();
+                                if (event_1["default"].once) {
+                                    client.once(event_1["default"].name, function () {
+                                        var _a;
+                                        var args = [];
+                                        for (var _i = 0; _i < arguments.length; _i++) {
+                                            args[_i] = arguments[_i];
+                                        }
+                                        return (_a = event_1["default"]).execute.apply(_a, args);
+                                    });
+                                }
+                                else {
+                                    client.on(event_1["default"].name, function () {
+                                        var _a;
+                                        var args = [];
+                                        for (var _i = 0; _i < arguments.length; _i++) {
+                                            args[_i] = arguments[_i];
+                                        }
+                                        return (_a = event_1["default"]).execute.apply(_a, args);
+                                    });
+                                }
+                                return [2 /*return*/];
+                        }
+                    });
+                };
+                _i = 0, eventFiles_1 = eventFiles;
                 _a.label = 1;
             case 1:
-                if (!(_i < commandFiles_1.length)) return [3 /*break*/, 4];
-                file = commandFiles_1[_i];
-                return [4 /*yield*/, import("../commands/".concat(file))];
+                if (!(_i < eventFiles_1.length)) return [3 /*break*/, 4];
+                file = eventFiles_1[_i];
+                return [5 /*yield**/, _loop_1(file)];
             case 2:
-                cmd = _a.sent();
-                //console.log(cmd.default);
-                client.commands.set(cmd["default"].data.name, cmd["default"]); // Link cmd name to complete module
+                _a.sent();
                 _a.label = 3;
             case 3:
                 _i++;
                 return [3 /*break*/, 1];
-            case 4:
-                rest = new REST({ version: '10' }).setToken(discord_token);
-                (function () { return __awaiter(void 0, void 0, void 0, function () {
-                    var error_1;
-                    return __generator(this, function (_a) {
-                        switch (_a.label) {
-                            case 0:
-                                _a.trys.push([0, 2, , 3]);
-                                console.log('Started refreshing application (/) commands.');
-                                return [4 /*yield*/, rest.put(Routes.applicationCommands(discord_client_id), { body: client.commands.map(function (x) { return x.data.toJSON(); }) })];
-                            case 1:
-                                _a.sent(); //Logging commands on RESTAPI (for each values in commands, get data.JSON() to register it
-                                console.log('Successfully reloaded application (/) commands.');
-                                return [3 /*break*/, 3];
-                            case 2:
-                                error_1 = _a.sent();
-                                console.error(error_1);
-                                return [3 /*break*/, 3];
-                            case 3: return [2 /*return*/];
-                        }
-                    });
-                }); })();
-                return [2 /*return*/];
+            case 4: return [2 /*return*/];
         }
     });
 }); });
