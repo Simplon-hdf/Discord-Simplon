@@ -42,20 +42,21 @@ export default {
     execute: function (interaction) {
         var _a;
         return __awaiter(this, void 0, void 0, function () {
-            var name, data, user_data, template_id, channels, options, select_menu;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var name, data, formation_data, template_id, channels, options, select_menu;
+            var _b;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         if (!interaction.isModalSubmit() || interaction['customId'] != 'name-modals-formation')
                             return [2 /*return*/];
                         name = interaction.fields.getTextInputValue('name-input-formations');
-                        return [4 /*yield*/, get('./config.json')];
+                        return [4 /*yield*/, get('./config_courses.json')];
                     case 1:
-                        data = _b.sent();
-                        user_data = data[interaction.user.id];
-                        console.log(user_data);
-                        user_data['formation_name'] = name;
-                        set('./config.json', interaction.user.id, user_data);
+                        data = _c.sent();
+                        formation_data = (_b = {},
+                            _b[name] = name,
+                            _b);
+                        set('./config_courses.json', 'formations', formation_data);
                         template_id = data['template'];
                         channels = (_a = interaction.guild) === null || _a === void 0 ? void 0 : _a.channels.cache.filter(function (channel) { return channel.type == 0 && channel.parentId == template_id; });
                         options = [];
@@ -74,6 +75,7 @@ export default {
                             .setMinValues(1)
                             .setMaxValues(options.length));
                         interaction.reply({ ephemeral: true, content: name, components: [select_menu] });
+                        set('./config_courses.json', interaction.user.id, { 'state': true, 'formation_name': name });
                         return [2 /*return*/];
                 }
             });
