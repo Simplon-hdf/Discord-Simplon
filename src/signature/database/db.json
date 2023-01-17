@@ -4,14 +4,14 @@
             "id": "0",
             "name": "John",
             "surname": "Doe",
-            "roles": "Formateur",
+            "roles": "1064925613120557196",
             "promotions": ["CDA-Vals-p1", "CDA-DevOps"]
         }, 
         {
             "id": "1",
             "name": "Sam",
             "surname": "Smiths",
-            "roles": "Formateur",
+            "roles": "1064925613120557196",
             "promotions": ["CDA-Vals-p1", "JAVA-Vals-p1"]
         }
     ],
@@ -19,32 +19,38 @@
         {
             "id": "0",
             "firstname": "Babita",
-            "lastname": "Shanley"
+            "lastname": "Shanley",
+            "roles": "1064925679193444473"
         },
         {
             "id": "1",
             "firstname": "Penelopa",
-            "lastname": "Lamoree"
+            "lastname": "Lamoree",
+            "roles": "1064925679193444473"
         },
         {
             "id": "2",
             "firstname": "Chandra",
-            "lastname": "Marisa"
+            "lastname": "Marisa",
+            "roles": "1064925679193444473"
         },
         {
             "id": "3",
             "firstname": "Therine",
-            "lastname": "Freddi"
+            "lastname": "Freddi",
+            "roles": "1064925679193444473"
         },
         {
             "id": "4",
             "firstname": "Imojean",
-            "lastname": "Seligman"
+            "lastname": "Seligman",
+            "roles": "1064925679193444473"
         },
         {
             "id": "5",
             "firstname": "Elmira",
-            "lastname": "Toor"
+            "lastname": "Toor",
+            "roles": "1064925679193444473"
         }
     ]
 }

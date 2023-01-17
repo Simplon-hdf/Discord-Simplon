@@ -31,7 +31,9 @@ client.on(Events.InteractionCreate, async (interaction) => {
     }
   } else if(interaction.isButton()){
     if(interaction.customId === "active"){
-      interaction.reply("test")
+      if (interaction.member.roles.cache.has('1064925613120557196')) {
+        interaction.reply('test');
+      }
     }
   }
 });
