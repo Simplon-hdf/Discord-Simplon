@@ -15,6 +15,7 @@ events_handler(client);
 
 
 client.on(Events.InteractionCreate, async (interaction: any) => {
+    if (!interaction.isChatInputCommand()) return;
     const parsedClient : any = client;
     const command = parsedClient.commands.get(interaction.commandName);
 	await command.execute(interaction);	

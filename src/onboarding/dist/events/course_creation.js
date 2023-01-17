@@ -34,43 +34,38 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-import { ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder, SlashCommandBuilder } from "discord.js";
-import { set } from "../utils/json_utils.js";
+import { Events } from "discord.js";
+import { get } from "../utils/json_utils.js";
 export default {
-    data: new SlashCommandBuilder()
-        .setName('create_course_interface')
-        .setDescription('Setup the interface for course creation'),
+    name: Events.MessageCreate,
+    once: true,
     execute: function (interaction) {
-        var _a, _b;
         return __awaiter(this, void 0, void 0, function () {
-            var row, embed;
-            var _this = this;
-            return __generator(this, function (_c) {
-                switch (_c.label) {
+            var content, data, channel_course, configs_in_progress, user_data, user, state, responses;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
                     case 0:
-                        row = new ActionRowBuilder()
-                            .addComponents(new ButtonBuilder()
-                            .setCustomId('start_course_creation')
-                            .setLabel('Commencer la création')
-                            .setStyle(ButtonStyle.Success));
-                        embed = new EmbedBuilder()
-                            .setColor(0x0099FF)
-                            .setTitle("Interface de création de nouvelles formations")
-                            .addFields({ name: "Guide", value: "Cliquer sur le bouton pour commencer à configurer une nouvelle formation" })
-                            .setFooter({ text: "Interface config" });
-                        set('./config.json', 'channel_id', (_a = interaction.channel) === null || _a === void 0 ? void 0 : _a.id);
-                        return [4 /*yield*/, ((_b = interaction.channel) === null || _b === void 0 ? void 0 : _b.send({ embeds: [embed], components: [row] }))];
+                        content = interaction.content;
+                        data = get('./config.json');
+                        channel_course = data['channel_id'];
+                        if (channel_course == undefined || interaction.channelId != channel_course) {
+                            return [2 /*return*/];
+                        }
+                        configs_in_progress = data['config_state_course_creation'];
+                        user_data = configs_in_progress.find(function (element) { return interaction.author.id == element['user_id']; });
+                        user = user_data['user_id'];
+                        state = user_data['state'];
+                        if (user_data.length == 0 || user == undefined)
+                            return [2 /*return*/];
+                        if (!state)
+                            return [2 /*return*/];
+                        if (!(content.split(' ').length > 0)) return [3 /*break*/, 2];
+                        return [4 /*yield*/, interaction.reply('Le nom de la formation de doit pas contenir d\'espace !')];
                     case 1:
-                        _c.sent();
-                        return [4 /*yield*/, interaction.deferReply({ ephemeral: true })];
+                        _a.sent();
+                        return [2 /*return*/];
                     case 2:
-                        _c.sent();
-                        setTimeout(function () { return __awaiter(_this, void 0, void 0, function () { return __generator(this, function (_a) {
-                            switch (_a.label) {
-                                case 0: return [4 /*yield*/, interaction.editReply({ content: "L'interface à bien été créée" })];
-                                case 1: return [2 /*return*/, _a.sent()];
-                            }
-                        }); }); });
+                        responses = user_data['responses'];
                         return [2 /*return*/];
                 }
             });

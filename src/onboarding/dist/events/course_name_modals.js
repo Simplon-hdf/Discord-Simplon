@@ -34,43 +34,46 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-import { ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder, SlashCommandBuilder } from "discord.js";
-import { set } from "../utils/json_utils.js";
+import { ActionRowBuilder, Events, StringSelectMenuBuilder } from "discord.js";
+import { set, get } from "../utils/json_utils.js";
 export default {
-    data: new SlashCommandBuilder()
-        .setName('create_course_interface')
-        .setDescription('Setup the interface for course creation'),
+    name: Events.InteractionCreate,
+    on: true,
     execute: function (interaction) {
-        var _a, _b;
+        var _a;
         return __awaiter(this, void 0, void 0, function () {
-            var row, embed;
-            var _this = this;
-            return __generator(this, function (_c) {
-                switch (_c.label) {
+            var name, data, user_data, template_id, channels, options, select_menu;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
                     case 0:
-                        row = new ActionRowBuilder()
-                            .addComponents(new ButtonBuilder()
-                            .setCustomId('start_course_creation')
-                            .setLabel('Commencer la création')
-                            .setStyle(ButtonStyle.Success));
-                        embed = new EmbedBuilder()
-                            .setColor(0x0099FF)
-                            .setTitle("Interface de création de nouvelles formations")
-                            .addFields({ name: "Guide", value: "Cliquer sur le bouton pour commencer à configurer une nouvelle formation" })
-                            .setFooter({ text: "Interface config" });
-                        set('./config.json', 'channel_id', (_a = interaction.channel) === null || _a === void 0 ? void 0 : _a.id);
-                        return [4 /*yield*/, ((_b = interaction.channel) === null || _b === void 0 ? void 0 : _b.send({ embeds: [embed], components: [row] }))];
+                        if (!interaction.isModalSubmit() || interaction['customId'] != 'name-modals-formation')
+                            return [2 /*return*/];
+                        name = interaction.fields.getTextInputValue('name-input-formations');
+                        return [4 /*yield*/, get('./config.json')];
                     case 1:
-                        _c.sent();
-                        return [4 /*yield*/, interaction.deferReply({ ephemeral: true })];
-                    case 2:
-                        _c.sent();
-                        setTimeout(function () { return __awaiter(_this, void 0, void 0, function () { return __generator(this, function (_a) {
-                            switch (_a.label) {
-                                case 0: return [4 /*yield*/, interaction.editReply({ content: "L'interface à bien été créée" })];
-                                case 1: return [2 /*return*/, _a.sent()];
-                            }
-                        }); }); });
+                        data = _b.sent();
+                        user_data = data[interaction.user.id];
+                        console.log(user_data);
+                        user_data['formation_name'] = name;
+                        set('./config.json', interaction.user.id, user_data);
+                        template_id = data['template'];
+                        channels = (_a = interaction.guild) === null || _a === void 0 ? void 0 : _a.channels.cache.filter(function (channel) { return channel.type == 0 && channel.parentId == template_id; });
+                        options = [];
+                        channels === null || channels === void 0 ? void 0 : channels.forEach(function (element) {
+                            options.push({
+                                label: element.name,
+                                description: "Channel de discussion",
+                                value: element.id
+                            });
+                        });
+                        select_menu = new ActionRowBuilder()
+                            .addComponents(new StringSelectMenuBuilder()
+                            .setCustomId('select-channels-formation')
+                            .setPlaceholder('Liste de channels')
+                            .addOptions(options)
+                            .setMinValues(1)
+                            .setMaxValues(options.length));
+                        interaction.reply({ ephemeral: true, content: name, components: [select_menu] });
                         return [2 /*return*/];
                 }
             });

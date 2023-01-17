@@ -1,4 +1,7 @@
-/// <reference path="../commands/ping_cmd.ts"/>
+/// <reference path="../events/ready.ts"/>
+/// <reference path="../events/start_course_creation.ts"/>
+/// <reference path="../events/course_creation.ts"/>
+/// <reference path="../events/course_name_modals.ts"/>
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {

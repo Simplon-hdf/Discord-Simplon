@@ -1,4 +1,7 @@
-/// <reference path="../commands/ping_cmd.ts"/>
+/// <reference path="../events/ready.ts"/>
+/// <reference path="../events/start_course_creation.ts"/>
+/// <reference path="../events/create_course_template.ts"/>
+/// <reference path="../events/course_name_modals.ts"/>
 
 import * as fs from "fs";
 
