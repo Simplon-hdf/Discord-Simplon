@@ -41,26 +41,27 @@ export default {
     on: true,
     execute: function (interaction) {
         return __awaiter(this, void 0, void 0, function () {
-            var selected, user_id, data, formations;
-            var _a;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var selected, user_id, data, formation_name, formation_data, user_data;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
                     case 0:
                         if (!interaction.isStringSelectMenu() || interaction['customId'] != 'select-channels-formation')
                             return [2 /*return*/];
                         selected = interaction.values.join(', ');
                         user_id = interaction.user.id;
-                        return [4 /*yield*/, get("./config.json")];
+                        return [4 /*yield*/, get("./config_courses.json")];
                     case 1:
-                        data = _b.sent();
-                        data[user_id].state = false;
-                        formations = (_a = {},
-                            _a[data[user_id].formation_name] = [interaction.values],
-                            _a);
-                        set('./config.json', 'formations', formations);
+                        data = _a.sent();
+                        formation_name = data[user_id]['formation_name'];
+                        formation_data = data['formations'];
+                        formation_data[formation_name] = interaction.values;
+                        set('./config_courses.json', 'formations', formation_data);
+                        user_data = data[interaction.user.id];
+                        user_data['state'] = false;
+                        set('./config_courses.json', user_id, user_data);
                         return [4 /*yield*/, interaction.reply('La formation a bien été créée')];
                     case 2:
-                        _b.sent();
+                        _a.sent();
                         return [2 /*return*/];
                 }
             });

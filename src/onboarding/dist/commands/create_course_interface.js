@@ -58,7 +58,7 @@ export default {
                             .setTitle("Interface de création de nouvelles formations")
                             .addFields({ name: "Guide", value: "Cliquer sur le bouton pour commencer à configurer une nouvelle formation" })
                             .setFooter({ text: "Interface config" });
-                        set('./config.json', 'channel_id', (_a = interaction.channel) === null || _a === void 0 ? void 0 : _a.id);
+                        set('./config_courses.json', 'channel_id', (_a = interaction.channel) === null || _a === void 0 ? void 0 : _a.id);
                         return [4 /*yield*/, ((_b = interaction.channel) === null || _b === void 0 ? void 0 : _b.send({ embeds: [embed], components: [row] }))];
                     case 1:
                         _c.sent();

@@ -9,7 +9,7 @@ export default {
 
         const channel = interaction.channelId;
 
-        const state = get('./config.json')['config_state_course_creation'];
+        const state = get('./config_courses.json')[interaction.user.id];
 
         if (state && state != undefined) {
             await interaction.reply({ content: 'La configuration est déja en cours', ephemeral: true });

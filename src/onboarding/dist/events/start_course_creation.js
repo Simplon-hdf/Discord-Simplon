@@ -48,7 +48,7 @@ export default {
                         if (!interaction.isButton() || interaction['customId'] != 'start_course_creation')
                             return [2 /*return*/];
                         channel = interaction.channelId;
-                        state = get('./config.json')['config_state_course_creation'];
+                        state = get('./config_courses.json')[interaction.user.id];
                         if (!(state && state != undefined)) return [3 /*break*/, 2];
                         return [4 /*yield*/, interaction.reply({ content: 'La configuration est déja en cours', ephemeral: true })];
                     case 1:
@@ -67,7 +67,7 @@ export default {
                         return [4 /*yield*/, interaction.showModal(modal)];
                     case 3:
                         _a.sent();
-                        set('./config.json', interaction.user.id, { 'state': true });
+                        set('./config_courses.json', interaction.user.id, { 'state': true });
                         return [2 /*return*/];
                 }
             });
