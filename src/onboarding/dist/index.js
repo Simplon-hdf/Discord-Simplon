@@ -37,11 +37,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 import { Client, Events, GatewayIntentBits } from "discord.js";
 import * as dotenv from "dotenv";
 import commands_handler from "./handlers/commands_handler.js";
+import events_handler from "./handlers/events_handler.js";
 dotenv.config();
 var DISCORD_TOKEN = process.env.DISCORD_TOKEN;
 var DISCORD_ID = process.env.DISCORD_ID;
 var client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.DirectMessages, GatewayIntentBits.GuildMessages] });
 commands_handler(client, DISCORD_TOKEN, DISCORD_ID);
+events_handler(client);
 client.once(Events.ClientReady, function () {
     console.log('Ready!');
 });
@@ -59,9 +61,4 @@ client.on(Events.InteractionCreate, function (interaction) { return __awaiter(vo
         }
     });
 }); });
-client.on('ready', function () {
-    if (client.user != undefined) {
-        console.log("Logged in as ".concat(client.user.tag, "!"));
-    }
-});
 client.login(DISCORD_TOKEN);
