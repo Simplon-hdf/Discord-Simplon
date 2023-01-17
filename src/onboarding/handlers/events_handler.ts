@@ -1,4 +1,5 @@
 /// <reference path="../events/ready.ts"/>
+<<<<<<< HEAD
 /// <reference path="../events/promo/promo_name_modal.ts"/>
 /// <reference path="../events/promo/selection-formation-promo.ts"/>
 /// <reference path="../events/promo/start_promo_creation.ts"/>
@@ -11,11 +12,16 @@
 /// <reference path="../events/identification/management/select-role-new-user.ts"/>
 /// <reference path="../events/identification/requesting/request-identification.ts"/>
 /// <reference path="../events/identification/requesting/submit-identification.ts"/>
+=======
+/// <reference path="../events/add-learner-to-class.ts"/>
+/// <reference path="../events/confirm-add-learner.ts"/>
+>>>>>>> f2c648d (feat(common): add formation learner first interface version)
 
 import * as fs from "fs";
 import * as path from "path";
 
 export default async (client) => {
+<<<<<<< HEAD
     const dirPath = './onboarding/dist/events';
     const eventFiles : [] = getAllFiles(dirPath);
 
@@ -43,6 +49,17 @@ export default async (client) => {
             client.once(event.default.name, (...args) => event.default.execute(...args));
         } else {
             client.on(event.default.name, (...args) => event.default.execute(...args));
+=======
+    const eventFiles = fs.readdirSync('./onboarding/dist/events').filter(e => e.endsWith('.js'));
+        
+        for(const file of eventFiles){
+            const event = await import('../events/' + file);
+            if(event.default.once){
+                client.once(event.default.name, (...args) => event.default.execute(...args));
+            } else {
+                client.on(event.default.name, (...args) => event.default.execute(...args));
+            }
+>>>>>>> f2c648d (feat(common): add formation learner first interface version)
         }
     }
 }
