@@ -1,4 +1,4 @@
-import { ActionRowBuilder, ButtonInteraction, Events, GuildMemberManager, ModalBuilder, ModalSubmitInteraction, TextInputBuilder, TextInputStyle } from "discord.js";
+import { ActionRowBuilder, ButtonInteraction, Events, Guild, GuildMemberManager, ModalBuilder, ModalSubmitInteraction, TextInputBuilder, TextInputStyle } from "discord.js";
 
 export default {
     name: Events.InteractionCreate,
@@ -7,9 +7,9 @@ export default {
         if (!interaction.isModalSubmit() || interaction['customId'] != 'confirm-add-learner') return;
         const username : String = interaction.fields.getField('username-selection')['value'];
         console.log(await interaction.guild?.members.list());
-        const list = interaction.client.guilds.resolve("1064635991320690799"); 
+        const list = await interaction.client.guilds.resolve(interaction.guild as Guild).members.cache;
         // Iterate through the collection of GuildMembers from the Guild getting the username property of each member 
-        console.log(await list?.members.list()); 
+        console.log(list.toJSON()); 
         await interaction.reply({content: 'Bien pris en compte !', ephemeral:true});
         setTimeout(async () => interaction.deleteReply(), 10000);
     }
