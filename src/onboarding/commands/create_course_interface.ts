@@ -24,7 +24,7 @@ export default {
             )
             .setFooter({text: "Interface config"});
 
-        set('./config.json', 'channel_id', interaction.channel?.id)
+        set('./config_courses.json', 'channel_id', interaction.channel?.id)
         
         await interaction.channel?.send({ embeds : [embed], components: [row]});
         await interaction.deferReply({ephemeral: true})
