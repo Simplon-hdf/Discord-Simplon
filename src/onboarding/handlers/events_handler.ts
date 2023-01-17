@@ -1,4 +1,6 @@
-/// <reference path="../commands/ping_cmd.ts"/>
+/// <reference path="../events/ready.ts"/>
+/// <reference path="../events/add-learner-to-class.ts"/>
+/// <reference path="../events/confirm-add-learner.ts"/>
 
 import * as fs from "fs";
 
@@ -7,7 +9,6 @@ export default async (client) => {
         
         for(const file of eventFiles){
             const event = await import('../events/' + file);
-        
             if(event.default.once){
                 client.once(event.default.name, (...args) => event.default.execute(...args));
             } else {
