@@ -44,14 +44,13 @@ var DISCORD_ID = process.env.DISCORD_ID;
 var client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.DirectMessages, GatewayIntentBits.GuildMessages] });
 commands_handler(client, DISCORD_TOKEN, DISCORD_ID);
 events_handler(client);
-client.once(Events.ClientReady, function () {
-    console.log('Ready!');
-});
 client.on(Events.InteractionCreate, function (interaction) { return __awaiter(void 0, void 0, void 0, function () {
     var parsedClient, command;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
+                if (!interaction.isChatInputCommand())
+                    return [2 /*return*/];
                 parsedClient = client;
                 command = parsedClient.commands.get(interaction.commandName);
                 return [4 /*yield*/, command.execute(interaction)];

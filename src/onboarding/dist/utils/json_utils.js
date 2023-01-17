@@ -34,46 +34,35 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-import { ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder, SlashCommandBuilder } from "discord.js";
-import { set } from "../utils/json_utils.js";
-export default {
-    data: new SlashCommandBuilder()
-        .setName('create_course_interface')
-        .setDescription('Setup the interface for course creation'),
-    execute: function (interaction) {
-        var _a, _b;
-        return __awaiter(this, void 0, void 0, function () {
-            var row, embed;
-            var _this = this;
-            return __generator(this, function (_c) {
-                switch (_c.label) {
-                    case 0:
-                        row = new ActionRowBuilder()
-                            .addComponents(new ButtonBuilder()
-                            .setCustomId('start_course_creation')
-                            .setLabel('Commencer la création')
-                            .setStyle(ButtonStyle.Success));
-                        embed = new EmbedBuilder()
-                            .setColor(0x0099FF)
-                            .setTitle("Interface de création de nouvelles formations")
-                            .addFields({ name: "Guide", value: "Cliquer sur le bouton pour commencer à configurer une nouvelle formation" })
-                            .setFooter({ text: "Interface config" });
-                        set('./config.json', 'channel_id', (_a = interaction.channel) === null || _a === void 0 ? void 0 : _a.id);
-                        return [4 /*yield*/, ((_b = interaction.channel) === null || _b === void 0 ? void 0 : _b.send({ embeds: [embed], components: [row] }))];
-                    case 1:
-                        _c.sent();
-                        return [4 /*yield*/, interaction.deferReply({ ephemeral: true })];
-                    case 2:
-                        _c.sent();
-                        setTimeout(function () { return __awaiter(_this, void 0, void 0, function () { return __generator(this, function (_a) {
-                            switch (_a.label) {
-                                case 0: return [4 /*yield*/, interaction.editReply({ content: "L'interface à bien été créée" })];
-                                case 1: return [2 /*return*/, _a.sent()];
-                            }
-                        }); }); });
-                        return [2 /*return*/];
-                }
-            });
-        });
-    }
-};
+import * as fs from "fs";
+export var set = function (filePath, key, value) { return __awaiter(void 0, void 0, void 0, function () {
+    var file, json;
+    var _a;
+    return __generator(this, function (_b) {
+        switch (_b.label) {
+            case 0:
+                file = fs.readFileSync(filePath);
+                if (!(file.length == 0)) return [3 /*break*/, 2];
+                return [4 /*yield*/, fs.writeFileSync(filePath, JSON.stringify((_a = {}, _a[key] = value, _a)))];
+            case 1:
+                _b.sent();
+                return [3 /*break*/, 3];
+            case 2:
+                json = JSON.parse(file.toString());
+                json[key] = value;
+                fs.writeFileSync(filePath, JSON.stringify(json));
+                _b.label = 3;
+            case 3: return [2 /*return*/];
+        }
+    });
+}); };
+export var get = function (filePath) { return __awaiter(void 0, void 0, void 0, function () {
+    var file;
+    return __generator(this, function (_a) {
+        file = fs.readFileSync(filePath);
+        if (file.length != 0) {
+            return [2 /*return*/, JSON.parse(file.toString())];
+        }
+        return [2 /*return*/, ''];
+    });
+}); };

@@ -34,43 +34,40 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-import { ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder, SlashCommandBuilder } from "discord.js";
-import { set } from "../utils/json_utils.js";
+import { ActionRowBuilder, Events, ModalBuilder, TextInputBuilder, TextInputStyle } from "discord.js";
+import { set, get } from "../utils/json_utils.js";
 export default {
-    data: new SlashCommandBuilder()
-        .setName('create_course_interface')
-        .setDescription('Setup the interface for course creation'),
+    name: Events.InteractionCreate,
+    on: true,
     execute: function (interaction) {
-        var _a, _b;
         return __awaiter(this, void 0, void 0, function () {
-            var row, embed;
-            var _this = this;
-            return __generator(this, function (_c) {
-                switch (_c.label) {
+            var channel, state, modal, inputName, action_row;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
                     case 0:
-                        row = new ActionRowBuilder()
-                            .addComponents(new ButtonBuilder()
-                            .setCustomId('start_course_creation')
-                            .setLabel('Commencer la création')
-                            .setStyle(ButtonStyle.Success));
-                        embed = new EmbedBuilder()
-                            .setColor(0x0099FF)
-                            .setTitle("Interface de création de nouvelles formations")
-                            .addFields({ name: "Guide", value: "Cliquer sur le bouton pour commencer à configurer une nouvelle formation" })
-                            .setFooter({ text: "Interface config" });
-                        set('./config.json', 'channel_id', (_a = interaction.channel) === null || _a === void 0 ? void 0 : _a.id);
-                        return [4 /*yield*/, ((_b = interaction.channel) === null || _b === void 0 ? void 0 : _b.send({ embeds: [embed], components: [row] }))];
+                        if (!interaction.isButton() || interaction['customId'] != 'start_course_creation')
+                            return [2 /*return*/];
+                        channel = interaction.channelId;
+                        state = get('./config.json')['config_state_course_creation'];
+                        if (!(state && state != undefined)) return [3 /*break*/, 2];
+                        return [4 /*yield*/, interaction.reply({ content: 'La configuration est déja en cours', ephemeral: true })];
                     case 1:
-                        _c.sent();
-                        return [4 /*yield*/, interaction.deferReply({ ephemeral: true })];
+                        _a.sent();
+                        return [2 /*return*/];
                     case 2:
-                        _c.sent();
-                        setTimeout(function () { return __awaiter(_this, void 0, void 0, function () { return __generator(this, function (_a) {
-                            switch (_a.label) {
-                                case 0: return [4 /*yield*/, interaction.editReply({ content: "L'interface à bien été créée" })];
-                                case 1: return [2 /*return*/, _a.sent()];
-                            }
-                        }); }); });
+                        modal = new ModalBuilder()
+                            .setCustomId('name-modals-formation')
+                            .setTitle('Nom de la formation');
+                        inputName = new TextInputBuilder()
+                            .setCustomId('name-input-formations')
+                            .setLabel('Entrer le nom de la formation')
+                            .setStyle(TextInputStyle.Short);
+                        action_row = new ActionRowBuilder().addComponents(inputName);
+                        modal.addComponents(action_row);
+                        return [4 /*yield*/, interaction.showModal(modal)];
+                    case 3:
+                        _a.sent();
+                        set('./config.json', interaction.user.id, { 'state': true });
                         return [2 /*return*/];
                 }
             });
