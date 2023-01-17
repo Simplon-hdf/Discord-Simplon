@@ -34,18 +34,41 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-import { SlashCommandBuilder } from "discord.js";
+import { ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder, SlashCommandBuilder } from "discord.js";
 export default {
     data: new SlashCommandBuilder()
-        .setName('ping')
-        .setDescription('Replies with Pong!'),
+        .setName('create_course_interface')
+        .setDescription('Setup the interface for course creation'),
     execute: function (interaction) {
+        var _a;
         return __awaiter(this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, interaction.reply('Pong!')];
+            var row, embed;
+            var _this = this;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        row = new ActionRowBuilder()
+                            .addComponents(new ButtonBuilder()
+                            .setCustomId('start_course_creation')
+                            .setLabel('Commencer la création')
+                            .setStyle(ButtonStyle.Success));
+                        embed = new EmbedBuilder()
+                            .setColor(0x0099FF)
+                            .setTitle("Interface de création de nouvelles formations")
+                            .addFields({ name: "Guide", value: "Cliquer sur le bouton pour commencer à configurer une nouvelle formation" })
+                            .setFooter({ text: "Interface config" });
+                        return [4 /*yield*/, ((_a = interaction.channel) === null || _a === void 0 ? void 0 : _a.send({ embeds: [embed], components: [row] }))];
                     case 1:
-                        _a.sent();
+                        _b.sent();
+                        return [4 /*yield*/, interaction.deferReply({ ephemeral: true })];
+                    case 2:
+                        _b.sent();
+                        setTimeout(function () { return __awaiter(_this, void 0, void 0, function () { return __generator(this, function (_a) {
+                            switch (_a.label) {
+                                case 0: return [4 /*yield*/, interaction.editReply({ content: "L'interface à bien été créée" })];
+                                case 1: return [2 /*return*/, _a.sent()];
+                            }
+                        }); }); });
                         return [2 /*return*/];
                 }
             });

@@ -1,4 +1,5 @@
 /// <reference path="../commands/ping_cmd.ts"/>
+/// <reference path="../commands/create_course_interface.ts" />
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -55,7 +56,7 @@ export default (function (client, discord_token, discord_client_id) { return __a
             case 2:
                 cmd = _a.sent();
                 //console.log(cmd.default);
-                client.commands.set(cmd["default"].data.name, cmd["default"]);
+                client.commands.set(cmd["default"].data.name, cmd["default"]); // Link cmd name to complete module
                 _a.label = 3;
             case 3:
                 _i++;
@@ -71,7 +72,7 @@ export default (function (client, discord_token, discord_client_id) { return __a
                                 console.log('Started refreshing application (/) commands.');
                                 return [4 /*yield*/, rest.put(Routes.applicationCommands(discord_client_id), { body: client.commands.map(function (x) { return x.data.toJSON(); }) })];
                             case 1:
-                                _a.sent();
+                                _a.sent(); //Logging commands on RESTAPI (for each values in commands, get data.JSON() to register it
                                 console.log('Successfully reloaded application (/) commands.');
                                 return [3 /*break*/, 3];
                             case 2:
