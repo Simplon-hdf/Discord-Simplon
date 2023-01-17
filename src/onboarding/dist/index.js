@@ -34,27 +34,14 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-import { Client, Events, GatewayIntentBits, Collection } from "discord.js";
+import { Client, Events, GatewayIntentBits } from "discord.js";
 import * as dotenv from "dotenv";
 import commands_handler from "./handlers/commands_handler.js";
-import * as fs from "node:fs";
-import * as path from "node:path";
 dotenv.config();
 var DISCORD_TOKEN = process.env.DISCORD_TOKEN;
 var DISCORD_ID = process.env.DISCORD_ID;
 var client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.DirectMessages, GatewayIntentBits.GuildMessages] });
-client.commands = new Collection();
-var commandsPath = path.join(__dirname, 'commands');
-var commandFiles = fs.readdirSync(commandsPath).filter(function (file) { return file.endsWith('.js'); });
-for (var _i = 0, commandFiles_1 = commandFiles; _i < commandFiles_1.length; _i++) {
-    var file = commandFiles_1[_i];
-    var filePath = path.join(commandsPath, file);
-    var command = require(filePath);
-    client.commands.set(command.data.name, command);
-}
-client.once(Events.ClientReady, function () {
-    console.log('Ready!');
-});
+commands_handler(client, DISCORD_TOKEN, DISCORD_ID);
 client.on('ready', function () {
     if (client.user != undefined) {
         console.log("Logged in as ".concat(client.user.tag, "!"));
@@ -65,9 +52,9 @@ client.on(Events.InteractionCreate, function (interaction) { return __awaiter(vo
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                if (!interaction.isChatInputCommand()) return [3 /*break*/, 5];
-                console.log(commands);
-                command = commands.get(interaction.commandName);
+                if (!interaction.isChatInputCommand())
+                    return [2 /*return*/];
+                command = interaction.client.slashCommands.get(interaction.commandName);
                 if (!command) {
                     console.error("No command matching ".concat(interaction.commandName, " was found."));
                     return [2 /*return*/];
@@ -90,5 +77,4 @@ client.on(Events.InteractionCreate, function (interaction) { return __awaiter(vo
         }
     });
 }); });
-commands_handler(client, DISCORD_TOKEN, DISCORD_ID);
 client.login(DISCORD_TOKEN);

@@ -1,22 +1,28 @@
 /// <reference path="../commands/ping_cmd.ts"/>
 
-import { REST, Routes, Collection, SlashCommandBuilder, Client } from "discord.js";
-import * as fs from "fs";
+import { Client, Routes, SlashCommandBuilder } from "discord.js";
+import { REST } from "@discordjs/rest"
+import { readdirSync } from "fs";
+import { join } from "path";
+import { SlashCommand } from "../type.js";
 import * as dotenv from "dotenv";
+
 
 export default async (client : Client, discord_token, discord_client_id) => {
     dotenv.config();
-    
-    const commandFiles = fs.readdirSync('./onboarding/dist/commands/');
-    const commands : SlashCommandBuilder[] = [];
 
-    for (const file of commandFiles) {
-        // console.log(file);
-        const cmd = await import(`../commands/${file}`);
-        commands.push(cmd.default.data);
-        console.log(commands);
+    const slashCommands : SlashCommandBuilder[] = [];
 
-    }
+    let slashCommandsDir = join("./onboarding/dist/commands/");
+
+    readdirSync(slashCommandsDir).forEach(async file => {
+        console.log(file)
+        if (!file.endsWith(".js")) return;
+        let command = await import(`../commands/${file}`);
+        slashCommands.push(command.default.command);
+        client.slashCommands.set(command.command.name, command);
+    })
+
 
 
 
@@ -26,7 +32,7 @@ export default async (client : Client, discord_token, discord_client_id) => {
         try {
             console.log('Started refreshing application (/) commands.');
 
-            await rest.put(Routes.applicationCommands(discord_client_id), { body: commands});
+            await rest.put(Routes.applicationCommands(discord_client_id), { body: slashCommands.map(command => command.toJSON())});
 
             console.log('Successfully reloaded application (/) commands.');
         } catch (error) {

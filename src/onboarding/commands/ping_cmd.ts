@@ -6,7 +6,7 @@ export default {
     data: new SlashCommandBuilder()
         .setName('ping')
         .setDescription('Replies with Pong!'),
-    async execute(interaction) {
+    execute: async (interaction) => {
         console.log('test')
         await interaction.reply('Pong!');
     },

@@ -35,54 +35,55 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-import { REST, Routes } from "discord.js";
-import * as fs from "fs";
+import { Routes } from "discord.js";
+import { REST } from "@discordjs/rest";
+import { readdirSync } from "fs";
+import { join } from "path";
 import * as dotenv from "dotenv";
 export default (function (client, discord_token, discord_client_id) { return __awaiter(void 0, void 0, void 0, function () {
-    var commandFiles, commands, _i, commandFiles_1, file, cmd, rest;
+    var slashCommands, slashCommandsDir, rest;
     return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                dotenv.config();
-                commandFiles = fs.readdirSync('./onboarding/dist/commands/');
-                commands = [];
-                _i = 0, commandFiles_1 = commandFiles;
-                _a.label = 1;
-            case 1:
-                if (!(_i < commandFiles_1.length)) return [3 /*break*/, 4];
-                file = commandFiles_1[_i];
-                return [4 /*yield*/, import("../commands/".concat(file))];
-            case 2:
-                cmd = _a.sent();
-                commands.push(cmd["default"].data);
-                console.log(commands);
-                _a.label = 3;
-            case 3:
-                _i++;
-                return [3 /*break*/, 1];
-            case 4:
-                rest = new REST({ version: '10' }).setToken(discord_token);
-                (function () { return __awaiter(void 0, void 0, void 0, function () {
-                    var error_1;
-                    return __generator(this, function (_a) {
-                        switch (_a.label) {
-                            case 0:
-                                _a.trys.push([0, 2, , 3]);
-                                console.log('Started refreshing application (/) commands.');
-                                return [4 /*yield*/, rest.put(Routes.applicationCommands(discord_client_id), { body: commands })];
-                            case 1:
-                                _a.sent();
-                                console.log('Successfully reloaded application (/) commands.');
-                                return [3 /*break*/, 3];
-                            case 2:
-                                error_1 = _a.sent();
-                                console.error(error_1);
-                                return [3 /*break*/, 3];
-                            case 3: return [2 /*return*/];
-                        }
-                    });
-                }); })();
-                return [2 /*return*/];
-        }
+        dotenv.config();
+        slashCommands = [];
+        slashCommandsDir = join("./onboarding/dist/commands/");
+        readdirSync(slashCommandsDir).forEach(function (file) { return __awaiter(void 0, void 0, void 0, function () {
+            var command;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        console.log(file);
+                        if (!file.endsWith(".js"))
+                            return [2 /*return*/];
+                        return [4 /*yield*/, import("../commands/".concat(file))];
+                    case 1:
+                        command = _a.sent();
+                        slashCommands.push(command["default"].command);
+                        client.slashCommands.set(command.command.name, command);
+                        return [2 /*return*/];
+                }
+            });
+        }); });
+        rest = new REST({ version: '10' }).setToken(discord_token);
+        (function () { return __awaiter(void 0, void 0, void 0, function () {
+            var error_1;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 2, , 3]);
+                        console.log('Started refreshing application (/) commands.');
+                        return [4 /*yield*/, rest.put(Routes.applicationCommands(discord_client_id), { body: slashCommands.map(function (command) { return command.toJSON(); }) })];
+                    case 1:
+                        _a.sent();
+                        console.log('Successfully reloaded application (/) commands.');
+                        return [3 /*break*/, 3];
+                    case 2:
+                        error_1 = _a.sent();
+                        console.error(error_1);
+                        return [3 /*break*/, 3];
+                    case 3: return [2 /*return*/];
+                }
+            });
+        }); })();
+        return [2 /*return*/];
     });
 }); });
