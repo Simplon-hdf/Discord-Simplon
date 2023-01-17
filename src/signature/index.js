@@ -36,13 +36,12 @@ client.on(Events.InteractionCreate, async (interaction) => {
     if(interaction.customId === "active"){
       if (interaction.member.roles.cache.has('1064925613120557196')) {
         const learner_list = Array.from(database.Apprenants);
-        console.log(learner_list);
         const row = new ActionRowBuilder()
           .addComponents(
             new StringSelectMenuBuilder()
               .setCustomId('select_learners')
               .setPlaceholder('Nothing Selected')
-              .addOptions(learner_list.map(learner => { return {label: String(learner.name), description: learner.lastname, value: learner.roles }}))
+              .addOptions(learner_list.map(learner => { return {label: learner.firstname, description: learner.lastname, value: learner.firstname }}))
           )
         await interaction.reply({content: 'test', components: [row]})
       }
