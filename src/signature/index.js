@@ -1,8 +1,11 @@
 import {
-  Client, Events, GatewayIntentBits, ActionRowBuilder, ButtonBuilder, ButtonStyle,
+  Client, Events, GatewayIntentBits, ActionRowBuilder, ButtonBuilder, ButtonStyle, StringSelectMenuBuilder,
 } from 'discord.js';
 import commands_handler from './handlers/deploy-comands.js'
 import * as dotenv from 'dotenv';
+import fs from 'node:fs';
+import database from './database/db.json' assert { type: "json" };
+
 
 dotenv.config();
 const DISCORD_TOKEN = process.env.DISCORD_TOKEN;
@@ -32,7 +35,16 @@ client.on(Events.InteractionCreate, async (interaction) => {
   } else if(interaction.isButton()){
     if(interaction.customId === "active"){
       if (interaction.member.roles.cache.has('1064925613120557196')) {
-        interaction.reply('test');
+        const learner_list = Array.from(database.Apprenants);
+        console.log(learner_list);
+        const row = new ActionRowBuilder()
+          .addComponents(
+            new StringSelectMenuBuilder()
+              .setCustomId('select_learners')
+              .setPlaceholder('Nothing Selected')
+              .addOptions(learner_list.map(learner => { return {label: String(learner.name), description: learner.lastname, value: learner.roles }}))
+          )
+        await interaction.reply({content: 'test', components: [row]})
       }
     }
   }
