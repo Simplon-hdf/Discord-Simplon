@@ -10,15 +10,14 @@ export default {
         const selected = interaction.values.join(', ');
 
         const user_id = interaction.user.id;
-        const data = await get("./config.json");
+        const data = await get("./config_courses.json");
 
         data[user_id].state = false
 
         const formations = {
             [data[user_id].formation_name]: interaction.values
         }
-        set('./config.json', 'formations', formations)
-
+        set('./config.json', 'formations', formations);
 
         await interaction.reply('La formation a bien été créée')
 

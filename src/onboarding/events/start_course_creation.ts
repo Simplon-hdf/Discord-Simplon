@@ -32,6 +32,6 @@ export default {
 
         await interaction.showModal(modal);
 
-        set('./config.json', interaction.user.id, {'state': true});
+        set('./config_courses.json', interaction.user.id, {'state': true});
     }
 }

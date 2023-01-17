@@ -1,6 +1,7 @@
 import { ActionRowBuilder, ButtonBuilder, ButtonStyle, CommandInteraction, EmbedBuilder, SlashCommandBuilder } from "discord.js";
 import * as fs from "fs";
-import { set } from "../utils/json_utils.js"
+import { set } from "../utils/json_utils.js";
+
 export default {
     data: new SlashCommandBuilder()
         .setName('create_course_interface')
@@ -23,7 +24,7 @@ export default {
             )
             .setFooter({text: "Interface config"});
 
-        set('./config.json', 'channel_id', interaction.channel?.id)
+        set('./config_courses.json', 'channel_id', interaction.channel?.id)
         
         await interaction.channel?.send({ embeds : [embed], components: [row]});
         await interaction.deferReply({ephemeral: true})

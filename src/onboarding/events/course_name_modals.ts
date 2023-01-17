@@ -10,7 +10,7 @@ export default {
         const name = interaction.fields.getTextInputValue('name-input-formations');
 
 
-        const data = await get('./config.json');
+        const data = await get('./config_courses.json');
 
         const user_data =  data[interaction.user.id];
 
@@ -19,7 +19,7 @@ export default {
 
         user_data['formation_name'] = name;
 
-        set('./config.json', interaction.user.id, user_data);
+        set('./config_courses.json', interaction.user.id, user_data);
 
         const template_id =  data['template'];
         const channels = interaction.guild?.channels.cache.filter(channel => channel.type == 0 && channel.parentId == template_id);
