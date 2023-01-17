@@ -1,6 +1,6 @@
 /// <reference path="../events/ready.ts"/>
 /// <reference path="../events/add-learner-to-class.ts"/>
-/// <reference path="../events/confirm-add-learner.ts"/>
+/// <reference path="../events/selected-role.ts"/>
 
 import * as fs from "fs";
 
