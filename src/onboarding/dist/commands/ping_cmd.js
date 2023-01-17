@@ -34,50 +34,21 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-import { Client, Events, GatewayIntentBits } from "discord.js";
-import * as dotenv from "dotenv";
-import commands_handler from "./handlers/commands_handler.js";
-<<<<<<< HEAD
-import events_handler from "./handlers/events_handler.js";
-=======
->>>>>>> 3161c98 (feat(course-creation) : add cmd for interface with interaction button)
-dotenv.config();
-var DISCORD_TOKEN = process.env.DISCORD_TOKEN;
-var DISCORD_ID = process.env.DISCORD_ID;
-var client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.DirectMessages, GatewayIntentBits.GuildMessages] });
-commands_handler(client, DISCORD_TOKEN, DISCORD_ID);
-<<<<<<< HEAD
-events_handler(client);
-=======
-client.once(Events.ClientReady, function () {
-    console.log('Ready!');
-});
->>>>>>> 3161c98 (feat(course-creation) : add cmd for interface with interaction button)
-client.on(Events.InteractionCreate, function (interaction) { return __awaiter(void 0, void 0, void 0, function () {
-    var parsedClient, command;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-<<<<<<< HEAD
-                if (!interaction.isChatInputCommand())
-                    return [2 /*return*/];
-=======
->>>>>>> 3161c98 (feat(course-creation) : add cmd for interface with interaction button)
-                parsedClient = client;
-                command = parsedClient.commands.get(interaction.commandName);
-                return [4 /*yield*/, command.execute(interaction)];
-            case 1:
-                _a.sent();
-                return [2 /*return*/];
-        }
-    });
-}); });
-<<<<<<< HEAD
-=======
-client.on('ready', function () {
-    if (client.user != undefined) {
-        console.log("Logged in as ".concat(client.user.tag, "!"));
+import { SlashCommandBuilder } from "discord.js";
+export default {
+    data: new SlashCommandBuilder()
+        .setName('ping')
+        .setDescription('Replies with Pong!'),
+    execute: function (interaction) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, interaction.reply('Pong!')];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
     }
-});
->>>>>>> 3161c98 (feat(course-creation) : add cmd for interface with interaction button)
-client.login(DISCORD_TOKEN);
+};

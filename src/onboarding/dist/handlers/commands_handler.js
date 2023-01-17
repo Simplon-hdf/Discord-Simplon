@@ -1,11 +1,14 @@
 /// <reference path="../commands/ping_cmd.ts"/>
 /// <reference path="../commands/create_course_interface.ts" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 /// <reference path="../events/ready.ts"/>
 >>>>>>> 8113020 (feat(onboarding) : add event handlers)
 =======
 >>>>>>> e82d5a8 (feat(course creation) : create interaction for setup course, include bouton for start creation, course name modals and selectbox for choose channels (WIP))
+=======
+>>>>>>> 3161c98 (feat(course-creation) : add cmd for interface with interaction button)
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {

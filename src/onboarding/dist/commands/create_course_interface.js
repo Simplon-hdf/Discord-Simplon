@@ -35,18 +35,30 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 import { ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder, SlashCommandBuilder } from "discord.js";
+<<<<<<< HEAD
 import { set } from "../utils/json_utils.js";
+=======
+>>>>>>> 3161c98 (feat(course-creation) : add cmd for interface with interaction button)
 export default {
     data: new SlashCommandBuilder()
         .setName('create_course_interface')
         .setDescription('Setup the interface for course creation'),
     execute: function (interaction) {
+<<<<<<< HEAD
         var _a, _b;
         return __awaiter(this, void 0, void 0, function () {
             var row, embed;
             var _this = this;
             return __generator(this, function (_c) {
                 switch (_c.label) {
+=======
+        var _a;
+        return __awaiter(this, void 0, void 0, function () {
+            var row, embed;
+            var _this = this;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+>>>>>>> 3161c98 (feat(course-creation) : add cmd for interface with interaction button)
                     case 0:
                         row = new ActionRowBuilder()
                             .addComponents(new ButtonBuilder()
@@ -58,6 +70,7 @@ export default {
                             .setTitle("Interface de création de nouvelles formations")
                             .addFields({ name: "Guide", value: "Cliquer sur le bouton pour commencer à configurer une nouvelle formation" })
                             .setFooter({ text: "Interface config" });
+<<<<<<< HEAD
                         set('./config_courses.json', 'channel_id', (_a = interaction.channel) === null || _a === void 0 ? void 0 : _a.id);
                         return [4 /*yield*/, ((_b = interaction.channel) === null || _b === void 0 ? void 0 : _b.send({ embeds: [embed], components: [row] }))];
                     case 1:
@@ -65,6 +78,14 @@ export default {
                         return [4 /*yield*/, interaction.deferReply({ ephemeral: true })];
                     case 2:
                         _c.sent();
+=======
+                        return [4 /*yield*/, ((_a = interaction.channel) === null || _a === void 0 ? void 0 : _a.send({ embeds: [embed], components: [row] }))];
+                    case 1:
+                        _b.sent();
+                        return [4 /*yield*/, interaction.deferReply({ ephemeral: true })];
+                    case 2:
+                        _b.sent();
+>>>>>>> 3161c98 (feat(course-creation) : add cmd for interface with interaction button)
                         setTimeout(function () { return __awaiter(_this, void 0, void 0, function () { return __generator(this, function (_a) {
                             switch (_a.label) {
                                 case 0: return [4 /*yield*/, interaction.editReply({ content: "L'interface à bien été créée" })];
