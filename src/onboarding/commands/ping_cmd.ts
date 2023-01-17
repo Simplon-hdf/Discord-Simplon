@@ -1,4 +1,4 @@
-import { BaseInteraction, Interaction, SlashCommandBuilder } from "discord.js";
+import { SlashCommandBuilder } from "discord.js";
 
 export default {
     data: new SlashCommandBuilder()
