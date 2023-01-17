@@ -1,0 +1,50 @@
+{
+    "Formateurs": [
+        {
+            "id": "0",
+            "name": "John",
+            "surname": "Doe",
+            "roles": "Formateur",
+            "promotions": ["CDA-Vals-p1", "CDA-DevOps"]
+        }, 
+        {
+            "id": "1",
+            "name": "Sam",
+            "surname": "Smiths",
+            "roles": "Formateur",
+            "promotions": ["CDA-Vals-p1", "JAVA-Vals-p1"]
+        }
+    ],
+    "Apprenants": [
+        {
+            "id": "0",
+            "firstname": "Babita",
+            "lastname": "Shanley"
+        },
+        {
+            "id": "1",
+            "firstname": "Penelopa",
+            "lastname": "Lamoree"
+        },
+        {
+            "id": "2",
+            "firstname": "Chandra",
+            "lastname": "Marisa"
+        },
+        {
+            "id": "3",
+            "firstname": "Therine",
+            "lastname": "Freddi"
+        },
+        {
+            "id": "4",
+            "firstname": "Imojean",
+            "lastname": "Seligman"
+        },
+        {
+            "id": "5",
+            "firstname": "Elmira",
+            "lastname": "Toor"
+        }
+    ]
+}

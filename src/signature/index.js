@@ -17,18 +17,22 @@ client.once(Events.ClientReady, (c) => {
 });
 
 client.on(Events.InteractionCreate, async (interaction) => {
-  if (!interaction.isChatInputCommand()) return;
-
-  if (interaction.commandName === 'active') {
-    const row = new ActionRowBuilder()
-      .addComponents(
-        new ButtonBuilder()
-          .setCustomId('active')
-          .setLabel('Active Me!')
-          .setStyle(ButtonStyle.Primary),
-      );
-
-    await interaction.reply({ content: 'Click the button to active me!', components: [row] });
+  if (interaction.isChatInputCommand()){
+    if (interaction.commandName === 'active') {
+      const row = new ActionRowBuilder()
+        .addComponents(
+          new ButtonBuilder()
+            .setCustomId('active')
+            .setLabel('Active Me!')
+            .setStyle(ButtonStyle.Primary),
+        );
+  
+      await interaction.reply({ content: 'Click the button to active me!', components: [row] });
+    }
+  } else if(interaction.isButton()){
+    if(interaction.customId === "active"){
+      interaction.reply("test")
+    }
   }
 });
 
