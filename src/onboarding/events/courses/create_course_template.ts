@@ -19,13 +19,9 @@ export default {
 
         set('./config_courses.json', 'formations', formation_data);
 
-
         const user_data = data[interaction.user.id];
-
         user_data['state'] = false;
-
         set('./config_courses.json', user_id, user_data);
-
 
         await interaction.reply('La formation a bien été créée')
 

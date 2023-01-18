@@ -1,4 +1,4 @@
-import { ActionRowBuilder, APISelectMenuOption, ChannelType, Events, Message, ModalSubmitInteraction, RestOrArray, SelectMenuComponentOptionData, StringSelectMenuBuilder, StringSelectMenuOptionBuilder } from "discord.js"
+import { ChannelType, Events, ModalSubmitInteraction, Colors, PermissionFlagsBits, GuildChannelManager } from "discord.js"
 import { set, get } from "../../utils/json_utils.js";
 
 export default {
@@ -6,7 +6,7 @@ export default {
     on: true,
     async execute(interaction: ModalSubmitInteraction) {
         if (!interaction.isModalSubmit() || interaction['customId'] != 'choice-promo-name') return;
-        
+
         const user_id = interaction.user.id;
         const promo_name = interaction.fields.getTextInputValue('input-name-promo');
 
@@ -22,16 +22,59 @@ export default {
 
         const formation_data = courses_data['formations'];
 
-        if(formation_data[formation_name]['promos'] == undefined){
+        if (formation_data[formation_name]['promos'] == undefined) {
             formation_data[formation_name]['promos'] = [promo_name]
-        }else{
+        } else {
             formation_data[formation_name]['promos'].push(promo_name);
         }
 
 
         set('./config_courses.json', 'formations', formation_data);
-    
-        await interaction.reply({ephemeral : true, content : 'Votre promo a bien été créée'})
 
-4    }
+        const channels : string[] = formation_data[formation_name]['channels'];
+
+        await interaction.guild?.roles.create({
+            name : promo_name,
+            color: Colors.Green,
+            reason: 'Role pour la nouvelle promotion "' + promo_name + "."
+        })
+
+        const roles = await interaction.guild?.roles.cache.find(r => r.name === promo_name);
+
+        await interaction.guild?.channels.create({
+            name: promo_name,
+            type: ChannelType.GuildCategory,
+            permissionOverwrites: [
+               {
+                 id: roles?.id!,
+                 deny: [PermissionFlagsBits.ViewChannel, PermissionFlagsBits.SendMessages],
+              },
+            ],
+        });
+
+        const categorie_id = await interaction.guild?.channels.cache.find(r => r.name === promo_name)?.id;
+
+
+        channels.forEach(async channel => {
+
+            const channel_info = await interaction.guild?.channels.fetch(channel)!;
+            const channel_type : number = channel_info?.type.valueOf()!
+
+            interaction.guild?.channels.create({
+                name: channel_info?.name!,
+                type: channel_type!,
+                parent : categorie_id,
+                permissionOverwrites: [
+                   {
+                     id: roles?.id!,
+                     deny: [PermissionFlagsBits.ViewChannel, PermissionFlagsBits.SendMessages],
+                  },
+                ],
+            });
+        })
+
+
+
+        await interaction.reply({ ephemeral: true, content: 'Votre promo a bien été créée' })
+    }
 }
