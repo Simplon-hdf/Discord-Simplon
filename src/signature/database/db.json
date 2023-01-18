@@ -2,16 +2,16 @@
     "Formateurs": [
         {
             "id": "0",
-            "name": "John",
-            "surname": "Doe",
-            "roles": "1064925679193444473",
+            "firstname": "John",
+            "lastname": "Doe",
+            "roles": "1064925613120557196",
             "promotions": ["CDA-Vals-p1", "CDA-DevOps"]
         }, 
         {
             "id": "1",
-            "name": "Sam",
-            "surname": "Smiths",
-            "roles": "1064925679193444473",
+            "firstname": "Sam",
+            "lastname": "Smiths",
+            "roles": "1064925613120557196",
             "promotions": ["CDA-Vals-p1", "JAVA-Vals-p1"]
         }
     ],
