@@ -37,42 +37,28 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 import { Client, Events, GatewayIntentBits } from "discord.js";
 import * as dotenv from "dotenv";
 import commands_handler from "./handlers/commands_handler.js";
+import events_handler from "./handlers/events_handler.js";
 dotenv.config();
 var DISCORD_TOKEN = process.env.DISCORD_TOKEN;
 var DISCORD_ID = process.env.DISCORD_ID;
 var client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.DirectMessages, GatewayIntentBits.GuildMessages] });
 commands_handler(client, DISCORD_TOKEN, DISCORD_ID);
+events_handler(client);
 client.once(Events.ClientReady, function () {
     console.log('Ready!');
 });
 client.on(Events.InteractionCreate, function (interaction) { return __awaiter(void 0, void 0, void 0, function () {
-    var parsedClient, command, error_1;
+    var parsedClient, command;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
                 parsedClient = client;
                 command = parsedClient.commands.get(interaction.commandName);
-                _a.label = 1;
-            case 1:
-                _a.trys.push([1, 3, , 5]);
                 return [4 /*yield*/, command.execute(interaction)];
-            case 2:
+            case 1:
                 _a.sent();
-                return [3 /*break*/, 5];
-            case 3:
-                error_1 = _a.sent();
-                console.error(error_1);
-                return [4 /*yield*/, interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true })];
-            case 4:
-                _a.sent();
-                return [3 /*break*/, 5];
-            case 5: return [2 /*return*/];
+                return [2 /*return*/];
         }
     });
 }); });
-client.on('ready', function () {
-    if (client.user != undefined) {
-        console.log("Logged in as ".concat(client.user.tag, "!"));
-    }
-});
 client.login(DISCORD_TOKEN);

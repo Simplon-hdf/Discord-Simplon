@@ -1,4 +1,4 @@
-/// <reference path="../commands/ping_cmd.ts"/>
+/// <reference path="../events/ready.ts"/>
 
 import { REST, Routes, Collection } from "discord.js";
 import * as fs from "fs";
