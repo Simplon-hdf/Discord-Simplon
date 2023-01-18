@@ -2,8 +2,11 @@ import { Client, CommandInteraction, Events, GatewayIntentBits, Interaction, Inv
 import * as dotenv from "dotenv";
 import commands_handler from "./handlers/commands_handler.js";
 import events_handler from "./handlers/events_handler.js"; 
+import { EventEmitter } from "events";
 
 dotenv.config();
+process.setMaxListeners(0);
+EventEmitter.setMaxListeners(0);
 const DISCORD_TOKEN = process.env.DISCORD_TOKEN;
 const DISCORD_ID = process.env.DISCORD_ID;
 
