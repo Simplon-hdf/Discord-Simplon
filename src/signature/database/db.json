@@ -1,6 +1,22 @@
 {
     "Formateurs": [
         {
+            "id": "2",
+            "firstname": "Cédric",
+            "lastname": "Leroy",
+            "roles": "1064925613120557196",
+            "discord_id": "1026469434078011444",
+            "promotions": ["CDA-Vals-p1", "CDA-DevOps"]
+        },
+        {
+            "id": "2",
+            "firstname": "Bastien",
+            "lastname": "Bourez",
+            "roles": "1064925613120557196",
+            "discord_id": "413337461071282196",
+            "promotions": ["CDA-Vals-p1", "CDA-DevOps"]
+        },
+        {
             "id": "0",
             "firstname": "John",
             "lastname": "Doe",

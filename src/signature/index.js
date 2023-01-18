@@ -26,7 +26,7 @@ client.once(Events.ClientReady, (c) => {
 client.on(Events.InteractionCreate, async (interaction) => {
   if (interaction.isChatInputCommand()) {
     if (interaction.commandName === "active") {
-      // console.log(interaction.guild.roles.cache.forEach((role) => role));
+
       const embedReminder = new EmbedBuilder()
         .setColor(0x0099ff)
         .setTitle("Commencer la procédure de rappel de signature")
@@ -102,7 +102,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
           const row = new ActionRowBuilder().addComponents(
             new StringSelectMenuBuilder()
-              .setCustomId("select_formatters")
+              .setCustomId("select_trainer")
               .setPlaceholder("Aucune réponse n'est actuellement sélectionnée !")
               .setMinValues(1)
               .setMaxValues(trainer_list.length)
@@ -113,7 +113,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
                     description: `${
                       interaction.guild.roles.cache.get(trainer.roles).name
                     }`,
-                    value: `${trainer.id}, ${trainer.firstname}, ${
+                    value: `${trainer.discord_id}, ${trainer.firstname}, ${
                       trainer.lastname
                     }, ${
                       interaction.guild.roles.cache.get(trainer.roles).name
@@ -131,29 +131,65 @@ client.on(Events.InteractionCreate, async (interaction) => {
     }
   } else if (interaction.isAnySelectMenu()) {
     if (interaction.customId === "select_learners") {
-      const userObject = interaction.values[0].split(",");
-      const embedReminderLearner = new EmbedBuilder()
-        .setColor(0x0099ff)
-        .setTitle("Rapel de signature")
-        .setDescription(
-          `Bonjour ${userObject[1]}, \n\n Votre formateur **${
-            interaction.values[0].split(",")[4]
-          }** vous a envoyé un rappel de signature pour votre formation **${userObject[3]
-            .split("-")
-            .join(" ")
-            .toUpperCase()}**\n\n  Vous pourrez retrouver le code dans le salon: <#1062684179164307476> \n`
-        )
-        .setThumbnail("https://cdn-icons-png.flaticon.com/512/4489/4489772.png")
-        .setTimestamp();
 
-      interaction.values.forEach(async (discordId) =>
+      interaction.values.forEach(async (discordId) =>{
+        const embedReminderLearner = new EmbedBuilder()
+          .setColor(0x0099ff)
+          .setTitle("Rappel de signature")
+          .setDescription(
+            `Bonjour ${discordId.split(",")[1]}, \n\n Votre formateur **${
+              discordId.split(",")[4]
+            }** vous a envoyé un rappel de signature pour votre formation **${discordId.split(",")[3].split("-").join(" ").toUpperCase()}**\n\n  Vous pourrez retrouver le code dans le salon: <#1062684179164307476> \n`
+          )
+          .setThumbnail("https://cdn-icons-png.flaticon.com/512/4489/4489772.png")
+          .setTimestamp();
+
         (await interaction.client.users.fetch(discordId.split(",")[0])).send({
           embeds: [embedReminderLearner],
         })
-      );
+        const embedResponse = new EmbedBuilder()
+          .setColor(0x0099ff)
+          .setTitle("Merci!")
+          .setDescription(
+            `Votre demande a bien été prise en compte.`
+          )
+
+          await interaction.reply({
+            embeds: [embedResponse],
+            ephemeral: true,
+          });
+    });
     }
-    // else if ()
+    if (interaction.customId === 'select_trainer') {
+      interaction.values.forEach(async (discordId) =>{
+        const embedReminderLearner = new EmbedBuilder()
+          .setColor(0x0099ff)
+          .setTitle("Rappel de signature")
+          .setDescription(
+            `Bonjour ${discordId.split(",")[1]}, \n\n Votre apprenant **${
+              discordId.split(",")[4]
+            }** vous a envoyé une demande de code pour la formation **CDA VALS P2**\n\n`
+          )
+          .setThumbnail("https://cdn-icons-png.flaticon.com/512/4489/4489772.png")
+          .setTimestamp();
+
+        (await interaction.client.users.fetch(discordId.split(",")[0])).send({
+          embeds: [embedReminderLearner],
+        })
+        const embedResponse = new EmbedBuilder()
+          .setColor(0x0099ff)
+          .setTitle("Merci!")
+          .setDescription(
+            `Votre demande a bien été prise en compte.`
+          )
+
+          interaction.reply({
+            embeds: [embedResponse],
+            ephemeral: true,
+          });
+    });
+    };
   }
-});
+})
 
 client.login(DISCORD_TOKEN);
