@@ -15,7 +15,7 @@ export default {
         const formation_name = data[user_id]['formation_name'];
         const formation_data = data['formations'];
 
-        formation_data[formation_name] = interaction.values
+        formation_data[formation_name]['channels'] = interaction.values
 
         set('./config_courses.json', 'formations', formation_data);
 
