@@ -41,7 +41,7 @@ import events_handler from "./handlers/events_handler.js";
 dotenv.config();
 var DISCORD_TOKEN = process.env.DISCORD_TOKEN;
 var DISCORD_ID = process.env.DISCORD_ID;
-var client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.DirectMessages, GatewayIntentBits.GuildMessages, GatewayIntentBits.GuildMembers] });
+var client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.DirectMessages, GatewayIntentBits.GuildMessages, GatewayIntentBits.GuildMembers, GatewayIntentBits.GuildInvites] });
 commands_handler(client, DISCORD_TOKEN, DISCORD_ID);
 events_handler(client);
 client.on(Events.InteractionCreate, function (interaction) { return __awaiter(void 0, void 0, void 0, function () {

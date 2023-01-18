@@ -1,4 +1,4 @@
-import { Client, CommandInteraction, Events, GatewayIntentBits, Interaction } from "discord.js";
+import { Client, CommandInteraction, Events, GatewayIntentBits, Interaction, Invite, InviteGuild } from "discord.js";
 import * as dotenv from "dotenv";
 import commands_handler from "./handlers/commands_handler.js";
 import events_handler from "./handlers/events_handler.js"; 
@@ -7,7 +7,7 @@ dotenv.config();
 const DISCORD_TOKEN = process.env.DISCORD_TOKEN;
 const DISCORD_ID = process.env.DISCORD_ID;
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.DirectMessages, GatewayIntentBits.GuildMessages, GatewayIntentBits.GuildMembers] });
+const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.DirectMessages, GatewayIntentBits.GuildMessages, GatewayIntentBits.GuildMembers, GatewayIntentBits.GuildInvites] });
 
 commands_handler(client, DISCORD_TOKEN, DISCORD_ID);
 events_handler(client);
