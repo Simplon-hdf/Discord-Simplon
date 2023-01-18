@@ -1,6 +1,7 @@
 /// <reference path="../commands/ping_cmd.ts"/>
 /// <reference path="../commands/add-learner-to-class.ts"/>
 /// <reference path="../commands/generate-link.ts"/>
+/// <reference path="../commands/create-id-button.ts"/>
 
 import { REST, Routes, Collection } from "discord.js";
 import * as fs from "fs";
