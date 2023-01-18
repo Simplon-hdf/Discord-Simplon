@@ -10,7 +10,7 @@ export default {
         const value = interaction.values[0];
 
         const data = await get('./config_courses.json');
-        const courses_data = data['formations'][value];
+        const courses_data = data['formations'][value]['channels'];
 
         const channels = interaction.guild?.channels.cache.filter(channel => courses_data.includes(channel.id));
 

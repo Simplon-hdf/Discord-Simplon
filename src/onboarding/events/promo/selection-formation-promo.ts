@@ -7,11 +7,11 @@ export default {
     async execute(interaction: StringSelectMenuInteraction) {
         if (!interaction.isStringSelectMenu() || interaction['customId'] != 'select-formation') return;
 
-        const promo_name = interaction.values[0];
+        const formation_name = interaction.values[0];
         const user_id = interaction.user.id;
         const data = await get('config_promo.json');
         
-        data[user_id]['promo_name'] = promo_name;
+        data[user_id]['formation_name'] = formation_name;
 
         set('config_promo.json', user_id, data[user_id]);
 

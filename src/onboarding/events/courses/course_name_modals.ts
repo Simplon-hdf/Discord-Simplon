@@ -11,7 +11,9 @@ export default {
         const data = await get('./config_courses.json');
 
         const formation_data = {
-            [name]: name
+            [name]: {
+                'name' : name
+            }
         };
         set('./config_courses.json', 'formations', formation_data);
 
