@@ -26,7 +26,7 @@ client.once(Events.ClientReady, (c) => {
 client.on(Events.InteractionCreate, async (interaction) => {
   if (interaction.isChatInputCommand()) {
     if (interaction.commandName === "active") {
-      console.log(interaction.guild.roles.cache.forEach((role) => role));
+      // console.log(interaction.guild.roles.cache.forEach((role) => role));
       const embedReminder = new EmbedBuilder()
         .setColor(0x0099ff)
         .setTitle("Commencer la procédure de rappel de signature")
@@ -53,7 +53,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
         const embedReminder = new EmbedBuilder()
           .setColor(0x0099ff)
-          .setTitle("Sélection des apprenants pour le rappeler")
+          .setTitle("Sélection des apprenants pour Rappel")
           .setDescription(
             `\n\n Bonjour ${interaction.member.displayName}, \n\n Veuillez sélectionner les apprenants à qui il faut rappeler de signer dans la liste de sélection ci-dessous.`
           )
@@ -89,8 +89,44 @@ client.on(Events.InteractionCreate, async (interaction) => {
           ephemeral: true,
         });
       }
-      else if (interaction.member.roles.cache.has("1064925613120557196")) {
-        const formatter_list = 
+      else if (interaction.member.roles.cache.has("1064925679193444473")) {
+        const trainer_list = Array.from(database.Formateurs);
+        
+        const embedRequest = new EmbedBuilder()
+          .setColor(0x0099ff)
+          .setTitle("Sélection du formateur du jour")
+          .setDescription(
+            `\n\n Bonjour ${interaction.member.displayName}, \n\n Veuillez sélectionner le formateur du jour afin de lui envoyer une demande de code.`
+          )
+          .setThumbnail("https://cdn-icons-png.flaticon.com/512/4489/4489772.png");
+
+          const row = new ActionRowBuilder().addComponents(
+            new StringSelectMenuBuilder()
+              .setCustomId("select_formatters")
+              .setPlaceholder("Aucune réponse n'est actuellement sélectionnée !")
+              .setMinValues(1)
+              .setMaxValues(trainer_list.length)
+              .addOptions(
+                trainer_list.map((trainer) => {
+                  return {
+                    label: `[${trainer.firstname} ${trainer.lastname}]`,
+                    description: `${
+                      interaction.guild.roles.cache.get(trainer.roles).name
+                    }`,
+                    value: `${trainer.id}, ${trainer.firstname}, ${
+                      trainer.lastname
+                    }, ${
+                      interaction.guild.roles.cache.get(trainer.roles).name
+                    }, ${interaction.member.displayName}`,
+                  };
+                })
+              )
+          );
+          await interaction.reply({
+            embeds: [embedRequest],
+            components: [row],
+            ephemeral: true,
+          });
       }
     }
   } else if (interaction.isAnySelectMenu()) {
@@ -116,6 +152,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
         })
       );
     }
+    // else if ()
   }
 });
 
