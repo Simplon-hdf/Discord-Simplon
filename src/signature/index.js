@@ -29,9 +29,9 @@ client.on(Events.InteractionCreate, async (interaction) => {
       console.log(interaction.guild.roles.cache.forEach((role) => role));
       const embedReminder = new EmbedBuilder()
         .setColor(0x0099ff)
-        .setTitle("Commencer la procédure de rapelle de signature")
+        .setTitle("Commencer la procédure de rappel de signature")
         .setDescription(
-          `\n\n Bonjour ${interaction.member.displayName}, \n\n pour commencer la procédure de rapelle de signature veuillez cliquer sur le bouton ci-dessous.`
+          `\n\n Bonjour ${interaction.member.displayName}, \n\n pour commencer la procédure de rappel de signature veuillez cliquer sur le bouton ci-dessous.`
         )
         .setThumbnail(
           "https://cdn-icons-png.flaticon.com/512/4489/4489772.png"
@@ -55,7 +55,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
           .setColor(0x0099ff)
           .setTitle("Sélection des apprenants pour le rappeler")
           .setDescription(
-            `\n\n Bonjour ${interaction.member.displayName}, \n\n Veuillez sélectionner les apprenants à qui il faut rappeler de signer via la liste de sélection ci-dessous.`
+            `\n\n Bonjour ${interaction.member.displayName}, \n\n Veuillez sélectionner les apprenants à qui il faut rappeler de signer dans la liste de sélection ci-dessous.`
           )
           .setThumbnail(
             "https://cdn-icons-png.flaticon.com/512/4489/4489772.png"
@@ -64,7 +64,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
         const row = new ActionRowBuilder().addComponents(
           new StringSelectMenuBuilder()
             .setCustomId("select_learners")
-            .setPlaceholder("Aucune réponse est actuellement sélectionner !")
+            .setPlaceholder("Aucune réponse n'est actuellement sélectionnée !")
             .setMinValues(1)
             .setMaxValues(learner_list.length)
             .addOptions(
@@ -89,17 +89,20 @@ client.on(Events.InteractionCreate, async (interaction) => {
           ephemeral: true,
         });
       }
+      else if (interaction.member.roles.cache.has("1064925613120557196")) {
+        const formatter_list = 
+      }
     }
   } else if (interaction.isAnySelectMenu()) {
     if (interaction.customId === "select_learners") {
       const userObject = interaction.values[0].split(",");
       const embedReminderLearner = new EmbedBuilder()
         .setColor(0x0099ff)
-        .setTitle("Rapelle de signature")
+        .setTitle("Rapel de signature")
         .setDescription(
           `Bonjour ${userObject[1]}, \n\n Votre formateur **${
             interaction.values[0].split(",")[4]
-          }** vous à envoyer un rappelle de signature pour votre formation **${userObject[3]
+          }** vous a envoyé un rappel de signature pour votre formation **${userObject[3]
             .split("-")
             .join(" ")
             .toUpperCase()}**\n\n  Vous pourrez retrouver le code dans le salon: <#1062684179164307476> \n`
