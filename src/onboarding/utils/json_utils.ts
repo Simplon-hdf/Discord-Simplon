@@ -28,3 +28,6 @@ export const redefine = async (filePath: string, toWrite) => {
     else fs.writeFileSync(filePath, JSON.stringify(toWrite, null, 4));
     
 }
+
+    return '';
+}
