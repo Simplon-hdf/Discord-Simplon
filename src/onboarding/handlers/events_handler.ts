@@ -5,6 +5,12 @@
 /// <reference path="../events/submit-identification.ts"/>
 /// <reference path="../events/accept-id-req.ts"/>
 /// <reference path="../events/reject-id-req.ts"/>
+/// <reference path="../events/ready.ts"/>
+/// <reference path="../events/start_course_creation.ts"/>
+/// <reference path="../events/create_course_template.ts"/>
+/// <reference path="../events/course_name_modals.ts"/>
+/// <reference path="../events/add-learner-to-class.ts"/>
+/// <reference path="../events/confirm-add-learner.ts"/>
 
 import * as fs from "fs";
 
