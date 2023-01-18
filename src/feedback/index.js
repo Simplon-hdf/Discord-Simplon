@@ -25,12 +25,35 @@ client.once(Events.ClientReady, (c) => {
 
 client.on(Events.InteractionCreate, async (interaction) => {
   if(interaction.isChatInputCommand()){
-    if(interaction.commandName === "feedbacktest"){
-      interaction.reply("Salut Mec")
+    if(interaction.commandName === "setup-feedback"){
+      const configEmbed = new EmbedBuilder()
+        .setColor(0x0099ff)
+        .setTitle('Commencer la procédure de configuration de feedback')
+        .setDescription(`Bonjour ${interaction.member.displayName}, \n\n pour commencer la procédure de configuration de feedback, veuillez cliquer sur un des boutons ci-dessous.`)
+        .setThumbnail('https://cdn-icons-png.flaticon.com/512/1087/1087804.png')
+      const row = new ActionRowBuilder().addComponents(
+        new ButtonBuilder()
+          .setCustomId('sendExistingFeedback')
+          .setLabel('Envoyer un modèle de feedback existant')
+          .setEmoji('📩')
+          .setStyle(ButtonStyle.Success),
+        new ButtonBuilder()
+          .setCustomId('createFeedback')
+          .setLabel('Créer un nouveau modèle de feedback')
+          .setEmoji('📝')
+          .setStyle(ButtonStyle.Primary),
+        new ButtonBuilder()
+          .setCustomId('configureFeedback')
+          .setLabel('Configurer un modèle de feedback existant')
+          .setEmoji('⚙️')
+          .setStyle(ButtonStyle.Secondary)
+      )
+      await interaction.reply({
+        embeds: [configEmbed],
+        components: [row]
+      });
     };
   };
-
 });
-
 
 client.login(DISCORD_TOKEN);
