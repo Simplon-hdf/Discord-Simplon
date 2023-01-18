@@ -1,5 +1,5 @@
 import { Events, Message, StringSelectMenuInteraction } from "discord.js"
-import { set, get } from "../utils/json_utils.js";
+import { set, get } from "../../utils/json_utils.js";
 
 export default {
     name: Events.InteractionCreate,
