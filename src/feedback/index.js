@@ -127,7 +127,6 @@ client.on(Events.InteractionCreate, async (interaction) => {
       // await interaction.showModal(feedbackSelectionModal);
 
       const promotions = database.apprenants;
-
       const selectPromotionEmbed = new EmbedBuilder()
         .setTitle('Sélectionner la catégorie de promotion')
         .setColor(0x0099ff)
