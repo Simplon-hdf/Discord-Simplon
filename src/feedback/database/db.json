@@ -21,6 +21,44 @@
                 "style": "long"
             }
         }
+    },
+    "apprenants" :  
+    {
+        "CDA" : {
+            "Vals-p1" : [
+                {
+                    "id": "0",
+                    "firstname": "Bastien",
+                    "lastname": "Bourez",
+                    "roles": "413337461071282196",
+                    "discord_id": "413337461071282196"
+                }, 
+                {
+                    "id": "1",
+                    "firstname": "Cédric",
+                    "lastname": "Leroy",
+                    "roles": "1064925613120557196",
+                    "discord_id": "1026469434078011444"
+                }
+                
+            ],
+            "DevOps" : [
+                {
+                    "id": "0",
+                    "firstname": "Bastien",
+                    "lastname": "Bourez",
+                    "roles": "413337461071282196",
+                    "discord_id": "413337461071282196"
+                }, 
+                {
+                    "id": "1",
+                    "firstname": "Cédric",
+                    "lastname": "Leroy",
+                    "roles": "1064925613120557196",
+                    "discord_id": "1026469434078011444"
+                }
+                
+            ]
+        }
     }
-  
 }
