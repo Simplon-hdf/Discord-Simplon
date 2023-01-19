@@ -1,6 +1,6 @@
 import { ActionRowBuilder, ButtonInteraction, EmbedBuilder, Events, GuildMember, GuildMemberManager, GuildMemberRoleManager, Role, RoleSelectMenuBuilder, StringSelectMenuBuilder, User } from "discord.js";
 import { get, set } from '../../../utils/json_utils.js'
-import { RolesIds } from "../../../utils/identification/enums.js";
+import { RolesIds } from "../../../utils/enums.js";
 
 export default {
     name: Events.InteractionCreate,
