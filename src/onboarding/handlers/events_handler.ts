@@ -14,11 +14,6 @@
 /// <reference path="../events/add-learner-to-class.ts"/>
 /// <reference path="../events/confirm-add-learner.ts"/>
 /// <reference path="../events/selected-role.ts"/>
-/// <reference path="../events/request-identification.ts"/>
-/// <reference path="../events/submit-identification.ts"/>
-/// <reference path="../events/reject-id-req.ts"/>
-/// <reference path="../events/accept-id-req.ts"/>
-/// <reference path="../events/reject-id-req.ts"/>
 
 import * as fs from "fs";
 import * as path from "path";
