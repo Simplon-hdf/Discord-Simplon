@@ -11,11 +11,15 @@
 /// <reference path="../events/identification/management/select-role-new-user.ts"/>
 /// <reference path="../events/identification/requesting/request-identification.ts"/>
 /// <reference path="../events/identification/requesting/submit-identification.ts"/>
+/// <reference path="../events/add-learner-to-class.ts"/>
+/// <reference path="../events/confirm-add-learner.ts"/>
+/// <reference path="../events/selected-role.ts"/>
 
 import * as fs from "fs";
 import * as path from "path";
 
 export default async (client) => {
+
     const dirPath = './onboarding/dist/events';
     const eventFiles : [] = getAllFiles(dirPath);
 
