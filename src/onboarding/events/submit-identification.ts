@@ -1,4 +1,5 @@
 import { ActionRowBuilder, ButtonBuilder, ButtonInteraction, ButtonStyle, EmbedBuilder, Events, GuildTextBasedChannel, ModalBuilder, ModalData, ModalSubmitFields, ModalSubmitInteraction, TextInputBuilder, TextInputStyle } from "discord.js";
+import { get, set } from '../utils/json_utils.js';
 
 export default {
     name: Events.InteractionCreate,
@@ -22,7 +23,7 @@ export default {
                     { name: 'Nom', value: `${lastname}` },
                     { name: 'Prénom', value: `${firstname}` },
                     { name: 'Adresse mail', value: `${email}` },
-                    { name: 'Nom de la fabrique', value: `${factory_name}` }
+                    { name: 'Emplacement de la fabrique', value: `${factory_name}` }
                 )
         const buttons_row = new ActionRowBuilder<ButtonBuilder>()
             .addComponents(
@@ -35,11 +36,20 @@ export default {
                     .setLabel('Refuser l\'identification')
                     .setStyle(ButtonStyle.Danger),
             )
-        const to_send_channel : GuildTextBasedChannel = (await interaction.guild?.channels.cache.get('1065212511714017340') as GuildTextBasedChannel)
-        to_send_channel.send({
+        const to_send_channel: GuildTextBasedChannel = (await interaction.guild?.channels.cache.get('1065212511714017340') as GuildTextBasedChannel)
+        const identification_notification_message = await to_send_channel.send({
             embeds: [to_display_embed],
             components: [buttons_row]
-        })
+        });
+
+        set('./identifications-requests.json', identification_notification_message.id, {
+            'user_id': interaction.user.id,
+            'firstname': firstname,
+            'lastname': lastname,
+            'email': email,
+            'factory_name': factory_name,
+        });
+
         await interaction.reply({ content: 'Votre demande d\'identification a bien été prise en compte', ephemeral: true });
 
     }
