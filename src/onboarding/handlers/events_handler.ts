@@ -16,6 +16,7 @@
 /// <reference path="../events/selected-role.ts"/>
 /// <reference path="../events/request-identification.ts"/>
 /// <reference path="../events/submit-identification.ts"/>
+/// <reference path="../events/reject-id-req.ts"/>
 /// <reference path="../events/accept-id-req.ts"/>
 /// <reference path="../events/reject-id-req.ts"/>
 
