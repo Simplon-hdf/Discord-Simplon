@@ -28,6 +28,9 @@ export const redefine = async (filePath: string, toWrite) => {
     else fs.writeFileSync(filePath, JSON.stringify(toWrite, null, 4));
     
 }
+<<<<<<< HEAD
 
     return '';
 }
+=======
+>>>>>>> f6438de (feat(save): add redefine method to rewrite entirely file & add indent for saving)
