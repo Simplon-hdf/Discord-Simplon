@@ -14,6 +14,7 @@
 /// <reference path="../events/add-learner-to-class.ts"/>
 /// <reference path="../events/confirm-add-learner.ts"/>
 /// <reference path="../events/selected-role.ts"/>
+/// <reference path="../events/user-join.ts"/>
 
 import * as fs from "fs";
 import * as path from "path";
