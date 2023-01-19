@@ -5,21 +5,40 @@
 /// <reference path="../commands/add-learner-to-class.ts"/>
 /// <reference path="../commands/generate-link.ts"/>
 /// <reference path="../commands/create-id-button.ts"/>
+/// <reference path="../commands/create_course_info_interface.ts" />
+/// <reference path="../commands/create_promo_interface.ts" />
 
 import { REST, Routes, Collection } from "discord.js";
 import * as fs from "fs";
+import * as path from 'path';
 import * as dotenv from "dotenv";
 
 export default async (client, discord_token, discord_client_id) => {
     dotenv.config();
     
-    const commandFiles = fs.readdirSync('./onboarding/dist/commands/');
+    const commandFiles = getAllFiles('./onboarding/dist/commands/')
+
+    function getAllFiles(dirPath, arrayOfFiles?){
+        const files = fs.readdirSync(dirPath)
+
+        arrayOfFiles = arrayOfFiles || []
+      
+        files.forEach(function(file) {
+          if (fs.statSync(dirPath + "/" + file).isDirectory()) {
+            arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles)
+          } else {
+            arrayOfFiles.push(path.join(dirPath.replace('onboarding/dist', ''), "/", file))
+          }
+        })
+      
+        return arrayOfFiles
+    }
     
     client.commands = new Collection();
 
     for (const file of commandFiles) {
         // console.log(file);
-        const cmd = await import(`../commands/${file}`);
+        const cmd = await import(`../${file}`);
         //console.log(cmd.default);
         client.commands.set(cmd.default.data.name, cmd.default); // Link cmd name to complete module
     }
