@@ -1,6 +1,10 @@
 /// <reference path="../commands/ping_cmd.ts"/>
 /// <reference path="../commands/create_course_interface.ts" />
 /// <reference path="../commands/add-learner-to-class.ts"/>
+/// <reference path="../commands/ping_cmd.ts"/>
+/// <reference path="../commands/add-learner-to-class.ts"/>
+/// <reference path="../commands/generate-link.ts"/>
+/// <reference path="../commands/create-id-button.ts"/>
 /// <reference path="../commands/create_course_info_interface.ts" />
 /// <reference path="../commands/create_promo_interface.ts" />
 
