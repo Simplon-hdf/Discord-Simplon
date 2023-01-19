@@ -8,6 +8,7 @@
 /// <reference path="../events/courses/information_courses.ts"/>
 /// <reference path="../events/identification/management/accept-id-req.ts"/>
 /// <reference path="../events/identification/management/reject-id-req.ts"/>
+/// <reference path="../events/identification/management/select-role-new-user.ts"/>
 /// <reference path="../events/identification/requesting/request-identification.ts"/>
 /// <reference path="../events/identification/requesting/submit-identification.ts"/>
 
