@@ -33,7 +33,7 @@ export default {
             .addComponents(
                 new TextInputBuilder()
                     .setCustomId('factory-name')
-                    .setLabel('Nom de votre fabrique (Optionnel)')
+                    .setLabel('Où se situe votre fabrique ? (Optionnel)')
                     .setRequired(false)
                     .setStyle(TextInputStyle.Short)
             )
