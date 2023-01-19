@@ -7,6 +7,7 @@
 /// <reference path="../events/courses/information_courses.ts"/>
 /// <reference path="../events/promo/promo_name_modal.ts"/>
 /// <reference path="../events/promo/selection-formation-promo.ts"/>
+/// <reference path="../events/channel_selector/handler-interface.ts"/>
 
 import * as fs from "fs";
 import * as path from "path";

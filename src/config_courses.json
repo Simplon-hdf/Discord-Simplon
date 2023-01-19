@@ -1,1 +1,27 @@
-{"template":"1064937184727154708","channel_id":"1064999597191221348","194816967666958336":{"state":false,"formation_name":"CDA"},"formations":{"CDA":{"name":"CDA","channels":["1064937231397175478","1064937263361966120"],"promos":["cda-vals-p1","cda-vals-p2","dede","grege"]}}}
+{
+    "template": "1064937184727154708",
+    "channel_id": "1064999597191221348",
+    "194816967666958336": {
+        "state": false,
+        "formation_name": "CDA"
+    },
+    "formations": {
+        "CDA": {
+            "name": "CDA",
+            "channels": [
+                "1064937231397175478",
+                "1064937263361966120"
+            ],
+            "promos": [
+                "cda-vals-p1",
+                "cda-vals-p2",
+                "dede",
+                "grege",
+                "bgdfdzbf",
+                "r46hwshtdyj",
+                "test",
+                "test2"
+            ]
+        }
+    }
+}
