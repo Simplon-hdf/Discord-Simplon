@@ -1,5 +1,6 @@
 import { ActionRowBuilder, ButtonInteraction, EmbedBuilder, Events, GuildMember, GuildMemberManager, GuildMemberRoleManager, Role, RoleSelectMenuBuilder, StringSelectMenuBuilder, User } from "discord.js";
 import { get, set } from '../../../utils/json_utils.js'
+import { RolesIds } from "../../../utils/identification/enums.js";
 
 export default {
     name: Events.InteractionCreate,
@@ -8,7 +9,7 @@ export default {
         if(interaction.guild == null) return;
         if ((!interaction.isButton() || interaction.customId != 'accept-id-req')) return;
         const member_roles: GuildMemberRoleManager = (await interaction.member?.roles) as GuildMemberRoleManager;
-        if (member_roles.cache.get('1065224602613186600') == undefined) return;
+        if (member_roles.cache.get(RolesIds.CAP_Role) == undefined) return;
 
         const guild_roles = await interaction.guild.roles.fetch();
 
@@ -31,7 +32,7 @@ export default {
         guild_roles.filter(role => learner_roles.includes(role.name)).forEach(role => {
             roles_to_display.addOptions({
                 label: role.name,
-                value: role.id
+                value: `${role.id}|${interaction.message.id}`
             });
         });
 
