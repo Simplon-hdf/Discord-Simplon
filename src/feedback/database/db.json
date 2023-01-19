@@ -1,64 +1,99 @@
 {
-  "modals" :  
-    {
-        "0" : {
-            "title": "Fin de formation",
-            "description": "Questionnaire de fin de formation",
-            "customId": "fin-de-formation",
-            "input": {
-                "customId": "input-fin-de-formation",
-                "label": "question du CAP",
-                "style": "long"
-            }
-        },
-        "1" : {
-            "title": "Nuit de l'info",
-            "description": "retour nuit de l'info",
-            "customId": "nuit-de-info",
-            "input": {
-                "customId": "input-nuit-de-info-1",
-                "label": "question du CAP",
-                "style": "long"
-            }
+  "modals": {
+    "0": {
+      "title": "Fin de formation",
+      "description": "Questionnaire de fin de formation",
+      "customId": "fin-de-formation",
+      "inputs": [
+        {
+          "customId": "input-fin-de-formation",
+          "label": "question du CAP",
+          "style": "Paragraph"
         }
+      ]
     },
-    "apprenants" :  
-    {
-        "CDA" : {
-            "Vals-p1" : [
-                {
-                    "id": "0",
-                    "firstname": "Bastien",
-                    "lastname": "Bourez",
-                    "roles": "413337461071282196",
-                    "discord_id": "413337461071282196"
-                }, 
-                {
-                    "id": "1",
-                    "firstname": "Cédric",
-                    "lastname": "Leroy",
-                    "roles": "1064925613120557196",
-                    "discord_id": "1026469434078011444"
-                }
-                
-            ],
-            "DevOps" : [
-                {
-                    "id": "0",
-                    "firstname": "Bastien",
-                    "lastname": "Bourez",
-                    "roles": "413337461071282196",
-                    "discord_id": "413337461071282196"
-                }, 
-                {
-                    "id": "1",
-                    "firstname": "Cédric",
-                    "lastname": "Leroy",
-                    "roles": "1064925613120557196",
-                    "discord_id": "1026469434078011444"
-                }
-                
-            ]
+    "1": {
+      "title": "Nuit de l'info",
+      "description": "retour nuit de l'info",
+      "customId": "nuit-de-info",
+      "inputs": [
+        {
+          "customId": "input-nuit-de-info-1",
+          "label": "Comment s'est passé la nuit de l'info ? ",
+          "style": "Paragraph"
+        },
+        {
+          "customId": "input-nuit-de-info-2",
+          "label": "Avez-vous collaboré avec d'autres promos ? ",
+          "style": "Short"
+        },
+        {
+          "customId": "input-nuit-info-3",
+          "label": "Comment vas-tu?? ",
+          "style": "Paragraph"
+        },
+        {
+          "customId": "input-nuit-info-4",
+          "label": "Si oui, lesquelles ? ",
+          "style": "Paragraph"
         }
+      ]
     }
+  },
+  "apprenants": [
+    {
+      "CDA": {
+        "Vals-p1": [
+          {
+            "id": "0",
+            "firstname": "Bastien",
+            "lastname": "Bourez",
+            "roles": "413337461071282196",
+            "discord_id": "413337461071282196"
+          },
+          {
+            "id": "1",
+            "firstname": "Cédric",
+            "lastname": "Leroy",
+            "roles": "1064925613120557196",
+            "discord_id": "1026469434078011444"
+          }
+        ],
+        "DevOps": [
+          {
+            "id": "0",
+            "firstname": "Bastien",
+            "lastname": "Bourez",
+            "roles": "413337461071282196",
+            "discord_id": "413337461071282196"
+          },
+          {
+            "id": "1",
+            "firstname": "Cédric",
+            "lastname": "Leroy",
+            "roles": "1064925613120557196",
+            "discord_id": "1026469434078011444"
+          }
+        ]
+      },
+      "JAVA" : {
+        "Vals-P1" : [
+            {
+                "id": "0",
+                "firstname": "Bastien",
+                "lastname": "Bourez",
+                "roles": "413337461071282196",
+                "discord_id": "413337461071282196"
+              },
+              {
+                "id": "1",
+                "firstname": "Cédric",
+                "lastname": "Leroy",
+                "roles": "1064925613120557196",
+                "discord_id": "1026469434078011444"
+              }
+        ]
+      }
+    }
+  ]
 }
