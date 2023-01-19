@@ -1,5 +1,4 @@
 import { ActionRowBuilder, APISelectMenuOption, CommandInteraction, EmbedBuilder, RestOrArray, SelectMenuComponentOptionData, SlashCommandBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder } from "discord.js";
-import * as fs from "fs";
 import { set, get } from "../utils/json_utils.js";
 
 export default {

@@ -1,18 +1,27 @@
 /// <reference path="../events/ready.ts"/>
-/// <reference path="../events/courses/start_course_creation.ts"/>
-/// <reference path="../events/promo/start_promo_creation.ts"/>
-/// <reference path="../events/courses/create_course_template.ts"/>
-/// <reference path="../events/courses/course_name_modals.ts"/>
-/// <reference path="../events/add-learner-to-class.ts"/>
-/// <reference path="../events/courses/information_courses.ts"/>
 /// <reference path="../events/promo/promo_name_modal.ts"/>
 /// <reference path="../events/promo/selection-formation-promo.ts"/>
 /// <reference path="../events/channel_selector/handler-interface.ts"/>
+/// <reference path="../events/promo/start_promo_creation.ts"/>
+/// <reference path="../events/courses/start_course_creation.ts"/>
+/// <reference path="../events/courses/create_course_template.ts"/>
+/// <reference path="../events/courses/course_name_modals.ts"/>
+/// <reference path="../events/courses/information_courses.ts"/>
+/// <reference path="../events/identification/management/accept-id-req.ts"/>
+/// <reference path="../events/identification/management/reject-id-req.ts"/>
+/// <reference path="../events/identification/management/select-role-new-user.ts"/>
+/// <reference path="../events/identification/requesting/request-identification.ts"/>
+/// <reference path="../events/identification/requesting/submit-identification.ts"/>
+/// <reference path="../events/add-learner-to-class.ts"/>
+/// <reference path="../events/confirm-add-learner.ts"/>
+/// <reference path="../events/selected-role.ts"/>
+/// <reference path="../events/user-join.ts"/>
 
 import * as fs from "fs";
 import * as path from "path";
 
 export default async (client) => {
+
     const dirPath = './onboarding/dist/events';
     const eventFiles : [] = getAllFiles(dirPath);
 

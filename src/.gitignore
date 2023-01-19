@@ -2,4 +2,7 @@ node_modules/
 package-lock.json
 
 .env
-onboarding/dist/
+onboarding/dist
+onboarding/dist/commands
+onboarding/dist/events
+onboarding/dist/handlers

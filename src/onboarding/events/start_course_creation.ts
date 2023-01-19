@@ -1,4 +1,4 @@
-import { ActionRowBuilder, ButtonInteraction, EmbedBuilder, Events, ModalActionRowComponentBuilder, ModalBuilder, TextInputBuilder, TextInputStyle } from "discord.js"
+import { ActionRowBuilder, ButtonInteraction, Events, ModalBuilder, TextInputBuilder, TextInputStyle } from "discord.js"
 import { set, get } from "../utils/json_utils.js";
 
 export default {
