@@ -1,4 +1,4 @@
-import { Events, Guild, GuildMember, StringSelectMenuInteraction, TextChannel } from 'discord.js'
+import { Events, GuildMember, StringSelectMenuInteraction } from 'discord.js'
 import { get } from '../../../utils/json_utils.js'
 import { remove_id_message_interactions, remove_id_request } from '../../../utils/identification/utils.js'
 import { RolesIds } from '../../../utils/enums.js'

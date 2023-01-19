@@ -1,6 +1,6 @@
-import { ActionRowBuilder, ButtonBuilder, ButtonInteraction, ButtonStyle, EmbedBuilder, Events, GuildTextBasedChannel, ModalBuilder, ModalData, ModalSubmitFields, ModalSubmitInteraction, TextInputBuilder, TextInputStyle } from "discord.js";
+import { ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder, Events, GuildTextBasedChannel, ModalSubmitInteraction } from "discord.js";
 import { ChannelsIds } from "../../../utils/enums.js";
-import { get, set } from '../../../utils/json_utils.js';
+import { set } from '../../../utils/json_utils.js';
 
 export default {
     name: Events.InteractionCreate,

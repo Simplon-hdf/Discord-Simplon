@@ -1,6 +1,5 @@
 import { EmbedBuilder } from "@discordjs/builders";
 import { ActionRowBuilder, ButtonBuilder, ButtonStyle, CommandInteraction, SlashCommandBuilder } from "discord.js";
-import * as fs from "fs";
 import { set } from "../utils/json_utils.js";
 
 export default {

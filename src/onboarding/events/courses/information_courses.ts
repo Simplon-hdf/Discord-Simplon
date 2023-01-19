@@ -1,5 +1,5 @@
 import { APIEmbedField, EmbedBuilder, Events, RestOrArray, StringSelectMenuInteraction } from "discord.js"
-import { set, get } from "../../utils/json_utils.js";
+import { get } from "../../utils/json_utils.js";
 
 export default {
     name: Events.InteractionCreate,
