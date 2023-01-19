@@ -1,4 +1,5 @@
 import { ActionRowBuilder, ButtonBuilder, ButtonInteraction, ButtonStyle, EmbedBuilder, Events, GuildTextBasedChannel, ModalBuilder, ModalData, ModalSubmitFields, ModalSubmitInteraction, TextInputBuilder, TextInputStyle } from "discord.js";
+import { ChannelsIds } from "../../../utils/identification/enums.js";
 import { get, set } from '../../../utils/json_utils.js';
 
 export default {
@@ -36,7 +37,7 @@ export default {
                     .setLabel('Refuser l\'identification')
                     .setStyle(ButtonStyle.Danger),
             )
-        const to_send_channel: GuildTextBasedChannel = (await interaction.guild?.channels.cache.get('1065212511714017340') as GuildTextBasedChannel)
+        const to_send_channel: GuildTextBasedChannel = (await interaction.guild?.channels.cache.get(ChannelsIds.Manage_Identification_Channel) as GuildTextBasedChannel)
         const identification_notification_message = await to_send_channel.send({
             embeds: [to_display_embed],
             components: [buttons_row]
