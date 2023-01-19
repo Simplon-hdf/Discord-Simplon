@@ -1,6 +1,7 @@
 /// <reference path="../events/ready.ts"/>
 /// <reference path="../events/promo/promo_name_modal.ts"/>
 /// <reference path="../events/promo/selection-formation-promo.ts"/>
+/// <reference path="../events/channel_selector/handler-interface.ts"/>
 /// <reference path="../events/promo/start_promo_creation.ts"/>
 /// <reference path="../events/courses/start_course_creation.ts"/>
 /// <reference path="../events/courses/create_course_template.ts"/>

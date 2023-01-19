@@ -7,6 +7,7 @@
 /// <reference path="../commands/create-id-button.ts"/>
 /// <reference path="../commands/create_course_info_interface.ts" />
 /// <reference path="../commands/create_promo_interface.ts" />
+/// <reference path="../commands/channel_selector/config_interface.ts" />
 
 import { REST, Routes, Collection } from "discord.js";
 import * as fs from "fs";

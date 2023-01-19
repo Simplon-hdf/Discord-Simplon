@@ -1,4 +1,4 @@
-import { ChannelType, Events, ModalSubmitInteraction, Colors, PermissionFlagsBits } from "discord.js"
+import { ChannelType, Events, ModalSubmitInteraction, Colors, PermissionFlagsBits, RestOrArray, StringSelectMenuOptionBuilder, APISelectMenuOption, SelectMenuComponentOptionData, TextChannel, ActionRowBuilder, StringSelectMenuBuilder } from "discord.js"
 import { set, get } from "../../utils/json_utils.js";
 
 export default {
@@ -31,10 +31,10 @@ export default {
 
         set('./config_courses.json', 'formations', formation_data);
 
-        const channels : string[] = formation_data[formation_name]['channels'];
+        const channels: string[] = formation_data[formation_name]['channels'];
 
         await interaction.guild?.roles.create({
-            name : promo_name,
+            name: promo_name,
             color: Colors.Green,
             reason: 'Role pour la nouvelle promotion "' + promo_name + "."
         })
@@ -45,10 +45,10 @@ export default {
             name: promo_name,
             type: ChannelType.GuildCategory,
             permissionOverwrites: [
-               {
-                 id: roles?.id!,
-                 deny: [PermissionFlagsBits.ViewChannel, PermissionFlagsBits.SendMessages],
-              },
+                {
+                    id: roles?.id!,
+                    deny: [PermissionFlagsBits.ViewChannel, PermissionFlagsBits.SendMessages],
+                },
             ],
         });
 
@@ -58,22 +58,50 @@ export default {
         channels.forEach(async channel => {
 
             const channel_info = await interaction.guild?.channels.fetch(channel)!;
-            const channel_type : number = channel_info?.type.valueOf()!
+            const channel_type: number = channel_info?.type.valueOf()!
 
             interaction.guild?.channels.create({
                 name: channel_info?.name!,
                 type: channel_type!,
-                parent : categorie_id,
+                parent: categorie_id,
                 permissionOverwrites: [
-                   {
-                     id: roles?.id!,
-                     deny: [PermissionFlagsBits.ViewChannel, PermissionFlagsBits.SendMessages],
-                  },
+                    {
+                        id: roles?.id!,
+                        deny: [PermissionFlagsBits.ViewChannel, PermissionFlagsBits.SendMessages],
+                    },
                 ],
             });
         })
 
+        const message_info_selector = data['message_info_selector'];
+        const channel_info_selector = data['channel_info_selector'];
 
+        if (message_info_selector != undefined) {
+            const options: RestOrArray<StringSelectMenuOptionBuilder | APISelectMenuOption | SelectMenuComponentOptionData> = [];
+
+            formation_data[formation_name]['promos'].forEach(promo => {
+                options.push({
+                    label: promo,
+                    description: 'Promotion au nom de ' + promo,
+                    value: promo
+                })
+            });
+
+            const row = new ActionRowBuilder<StringSelectMenuBuilder>()
+                .addComponents(
+                    new StringSelectMenuBuilder()
+                        .setCustomId('onboarding-selector')
+                        .setPlaceholder('Selectionner vos channels')
+                        .addOptions(options)
+                )
+            
+             interaction.channel?.messages
+            const channel = interaction.guild?.channels.cache.find(channel => channel.id == channel_info_selector);
+
+            if(channel?.isTextBased()){
+                (await channel.messages.fetch(message_info_selector)).edit({components : [row]});
+            }
+        }
 
         await interaction.reply({ ephemeral: true, content: 'Votre promo a bien été créée' })
     }
