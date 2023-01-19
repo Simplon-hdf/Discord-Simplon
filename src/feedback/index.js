@@ -139,25 +139,22 @@ client.on(Events.InteractionCreate, async (interaction) => {
         new StringSelectMenuBuilder()
           .setCustomId('select-promotion')
           .setPlaceholder(
-            "Aucune catégorie de promotion n'est actuellement selectionnée"
-          )
+            "Aucune catégorie de promotion n'est actuellement selectionnée")
           .setMinValues(1)
           .setMaxValues(1)
           .addOptions(
-            promotions.map((promotion, index) => {
-              Object.keys(promotion).map((promotion) => {
+              Object.keys(promotions.map((u) => u)[0]).map((promotion, index) => {
                 return {
                   label: `${promotion}`,
                   description: `Promotion ${promotion}`,
                   value: `${index}`,
                 };
-              });
-            })
+              })
           )
       );
       await interaction.reply({
         embeds: [selectPromotionEmbed],
-        component: [selectPromotionRow],
+        components: [selectPromotionRow],
         ephemeral: true,
       });
     }
