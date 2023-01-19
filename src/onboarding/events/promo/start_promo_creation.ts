@@ -1,4 +1,4 @@
-import { ActionRowBuilder, APISelectMenuOption, ButtonInteraction, EmbedBuilder, Events, ModalActionRowComponentBuilder, ModalBuilder, RestOrArray, SelectMenuComponentOptionData, StringSelectMenuBuilder, StringSelectMenuOptionBuilder, TextInputBuilder, TextInputStyle } from "discord.js"
+import { ActionRowBuilder, APISelectMenuOption, ButtonInteraction, EmbedBuilder, Events, RestOrArray, SelectMenuComponentOptionData, StringSelectMenuBuilder, StringSelectMenuOptionBuilder } from "discord.js"
 import { set, get } from "../../utils/json_utils.js";
 
 export default {

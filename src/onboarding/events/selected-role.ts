@@ -1,5 +1,5 @@
 import { Events, GuildInvitableChannelResolvable, Role, RoleSelectMenuInteraction } from "discord.js";
-import { set, get } from "../utils/json_utils.js";
+import { set } from "../utils/json_utils.js";
 
 export default {
     name: Events.InteractionCreate,

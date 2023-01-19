@@ -1,4 +1,4 @@
-import { Client, CommandInteraction, Events, GatewayIntentBits, Interaction, Invite, InviteGuild } from "discord.js";
+import { Client, Events, GatewayIntentBits, Interaction } from "discord.js";
 import * as dotenv from "dotenv";
 import commands_handler from "./handlers/commands_handler.js";
 import events_handler from "./handlers/events_handler.js"; 
