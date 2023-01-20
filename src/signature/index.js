@@ -141,7 +141,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
               discordId.split(",")[4]
             }** vous a envoyé un rappel de signature pour votre formation **${discordId.split(",")[3].split("-").join(" ").toUpperCase()}**\n\n  Vous pourrez retrouver le code dans le salon: <#1062684179164307476> \n`
           )
-          .setThumbnail("https://cdn-icons-png.flaticon.com/512/4489/4489772.png")
+          .setThumbnail("https://cdn-icons-png.flaticon.com/512/4896/4896860.png")
           .setTimestamp();
 
         (await interaction.client.users.fetch(discordId.split(",")[0])).send({
@@ -170,7 +170,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
               discordId.split(",")[4]
             }** vous a envoyé une demande de code pour la formation **CDA VALS P2**\n\n`
           )
-          .setThumbnail("https://cdn-icons-png.flaticon.com/512/4489/4489772.png")
+          .setThumbnail("https://cdn-icons-png.flaticon.com/512/4896/4896860.png")
           .setTimestamp();
 
         (await interaction.client.users.fetch(discordId.split(",")[0])).send({
