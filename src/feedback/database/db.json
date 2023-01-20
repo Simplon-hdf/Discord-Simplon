@@ -1,6 +1,7 @@
 {
   "modals": {
     "0": {
+      "id": "0",
       "title": "Fin de formation",
       "description": "Questionnaire de fin de formation",
       "customId": "fin-de-formation",
@@ -13,6 +14,7 @@
       ]
     },
     "1": {
+      "id": "1",
       "title": "Nuit de l'info",
       "description": "retour nuit de l'info",
       "customId": "nuit-de-info",
@@ -92,7 +94,23 @@
                 "roles": "1064925613120557196",
                 "discord_id": "1026469434078011444"
               }
-        ]
+        ],
+        "Vals-P2" : [
+          {
+              "id": "0",
+              "firstname": "Bastien",
+              "lastname": "Bourez",
+              "roles": "413337461071282196",
+              "discord_id": "413337461071282196"
+            },
+            {
+              "id": "1",
+              "firstname": "Cédric",
+              "lastname": "Leroy",
+              "roles": "1064925613120557196",
+              "discord_id": "1026469434078011444"
+            }
+      ]
       }
     }
   ]
