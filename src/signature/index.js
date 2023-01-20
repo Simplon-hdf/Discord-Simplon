@@ -178,7 +178,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
         })
         const embedResponse = new EmbedBuilder()
           .setColor(0x0099ff)
-          .setTitle("Merci!")
+          .setTitle("Merci !")
           .setDescription(
             `Votre demande a bien été prise en compte.`
           )
