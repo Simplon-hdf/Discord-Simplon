@@ -1,1 +1,10 @@
-{"channel":"1065287871256330280","194816967666958336":{"state":true,"formation_name":"CDA"},"promos":"test2","message_info_selector":"1065677050448453803","channel_info_selector":"1065567366643200040"}
+{
+    "channel": "1065921040645115924",
+    "194816967666958336": {
+        "state": true,
+        "formation_name": "CARENTICA-IA"
+    },
+    "promos": "vals-p1",
+    "message_info_selector": "1065951315315916851",
+    "channel_info_selector": "1065921711775686726"
+}

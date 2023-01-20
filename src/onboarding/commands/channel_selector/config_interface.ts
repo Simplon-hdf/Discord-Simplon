@@ -11,7 +11,7 @@ export default {
         if (!interaction.isChatInputCommand()) return;
 
         const embed = new EmbedBuilder()
-            .setTitle('Sélectionner les catégories qui vous interrèsses.')
+            .setTitle('Sélectionner les catégories qui vous interrèssent.')
             .setDescription('Donne le visuel sur certain channel')
 
 

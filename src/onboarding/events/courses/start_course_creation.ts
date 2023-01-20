@@ -23,7 +23,7 @@ export default {
 
         const inputName = new TextInputBuilder()
             .setCustomId('name-input-formations')
-            .setLabel('Entrer le nom de la formation')
+            .setLabel('Entre le nom de la formation')
             .setStyle(TextInputStyle.Short);
 
         const action_row = new ActionRowBuilder<TextInputBuilder>().addComponents(inputName);

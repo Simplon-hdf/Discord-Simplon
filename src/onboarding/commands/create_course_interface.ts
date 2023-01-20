@@ -18,15 +18,13 @@ export default {
         const embed = new EmbedBuilder()
             .setColor(0x0099FF)
             .setTitle("Interface de création de nouvelles formations")
-            .addFields(
-                {name: "Guide", value: "Cliquer sur le bouton pour commencer à configurer une nouvelle formation"}
-            )
-            .setFooter({text: "Interface config"});
+            .setDescription('Clique sur le bouton pour commencer à configurer une nouvelle formation')
+            .setThumbnail('https://www.flaticon.com/free-icon/add_8690256?term=create&page=1&position=53&origin=search&related_id=8690256');
 
         set('./config_courses.json', 'channel_id', interaction.channel?.id)
         
         await interaction.channel?.send({ embeds : [embed], components: [row]});
         await interaction.deferReply({ephemeral: true})
-        setTimeout(async () => await interaction.editReply({content : "L'interface à bien été créée"}));
+        setTimeout(async () => await interaction.editReply({content : "L'interface a bien été crée"}));
     }
 }

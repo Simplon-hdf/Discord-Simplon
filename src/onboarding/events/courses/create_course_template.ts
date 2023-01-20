@@ -23,7 +23,7 @@ export default {
         user_data['state'] = false;
         set('./config_courses.json', user_id, user_data);
 
-        await interaction.reply('La formation a bien été créée')
+        await interaction.reply('La formation a bien été créée.')
 
     }
 }
