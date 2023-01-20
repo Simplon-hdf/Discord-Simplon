@@ -9,7 +9,7 @@ export default {
 
         const embed = new EmbedBuilder()
             .setTitle('Renseignements sur les formations créées')
-            .setDescription('Ce menu vous permettra d\'afficher les informations d\'un cours déjà créée')
+            .setDescription('Ce menu vous permettra d\'afficher les informations')
             .setThumbnail('https://www.flaticon.com/free-icon/list_6593002?term=informations+list&page=1&position=37&origin=searchrelated_id=6593002');
 
         const data = await get('./config_courses.json');

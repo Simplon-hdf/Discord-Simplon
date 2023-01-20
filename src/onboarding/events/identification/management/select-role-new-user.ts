@@ -18,7 +18,7 @@ export default {
 
         remove_id_message_interactions(interaction, message_id, `La demande d'identification a été validée par ${interaction.member?.user.username}`);
         member.roles.add(role_id);
-        member.setNickname(`${id_request['firstname']} ${id_request['lastname']}`);
+        //member.setNickname(`${id_request['firstname']} ${id_request['lastname']}`);
 
         if(member.roles.cache.get(RolesIds.Unverified_User_Role))
             await member.roles.remove(RolesIds.Unverified_User_Role);

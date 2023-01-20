@@ -1,19 +1,20 @@
 {
-    "template": "1065949906193363004",
-    "channel_id": "1065920984642768967",
+    "template": "1064937184727154708",
+    "channel_id": "1065195382650449960",
     "194816967666958336": {
         "state": false,
-        "formation_name": "CARENTICA-IA"
+        "formation_name": "CDA"
     },
     "formations": {
-        "CARENTICA-IA": {
-            "name": "CARENTICA-IA",
+        "CDA": {
+            "name": "CDA",
             "channels": [
-                "1065949988582068245",
-                "1065950694433116170"
+                "1064937231397175478",
+                "1064937263361966120"
             ],
             "promos": [
-                "vals-p1"
+                "cda-vals-p1",
+                "cda-vals-p2"
             ]
         }
     }
