@@ -2,19 +2,23 @@
     "template": "1064937184727154708",
     "channel_id": "1064999597191221348",
     "formations": {
-        "CDA": {
-            "name": "CDA",
+        "Blockchain": {
+            "name": "Blockchain",
             "channels": [
                 "1064937231397175478",
                 "1064937263361966120"
             ],
             "promos": [
-                "cda-vals-p1"
+                "Blockchain-Vals-P1"
             ]
         }
     },
     "194816967666958336": {
         "state": false,
         "formation_name": "CDA"
+    },
+    "317451045976408064": {
+        "state": false,
+        "formation_name": "Blockchain"
     }
 }

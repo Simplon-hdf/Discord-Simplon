@@ -1,6 +1,6 @@
 import { EmbedBuilder } from "@discordjs/builders";
 import { ActionRowBuilder, ButtonBuilder, ButtonStyle, CommandInteraction, SlashCommandBuilder } from "discord.js";
-import { set } from "../utils/json_utils.js";
+import { set } from "../../utils/json_utils.js";
 
 export default {
     data: new SlashCommandBuilder()
@@ -9,7 +9,9 @@ export default {
     async execute(interaction : CommandInteraction){
 
         const embed = new EmbedBuilder()
-            .setTitle('Création d\'une nouvelle promo');
+            .setTitle('Création d\'une nouvelle promo')
+            .setDescription('Permet de creer une nouvelle promotion')
+            .setThumbnail('https://cdn-icons-png.flaticon.com/512/6380/6380191.png');
 
         const button = new ActionRowBuilder<ButtonBuilder>()
             .addComponents(

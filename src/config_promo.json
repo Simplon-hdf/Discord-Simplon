@@ -6,5 +6,9 @@
         "state": true,
         "formation_name": "CDA"
     },
-    "promos": "cda-vals-p1"
+    "promos": "Blockchain-Vals-P1",
+    "317451045976408064": {
+        "state": true,
+        "formation_name": "Blockchain"
+    }
 }

@@ -5,7 +5,7 @@ import { get, set } from "../../utils/json_utils.js";
 
 export default {
     data: new SlashCommandBuilder()
-        .setName('config_selector')
+        .setName('interface_promo_selector')
         .setDescription('Permet d\afficher l\'interface du onboarding selector'),
     async execute(interaction: CommandInteraction) {
         if (!interaction.isChatInputCommand()) return;
@@ -13,8 +13,7 @@ export default {
         const embed = new EmbedBuilder()
             .setTitle('Sélectionner les catégories qui vous interrèssent.')
             .setDescription('Donne le visuel sur certain channel')
-
-
+            .setThumbnail('https://cdn-icons-png.flaticon.com/512/5678/5678695.png');
 
         const data = await get('./config_courses.json');
 
@@ -26,9 +25,6 @@ export default {
             promos = data['formations'][obj]['promos'];
 
         })
-
-
-        console.log(promos);
 
         const options: RestOrArray<StringSelectMenuOptionBuilder | APISelectMenuOption | SelectMenuComponentOptionData> = [];
 
