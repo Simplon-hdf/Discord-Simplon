@@ -40,6 +40,7 @@ export default {
             .addComponents(
                roles_to_display
             );
-        await interaction.reply({content: 'Choisis le rôle à attribuer au nouvel apprenant', ephemeral:true, components:[row]});
+        interaction.message.edit({embeds: interaction.message.embeds, components: [row]});
+        await interaction.deferUpdate();
     }
 }
