@@ -1,10 +1,10 @@
 {
     "channel": "1065287871256330280",
-    "message_info_selector": "1065951315315916851",
-    "channel_info_selector": "1065921711775686726",
+    "message_info_selector": "1066073592481185864",
+    "channel_info_selector": "1065567366643200040",
     "194816967666958336": {
         "state": true,
         "formation_name": "CDA"
     },
-    "promos": "cda-vals-p2"
+    "promos": "cda-vals-p1"
 }

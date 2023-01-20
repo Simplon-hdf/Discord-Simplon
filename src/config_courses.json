@@ -1,10 +1,6 @@
 {
     "template": "1064937184727154708",
-    "channel_id": "1065195382650449960",
-    "194816967666958336": {
-        "state": false,
-        "formation_name": "CDA"
-    },
+    "channel_id": "1064999597191221348",
     "formations": {
         "CDA": {
             "name": "CDA",
@@ -13,9 +9,12 @@
                 "1064937263361966120"
             ],
             "promos": [
-                "cda-vals-p1",
-                "cda-vals-p2"
+                "cda-vals-p1"
             ]
         }
+    },
+    "194816967666958336": {
+        "state": false,
+        "formation_name": "CDA"
     }
 }
