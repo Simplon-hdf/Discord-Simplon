@@ -1,5 +1,5 @@
 import { ActionRowBuilder, ButtonInteraction, Events, ModalBuilder, TextInputBuilder, TextInputStyle } from "discord.js"
-import { set, get } from "../utils/json_utils.js";
+import { set, get } from "../../utils/json_utils.js";
 
 export default {
     name: Events.InteractionCreate,
@@ -23,7 +23,7 @@ export default {
 
         const inputName = new TextInputBuilder()
             .setCustomId('name-input-formations')
-            .setLabel('Entrer le nom de la formation')
+            .setLabel('Entre le nom de la formation')
             .setStyle(TextInputStyle.Short);
 
         const action_row = new ActionRowBuilder<TextInputBuilder>().addComponents(inputName);

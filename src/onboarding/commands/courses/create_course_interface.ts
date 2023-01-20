@@ -1,9 +1,9 @@
 import { ActionRowBuilder, ButtonBuilder, ButtonStyle, CommandInteraction, EmbedBuilder, SlashCommandBuilder } from "discord.js";
-import { set } from "../utils/json_utils.js";
+import { set } from "../../utils/json_utils.js";
 
 export default {
     data: new SlashCommandBuilder()
-        .setName('create_course_interface')
+        .setName('config_courses_interface')
         .setDescription('Setup the interface for course creation'),
     async execute(interaction : CommandInteraction){
 
@@ -18,15 +18,13 @@ export default {
         const embed = new EmbedBuilder()
             .setColor(0x0099FF)
             .setTitle("Interface de création de nouvelles formations")
-            .addFields(
-                {name: "Guide", value: "Cliquer sur le bouton pour commencer à configurer une nouvelle formation"}
-            )
-            .setFooter({text: "Interface config"});
+            .setDescription('Clique sur le bouton pour commencer à configurer une nouvelle formation')
+            .setThumbnail('https://cdn-icons-png.flaticon.com/512/8690/8690256.png');
 
         set('./config_courses.json', 'channel_id', interaction.channel?.id)
         
         await interaction.channel?.send({ embeds : [embed], components: [row]});
         await interaction.deferReply({ephemeral: true})
-        setTimeout(async () => await interaction.editReply({content : "L'interface à bien été créée"}));
+        setTimeout(async () => await interaction.editReply({content : "L'interface a bien été crée"}));
     }
 }

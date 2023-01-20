@@ -37,11 +37,11 @@ export default {
         })
 
         promos.forEach(async name => {
-            const role = await (await role_server.fetch()).find(role => role.name == name);
+            const role = (await role_server.fetch()).find(role => role.name == name);
             role_manager?.add(role?.id!);
         })
 
-        await interaction.reply('Vous povez voir les promos selectionées');
+        await interaction.reply('Vous pouvez voir les promos selectionées');
         setTimeout(async () => await interaction.deleteReply(), 4000);
 
     }

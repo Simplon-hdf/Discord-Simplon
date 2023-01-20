@@ -30,5 +30,6 @@ export default {
         modal.addComponents(row);
 
         await interaction.showModal(modal);
+        
     }
 }

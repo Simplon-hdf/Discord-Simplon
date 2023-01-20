@@ -1,4 +1,4 @@
-import { ActionRowBuilder, APISelectMenuOption, Events, ModalSubmitInteraction, RestOrArray, SelectMenuComponentOptionData, StringSelectMenuBuilder, StringSelectMenuOptionBuilder } from "discord.js"
+import { ActionRowBuilder, APISelectMenuOption, EmbedBuilder, Events, ModalSubmitInteraction, RestOrArray, SelectMenuComponentOptionData, StringSelectMenuBuilder, StringSelectMenuOptionBuilder } from "discord.js"
 import { set, get } from "../../utils/json_utils.js";
 
 export default {
@@ -29,6 +29,11 @@ export default {
             });
         });
 
+        const embed = new EmbedBuilder()
+            .setTitle('Selectionne les channels pour la promotions')
+            .setDescription('Permet d\'ajouter les différents channel pour la promo en cours de création')
+            .setThumbnail('https://cdn-icons-png.flaticon.com/512/5678/5678695.png');
+
 
         const select_menu = new ActionRowBuilder<StringSelectMenuBuilder>()
             .addComponents(
@@ -41,7 +46,7 @@ export default {
             )
 
 
-        interaction.reply({ ephemeral: true, content: name, components: [select_menu] });
+        interaction.reply({ ephemeral: true, embeds: [embed], components: [select_menu] });
         set('./config_courses.json', interaction.user.id, { 'state': true, 'formation_name': name });
 
     }

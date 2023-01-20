@@ -24,8 +24,9 @@ export default {
         })
 
         const embed = new EmbedBuilder()
-            .setTitle('Information de la formation ' + value)
-            .addFields(fields);
+            .setTitle('Renseignements sur la formation :  ' + value)
+            .addFields(fields)
+            .setThumbnail('https://www.flaticon.com/free-icon/list_6593002?term=informations+list&page=1&position=37&origin=searchrelated_id=6593002');
 
             await interaction.reply({ephemeral : true, embeds : [embed]})
 
