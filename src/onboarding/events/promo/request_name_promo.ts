@@ -37,7 +37,7 @@ export default {
             name: promo_name,
             color: Colors.Green,
             reason: 'Role pour la nouvelle promotion "' + promo_name + "."
-        })
+        });
 
         const roles = await interaction.guild?.roles.cache.find(r => r.name === promo_name);
 
@@ -94,15 +94,15 @@ export default {
                         .setPlaceholder('Selectionner vos channels')
                         .addOptions(options)
                 )
-            
-             interaction.channel?.messages
+
+            interaction.channel?.messages
             const channel = interaction.guild?.channels.cache.find(channel => channel.id == channel_info_selector);
 
-            if(channel?.isTextBased()){
-                (await channel.messages.fetch(message_info_selector)).edit({components : [row]});
+            if (channel?.isTextBased()) {
+                (await channel.messages.fetch(message_info_selector)).edit({ components: [row] });
             }
         }
+        await interaction.reply({ ephemeral: true, content: 'Votre promo a bien été créée' });
 
-        await interaction.reply({ ephemeral: true, content: 'Votre promo a bien été créée' })
     }
 }

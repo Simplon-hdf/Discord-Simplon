@@ -3,7 +3,7 @@ import { set, get } from "../../utils/json_utils.js";
 
 export default {
     data: new SlashCommandBuilder()
-        .setName('interface_course_informations')
+        .setName('config_course_informations')
         .setDescription('Setup the interface for course creation'),
     async execute(interaction: CommandInteraction) {
 

@@ -32,7 +32,7 @@ export default {
         const embed = new EmbedBuilder()
             .setTitle('Selectionne les channels pour la promotions')
             .setDescription('Permet d\'ajouter les différents channel pour la promo en cours de création')
-            .setThumbnail('https://www.flaticon.com/free-icon/list_5678695?term=select&page=2&position=16&origin=search&related_id=5678695');
+            .setThumbnail('https://cdn-icons-png.flaticon.com/512/5678/5678695.png');
 
 
         const select_menu = new ActionRowBuilder<StringSelectMenuBuilder>()

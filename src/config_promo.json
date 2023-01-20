@@ -1,14 +1,5 @@
 {
     "channel": "1065287871256330280",
     "message_info_selector": "1066073592481185864",
-    "channel_info_selector": "1065567366643200040",
-    "194816967666958336": {
-        "state": true,
-        "formation_name": "CDA"
-    },
-    "promos": "Blockchain-Vals-P1",
-    "317451045976408064": {
-        "state": true,
-        "formation_name": "Blockchain"
-    }
+    "channel_info_selector": "1065567366643200040"
 }

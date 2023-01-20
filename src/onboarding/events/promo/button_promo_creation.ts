@@ -35,7 +35,7 @@ export default {
                     .addOptions(options)
             );
 
-        await interaction.reply({embeds : [embed], ephemeral : true, components : [select_menu]});
+        await interaction.reply({embeds : [embed], ephemeral: true, components : [select_menu]});
         set('./config_promo.json', interaction.user.id, {'state': true});
 
     }
