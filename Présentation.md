@@ -21,10 +21,10 @@ Certains d'entre-vous connaissent un petit peu l'histoire, mais pour résumer et
 
 ## L'amélioration des communications
 
-On s'est vite rendu compte que la communication, loin d'être catastrophique est fatalement nulle, n'a pas vraiment été réfléchie en amont en terme de stratégie, mais se construit plutôt au quotidien. 
+On s'est vite rendu compte que la communication, loin d'être catastrophique et fatalement nulle, n'a pas vraiment été réfléchie en amont en terme de stratégie, mais se construit plutôt au quotidien. 
 
-Bien sûr, ça conduit a des problèmes qu'on a pu observer même à notre position : 
-- Des problèmes de sourcing : Pas dans la démarche, mais plutôt dans la réussite à trouver et faire matcher les bons profils avec les bonnes formations
+Bien sûr, ça conduit a des problèmes qu'on a pu observer, même à notre position : 
+- Des problèmes de sourcing : Pas dans la démarche, mais plutôt dans la réussite à trouver et faire matcher les bons profils avec les bonnes formations. On a vécu deux abandons dans la formation dernièrement.
 - On a du mal à garder des contacts avec les alumnis, ce qui fait perdre beaucoup d'opportunités en terme de réseau
 - Les Google Forms en début de formation ? C'est vieillissant, redondant et pas adapté, on va passer rapidement..
 - On aurait pu mettre d'autres exemples, mais en bref, tout cela conduit à se poser la question, est-ce que tous les simploniens partagent une même expérience ? L'expérience Simplon est-t'elle homogéne ? 
@@ -33,15 +33,14 @@ Bien sûr, ça conduit a des problèmes qu'on a pu observer même à notre posit
 
 Encore au delà, c'est même une question d'efficience. 
 
-Tous dans nos travails respectifs on s'efforce de faire au mieux avec nos ressources. 
-Aujourd'hui on se rends compte que malgré les très grands efforts déployés par Simplon, il y a un manque d'efficience. 
-La balance négative n'est pas du côté des équipes mais du côté des outils proposés et de la gestion des tâches. 
+En discutant avec nos coachs on s'est rendus compte que tous dans vos quotidiens, vous avez des tâches répétitives. 
 
 C'est sur ces points que va s'appuyer notre proposition. 
 
 ## Serveur Discord
 
 Aujourd'hui, on ne compte plus le nombre de serveurs chez Simplon. Si dans l'idée multiplier les serveurs est une bonne chose au début, on se retrouve vite à ne plus s'y retrouver.
+J'ai une question qui est simple : Est-ce que quelqu'un d'entre vous connait le nombre de serveurs appartenant à Simplon HDF ? 
 
 ## Quelles solution ? 
 
@@ -57,6 +56,17 @@ Quelle galère.
 
 Pourtant, regrouper les communautés, c'est leur permettre d'échanger, de potentiellement se rencontrer, faire grandir un réseau et faire naître des projets mêlant aussi bien l'IA que la Conception d'application. 
 
+Une école comme Simplon, c'est des milliers de gens qui gravitent autour, imaginez un peu le réseautage qu'il est possible d'obtenir en réussissant à grouper tous ces gens ? 
+On passe à côté d'une vraie puissance de frappe
+
+Les communautés sur Internet font de grandes choses : 
+
+## Pixel War : 
+
+On a ici un parfait exemple de la force des communautés. Ici, sous couvert de jeu, des millions d'inconnus se sont réunis afin de se disputer une guerre des pixels. Les communautés se sont réunis sur des serveurs Discord, ou d'autres plateformes. 
+Mais pourquoi on vous parle de cet évenement ? 
+De la liberté naît la créativité : Ce qu'il y a de magique avec la communauté, c'est réussir à s'auto-organiser pour atteindre un objectif commun, et même plus loin encore se définir des objectifs.
+
 ça peut également faire peur : comment gérer une aussi grosse communauté ? Quelle responsabilités pour les équipes ? 
 On le voit à vos réactions en ce moment même, cette idée peut faire peur
 
@@ -68,6 +78,7 @@ Avant ça, on va vous présenter Discord.
 
 ## Discord
 
+...
 
 ## Onboarding :
 - Avant de vous présenter le onboarding, laissez-nous vous introduire la notion de rôles. 
@@ -84,6 +95,13 @@ Avant ça, on va vous présenter Discord.
 ## Feedback : 
 - Régulièrement, en tant que membre des équipes Simplon, je peux avoir besoin de solliciter les apprenants afin de récolter leurs avis. C'est ici qu'intervient le robot de Feedback en permettant à la fois de demander directement aux apprenants leurs avis, mais aussi de récolter et classer les feedbacks reçus dans un forum dédié. 
 - En plus de cela, l'entièreté de ces données peut être stockée, archivé, ou exporté, à des fins de traitement manuel.
+
+## Le ticketing : 
+- Pour aider chacun, apprenant comme membres des équipes, dans la gestion des résolutions de problèmes. On a pensé à la mise en place d'un système de ticketing par l'intermédiaire du serveur Discord. 
+- On a vu du mouvement dans les équipes qui nous ont directement touchés dans la gestion de nos problèmes respectifs
+- L'idée derrière tout ça, c'est de pouvoir diluer un peu la charge des équipes
+- On a bien compris qu'il ne fallait pas faire de suivi directement sur le Discord, ou alors que la traçabilité mail devait être en béton derrière. 
+- Imaginons : J'ai un problème adminstratif et je souhaite contacter le pôle 
 
 ## Sondage : 
 Dans un même temps, un autre outil pour l'avis des apprenants est la mise en place d'un robot de sondages 
