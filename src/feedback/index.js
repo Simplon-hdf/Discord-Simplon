@@ -257,7 +257,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
         database.modals[interaction.values[0].split(",")[0]].inputs;
 
       const feedbackSelectionModal = new ModalBuilder()
-        .setCustomId(interaction.values[0].split(",")[0])
+        .setCustomId(`${interaction.values[0].split(",")[0]}, ${interaction.values[0].split(",")[1]}`)
         .setTitle(database.modals[interaction.values[0].split(",")[0]].title);
 
       input_list.map((input) => {
@@ -280,33 +280,34 @@ client.on(Events.InteractionCreate, async (interaction) => {
     }
   }
   if (interaction.isModalSubmit()) {
-    const fields = [interaction.fields.fields];
-    const actualFeedback = database.modals[interaction.customId];
+    
+    const fields = interaction.fields.fields;
+    const fieldValue = fields.map(e => e.value);
+    const actualFeedback = database.modals[interaction.customId.split(',')[0].trim()];
     const channel = client.channels.cache.get("1066503603545702521");
 
-    [actualFeedback].map((feedbackItem) => {
+    const username = interaction.customId.split(',')[1].trim() === "0" ? "Anonyme" : interaction.user.username;
+    
       global.postResponseEmbed = new EmbedBuilder()
         .setTitle(
-          `Feedback | ${feedbackItem["title"]} | ${interaction.user.username}`
+          `Feedback | ${actualFeedback['title']} | ${username}`
         )
-        .setColor(0x0099ff)
+        .setDescription(` \n\nBonjour,\n\n l'apprenant **${username}** viens de répondre au feeback intitulé **${actualFeedback['title']}**.\n\n Vous trouverez ci'dessous ses réponses.\n\n`)
+        .setColor(0x0099f)
         .setTimestamp()
         .setThumbnail(
           "https://cdn-icons-png.flaticon.com/512/1087/1087804.png"
         );
-      fields[0].map((field) => {
-        for (let i = 0; i < 1; i++) {
+        for (let i = 0; i < fieldValue.length; i++) {
 
           postResponseEmbed.addFields({
-            name: `${feedbackItem["inputs"][i]["label"]}`,
-            value: `${field.value}`,
+            name: `${i + 1}.  **${actualFeedback['inputs'][i].label}**`,
+            value: `${fieldValue[i]}`,
             inline: false,
           });
         }
-      });
-    });
     channel.send({ embeds: [postResponseEmbed] });
-    interaction.reply({ content: "ok" });
+    interaction.reply({ content: `👌🏻 Votre réponse au feedback **${actualFeedback['title']}** a bien était envoyer en tant que: ${username}.` , ephemeral: true});
   }
 });
 
