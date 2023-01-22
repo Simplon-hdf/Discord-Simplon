@@ -16,6 +16,7 @@ import {
 import commands_handler from "./handlers/deploy-comands.js";
 import * as dotenv from "dotenv";
 import database from "./database/db.json" assert { type: "json" };
+import * as fs from "fs";
 
 dotenv.config();
 const DISCORD_TOKEN = process.env.DISCORD_TOKEN;
@@ -102,6 +103,40 @@ client.on(Events.InteractionCreate, async (interaction) => {
       await interaction.reply({
         embeds: [templateSelectionEmbed],
         components: [templateSelectionRow],
+        ephemeral: true,
+      });
+    }
+    if (interaction.customId === "configureFeedback") {
+      const templateUpdateEmbed = new EmbedBuilder()
+        .setColor(0x0099ff)
+        .setTitle("Sélection du feedBack pour la modification !")
+        .setDescription(
+          "Veuiller sélectionner le feedback que vous souhaitez modifier dans la liste ci-dessous"
+        )
+        .setThumbnail(
+          "https://cdn-icons-png.flaticon.com/512/5334/5334827.png"
+        );
+
+      const templateUpdateRow = new ActionRowBuilder().addComponents(
+        new StringSelectMenuBuilder()
+          .setCustomId("update-feedback-template")
+          .setPlaceholder("Aucune réponse n'est sélectionnée")
+          .setMinValues(1)
+          .setMaxValues(1)
+          .addOptions(
+            Object.values(database.modals).map((item, index) => {
+              return {
+                label: `[${item.title}]`,
+                description: `${item.description}`,
+                value: `${index}, ${item.title}`,
+              };
+            })
+          )
+      );
+
+      await interaction.reply({
+        embeds: [templateUpdateEmbed],
+        components: [templateUpdateRow],
         ephemeral: true,
       });
     }
@@ -257,7 +292,11 @@ client.on(Events.InteractionCreate, async (interaction) => {
         database.modals[interaction.values[0].split(",")[0]].inputs;
 
       const feedbackSelectionModal = new ModalBuilder()
-        .setCustomId(`${interaction.values[0].split(",")[0]}, ${interaction.values[0].split(",")[1]}`)
+        .setCustomId(
+          `${interaction.values[0].split(",")[0]}, ${
+            interaction.values[0].split(",")[1]
+          }`
+        )
         .setTitle(database.modals[interaction.values[0].split(",")[0]].title);
 
       input_list.map((input) => {
@@ -278,36 +317,125 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
       await interaction.showModal(feedbackSelectionModal);
     }
+    if (interaction.customId === "update-feedback-template") {
+      const templateUpdateEmbedSelected = new EmbedBuilder()
+        .setColor(0x0099ff)
+        .setTitle("Que shouaitez-vous modifier ?")
+        .setDescription(
+          `Veuiller sélectionner ce qui doit etre modifier pour le template **${
+            interaction.values[0].split(",")[1]
+          }** dans la liste ci-dessous`
+        )
+        .setThumbnail(
+          "https://cdn-icons-png.flaticon.com/512/5334/5334827.png"
+        );
+
+      const templateUpdateRowSelected = new ActionRowBuilder().addComponents(
+        new StringSelectMenuBuilder()
+          .setCustomId("update-feedback-template-selection")
+          .setPlaceholder("Aucune réponse n'est sélectionnée")
+          .setMinValues(1)
+          .setMaxValues(1)
+          .addOptions(
+            {
+              label: "Titre / Déscription",
+              description: "Modifier le titre ou la déscription",
+              value: `${
+                interaction.values[0].split(",")[0]
+              }, title, description`,
+            },
+            {
+              label: "Question(s)",
+              description: "Modifier la ou les question(s)",
+              value: `${interaction.values[0].split(",")[0]}, inputs`,
+            }
+          )
+      );
+      await interaction.reply({
+        embeds: [templateUpdateEmbedSelected],
+        components: [templateUpdateRowSelected],
+        ephemeral: true,
+      });
+    }
+    if (interaction.customId === "update-feedback-template-selection") {
+      const templateSelected =
+        database.modals[interaction.values[0].split(",")[0]];
+      const title =
+        templateSelected[interaction.values[0].split(",")[1].trim()];
+      const customid = templateSelected["customId"];
+
+      const UpdateTemplateModal = new ModalBuilder()
+        .setCustomId(customid)
+        .setTitle(`Modification de ${title}`);
+
+      for (let i = 1; i < interaction.values[0].split(",").length; i++) {
+        UpdateTemplateModal.addComponents(
+          new ActionRowBuilder().addComponents(
+            new TextInputBuilder()
+              .setCustomId(`${customid}-${i}`)
+              .setLabel(
+                templateSelected[interaction.values[0].split(",")[i].trim()]
+              )
+              .setStyle(TextInputStyle.Short)
+              .setPlaceholder("Veuillez entrer ici la nouvelle valeur.")
+          )
+        );
+      }
+
+      await interaction.showModal(UpdateTemplateModal);
+    }
   }
   if (interaction.isModalSubmit()) {
-    
-    const fields = interaction.fields.fields;
-    const fieldValue = fields.map(e => e.value);
-    const actualFeedback = database.modals[interaction.customId.split(',')[0].trim()];
-    const channel = client.channels.cache.get("1066503603545702521");
+    for (let i = 0; i < Object.values(database.modals).length; i++) {
+      if (interaction.customId === database.modals[i].customId) {
+        const data = JSON.parse(fs.readFileSync("./feedback/database/db.json", 'utf-8'));
+        const fieldValueResponse = interaction.fields.fields.map((e) => e.value);
+          data.modals[i].title = fieldValueResponse[0];
+          data.modals[i].description = fieldValueResponse[1];
+        
+        fs.writeFileSync('./feedback/database/db.json', JSON.stringify(data));
 
-    const username = interaction.customId.split(',')[1].trim() === "0" ? "Anonyme" : interaction.user.username;
-    
-      global.postResponseEmbed = new EmbedBuilder()
-        .setTitle(
-          `Feedback | ${actualFeedback['title']} | ${username}`
-        )
-        .setDescription(` \n\nBonjour,\n\n l'apprenant **${username}** viens de répondre au feeback intitulé **${actualFeedback['title']}**.\n\n Vous trouverez ci'dessous ses réponses.\n\n`)
-        .setColor(0x0099f)
-        .setTimestamp()
-        .setThumbnail(
-          "https://cdn-icons-png.flaticon.com/512/1087/1087804.png"
-        );
+        return interaction.reply({
+          content: "Les modifications on bien était enregistrer !",
+          ephemeral: true
+        });
+
+      } else if (interaction.customId != database.modals[i].customId) {
+        const fields = interaction.fields.fields;
+        const fieldValue = fields.map((e) => e.value);
+        const actualFeedback =
+          database.modals[interaction.customId.split(",")[0].trim()];
+        const channel = client.channels.cache.get("1066503603545702521");
+
+        const username =
+          interaction.customId.split(",")[1].trim() === "0"
+            ? "Anonyme"
+            : interaction.user.username;
+
+        global.postResponseEmbed = new EmbedBuilder()
+          .setTitle(`Feedback | ${actualFeedback["title"]} | ${username}`)
+          .setDescription(
+            ` \n\nBonjour,\n\n l'apprenant **${username}** viens de répondre au feeback intitulé **${actualFeedback["title"]}**.\n\n Vous trouverez ci'dessous ses réponses.\n\n`
+          )
+          .setColor(0x0099f)
+          .setTimestamp()
+          .setThumbnail(
+            "https://cdn-icons-png.flaticon.com/512/1087/1087804.png"
+          );
         for (let i = 0; i < fieldValue.length; i++) {
-
           postResponseEmbed.addFields({
-            name: `${i + 1}.  **${actualFeedback['inputs'][i].label}**`,
+            name: `${i + 1}.  **${actualFeedback["inputs"][i].label}**`,
             value: `${fieldValue[i]}`,
             inline: false,
           });
         }
-    channel.send({ embeds: [postResponseEmbed] });
-    interaction.reply({ content: `👌🏻 Votre réponse au feedback **${actualFeedback['title']}** a bien était envoyer en tant que: ${username}.` , ephemeral: true});
+        channel.send({ embeds: [postResponseEmbed] });
+        interaction.reply({
+          content: `👌🏻 Votre réponse au feedback **${actualFeedback["title"]}** a bien était envoyer en tant que: ${username}.`,
+          ephemeral: true,
+        });
+      }
+    }
   }
 });
 

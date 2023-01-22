@@ -2,8 +2,8 @@
   "modals": {
     "0": {
       "id": "0",
-      "title": "Fin de formation",
-      "description": "Questionnaire de fin de formation",
+      "title": "fin de forlmation",
+      "description": "form de fin de formation",
       "customId": "fin-de-formation",
       "inputs": [
         {
@@ -78,39 +78,39 @@
           }
         ]
       },
-      "JAVA" : {
-        "Vals-P1" : [
-            {
-                "id": "0",
-                "firstname": "Bastien",
-                "lastname": "Bourez",
-                "roles": "413337461071282196",
-                "discord_id": "413337461071282196"
-              },
-              {
-                "id": "1",
-                "firstname": "Cédric",
-                "lastname": "Leroy",
-                "roles": "1064925613120557196",
-                "discord_id": "1026469434078011444"
-              }
-        ],
-        "Vals-P2" : [
+      "JAVA": {
+        "Vals-P1": [
           {
-              "id": "0",
-              "firstname": "Bastien",
-              "lastname": "Bourez",
-              "roles": "413337461071282196",
-              "discord_id": "413337461071282196"
-            },
-            {
-              "id": "1",
-              "firstname": "Cédric",
-              "lastname": "Leroy",
-              "roles": "1064925613120557196",
-              "discord_id": "1026469434078011444"
-            }
-      ]
+            "id": "0",
+            "firstname": "Bastien",
+            "lastname": "Bourez",
+            "roles": "413337461071282196",
+            "discord_id": "413337461071282196"
+          },
+          {
+            "id": "1",
+            "firstname": "Cédric",
+            "lastname": "Leroy",
+            "roles": "1064925613120557196",
+            "discord_id": "1026469434078011444"
+          }
+        ],
+        "Vals-P2": [
+          {
+            "id": "0",
+            "firstname": "Bastien",
+            "lastname": "Bourez",
+            "roles": "413337461071282196",
+            "discord_id": "413337461071282196"
+          },
+          {
+            "id": "1",
+            "firstname": "Cédric",
+            "lastname": "Leroy",
+            "roles": "1064925613120557196",
+            "discord_id": "1026469434078011444"
+          }
+        ]
       }
     }
   ]

@@ -17,6 +17,7 @@
     "discord.js": "^14.7.1",
     "dotenv": "^16.0.3",
     "eslint": "^8.32.0",
+    "fs": "^0.0.1-security",
     "typescript": "^4.9.4"
   },
   "devDependencies": {
