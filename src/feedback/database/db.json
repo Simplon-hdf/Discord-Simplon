@@ -9,7 +9,7 @@
         {
           "customId": "input-fin-de-formation",
           "label": "question du CAP",
-          "style": "Paragraph"
+          "style": "Paragraph" 
         }
       ]
     },
