@@ -47,7 +47,7 @@ export default {
             permissionOverwrites: [
                 {
                     id: roles?.id!,
-                    deny: [PermissionFlagsBits.ViewChannel, PermissionFlagsBits.SendMessages],
+                    allow: [PermissionFlagsBits.ViewChannel, PermissionFlagsBits.SendMessages],
                 },
             ],
         });
@@ -67,7 +67,7 @@ export default {
                 permissionOverwrites: [
                     {
                         id: roles?.id!,
-                        deny: [PermissionFlagsBits.ViewChannel, PermissionFlagsBits.SendMessages],
+                        allow: [PermissionFlagsBits.ViewChannel, PermissionFlagsBits.SendMessages],
                     },
                 ],
             });
