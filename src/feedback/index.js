@@ -41,9 +41,9 @@ client.on(Events.InteractionCreate, async (interaction) => {
     if (interaction.commandName === "setup-feedback") {
       const configEmbed = new EmbedBuilder()
         .setColor(0x0099ff)
-        .setTitle("Configuration feedback | 1/4")
+        .setTitle("Configuration feedback")
         .setDescription(
-          `Bonjour ${interaction.member.displayName}, \n\n pour commencer la procédure de configuration de feedback, veuillez cliquer sur un des boutons ci-dessous.`
+          `Bonjour, \n\n pour commencer la procédure de configuration de feedback, veuillez cliquer sur un des boutons ci-dessous.`
         )
         .setThumbnail(
           "https://cdn-icons-png.flaticon.com/512/1087/1087804.png"
@@ -74,7 +74,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
     if (interaction.customId === "sendExistingFeedback") {
       const templateSelectionEmbed = new EmbedBuilder()
         .setColor(0x0099ff)
-        .setTitle("Sélection du feedBack | 2/4")
+        .setTitle("Sélection du feedBack | 1/3")
         .setDescription(
           "Veuiller sélectionner le feedback souhaité dans la liste ci-dessous"
         )
@@ -110,7 +110,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
       const promotions = database.apprenants;
 
       const selectPromotionTypeEmbed = new EmbedBuilder()
-        .setTitle("Sélectionner la catégorie de promotion | 3/4")
+        .setTitle("Sélectionner la catégorie de promotion | 2/3")
         .setColor(0x0099ff)
         .setDescription(
           `Veuillez sélectionner la catégorie de promotion concernée par le feedback **${
@@ -136,9 +136,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
                 description: `Promotion ${promotion}`,
                 value: `${index},${promotion},${
                   interaction.values[0].split(",")[1]
-                },${
-                  interaction.values[0].split(",")[2]
-                }`,
+                },${interaction.values[0].split(",")[2]}`,
               };
             })
           )
@@ -155,7 +153,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
         promotions[0][`${interaction.values[0].split(",")[1]}`];
 
       const selectPromotionEmbed = new EmbedBuilder()
-        .setTitle("Sélection de promotion(s) | 4/4")
+        .setTitle("Sélection de promotion(s) | 3/3")
         .setColor(0x0099ff)
         .setDescription(
           `Veuillez sélectionner une ou plusieurs **formation** concernée par le feedback **${
@@ -181,7 +179,9 @@ client.on(Events.InteractionCreate, async (interaction) => {
                 }`,
                 value: `${index},${item},${
                   interaction.values[0].split(",")[1]
-                },${interaction.values[0].split(",")[2]},${interaction.values[0].split(",")[3]}`,
+                },${interaction.values[0].split(",")[2]},${
+                  interaction.values[0].split(",")[3]
+                }`,
               };
             })
           )
@@ -210,7 +210,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
                 Object.values(user)[1]
               },\n\nle membre du staff simplon **${
                 interaction.member.displayName
-              }** vous à envoyer un feedback. Pour y répondre veuillez Sélectionner la réponse **oui** dans la lise ci-dessous.\n\n Nous restons disponibles pour toutes questions.\n\nSite: https://hautsdefrance.simplon.co/\nDiscord: discord.gg/SimplonHDF\nEmail: contact@somplon.com`
+              }** vous à envoyer un feedback. Pour y répondre veuillez Sélectionner une réponse dans la lise ci-dessous.\n\n Nous restons disponibles pour toutes questions.\n\nSite: https://hautsdefrance.simplon.co/\nDiscord: discord.gg/SimplonHDF\nEmail: contact@somplon.com`
             )
             .setTimestamp()
             .setThumbnail(
@@ -219,18 +219,22 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
           const learnerPmRow = new ActionRowBuilder().addComponents(
             new StringSelectMenuBuilder()
-            .setCustomId("learner-response")
-            .setPlaceholder("Aucune réponse n'est actuellement selectionnée")
-            .setMinValues(1)
-            .setMaxValues(1)
-            .addOptions(
-              {
-                label: `Oui`,
-                description: 'Cette réponse affichera le questionnaire.',
-                value: `${interaction.values[0].split(",")[4]}`,
-              }
-            )
-              
+              .setCustomId("learner-response")
+              .setPlaceholder("Aucune réponse n'est actuellement selectionnée")
+              .setMinValues(1)
+              .setMaxValues(1)
+              .addOptions(
+                {
+                  label: `Oui, Anonyme`,
+                  description: "Votre nom et prénom apparaîtrons pas.",
+                  value: `${interaction.values[0].split(",")[4]}, 0`,
+                },
+                {
+                  label: `Oui, Non Anonyme`,
+                  description: "Votre nom et prénom apparaîtrons.",
+                  value: `${interaction.values[0].split(",")[4]}, 1`,
+                }
+              )
           );
           (await interaction.client.users.fetch(Object.values(user)[4])).send({
             embeds: [learnerPmEmbed],
@@ -249,12 +253,12 @@ client.on(Events.InteractionCreate, async (interaction) => {
     }
 
     if (interaction.customId === "learner-response") {
-      console.log(interaction.values)
-      const input_list = database.modals[interaction.values[0]].inputs;
+      const input_list =
+        database.modals[interaction.values[0].split(",")[0]].inputs;
 
       const feedbackSelectionModal = new ModalBuilder()
-      .setCustomId(database.modals[interaction.values[0]].customId)
-      .setTitle(database.modals[interaction.values[0]].title);
+        .setCustomId(interaction.values[0].split(",")[0])
+        .setTitle(database.modals[interaction.values[0].split(",")[0]].title);
 
       input_list.map((input) => {
         let actualInputStyle = input.style;
@@ -274,6 +278,35 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
       await interaction.showModal(feedbackSelectionModal);
     }
+  }
+  if (interaction.isModalSubmit()) {
+    const fields = [interaction.fields.fields];
+    const actualFeedback = database.modals[interaction.customId];
+    const channel = client.channels.cache.get("1066503603545702521");
+
+    [actualFeedback].map((feedbackItem) => {
+      global.postResponseEmbed = new EmbedBuilder()
+        .setTitle(
+          `Feedback | ${feedbackItem["title"]} | ${interaction.user.username}`
+        )
+        .setColor(0x0099ff)
+        .setTimestamp()
+        .setThumbnail(
+          "https://cdn-icons-png.flaticon.com/512/1087/1087804.png"
+        );
+      fields[0].map((field) => {
+        for (let i = 0; i < 1; i++) {
+
+          postResponseEmbed.addFields({
+            name: `${feedbackItem["inputs"][i]["label"]}`,
+            value: `${field.value}`,
+            inline: false,
+          });
+        }
+      });
+    });
+    channel.send({ embeds: [postResponseEmbed] });
+    interaction.reply({ content: "ok" });
   }
 });
 
