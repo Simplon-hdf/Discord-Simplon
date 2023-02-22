@@ -122,8 +122,9 @@ CREATE TABLE public.users(
 ------------------------------------------------------------
 CREATE TABLE public.messages(
 	id                SERIAL NOT NULL ,
-	message_uuid      INT  NOT NULL ,
+	message_uuid     INT  NOT NULL ,
 	message_content   VARCHAR (255) NOT NULL ,
+	tag               VARCHAR (50)  ,
 	id_users          INT  NOT NULL  ,
 	CONSTRAINT messages_PK PRIMARY KEY (id)
 
@@ -237,4 +238,4 @@ CREATE TABLE public.Associer(
 
 
 
-
+ 
