@@ -1,94 +1,148 @@
 # Règles de gestion
 
-- Un serveur Discord :
-  - Un serveur Discord est un outil de discussion synchrone.
-  - Il permet de développer une communauté.
-  - Il permet d'appliquer une stratégie de RBAC nativement.
-  - Il permet de créer des canaux de discussions textuels.
-  - Il permet de créer des forums de discussions textuels.
-  - Il permet de créer des canaux de discussions vocaux.
-  - Il permet d'organiser ces différents canaux en catégorie.
-  - Il permet d'organiser des événements basés ou non sur des conférences.
-  - Il permet d'uploader ses propres emoji et autocollants.
-  - Il permet un suivis de statistiques pousser pour sa communauter.
+![gestion rules image](https://www.financewhile.com/wp-content/uploads/2021/01/Business-Rules.png)
 
-- Widget de serveur :
-  - Il défini dans quel salon mène n'importe quelle invitation crée sur le discord.
-  - Permets d'intégrer un widget prédéfinit de ton discord sur ton site.
-
-- Un rôle : 
-  - Un rôle peut être attribué à n'importe quel membre.
-  - Il dispose d'une liste de permsissions activables ou désactivables.
-  - Il peut-être styliser de manière différente selon son utilisation.
-  - Peut-être un rôle lié ( exemple: La personne aura le grade twitch si sont comptes twitch et lier à discord).
-  - Peut posséder une icône de rôle.
-  - Peut-être afficher séparément d'autres rôles.
-
-- Un canal de discussion : 
-  - Un canal de discussion peut être textuel ( Peut-être mis en archive (masqué) après une période d'inactivité ) ou vocal.
-  - Il dispose d'une configurabilité par le biais de permissions.
-  - Un canal de discussion vocal peut avoir une limite d'utilisateurs simultané.
-  - Possibilité d'intégrer des web Hooks (Possibilité de poster des messages dans des salons discords depuis d'autres applications.!) dans les salons textuels, forum, salon announcement.
-
-- Un forum de discussions est uniquement textuel
-  - Il posait un guide des postes.
-  - Il possèdent des tags.
-  - Possède 2 dispositions (Une sous-forme de lignes et une sous-forme de grille) pour une meilleure visibilité.
-  - Peut-être mis en archive (masqué) après une période d'inactivité.
-
-- Les intégrations d'application :
-  - Permets de gérer les Bots, les web Hooks et autres applications.
-  - Permets de restreinte les commandes de bots selon les rôles et salons.
-
-- Le répertoire d'application :
-  - Permet de rechercher, parcourir et explorer des milliers d'application a fin personnaliser et d'automatiser sont serveur discord pour le rendre unique.
-  - Permet d'essayer des application avant de les mettres en place et de les utilisers sur sont propre discord.
+# OnBoarding : 
 
 
-- Le salon de type announcement :
-  - Il peut avoir plusieurs salon de ce type.
-  - Récapitulatif pour les personnes qui entrent et sortent du serveur discord.
-  - Permets de suivre les messages postés dans un discord.
-  - Les mentions ne sont pas transmises.
-  - Permets un suivi de vos postes sur le discord d'un apprenant par exemple.
+- Le bot doit disposer d'un système de configuration.
+  - Le bot doit avoir une commande de génération d'embed (dans un canal) pour l'ajout des membres du staff.
+    - L'embed doit disposer d'une liste déroulante permettant de sélectionner le rôle afin de générer un lien d'invitation.
+  - Le bot doit avoir une commande de génération d'embed (dans un canal) pour la création d'un nouveau type de formation.
+    - L'embed doit disposer d'un bouton permettant d'envoyer une demande de nom pour le nouveau type de formation.
+- Le bot doit avoir une commande de génération d'embed (dans un canal) pour l'ajout de formation.
+    - L'embed doit disposer d'une liste déroulante permettant la sélection du type de formation.
+      - Une demande doit être envoyée pour demander de compléter le nom de la formation.
+      - Un nouvel embed doit être envoyé et doit disposer d'un bouton permettant de créer une nouvelle formation.
+      - Le bot doit envoyer un message demandant la date de début et de fin de la formation.
+  - Le bot doit avoir une commande de génération d'embed (dans un canal) pour l'ajout d'apprenants à une formation.
+    - L'embed doit disposer d'une liste déroulante permettant de générer un lien d'invitation pour un nouvel apprenant, à une formation spécifique.
+      - Le lien d'invitation doit être valide pour une seule personne.
+  - Le bot doit avoir une commande de génération d'embed (dans un canal) pour l'ajout de nouveaux utilisateurs déjà présents sur le serveur Discord, à une formation.
+    - L'embed doit disposer d'une liste déroulante permettant de sélectionner une formation spécifique.
+      - Lors de la sélection de la formation, un nouvel embed doit être envoyé, il doit disposer d'un bouton permettant d'afficher un formulaire d'ajout d'utilisateur.
+  - Le bot doit avoir une commande de génération d'embed pour l'ajout ou la modification de template de catégorie de formation.
+    - Une catégorie de formation est un ensemble de canaux dédiés à une formation.
+    - Le bot doit à la création d'une formation, générer un embed de configuration dans un channel propre à sa catégorie.
+- Le lien d'invitation généré par le bot ne doit fonctionner que pour une personne.
+- Le lien d'invitation doit être temporaire.
+- Le bot ne doit pas pouvoir créer deux fois le même embed de configuration.
+- Le bot doit pouvoir détecter si un embed a été supprimé pour permettre la création d'une nouvelle.
+- L'administrateur peut supprimer un embed.
 
-- Le salon de type Stage (Conférence) :
-  - Permets de créé des sessions, des groupes, d'organiser des événements publics (sous forme de conférence).
-  - Permet de diffuser des informations a tous le discord.
-  - Les orateurs :
-    - faciliter de déplacement dans l'audience.
-    - Sont autorisés à parler dans les salons stages.
-  - Les modérateurs de conférence :
-    - ce sont des orateurs classiques.
-    - Peuvent ajouter, retirer et mettre en sourdine d'orateurs.
-  - Toute personne ayant la permission de voir le salon de la conférence pourra y accéder en tant que spectateur.
+- Lors de l'ajout d'un utilisateur à une formation, le bot doit envoyer une demande de vérification (dans un canal dédié à cette formation).
+- Le bot doit imposer une identification lors de l'arrivée d'un nouvel apprenant ou nouveau membre du staff.
+  - Lors de l'arrivée d'un nouvel apprenant, le bot doit envoyer un message de demande de vérification (dans un canal dédié à cette formation).
+  - Lors de l'arrivée d'un nouveau staff, le bot doit envoyer un message de demande de vérification (dans un canal dédié au staff).
+    - Une fois la vérification de l'identité validée, le rôle doit être attribué par le bot à l'utilisateur du lien.
+- Le bot doit mettre en place un embed (dans un canal) permettant de sélectionner les formations visibles pour le staff.
+
+# Gestion des signatures
+
+- Le bot doit générer à la création de la formation, un canal spécifique dans lequel se trouve un embed pour notifier les non-signatures aux apprenants.
+  - L'embed doit posséder une liste de cases à cocher pour les apprenants de la formation.
+    - Lors de la sélection d'un apprenant, un message privé doit être envoyé par le bot pour signaler le problème.
+  - La liste de cases à cocher doit être utilisée uniquement par le formateur.
+
+- Le bot doit générer à la création de la formation, un embed permettant pour les apprenants de notifier le formateur de l'absence d'émargement.
+  - L'embed doit disposer d'un bouton permettant d'envoyer un message privé au formateur.
+    - Pour envoyer le message privé, il faut que 3 apprenants signalent le problème.
+
+- Le formateur peut envoyer le code d'émargement dans un channel dedié à la formation.
+  - Lorsque le formateur le décide, il peut désactiver la fonction de rappel des signatures pour les aprenants de la formation. 
   
+- Le rappel se réactive tous les jours à 8h et 12h.
 
-- Une catégorie Discord :
-  - Elle peut contenir 0 à plusieurs canaux de discussion.
-  - Elle peut modifier les permissions des rôles du serveur, sur les canaux qui la compose.
-  - Elle peut être agencée de différentes façons.
+# Pôle
 
-  
-- Un membre du Staff : 
-  - Un membre du staff peut créer des catégories
-  - Un membre du staff peut valider les demandes d'identification des visiteurs
-  - Un membre du staff peut créer des salons
-  - Un membre du staff peut accèder aux tickets crées par les apprenants
-  - Un membre du staff peut expulser ou bannir un membre du serveur Discord
-  - Un membre du staff peut accèder au panel d'administration de gestion des bots
-  - Un membre du staff peut poster des messages dans les canaux généraux
-  - Un membre du staff peut poster des annonces
+- Un pôle est composé de 1 à n membres.
+- Un pôle est représenté par un rôle au sein de l'organisation de Simplon-HDF.
+- Un pôle doit être affilié à un rôle du serveur.
+- Le bot doit mettre en place un embed (dans un canal) permettant de selectionner les formations visibles pour le staff.
 
-- Un formateur :
-  - Un formateur peut créer un espace dédié à la formation qu'il dispense.
-  - Il peut ajouter un apprenant à cet espace dédié.
-  - Il peut supprimer un apprenant de cet espace dédié.
-  - Il peut discuter librement dans les canaux généraux.
-  - Il a accès aux canaux du Staff.
+# Un ticket
 
-- Un apprenant : 
-  - Il peut discuter librement dans les canaux.
-  - Il peut discuter librement dans les canaux de sa promotion.
-  - Il peut prendre contact avec un membre du staff par le biais de canaux dédiés.
-  - Il doit être lié à une et une seule promotion en cours.
+- Un ticket est constitué d'un numéro d'identification.
+- Un ticket est composé d'un nom.
+- Un ticket est composé d'un créateur représenté par un utilisateur affilié à Simplon-HDF.
+- Un ticket est composé d'un pôle destinataire.
+- Un ticket est composé d'un fil de discussion asynchrone.
+- Un ticket peut être fermé par son créateur et par le pôle destinataire.
+- Un ticket peut être marqué comme résolu par un membre du pôle destinataire.
+- Un ticket peut être archivé par un membre du pôle destinataire.
+- Un ticket peut être sauvegardé de façon externe.
+
+# Bot Ticketing
+
+- Le bot doit disposer d'un embed (dans un canal) permettant à un utilisateur affilié à Simplon de créer un nouveau ticket. 
+  - Cet embed doit disposer d'un bouton permettant de commencer la création d'un nouveau ticket.
+    - Une demande de nom de ticket doit être envoyée à la création.
+    - Une embed doit être envoyée disposant d'une liste déroulante permettant de sélectionner le pôle visé.
+    - Le bot doit créer un fil de discussion dédié pour le ticket dans une catégorie adaptée.
+      - Cette catégorie doit être visible uniquement par le pôle visé.
+      - Le bot doit générer dans le fil de discussion du ticket un embed disposant d'un bouton.
+      - Cet embed doit disposer d'un bouton permettant de fermer le ticket.
+        - Le ticket doit être archivé une fois fermé.
+
+## Configuration
+
+- Le bot doit disposer d'une commande permettant de générer un embed (dans un canal) pour créer des tickets.
+
+# Un sondage
+
+- Un sondage est un embed.
+- Un sondage contient plus ou moins de boutons permettant de voter.
+- Il contient un message.
+- Il peut contenir des images.
+- Un sondage peut être signalé.
+
+# Bot sondage
+
+- Le bot doit disposer d'un embed (dans un canal) permettant à un utilisateur de commencer la création d'un sondage.
+- L'embed doit disposer d'un bouton permettant de commencer une configuration de sondage.
+- La configuration de sondage permet d'ajouter du texte, des images et des champs de votes potentiels et la durée, et le canal dans lequel l'envoyer.
+
+- Le sondage doit être supprimé après le temps déterminé pendant la configuration.
+- Le sondage doit pouvoir être signalé via une commande par tous les utilisateurs.
+- A partir d'un certain nombre de signalements, le sondage doit être supprimé automatiquement.
+
+- L'utilisateur qui créée le sondage peut le fermer le fermer ou le supprimer.
+- Une image representant les resultats doit etre envoyé à la fin du sondage.
+
+
+## Configuration
+
+- Le bot doit disposer d'une commande permettant de définir une durée de sondage par défaut.
+- Le bot doit disposer d'une commande permettant de générer un embed (dans un canal) pour créer des sondages.
+
+# Feedback bot
+
+- Le bot doit mettre à disposition un canal dédié aux membres du staff afin de consulter les feedbacks des apprenants.
+- Ce canal est affilié à la catégorie de la formation.
+- Les apprenants peuvent envoyer un message au bot afin de faire leur feedback.
+- Le bot doit considérer les messages uniquement des apprenants.
+- Le bot doit considérer uniquement 1 message par apprenant.
+- Le bot doit considérer uniquement les messages des apprenants une semaine avant la fin de leur formation. 
+- Le bot doit envoyer le message dans le canal dédié afin de préserver l'anonymat des feedbacks des apprenants.
+
+## Configuration 
+
+- Le bot doit mettre à disposition une commande permettant son activation.
+- Le bot doit mettre à disposition une commande permettant sa désactivation.
+- Le bot doit mettre à disposition une commande permettant d'activer les feedbacks selon les formations.
+- Cet embed doit être composé d'une liste déroulante permettant de sélectionner la formation sur laquelle activer ou désactiver les feedbacks.
+
+# SimplonHub Bot
+
+- Le bot doit permettre aux utilisateurs de voter pour encourager une ressource.
+- Le bot doit permettre aux utilisateurs de voter pour condamner une ressource.
+- Le bot doit analyser les ressources partagées dans les canaux ou catégories dédiées pour détecter si elle est déjà présente ou si elle a déjà été condamnée.
+- La mise en condamnation doit renomer le nom du poste en rajoutant une annotation "condamné" à la fin et fermer le poste.
+- L'utilisateur peut effectuer un message commande (action specifique a discord) pour report le message.
+
+## Configuration
+
+- Le bot doit mettre à disposition une commande permettant son activation.
+- Le bot doit mettre à disposition une commande permettant sa désactivation.
+- Le bot doit mettre à disposition une commande permettant de lier un canal spécifique à un tag.
+- Le bot doit mettre à disposition une commande permettant de lier une categorie spécifique à un tag . 
