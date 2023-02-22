@@ -1,26 +1,14 @@
-/// <reference path="../commands/ping_cmd.ts"/>
-/// <reference path="../commands/courses/create_course_interface.ts" />
-/// <reference path="../commands/add-learner-to-class.ts"/>
-/// <reference path="../commands/ping_cmd.ts"/>
-/// <reference path="../commands/add-learner-to-class.ts"/>
-/// <reference path="../commands/generate-link.ts"/>
-/// <reference path="../commands/create-id-button.ts"/>
-/// <reference path="../commands/courses/create_course_info_interface.ts" />
-/// <reference path="../commands/promos/create_promo_interface.ts" />
-/// <reference path="../commands/channel_selector/config_interface.ts" />
-/// <reference path="../commands/utils/clear.ts" />
-
-import { REST, Routes, Collection } from "discord.js";
+import { REST, Routes, Collection, Client } from "discord.js";
 import * as fs from "fs";
 import * as path from 'path';
 import * as dotenv from "dotenv";
 
-export default async (client, discord_token, discord_client_id) => {
+export default async (client : any, discord_token?: any, discord_client_id?: any) => {
     dotenv.config();
     
-    const commandFiles = getAllFiles('./onboarding/dist/commands/')
+    const commandFiles = getAllFiles('./onboarding/build/commands/')
 
-    function getAllFiles(dirPath, arrayOfFiles?){
+    function getAllFiles(dirPath : any, arrayOfFiles? : any){
         const files = fs.readdirSync(dirPath)
 
         arrayOfFiles = arrayOfFiles || []
@@ -45,13 +33,18 @@ export default async (client, discord_token, discord_client_id) => {
         client.commands.set(cmd.default.data.name, cmd.default); // Link cmd name to complete module
     }
 
+    if(!discord_token && !discord_client_id){
+        throw new Error('Discord id or token is undefined');  
+
+    }
+
     const rest = new REST({ version: '10' }).setToken(discord_token);
 
     (async () => {
         try {
             console.log('Started refreshing application (/) commands.');
 
-            await rest.put(Routes.applicationCommands(discord_client_id), { body: client.commands.map(x => x.data.toJSON())}); //Logging commands on RESTAPI (for each values in commands, get data.JSON() to register it
+            await rest.put(Routes.applicationCommands(discord_client_id), { body: client.commands.map((x: any) => x.data.toJSON())}); //Logging commands on RESTAPI (for each values in commands, get data.JSON() to register it
 
             console.log('Successfully reloaded application (/) commands.');
         } catch (error) {
