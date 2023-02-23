@@ -30,7 +30,7 @@ const dotenv = __importStar(require("dotenv"));
 exports.default = async (client, discord_token, discord_client_id) => {
     var _a;
     dotenv.config();
-    const commandFiles = getAllFiles('./folder_bot/build/commands/');
+    const commandFiles = getAllFiles('./build/commands/');
     function getAllFiles(dirPath, arrayOfFiles) {
         const files = fs.readdirSync(dirPath);
         arrayOfFiles = arrayOfFiles || [];
@@ -39,7 +39,7 @@ exports.default = async (client, discord_token, discord_client_id) => {
                 arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles);
             }
             else {
-                arrayOfFiles.push(path.join(dirPath.replace('folder_bot/build', ''), "/", file));
+                arrayOfFiles.push(path.join(dirPath.replace('/build', ''), "/", file));
             }
         });
         return arrayOfFiles;
@@ -55,7 +55,7 @@ exports.default = async (client, discord_token, discord_client_id) => {
         throw new Error('Discord id or token is undefined');
     }
     const rest = new discord_js_1.REST({ version: '10' }).setToken(discord_token);
-    (async () => {
+    await (async () => {
         try {
             console.log('Started refreshing application (/) commands.');
             await rest.put(discord_js_1.Routes.applicationCommands(discord_client_id), { body: client.commands.map((x) => x.data.toJSON()) }); //Logging commands on RESTAPI (for each values in commands, get data.JSON() to register it

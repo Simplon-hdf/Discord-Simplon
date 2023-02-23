@@ -27,7 +27,7 @@ const fs = __importStar(require("fs"));
 const path = __importStar(require("path"));
 exports.default = async (client) => {
     var _a;
-    const dirPath = './folder_bot/build/events';
+    const dirPath = './build/events';
     const eventFiles = getAllFiles(dirPath);
     function getAllFiles(dirPath, arrayOfFiles) {
         const files = fs.readdirSync(dirPath);
@@ -37,7 +37,7 @@ exports.default = async (client) => {
                 arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles);
             }
             else {
-                arrayOfFiles.push(path.join(dirPath.replace('folder_bot/build', ''), "/", file));
+                arrayOfFiles.push(path.join(dirPath.replace('/build', ''), "/", file));
             }
         });
         return arrayOfFiles;
