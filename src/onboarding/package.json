@@ -4,9 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:onboarding": "tsc --project tsconfig.json --outDir onboarding/build",
-    "build:ticketing": "tsc --project tsconfig.json --outDir ticketing/build",
-    "build:signature": "tsc --project tsconfig.json --outDir signature/build"
+    "build": "tsc --project tsconfig.json"
   },
   "author": "",
   "license": "ISC",
