@@ -5,7 +5,7 @@ import command_handler from "./handlers/command_handler";
 import event_handler from "./handlers/event_handler";
 
 
-dotenv.config({path: "./folder_bot/.env"});
+dotenv.config();
 process.setMaxListeners(0);
 EventEmitter.setMaxListeners(0);
 
