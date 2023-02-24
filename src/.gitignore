@@ -1,8 +1,14 @@
 node_modules/
 package-lock.json
 
-signature/.env
+onboarding/.env
 onboarding/dist
 onboarding/dist/commands
 onboarding/dist/events
 onboarding/dist/handlers
+
+signature/.env
+signature/dist
+signature/dist/commands
+signature/dist/events
+signature/dist/handlers
