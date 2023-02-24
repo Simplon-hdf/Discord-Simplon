@@ -1,7 +1,7 @@
 node_modules/
 package-lock.json
 
-.env
+onboarding/.env
 onboarding/dist
 onboarding/dist/commands
 onboarding/dist/events
