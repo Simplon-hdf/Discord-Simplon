@@ -1,4 +1,5 @@
 import {PromoCategory} from "../../channels/category/promo-category";
+import {PromoRole} from "./promo-role";
 
 export class Promo {
   private readonly _id: number;
