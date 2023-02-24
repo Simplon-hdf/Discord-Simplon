@@ -1,8 +1,8 @@
-import {YamlParser} from "./utils/parsers/yaml-parser";
+import {YamlParser} from "../utils/parsers/yaml-parser";
 import {Channel} from "./channel";
-import {Learner} from "./learner";
+import {Learner} from "../users/learner";
 import axios from "axios";
-import {Routes} from "./utils/routes";
+import {Routes} from "../utils/routes";
 
 
 

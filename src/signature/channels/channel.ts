@@ -1,4 +1,4 @@
-import {YamlParser} from "./utils/parsers/yaml-parser";
+import {YamlParser} from "../utils/parsers/yaml-parser";
 
 
 export class Channel {

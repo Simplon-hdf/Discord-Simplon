@@ -10,13 +10,18 @@ exports.default = {
             const beginProcedure = new discord_js_1.EmbedBuilder()
                 .setColor(0x0099ff)
                 .setTitle("Commencer la procédure de rappel de signature")
-                .setDescription(`\n\n Bonjour ${interaction.member.displayName}, \n\n pour commencer la procédure de rappel de signature veuillez cliquer sur le bouton ci-dessous.`)
+                .setDescription(`\n\n Bonjour ${interaction.member?.user.username}, \n\n pour commencer la procédure de rappel de signature veuillez cliquer sur le bouton ci-dessous.`)
                 .setThumbnail("https://cdn-icons-png.flaticon.com/512/4489/4489772.png");
+            const row = new discord_js_1.ActionRowBuilder().addComponents(new discord_js_1.ButtonBuilder()
+                .setCustomId("active")
+                .setLabel("Commencer la procédure !")
+                .setStyle(discord_js_1.ButtonStyle.Success));
+            await interaction.reply({ embeds: [beginProcedure], components: [row] });
         }
         const embedReminder = new discord_js_1.EmbedBuilder()
             .setColor(0x0099ff)
             .setTitle("Sélection des apprenants pour Rappel")
-            .setDescription(`\n\n Bonjour ${interaction.member.displayName}, \n\n Veuillez sélectionner les apprenants à qui il faut rappeler de signer dans la liste de sélection ci-dessous.`)
+            .setDescription(`\n\n Bonjour ${interaction.member?.user.username}, \n\n Veuillez sélectionner les apprenants à qui il faut rappeler de signer dans la liste de sélection ci-dessous.`)
             .setThumbnail("https://cdn-icons-png.flaticon.com/512/4489/4489772.png");
         const learnerList = 'placeholder';
         const row = new discord_js_1.ActionRowBuilder().addComponents(new discord_js_1.StringSelectMenuBuilder()

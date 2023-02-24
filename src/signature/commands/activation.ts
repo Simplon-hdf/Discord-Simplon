@@ -1,4 +1,12 @@
-import {ActionRowBuilder, EmbedBuilder, SlashCommandBuilder, StringSelectMenuBuilder} from 'discord.js';
+import {
+    ActionRowBuilder, ButtonBuilder,
+    CommandInteraction,
+    EmbedBuilder,
+    Interaction,
+    SlashCommandBuilder,
+    StringSelectMenuBuilder,
+    ButtonStyle
+} from 'discord.js';
 
 export default {
 
@@ -6,7 +14,7 @@ export default {
         .setName('active')
         .setDescription('Run this command to activate the bot'),
 
-    async execute(interaction: any) {
+    async execute(interaction: CommandInteraction) {
 
             if (interaction.commandName === "active") {
 
@@ -14,18 +22,30 @@ export default {
                     .setColor(0x0099ff)
                     .setTitle("Commencer la procédure de rappel de signature")
                     .setDescription(
-                        `\n\n Bonjour ${interaction.member.displayName}, \n\n pour commencer la procédure de rappel de signature veuillez cliquer sur le bouton ci-dessous.`
+                        `\n\n Bonjour ${interaction.member?.user.username}, \n\n pour commencer la procédure de rappel de signature veuillez cliquer sur le bouton ci-dessous.`
                     )
                     .setThumbnail(
                         "https://cdn-icons-png.flaticon.com/512/4489/4489772.png"
                     );
+
+                const row = new ActionRowBuilder<ButtonBuilder>().addComponents(
+                    new ButtonBuilder()
+                        .setCustomId("active")
+                        .setLabel("Commencer la procédure !")
+                        .setStyle(ButtonStyle.Success)
+                );
+
+                await interaction.reply({ embeds: [beginProcedure], components: [row]  });
             }
+
+
+
 
             const embedReminder = new EmbedBuilder()
                 .setColor(0x0099ff)
                 .setTitle("Sélection des apprenants pour Rappel")
                 .setDescription(
-                    `\n\n Bonjour ${interaction.member.displayName}, \n\n Veuillez sélectionner les apprenants à qui il faut rappeler de signer dans la liste de sélection ci-dessous.`
+                    `\n\n Bonjour ${interaction.member?.user.username}, \n\n Veuillez sélectionner les apprenants à qui il faut rappeler de signer dans la liste de sélection ci-dessous.`
                 )
                 .setThumbnail(
                     "https://cdn-icons-png.flaticon.com/512/4489/4489772.png"
@@ -34,7 +54,7 @@ export default {
 
             const learnerList = 'placeholder';
 
-            const row = new ActionRowBuilder().addComponents(
+            const row = new ActionRowBuilder<StringSelectMenuBuilder>().addComponents(
                 new StringSelectMenuBuilder()
                     .setCustomId("select_learners")
                     .setPlaceholder("Aucune réponse n'est actuellement sélectionnée !")
@@ -64,5 +84,4 @@ export default {
                 ephemeral: true,
             });
         }
-
 };
