@@ -3,7 +3,7 @@ import * as path from "path";
 
 export default async (client: any) => {
 
-    const dirPath = './folder_bot/build/events';
+    const dirPath = './build/events';
     const eventFiles : [] = getAllFiles(dirPath);
 
 
@@ -16,7 +16,7 @@ export default async (client: any) => {
           if (fs.statSync(dirPath + "/" + file).isDirectory()) {
             arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles)
           } else {
-            arrayOfFiles.push(path.join(dirPath.replace('folder_bot/build', ''), "/", file))
+            arrayOfFiles.push(path.join(dirPath.replace('/build', ''), "/", file))
           }
         })
       
