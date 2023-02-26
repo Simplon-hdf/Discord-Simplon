@@ -14,7 +14,7 @@ export default {
         .setName('active')
         .setDescription('Run this command to activate the bot'),
 
-    async execute(interaction: CommandInteraction) {
+    async execute(interaction: any) {
         if (interaction.isChatInputCommand()) {
             if (interaction.commandName === 'active') {
                 const beginProcedure = new EmbedBuilder()
@@ -29,15 +29,14 @@ export default {
 
                 const row = new ActionRowBuilder<ButtonBuilder>().addComponents(
                     new ButtonBuilder()
-                        .setCustomId("active")
+                        .setCustomId("start")
                         .setLabel("Commencer la procédure !")
                         .setStyle(ButtonStyle.Success)
                 );
                 await interaction.reply({embeds: [beginProcedure], components: [row]});
             }
+        }  if (interaction.isButton()) {
 
-        }
-        if (interaction.isButton()) {
             const guild = interaction.guild;
             const trainerRole = guild?.roles.cache.has('1064925613120557196');
 

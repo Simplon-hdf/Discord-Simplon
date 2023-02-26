@@ -44,6 +44,10 @@ client.on(discord_js_1.Events.InteractionCreate, async (interaction) => {
         return;
     const parsedClient = client;
     const command = parsedClient.commands.get(interaction['commandName']);
-    command.execute(interaction);
+    await command.execute(interaction);
 });
+/*client.on(
+    "interactionCreate",
+    async (interaction: Interaction) => await onInteraction(interaction)
+);*/
 client.login(DISCORD_TOKEN);

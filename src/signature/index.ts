@@ -3,6 +3,7 @@ import EventEmitter from "events";
 import * as dotenv from "dotenv";
 import command_handler from "./handlers/command_handler";
 import event_handler from "./handlers/event_handler";
+import {onInteraction} from "./interaction";
 
 
 dotenv.config();
@@ -21,8 +22,12 @@ client.on(Events.InteractionCreate, async (interaction : Interaction) => {
     if(!interaction.isChatInputCommand()) return; 
     const parsedClient : any = client;
     const command = parsedClient.commands.get(interaction['commandName']);
-    command.execute(interaction);
+    await command.execute(interaction);
 });
 
+/*client.on(
+    "interactionCreate",
+    async (interaction: Interaction) => await onInteraction(interaction)
+);*/
 
 client.login(DISCORD_TOKEN);

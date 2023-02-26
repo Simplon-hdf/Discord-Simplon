@@ -22,9 +22,9 @@ export class TrainerChannel extends Channel {
         // - sendConfirmation(): void
         // - get_trainers(): array
 
-    selectLearners(id: number): void {
+    selectLearners(promoUuid: number): void {
         let routes = Routes.GET_USERS_BY_PROMO_ID
-        let learnerList = axios.get( routes + id )
+        let learnerList = axios.get( routes + promoUuid )
             .then( function(response: any) {
                 return response;
             })
