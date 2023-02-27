@@ -1,9 +1,8 @@
-import {Guild} from "./guilds/guild";
 import {GuildsManager} from "./guilds/guilds-manager";
 
 export class DiscordClient {
 
-  private static instance : DiscordClient;
+  private static instance? : DiscordClient;
 
   private readonly guildManager : GuildsManager;
 
@@ -19,8 +18,14 @@ export class DiscordClient {
     return DiscordClient.instance;
   }
 
+
+
   getGuildManager(): GuildsManager {
     return DiscordClient.getInstance().guildManager;
+  }
+
+  destroy(): void {
+    DiscordClient.instance = undefined;
   }
 
 }

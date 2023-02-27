@@ -19,6 +19,8 @@ export default {
           console.error(err);
           process.exit(0);
         });
+
+      discordClient.destroy();
     })
 
   }
