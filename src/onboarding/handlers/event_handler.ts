@@ -5,33 +5,35 @@ import * as path from "path";
 
 export default async (client: any) => {
 
-    const dirPath = './onboarding/build/events';
-    const eventFiles : [] = getAllFiles(dirPath);
+  const dirPath = './onboarding/build/events';
+  const eventFiles: [] = getAllFiles(dirPath);
 
 
-    function getAllFiles(dirPath: any, arrayOfFiles?: any){
-        const files = fs.readdirSync(dirPath)
+  function getAllFiles(dirPath: any, arrayOfFiles?: any) {
+    arrayOfFiles = arrayOfFiles || []
 
-        arrayOfFiles = arrayOfFiles || []
-      
-        files.forEach(function(file) {
-          if (fs.statSync(dirPath + "/" + file).isDirectory()) {
-            arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles)
-          } else {
-            arrayOfFiles.push(path.join(dirPath.replace('onboarding/build', ''), "/", file))
-          }
-        })
-      
-        return arrayOfFiles
-    }
+    try {
+      const files = fs.readdirSync(dirPath)
 
-    
-    for (const file of eventFiles) {
-        const event = await import('../' + file);
-        if (event.default.once) {
-            client.once(event.default.name, (...args: any[]) => event.default.execute(...args));
+      files.forEach(function (file) {
+        if (fs.statSync(dirPath + "/" + file).isDirectory()) {
+          arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles)
         } else {
-            client.on(event.default.name, (...args: any[]) => event.default.execute(...args));
+          arrayOfFiles.push(path.join(dirPath.replace('onboarding/build', ''), "/", file))
         }
+      })
+    } catch { }
+
+    return arrayOfFiles
+  }
+
+
+  for (const file of eventFiles) {
+    const event = await import('../' + file);
+    if (event.default.once) {
+      client.once(event.default.name, (...args: any[]) => event.default.execute(...args));
+    } else {
+      client.on(event.default.name, (...args: any[]) => event.default.execute(...args));
     }
+  }
 }

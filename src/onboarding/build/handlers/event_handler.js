@@ -31,16 +31,19 @@ exports.default = async (client) => {
     const dirPath = './onboarding/build/events';
     const eventFiles = getAllFiles(dirPath);
     function getAllFiles(dirPath, arrayOfFiles) {
-        const files = fs.readdirSync(dirPath);
         arrayOfFiles = arrayOfFiles || [];
-        files.forEach(function (file) {
-            if (fs.statSync(dirPath + "/" + file).isDirectory()) {
-                arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles);
-            }
-            else {
-                arrayOfFiles.push(path.join(dirPath.replace('onboarding/build', ''), "/", file));
-            }
-        });
+        try {
+            const files = fs.readdirSync(dirPath);
+            files.forEach(function (file) {
+                if (fs.statSync(dirPath + "/" + file).isDirectory()) {
+                    arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles);
+                }
+                else {
+                    arrayOfFiles.push(path.join(dirPath.replace('onboarding/build', ''), "/", file));
+                }
+            });
+        }
+        catch { }
         return arrayOfFiles;
     }
     for (const file of eventFiles) {
