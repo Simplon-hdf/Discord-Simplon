@@ -30,7 +30,7 @@ const dotenv = __importStar(require("dotenv"));
 exports.default = async (client, discord_token, discord_client_id) => {
     var _a;
     dotenv.config();
-    const commandFiles = getAllFiles('./onboarding/build/commands/');
+    const commandFiles = getAllFiles('./build/commands/');
     function getAllFiles(dirPath, arrayOfFiles) {
         arrayOfFiles = arrayOfFiles || [];
         try {
@@ -40,17 +40,18 @@ exports.default = async (client, discord_token, discord_client_id) => {
                     arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles);
                 }
                 else {
-                    arrayOfFiles.push(path.join(dirPath.replace('onboarding/dist', ''), "/", file));
+                    arrayOfFiles.push(path.join("commands/", file));
                 }
             });
         }
-        catch {
+        catch (error) {
+            console.log(error);
         }
         return arrayOfFiles;
     }
     client.commands = new discord_js_1.Collection();
     for (const file of commandFiles) {
-        // console.log(file);
+        //console.log(file);
         const cmd = await (_a = `../${file}`, Promise.resolve().then(() => __importStar(require(_a))));
         //console.log(cmd.default);
         client.commands.set(cmd.default.data.name, cmd.default); // Link cmd name to complete module
