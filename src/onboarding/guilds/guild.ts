@@ -1,4 +1,4 @@
-import {Config} from "../config";
+import {Config} from "../config/config";
 import {YamlParser} from "../utils/parsers/yaml-parser";
 import {Routes} from "../utils/Routes";
 import {HttpUtils} from "../utils/http";
@@ -8,12 +8,12 @@ export class Guild {
   private readonly _id: number;
   private readonly _name: string;
 
-  private readonly _config: Config;
+  private readonly _config: IConfig;
 
   static YamlConfig = new YamlParser('./config.yml');
 
   // private readonly _config:
-  constructor(id: number, name: string, config: Config) {
+  constructor(id: number, name: string, config: IConfig) {
     this._id = id;
     this._name = name;
     this._config = config;
@@ -28,7 +28,7 @@ export class Guild {
     return this._name;
   }
 
-  get config(): Config {
+  get config(): IConfig {
     return this._config;
   }
 

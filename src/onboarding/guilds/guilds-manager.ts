@@ -1,18 +1,17 @@
 import {Guild} from "./guild";
 import {HttpUtils} from "../utils/http";
 import {Routes} from "../utils/Routes";
+import {Config} from "../config/config";
 
 export class GuildsManager {
 
-  private readonly _guild_uuid : number;
-  private guilds : Guild;
+  private guilds?: Guild;
 
-  constructor(guild_uuid: number) {
-    this._guild_uuid = guild_uuid;
+  constructor() {
   }
 
-  async registerGuild() {
-      const guildJSON = await new HttpUtils().get(Routes.GET_GUILD_CONFIG);
+  async loadGuild(guild_uuid: number) {
+      const guildJSON = await new HttpUtils().get(Routes.GET_GUILD, guild_uuid.toString());
 
       if(guildJSON){
         throw new ApiError('Bot try register existing guild');
@@ -24,11 +23,26 @@ export class GuildsManager {
         throw new ApiError('API response is empty for register guild');
       }
 
-      const config = await new HttpUtils().get(Routes.GET_GUILD_CONFIG)
+      const configJSON = await new HttpUtils().get(Routes.GET_GUILD_CONFIG);
+      const configKeys = Object.keys(configJSON);
 
-  }
+      if(configKeys.length === 0){
+        throw new ApiError('API response is empty for instancie config');
+      }
 
-  getGuild() {
+      for(let confKey of configKeys){
+        if (confKey === ''){
+          throw new ApiError('API response is empty for instancie config');
+        }
+      }
+
+      try {
+        const config: IConfig = configJSON as IConfig;
+        this.guilds = new Guild(id, name, config);
+      }catch (e) {
+        throw new ApiError('API response not corresponding with Config class');
+      }
+
 
   }
 }
