@@ -18,6 +18,7 @@ export class TrainerChannel extends Channel {
     }
 
     // Add methods:
+        // - getIsCodeRequestSendable(): boolean
         // - selectLearners(id): void
         // - sendConfirmation(): void
         // - get_trainers(): array

@@ -50,10 +50,7 @@ export const onInteraction = async (interaction: Interaction) => {
                     );
 
 
-                let channels = new TrainerChannel()
-
-
-                const learnerList = 'placeholder';
+                // TODO : define TrainerChannel object.
 
                 const row = new ActionRowBuilder<StringSelectMenuBuilder>().addComponents(
                     new StringSelectMenuBuilder()
