@@ -1,7 +1,7 @@
-import {Config} from "./config";
-import {YamlParser} from "./utils/parsers/yaml-parser";
-import {Routes} from "./utils/Routes";
-import {HttpUtils} from "./utils/http";
+import {Config} from "../config";
+import {YamlParser} from "../utils/parsers/yaml-parser";
+import {Routes} from "../utils/Routes";
+import {HttpUtils} from "../utils/http";
 
 export class Guild {
 
