@@ -31,7 +31,7 @@ const events_1 = __importDefault(require("events"));
 const dotenv = __importStar(require("dotenv"));
 const command_handler_1 = __importDefault(require("./handlers/command_handler"));
 const event_handler_1 = __importDefault(require("./handlers/event_handler"));
-dotenv.config({ path: "./folder_bot/.env" });
+dotenv.config();
 process.setMaxListeners(0);
 events_1.default.setMaxListeners(0);
 const DISCORD_TOKEN = process.env.DISCORD_TOKEN;
