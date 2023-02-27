@@ -1,5 +1,4 @@
 "use strict";
-/// <reference path="../events/ready.ts"/>
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -28,7 +27,7 @@ const fs = __importStar(require("fs"));
 const path = __importStar(require("path"));
 exports.default = async (client) => {
     var _a;
-    const dirPath = './onboarding/build/events';
+    const dirPath = './build/events/';
     const eventFiles = getAllFiles(dirPath);
     function getAllFiles(dirPath, arrayOfFiles) {
         arrayOfFiles = arrayOfFiles || [];
@@ -39,11 +38,13 @@ exports.default = async (client) => {
                     arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles);
                 }
                 else {
-                    arrayOfFiles.push(path.join(dirPath.replace('onboarding/build', ''), "/", file));
+                    arrayOfFiles.push(path.join("events/", file));
                 }
             });
         }
-        catch { }
+        catch (error) {
+            console.log(error);
+        }
         return arrayOfFiles;
     }
     for (const file of eventFiles) {

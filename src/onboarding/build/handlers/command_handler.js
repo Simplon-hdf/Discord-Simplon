@@ -51,9 +51,7 @@ exports.default = async (client, discord_token, discord_client_id) => {
     }
     client.commands = new discord_js_1.Collection();
     for (const file of commandFiles) {
-        //console.log(file);
         const cmd = await (_a = `../${file}`, Promise.resolve().then(() => __importStar(require(_a))));
-        //console.log(cmd.default);
         client.commands.set(cmd.default.data.name, cmd.default); // Link cmd name to complete module
     }
     if (!discord_token && !discord_client_id) {
