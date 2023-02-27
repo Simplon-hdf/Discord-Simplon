@@ -1,6 +1,7 @@
 import {Client, Events} from "discord.js";
 import {DiscordClient} from "../client";
 import {GuildsManager} from "../guilds/guilds-manager";
+import {Guild} from "../guilds/guild";
 
 
 export default {
@@ -13,12 +14,14 @@ export default {
 
     const guildManager: GuildsManager = discordClient.getGuildManager();
 
-    client.guilds.cache.forEach((guild) => {
-      guildManager.loadGuild(parseInt(guild.id))
-        .catch(err => {
-          console.error(err);
-          process.exit(0);
-        });
+    client.guilds.cache.forEach(async (element) => {
+      const guild = await guildManager.loadGuild(parseInt(element.id));
+
+      if(guild === undefined){
+        guildManager.registerGuild(new Guild(
+
+        ))
+      }
 
       discordClient.destroy();
     })
