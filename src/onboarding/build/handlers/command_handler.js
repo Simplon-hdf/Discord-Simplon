@@ -32,16 +32,20 @@ exports.default = async (client, discord_token, discord_client_id) => {
     dotenv.config();
     const commandFiles = getAllFiles('./onboarding/build/commands/');
     function getAllFiles(dirPath, arrayOfFiles) {
-        const files = fs.readdirSync(dirPath);
         arrayOfFiles = arrayOfFiles || [];
-        files.forEach(function (file) {
-            if (fs.statSync(dirPath + "/" + file).isDirectory()) {
-                arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles);
-            }
-            else {
-                arrayOfFiles.push(path.join(dirPath.replace('onboarding/dist', ''), "/", file));
-            }
-        });
+        try {
+            const files = fs.readdirSync(dirPath);
+            files.forEach(function (file) {
+                if (fs.statSync(dirPath + "/" + file).isDirectory()) {
+                    arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles);
+                }
+                else {
+                    arrayOfFiles.push(path.join(dirPath.replace('onboarding/dist', ''), "/", file));
+                }
+            });
+        }
+        catch {
+        }
         return arrayOfFiles;
     }
     client.commands = new discord_js_1.Collection();

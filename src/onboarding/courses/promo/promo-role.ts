@@ -1,6 +1,6 @@
 import {Permission} from "../../permission";
 
-class PromoRole {
+export class PromoRole {
   private readonly _id: number;
   private _name: string;
   private _permission: List<Permission> = new List<Permission>();

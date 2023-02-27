@@ -3,27 +3,31 @@ import * as fs from "fs";
 import * as path from 'path';
 import * as dotenv from "dotenv";
 
-export default async (client : any, discord_token?: any, discord_client_id?: any) => {
+export default async (client: any, discord_token?: any, discord_client_id?: any) => {
     dotenv.config();
-    
+
     const commandFiles = getAllFiles('./onboarding/build/commands/')
 
-    function getAllFiles(dirPath : any, arrayOfFiles? : any){
-        const files = fs.readdirSync(dirPath)
+    function getAllFiles(dirPath: any, arrayOfFiles?: any) {
 
         arrayOfFiles = arrayOfFiles || []
-      
-        files.forEach(function(file) {
-          if (fs.statSync(dirPath + "/" + file).isDirectory()) {
-            arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles)
-          } else {
-            arrayOfFiles.push(path.join(dirPath.replace('onboarding/dist', ''), "/", file))
-          }
-        })
-      
+        try {
+
+            const files = fs.readdirSync(dirPath)
+
+
+            files.forEach(function (file) {
+                if (fs.statSync(dirPath + "/" + file).isDirectory()) {
+                    arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles)
+                } else {
+                    arrayOfFiles.push(path.join(dirPath.replace('onboarding/build', ''), "/", file))
+                }
+            })
+
+        } catch { }
         return arrayOfFiles
     }
-    
+
     client.commands = new Collection();
 
     for (const file of commandFiles) {
@@ -33,8 +37,8 @@ export default async (client : any, discord_token?: any, discord_client_id?: any
         client.commands.set(cmd.default.data.name, cmd.default); // Link cmd name to complete module
     }
 
-    if(!discord_token && !discord_client_id){
-        throw new Error('Discord id or token is undefined');  
+    if (!discord_token && !discord_client_id) {
+        throw new Error('Discord id or token is undefined');
 
     }
 
@@ -44,7 +48,7 @@ export default async (client : any, discord_token?: any, discord_client_id?: any
         try {
             console.log('Started refreshing application (/) commands.');
 
-            await rest.put(Routes.applicationCommands(discord_client_id), { body: client.commands.map((x: any) => x.data.toJSON())}); //Logging commands on RESTAPI (for each values in commands, get data.JSON() to register it
+            await rest.put(Routes.applicationCommands(discord_client_id), { body: client.commands.map((x: any) => x.data.toJSON()) }); //Logging commands on RESTAPI (for each values in commands, get data.JSON() to register it
 
             console.log('Successfully reloaded application (/) commands.');
         } catch (error) {

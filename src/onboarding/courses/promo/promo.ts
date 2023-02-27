@@ -1,3 +1,4 @@
+import { PromoRole } from "./promo-role";
 import {PromoCategory} from "../../channels/category/promo-category";
 
 export class Promo {
