@@ -2,6 +2,7 @@ import {Client, Events} from "discord.js";
 import {DiscordClient} from "../client";
 import {GuildsManager} from "../guilds/guilds-manager";
 import {Guild} from "../guilds/guild";
+import {Config} from "../config/config";
 
 
 export default {
@@ -19,8 +20,15 @@ export default {
       const guild = await guildManager.loadGuild(parseInt(element.id));
 
       if(guild === undefined){
-        guildManager.registerGuild(new Guild(
-
+        await guildManager.registerGuild(new Guild(
+          parseInt(element.id),
+          element.name,
+          new Config(
+            0,
+            0,
+            0,
+            0
+          )
         ))
       }
 
