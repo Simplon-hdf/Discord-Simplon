@@ -1,15 +1,27 @@
-import {Client, Events, GuildManager} from "discord.js";
+import {Client, Events} from "discord.js";
 
 
 export default {
   name: Events.ClientReady,
   once: true,
   execute(client: Client) {
-    console.log('Ready! Logged in as ' + client.user?.tag);
+    console.info('Ready! Logged in as ' + client.user?.tag);
 
-    const guild : GuildManager = client.guilds
+    const discordClient: DiscordClient = DiscordClient.getInstance();
 
+    const guildManager: GuildsManager = discordClient.getGuildManager();
 
+    client.guilds.cache.forEach(async (element) => {
+      const guild = await guildManager.loadGuild(parseInt(element.id));
+
+      if(guild === undefined){
+        guildManager.registerGuild(new Guild(
+
+        ))
+      }
+
+      discordClient.destroy();
+    })
 
   }
 }
