@@ -4,17 +4,16 @@ import {HttpUtils} from "../utils/http";
 
 
 export class Promo {
+    private promoUuId: string;
 
-    private codeRequestStatus: boolean;
-
-    constructor(codeRequestStatus: boolean) {
-        this.codeRequestStatus = codeRequestStatus;
+    constructor(promoUuId: string) {
+        this.promoUuId = promoUuId;
     }
 
 
-    getLearners(promoUuid: number): void {
+    getLearners(): void {
         let routes = Routes.GET_USERS_BY_PROMO_ID
-        let learnerList = axios.get( routes + promoUuid )
+        let learnerList = axios.get( routes + this.promoUuId )
             .then( function(response: any) {
                 return response;
             })
@@ -24,9 +23,9 @@ export class Promo {
             })
     }
 
-    getTrainers(promoUuid: number): void {
-        let routes = 'placeholder';//Insert Route
-        let trainerList = axios.get( routes + promoUuid )
+    getTrainers(): void {
+        let routes = 'placeholder'; //Insert Route
+        let trainerList = axios.get( routes + this.promoUuId )
             .then( function(response: any) {
                 return response;
             })
@@ -36,9 +35,9 @@ export class Promo {
             })
     }
 
-    async getCodeRequestStatus(promoUuid: number): Promise<boolean>  {
-        const routes = Routes.GET_CODE_REQUEST_STATUS// Insert Route here
-        const request = new HttpUtils<boolean>().get(routes, promoUuid.toString())
+    async getCodeRequestStatus(): Promise<boolean>  {
+        const routes = Routes.GET_CODE_REQUEST_STATUS // Insert Route here
+        const request = new HttpUtils<boolean>().get(routes, this.promoUuId.toString())
         return request;
     }
 }
