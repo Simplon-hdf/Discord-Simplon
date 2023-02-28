@@ -6,7 +6,7 @@ import * as dotenv from "dotenv";
 export default async (client: any, discord_token?: any, discord_client_id?: any) => {
     dotenv.config();
 
-    const commandFiles = getAllFiles('./onboarding/build/commands/')
+    const commandFiles = getAllFiles('./build/commands/');
 
     function getAllFiles(dirPath: any, arrayOfFiles?: any) {
 
@@ -14,26 +14,25 @@ export default async (client: any, discord_token?: any, discord_client_id?: any)
         try {
 
             const files = fs.readdirSync(dirPath)
-
-
             files.forEach(function (file) {
                 if (fs.statSync(dirPath + "/" + file).isDirectory()) {
                     arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles)
                 } else {
-                    arrayOfFiles.push(path.join(dirPath.replace('onboarding/build', ''), "/", file))
+                    arrayOfFiles.push(path.join("commands/", file));
                 }
             })
 
-        } catch { }
+        } catch (error) {
+            console.log(error);
+
+        }
         return arrayOfFiles
     }
 
     client.commands = new Collection();
 
     for (const file of commandFiles) {
-        // console.log(file);
         const cmd = await import(`../${file}`);
-        //console.log(cmd.default);
         client.commands.set(cmd.default.data.name, cmd.default); // Link cmd name to complete module
     }
 
