@@ -4,6 +4,7 @@ import * as path from "path";
 export default async (client: any) => {
 
   const dirPath = './build/events/';
+
   const eventFiles: [] = getAllFiles(dirPath);
 
 

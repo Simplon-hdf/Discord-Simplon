@@ -46,6 +46,7 @@ exports.default = async (client) => {
         catch (error) {
             console.log(error);
         }
+
         return arrayOfFiles;
     }
     for (const file of eventFiles) {

@@ -46,6 +46,7 @@ exports.default = async (client, discord_token, discord_client_id) => {
         }
         catch (error) {
             console.log(error);
+
         }
         return arrayOfFiles;
     }

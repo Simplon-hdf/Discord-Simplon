@@ -7,13 +7,13 @@ export default async (client: any, discord_token?: any, discord_client_id?: any)
     dotenv.config();
 
     const commandFiles = getAllFiles('./build/commands/');
+
     function getAllFiles(dirPath: any, arrayOfFiles?: any) {
 
         arrayOfFiles = arrayOfFiles || []
         try {
 
             const files = fs.readdirSync(dirPath)
-
             files.forEach(function (file) {
                 if (fs.statSync(dirPath + "/" + file).isDirectory()) {
                     arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles)
