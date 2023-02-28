@@ -7,7 +7,7 @@ import {
     Interaction,
     StringSelectMenuBuilder
 } from "discord.js";
-import {TrainerChannel} from "./channels/learner_channel";
+
 
 export const onInteraction = async (interaction: Interaction) => {
     if (interaction.isCommand()) {

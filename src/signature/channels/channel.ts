@@ -3,22 +3,22 @@ import {YamlParser} from "../utils/parsers/yaml-parser";
 
 export class Channel {
 
-    private readonly _id: number;
-    private readonly _name: string;
+    private readonly _uuid: number;
 
     static YamlConfig = new YamlParser('./config.yml');
 
-    constructor(id: number, name: string) {
-        this._id = id;
-        this._name = name;
+    constructor(id: number) {
+        this._uuid = id;
     }
 
-    get id(): number {
-        return this._id;
+    get uuid(): number {
+        return this._uuid;
     }
 
-    get name(): string {
-        return this._name;
+    SendConfirmation(channelId: number): void {
+        console.log(channelId);
+
+        //TODO: Implement function.
     }
 
 }
