@@ -1,25 +1,36 @@
 import {YamlParser} from "../utils/parsers/yaml-parser";
 
 export class User {
-    private readonly _id: number;
-    private readonly _name: string;
+    protected readonly _Uuid: string;
+    protected _roleUuid: string;
+    protected _promoUuid: string;
 
-    static YamlConfig = new YamlParser('./config.yml');
-
-    constructor(id: number, name: string) {
-        this._id = id;
-        this._name = name;
-
+    constructor(Uuid: string, roleUuId: string, promoUuId: string ) {
+        this._Uuid = Uuid;
+        this._roleUuid = roleUuId;
+        this._promoUuid = promoUuId;
     }
 
-    get id(): number {
-        return this._id;
+    public get id(): string {
+        return this._Uuid;
     }
 
-    get name(): string {
-        return this._name;
+    public get promoUuId(): string {
+        return this._promoUuid;
     }
 
+    public get roleUuId(): string {
+        return this._roleUuid;
+    }
+
+    public set promoUuId(promoUuId: string) {
+        this._promoUuid = promoUuId;
+        // TODO : faire requête POST pour inscrire en BDD
+    }
+
+    public set roleUuId(roleUuId: string) {
+        this._roleUuid = roleUuId;
+    }
 
 
 }

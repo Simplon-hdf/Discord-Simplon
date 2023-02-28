@@ -1,12 +1,14 @@
 import {User} from "./user";
 
 export class Trainer extends User {
-
-    reportForgottenSignature(id: string) {
-        return id;
+    constructor(Uuid: string, roleUuId: string, promoUuId: string ) {
+        super(Uuid, roleUuId, promoUuId);
+    }
+    reportForgottenSignature(learnerUuid: string) {
+        return learnerUuid;
     }
 
-    deactivateCodeRequest(id: string) {
-        return id;
+    deactivateCodeRequest(_promoUuid: string) {
+        return _promoUuid;
     }
 }
