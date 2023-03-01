@@ -1,4 +1,4 @@
-import {Guild} from "./guild";
+import {Guild, IGuild} from "./guild";
 import {HttpUtils} from "../utils/http";
 import {Routes} from "../utils/Routes";
 import {ApiError} from "../utils/exceptions/api-error";
@@ -8,38 +8,29 @@ export class GuildsManager {
 
   private guilds?: Guild;
 
-  async loadGuild(guild_uuid: number) /*: Promise<Guild | undefined> */{
+  async loadGuild(guild_uuid: number): Promise<Guild | undefined> {
 
-      const guildJSON = await new HttpUtils().get(Routes.GET_GUILD, guild_uuid.toString())
-        .catch((err) => {
-            logger.error(err);
-        });
+      const guildJSON = await new HttpUtils().get(Routes.GET_GUILD, guild_uuid.toString());
+      console.log(guildJSON.statusCode)
+      if(guildJSON.statusCode === 409){
+        return undefined;
+      }
+    logger.info("GuildManager => Load guild : " + guild_uuid);
 
-      logger.debug(guildJSON)
+      const {id, name, member_size} = guildJSON;
 
-      // if(guildJSON.statusCode === 409){
-      //   throw new ApiError('Bot try register existing guild');
-      // }
-      //
-      // const {id, name} = guildJSON;
-      //
-      // if(name === '' && id === '') {
-      //   return undefined;
-      // }
-      //
-      // try {
-      //   this.guilds = new Guild(id, name);
-      //   return this.guilds;
-      // }catch (e) {
-      //   throw new ApiError('API response not corresponding with Config class');
-      // }
+      if(name === '' && id === '') {
+        throw new ApiError('Fields is empty on load guild');
+      }
+
+    this.guilds = new Guild(id, name, member_size);
+    return this.guilds;
   }
 
-  async registerGuild(guild: Guild){
-    const guildJSON = await new HttpUtils().post(Routes.GET_GUILD_CONFIG, guild)
-      .catch((err) => {
-          logger.error(err);
-      });
+  async registerGuild(guild: IGuild){
+    const guildJSON = await new HttpUtils().post(Routes.CREATE_GUILD, guild);
+
+    logger.info("GuildManager => Register new guild");
 
     if(guildJSON.statusCode === 409) {
       throw new ApiError('API response is empty on register guild');

@@ -3,6 +3,8 @@ import {Guild} from "../guilds/guild";
 import {Routes} from "./Routes";
 import {ApiError} from './exceptions/api-error'
 import logger from "./logger";
+import {rejects} from "assert";
+import {req} from "pino-std-serializers";
 
 
 export class HttpUtils{
@@ -14,30 +16,29 @@ export class HttpUtils{
   }
 
   async get (route: Routes, args?: string): Promise<any>{
-    return new Promise(async (resolve, reject) => {
+    return new Promise(async (resolve) => {
       const formattedRoute: string = route.replace(/:(\w+)/, (_match, group) => group.replace(/[a-zA-Z]/g, args));
-      const obj = await axios.get(this._urlBase + formattedRoute);
-      try {
-        resolve(JSON.parse(obj.data));
-      }catch (err) {
-        if(err instanceof ApiError) {
-          throw new ApiError('Recieved data is not JSON');
-        }
-        reject('Request error code ' + obj.status + " : " + route.toString());
+      const request = await axios.get(this._urlBase + formattedRoute);
+      if(request.status === 404 || request.status === 500){
+        throw new ApiError('API error on `GET` request. Error : ' + request.status);
       }
+
+      resolve(request.data);
+
     })
   }
 
   async post (route: Routes, data: any, args?: string): Promise<any> {
-    const formattedRoute: string = route.replace(/:(\w+)/, (_match, group) => ":" + group.replace(/[a-zA-Z]/g, args));
-    const request = await axios.post(this._urlBase + formattedRoute, data);
-    logger.error('test');
+    return new Promise(async (resolve) => {
+      const formattedRoute: string = route.replace(/:(\w+)/, (_match, group) => ":" + group.replace(/[a-zA-Z]/g, args));
+      const request = await axios.post(this._urlBase + formattedRoute, data);
 
-    try{
-      return JSON.parse(request.data);
-    }catch (e){
-      throw new ApiError('Request error code ' + request.status);
-    }
+      if(request.status === 404 || request.status === 500){
+        throw new ApiError('API error on `POST` request. Error : ' + request.status);
+      }
+
+      resolve(request.data);
+    })
 
   }
 }

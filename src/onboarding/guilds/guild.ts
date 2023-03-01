@@ -3,32 +3,41 @@ import {YamlParser} from "../utils/parsers/yaml-parser";
 import {Routes} from "../utils/Routes";
 import {HttpUtils} from "../utils/http";
 
-interface IGuild {
-  id: number;
-  name: string;
+export interface IGuild {
+  getGuildUuid(): string;
+  getGuildName(): string;
+  getMemberSize(): number;
+
+
 }
 
-export class Guild {
+export class Guild implements IGuild{
 
-  private readonly _id: number;
-  private readonly _name: string;
+  private readonly guild_uuid: string;
+  private readonly guild_name: string;
+  private member_size: number;
 
 
   static YamlConfig = new YamlParser('./config.yml');
 
   // private readonly _config:
-  constructor(id: number, name: string) {
-    this._id = id;
-    this._name = name;
+  constructor(guild_uuid: string, guild_name: string, member_size: number) {
+    this.guild_uuid = guild_uuid;
+    this.guild_name = guild_name;
+    this.member_size = member_size;
   }
 
 
-  get id(): number {
-    return this._id;
+  getGuildUuid(): string {
+    return this.guild_uuid;
   }
 
-  get name(): string {
-    return this._name;
+  getGuildName(): string {
+    return this.guild_name;
   }
 
+
+  getMemberSize(): number {
+    return this.member_size;
+  }
 }

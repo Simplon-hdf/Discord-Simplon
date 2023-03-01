@@ -1,7 +1,7 @@
 import {Client, Events} from "discord.js";
 import {DiscordClient} from "../client";
 import {GuildsManager} from "../guilds/guilds-manager";
-import {Guild} from "../guilds/guild";
+import {Guild, IGuild} from "../guilds/guild";
 import {Config} from "../config/config";
 
 
@@ -14,14 +14,17 @@ export default {
       const discordClient: DiscordClient = DiscordClient.getInstance();
       const guildManager: GuildsManager = discordClient.getGuildManager();
 
-      await guildManager.loadGuild(parseInt(element.id));
+      const guild = await guildManager.loadGuild(parseInt(element.id));
 
-      // if(guild === undefined){
-      //   await guildManager.registerGuild(new Guild(
-      //     parseInt(element.id),
-      //     element.name
-      //   ))
-      // }
+      if(guild === undefined){
+        console.log(guild);
+        const newGuild: IGuild = new Guild(
+          element.id,
+          element.name,
+          element.memberCount
+        )
+        await guildManager.registerGuild(newGuild);
+      }
 
       discordClient.destroy();
     })
