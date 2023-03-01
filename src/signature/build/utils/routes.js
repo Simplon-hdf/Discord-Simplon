@@ -5,4 +5,5 @@ var Routes;
 (function (Routes) {
     Routes["GET_USER_BY_ID"] = "/api/guilds/config";
     Routes["GET_USERS_BY_PROMO_ID"] = "/api/signature/find/promo/";
+    Routes["GET_CODE_REQUEST_STATUS"] = "placeholder";
 })(Routes = exports.Routes || (exports.Routes = {}));

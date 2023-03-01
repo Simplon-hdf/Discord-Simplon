@@ -1,6 +1,6 @@
 import MessageEmbed, {ColorResolvable, EmbedBuilder} from 'discord.js'
 
-class EmbedBuilderClass {
+export class EmbedBuilderClass {
     private readonly embed: EmbedBuilder;
 
     constructor() {

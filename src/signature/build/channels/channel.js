@@ -3,18 +3,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Channel = void 0;
 const yaml_parser_1 = require("../utils/parsers/yaml-parser");
 class Channel {
-    _id;
-    _name;
+    _uuid;
     static YamlConfig = new yaml_parser_1.YamlParser('./config.yml');
-    constructor(id, name) {
-        this._id = id;
-        this._name = name;
+    constructor(id) {
+        this._uuid = id;
     }
-    get id() {
-        return this._id;
+    get uuid() {
+        return this._uuid;
     }
-    get name() {
-        return this._name;
+    SendConfirmation(channelId) {
+        console.log(channelId);
+        //TODO: Implement function.
     }
 }
 exports.Channel = Channel;

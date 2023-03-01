@@ -1,6 +1,6 @@
 import {ButtonBuilder, ButtonStyle} from 'discord.js';
 
-class ButtonBuilderClass {
+export class ButtonBuilderClass {
     private readonly button: ButtonBuilder
 
     constructor() {

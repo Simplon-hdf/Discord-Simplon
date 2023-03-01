@@ -7,6 +7,10 @@ import {
     Interaction,
     StringSelectMenuBuilder
 } from "discord.js";
+import {ButtonBuilderClass} from "./discord-builders/button-builder";
+import {EmbedBuilderClass} from "./discord-builders/embed-builder";
+import {Promo} from "./promo/promo";
+import {Trainer} from "./users/trainer";
 
 
 export const onInteraction = async (interaction: Interaction) => {
@@ -39,6 +43,38 @@ export const onInteraction = async (interaction: Interaction) => {
         if (member) {
             const roles = member.roles.cache
             if (trainerRole) {
+
+                let trainer = new Trainer(interaction.member?.user.id ?? '', interaction.member?.roles.toString() ?? '1064925613120557196')
+
+                let trainerPromos = trainer.getPromoUuId();
+
+                const selectPromosEmbed = new EmbedBuilder()
+                    .setColor(0x0099ff)
+                    .setTitle("Sélection des apprenants pour Rappel")
+                    .setDescription(
+                        `\n\n Bonjour ${interaction.member?.user.username}, \n\n Veuillez sélectionner les apprenants à qui il faut rappeler de signer dans la liste de sélection ci-dessous.`
+                    )
+                    .setThumbnail(
+                        "https://cdn-icons-png.flaticon.com/512/4489/4489772.png"
+                    );
+
+                const selectPromoRow = new ActionRowBuilder<StringSelectMenuBuilder>().addComponents(
+                    new StringSelectMenuBuilder()
+                        .setCustomId('select_promo')
+                        .setPlaceholder('Aucune promotion n\'est actuellement selectionnée')
+                        .setMinValues(1)
+                        //.setMaxValues()
+                        .addOptions({label: "test", value: "test"})
+                )
+                await interaction.reply({
+                    embeds: [selectPromosEmbed],
+                    components: [selectPromoRow],
+                    ephemeral: true,
+                });
+            } if (interaction.isAnySelectMenu()) {
+                let promoUuid = interaction.
+                    let promo = new Promo();
+
                 const embedReminder = new EmbedBuilder()
                     .setColor(0x0099ff)
                     .setTitle("Sélection des apprenants pour Rappel")
@@ -49,10 +85,7 @@ export const onInteraction = async (interaction: Interaction) => {
                         "https://cdn-icons-png.flaticon.com/512/4489/4489772.png"
                     );
 
-
-                // TODO : define TrainerChannel object.
-
-                const row = new ActionRowBuilder<StringSelectMenuBuilder>().addComponents(
+                const selectLearnersRow = new ActionRowBuilder<StringSelectMenuBuilder>().addComponents(
                     new StringSelectMenuBuilder()
                         .setCustomId("select_learners")
                         .setPlaceholder("Aucune réponse n'est actuellement sélectionnée !")
@@ -78,11 +111,13 @@ export const onInteraction = async (interaction: Interaction) => {
                 )
                 await interaction.reply({
                     embeds: [embedReminder],
-                    components: [row],
+                    components: [selectLearnersRow],
                     ephemeral: true,
                 });
             }
         }
+    } if (interaction.isAnySelectMenu()) {
+
     }
 
 };

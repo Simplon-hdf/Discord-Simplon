@@ -11,10 +11,10 @@ class HttpUtils {
     constructor() {
         this._urlBase = guild_1.Guild.YamlConfig.get()['api-route-url'];
     }
-    async get(route) {
-        const obj = await axios_1.default.get(this._urlBase + route);
+    async get(route, args) {
+        const obj = args === undefined ? await axios_1.default.get(this._urlBase + route) : await axios_1.default.get(this._urlBase + route + '/' + args);
         try {
-            return obj;
+            return obj.data;
         }
         catch (Exception) {
             throw new Error('Object not corresponds to request');
