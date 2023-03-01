@@ -15,7 +15,7 @@ export class GuildsManager {
             logger.error(err);
         });
 
-      console.log(guildJSON)
+      logger.debug(guildJSON)
 
       // if(guildJSON.statusCode === 409){
       //   throw new ApiError('Bot try register existing guild');

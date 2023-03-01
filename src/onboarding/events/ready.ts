@@ -14,14 +14,14 @@ export default {
       const discordClient: DiscordClient = DiscordClient.getInstance();
       const guildManager: GuildsManager = discordClient.getGuildManager();
 
-      const guild = await guildManager.loadGuild(parseInt(element.id));
+      await guildManager.loadGuild(parseInt(element.id));
 
-      if(guild === undefined){
-        await guildManager.registerGuild(new Guild(
-          parseInt(element.id),
-          element.name
-        ))
-      }
+      // if(guild === undefined){
+      //   await guildManager.registerGuild(new Guild(
+      //     parseInt(element.id),
+      //     element.name
+      //   ))
+      // }
 
       discordClient.destroy();
     })
