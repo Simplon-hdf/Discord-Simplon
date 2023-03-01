@@ -10,9 +10,6 @@ export default {
   once: true,
   execute(client: Client) {
     console.info('Ready! Logged in as ' + client.user?.tag);
-
-
-
     client.guilds.cache.forEach(async (element) => {
       const discordClient: DiscordClient = DiscordClient.getInstance();
       const guildManager: GuildsManager = discordClient.getGuildManager();
@@ -22,13 +19,7 @@ export default {
       if(guild === undefined){
         await guildManager.registerGuild(new Guild(
           parseInt(element.id),
-          element.name,
-          new Config(
-            0,
-            0,
-            0,
-            0
-          )
+          element.name
         ))
       }
 

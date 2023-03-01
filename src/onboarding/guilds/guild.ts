@@ -3,20 +3,23 @@ import {YamlParser} from "../utils/parsers/yaml-parser";
 import {Routes} from "../utils/Routes";
 import {HttpUtils} from "../utils/http";
 
+interface IGuild {
+  id: number;
+  name: string;
+}
+
 export class Guild {
 
   private readonly _id: number;
   private readonly _name: string;
 
-  private readonly _config: IConfig;
 
   static YamlConfig = new YamlParser('./config.yml');
 
   // private readonly _config:
-  constructor(id: number, name: string, config: IConfig) {
+  constructor(id: number, name: string) {
     this._id = id;
     this._name = name;
-    this._config = config;
   }
 
 
@@ -26,10 +29,6 @@ export class Guild {
 
   get name(): string {
     return this._name;
-  }
-
-  get config(): IConfig {
-    return this._config;
   }
 
 }

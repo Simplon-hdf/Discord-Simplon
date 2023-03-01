@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc --project tsconfig.json"
+    "build": "tsc --project tsconfig.json",
+    "build:start": "tsc --project tsconfig.json && node build/index.js | pino-pretty -c"
   },
   "author": "",
   "license": "ISC",
@@ -13,9 +14,11 @@
     "discord.js": "^14.7.1",
     "dotenv": "^16.0.3",
     "eslint": "^8.35.0",
+    "pino": "^8.11.0",
     "yaml": "^2.2.1"
   },
   "devDependencies": {
+    "pino-pretty": "^9.4.0",
     "typescript": "^4.9.5"
   }
 }

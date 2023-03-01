@@ -6,7 +6,7 @@ import * as dotenv from "dotenv";
 export default async (client : any, discord_token?: any, discord_client_id?: any) => {
     dotenv.config();
     
-    const commandFiles = getAllFiles('./onboarding/build/commands/')
+    const commandFiles = getAllFiles('./build/commands/')
 
     function getAllFiles(dirPath : any, arrayOfFiles? : any){
         const files = fs.readdirSync(dirPath)
@@ -17,7 +17,7 @@ export default async (client : any, discord_token?: any, discord_client_id?: any
           if (fs.statSync(dirPath + "/" + file).isDirectory()) {
             arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles)
           } else {
-            arrayOfFiles.push(path.join(dirPath.replace('onboarding/dist', ''), "/", file))
+            arrayOfFiles.push(path.join("commands/", file))
           }
         })
       
