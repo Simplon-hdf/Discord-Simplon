@@ -1,12 +1,12 @@
 export enum Routes {
-    GET_USER_BY_ID = '/api/guilds/config',
-    GET_USERS_BY_PROMO_ID  = '/api/signature/find/promo/',
+    GET_USER_BY_ID = '/guilds/config/',
+    GET_USERS_BY_PROMO_ID  = '/signature/find/promo/:uuid',
 
     GET_CODE_REQUEST_STATUS = 'placeholder',
 
-    GET_PROMO_BY_USER_ID = '/find/promo/trainer/',
+    GET_PROMO_BY_USER_ID = '/signature/find/promo/trainer/:uuid',
 
-    GET_ROLE_BY_USER_ID = '/find/role/user/',
+    GET_ROLE_BY_USER_ID = '/find/role/user/:uuid',
 
     GET_ROLE = 'placeholder',
 }

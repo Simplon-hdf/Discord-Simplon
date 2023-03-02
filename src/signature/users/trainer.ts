@@ -1,6 +1,6 @@
 import {User} from "./user";
 import {Routes} from "../utils/routes";
-import axios from "axios";
+import {HttpUtils} from "../utils/http";
 
 export class Trainer extends User {
     constructor(Uuid: string) {
@@ -14,17 +14,12 @@ export class Trainer extends User {
         return _promoUuid;
     }
 
-    getTrainerPromos(): any {
+    async getTrainerPromos(): Promise<any> {
         const routes = Routes.GET_PROMO_BY_USER_ID;
 
-        let learnerList = axios.get( routes + this._Uuid)
-            .then( function(response: any) {
-                return response;
-            })
-            .catch(function(error) {
-                console.log('No learners found');
-                return error.message;
-            })
+        const promoList =  await new HttpUtils().get(Routes.GET_PROMO_BY_USER_ID, this._Uuid)
+
+        console.log(promoList.data);
     }
 
 }

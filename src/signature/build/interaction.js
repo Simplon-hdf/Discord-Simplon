@@ -24,8 +24,7 @@ const onInteraction = async (interaction) => {
         const trainer = new trainer_1.Trainer(trainerId);
         const memberRole = interaction.memberPermissions?.has(discord_js_1.PermissionsBitField.Flags.SendMessages);
         if (memberRole === true) {
-            let trainerPromos = trainer.getTrainerPromos();
-            console.log(trainerPromos);
+            let trainerPromos = await trainer.getTrainerPromos();
             const selectPromosEmbed = new discord_js_1.EmbedBuilder()
                 .setColor(0x0099ff)
                 .setTitle("Sélection de la promo pour Rappel")

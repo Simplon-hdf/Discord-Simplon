@@ -35,9 +35,9 @@ export class Promo {
             })
     }
 
-    async getCodeRequestStatus(): Promise<boolean>  {
+    /*async getCodeRequestStatus(): Promise<boolean>  {
         const routes = Routes.GET_CODE_REQUEST_STATUS // Insert Route here
         const request = new HttpUtils<boolean>().get(routes, this.promoUuId.toString())
         return request;
-    }
+    }*/
 }

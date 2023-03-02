@@ -1,7 +1,6 @@
 import {YamlParser} from "./utils/parsers/yaml-parser";
 import {Routes} from "./utils/routes";
 import {HttpUtils} from "./utils/http";
-import axios from "axios/index";
 
 export class Guild {
 
@@ -27,7 +26,7 @@ export class Guild {
         const routes = Routes.GET_ROLE;
 
 
-        let roleList = axios.get( routes + this._id)
+        /*let roleList = axios.get( routes + this._id)
             .then( function(response: any) {
                 return response;
             })
@@ -35,6 +34,6 @@ export class Guild {
                 console.log('No learners found');
                 return error.message;
             })
-    }
+    }*/
 
-}
+}}

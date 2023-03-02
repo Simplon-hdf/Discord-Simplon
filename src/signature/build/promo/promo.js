@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Promo = void 0;
 const routes_1 = require("../utils/routes");
 const index_1 = __importDefault(require("axios/index"));
-const http_1 = require("../utils/http");
 class Promo {
     promoUuId;
     constructor(promoUuId) {
@@ -33,11 +32,6 @@ class Promo {
             console.log('No trainers found');
             return error.message;
         });
-    }
-    async getCodeRequestStatus() {
-        const routes = routes_1.Routes.GET_CODE_REQUEST_STATUS; // Insert Route here
-        const request = new http_1.HttpUtils().get(routes, this.promoUuId.toString());
-        return request;
     }
 }
 exports.Promo = Promo;

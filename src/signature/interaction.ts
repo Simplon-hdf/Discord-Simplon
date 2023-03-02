@@ -39,15 +39,16 @@ export const onInteraction = async (interaction: Interaction) => {
 
             let user;
             const trainerId = interaction.user.id;
-            console.log(trainerId);
+
             const trainer = new Trainer(trainerId);
 
             const memberRole= interaction.memberPermissions?.has(PermissionsBitField.Flags.SendMessages);
 
 
             if (memberRole === true) {
-                console.log(trainer.id)
-                let trainerPromos = trainer.getTrainerPromos();
+                let trainerPromos = await trainer.getTrainerPromos();
+
+
 
                 const selectPromosEmbed = new EmbedBuilder()
                     .setColor(0x0099ff)
