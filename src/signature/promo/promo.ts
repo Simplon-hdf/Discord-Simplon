@@ -11,7 +11,7 @@ export class Promo {
     }
 
 
-    getLearners(): void {
+    /*getLearners(): void {
         let routes = Routes.GET_USERS_BY_PROMO_ID
         let learnerList = axios.get( routes + this.promoUuId )
             .then( function(response: any) {
@@ -21,9 +21,9 @@ export class Promo {
                 console.log('No learners found');
                 return error.message;
             })
-    }
+    }*/
 
-    getTrainers(): void {
+    /*getTrainers(): void {
         let routes = 'placeholder'; //Insert Route
         let trainerList = axios.get( routes + this.promoUuId )
             .then( function(response: any) {
@@ -33,7 +33,7 @@ export class Promo {
                 console.log('No trainers found');
                 return error.message;
             })
-    }
+    }*/
 
     /*async getCodeRequestStatus(): Promise<boolean>  {
         const routes = Routes.GET_CODE_REQUEST_STATUS // Insert Route here

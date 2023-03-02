@@ -18,8 +18,14 @@ export class Trainer extends User {
         const routes = Routes.GET_PROMO_BY_USER_ID;
 
         const promoList =  await new HttpUtils().get(Routes.GET_PROMO_BY_USER_ID, this._Uuid)
+        try {
+            return promoList.data;
+        }
+        catch (error) {
+            console.log(promoList.error.message)
+            return 'fail'
+        }
 
-        console.log(promoList.data);
     }
 
 }

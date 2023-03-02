@@ -37,7 +37,7 @@ export const onInteraction = async (interaction: Interaction) => {
         }
     } if (interaction.isButton()){
 
-            let user;
+
             const trainerId = interaction.user.id;
 
             const trainer = new Trainer(trainerId);
@@ -48,7 +48,21 @@ export const onInteraction = async (interaction: Interaction) => {
             if (memberRole === true) {
                 let trainerPromos = await trainer.getTrainerPromos();
 
+                /*let promoNames: string[] = []
+                trainerPromos.forEach(((promo: { roles: { role_name: any; }; }) => promoNames.push(promo.roles.role_name)));
 
+                let promoIds: string[] = [];
+                trainerPromos.forEach((promo: { id: string; }) => promoIds.push(promo.id))*/
+
+                let promoList: { id: any; name: any; }[] = []
+                trainerPromos.forEach((promo: { id: any; roles: { role_name: any; }; }) => {
+                    promoList.push({
+                        "id": promo.id,
+                        "name": promo.roles.role_name
+                    })
+                })
+
+                console.log(promoList);
 
                 const selectPromosEmbed = new EmbedBuilder()
                     .setColor(0x0099ff)
@@ -60,19 +74,32 @@ export const onInteraction = async (interaction: Interaction) => {
                         "https://cdn-icons-png.flaticon.com/512/4489/4489772.png"
                     );
 
-                const selectPromoRow = new ActionRowBuilder<StringSelectMenuBuilder>().addComponents(
+                /*const selectPromoRow = new ActionRowBuilder<StringSelectMenuBuilder>().addComponents(
                     new StringSelectMenuBuilder()
                         .setCustomId('select_promo')
                         .setPlaceholder('Aucune promotion n\'est actuellement selectionnée')
                         .setMinValues(1)
-                        //.setMaxValues()
-                        .addOptions({label: "test", value: "test"})
-                )
-                await interaction.reply({
+                        .setMaxValues(promoNames.length)
+                        .addOptions(promoList.map((learner) => {
+                            return {
+                                label: `[${learner.firstname} ${learner.lastname}]`,
+                                description: `Promotion: ${
+                                    
+                                }`,
+                                value: `${learner.discord_id}, ${learner.firstname}, ${
+                                    learner.lastname
+                                }, ${
+                                    interaction.guild.roles.cache.get(learner.roles).name
+                                }, ${interaction.member.displayName}`,
+                            };
+                        })
+                ))*/
+
+               /* await interaction.reply({
                     embeds: [selectPromosEmbed],
                     components: [selectPromoRow],
                     ephemeral: true,
-                });
+                });*/
             } if (interaction.isAnySelectMenu()) {
                 /*let promoUuid = interaction.
                     let promo = new Promo();*/

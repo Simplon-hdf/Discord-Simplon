@@ -19,28 +19,54 @@ const onInteraction = async (interaction) => {
         }
     }
     if (interaction.isButton()) {
-        let user;
         const trainerId = interaction.user.id;
         const trainer = new trainer_1.Trainer(trainerId);
         const memberRole = interaction.memberPermissions?.has(discord_js_1.PermissionsBitField.Flags.SendMessages);
         if (memberRole === true) {
             let trainerPromos = await trainer.getTrainerPromos();
+            /*let promoNames: string[] = []
+            trainerPromos.forEach(((promo: { roles: { role_name: any; }; }) => promoNames.push(promo.roles.role_name)));
+
+            let promoIds: string[] = [];
+            trainerPromos.forEach((promo: { id: string; }) => promoIds.push(promo.id))*/
+            let promoList = [];
+            trainerPromos.forEach((promo) => {
+                promoList.push({
+                    "id": promo.id,
+                    "name": promo.roles.role_name
+                });
+            });
+            console.log(promoList);
             const selectPromosEmbed = new discord_js_1.EmbedBuilder()
                 .setColor(0x0099ff)
                 .setTitle("Sélection de la promo pour Rappel")
                 .setDescription(`\n\n Bonjour ${interaction.member?.user.username}, \n\n Veuillez sélectionner les apprenants à qui il faut rappeler de signer dans la liste de sélection ci-dessous.`)
                 .setThumbnail("https://cdn-icons-png.flaticon.com/512/4489/4489772.png");
-            const selectPromoRow = new discord_js_1.ActionRowBuilder().addComponents(new discord_js_1.StringSelectMenuBuilder()
-                .setCustomId('select_promo')
-                .setPlaceholder('Aucune promotion n\'est actuellement selectionnée')
-                .setMinValues(1)
-                //.setMaxValues()
-                .addOptions({ label: "test", value: "test" }));
-            await interaction.reply({
-                embeds: [selectPromosEmbed],
-                components: [selectPromoRow],
-                ephemeral: true,
-            });
+            /*const selectPromoRow = new ActionRowBuilder<StringSelectMenuBuilder>().addComponents(
+                new StringSelectMenuBuilder()
+                    .setCustomId('select_promo')
+                    .setPlaceholder('Aucune promotion n\'est actuellement selectionnée')
+                    .setMinValues(1)
+                    .setMaxValues(promoNames.length)
+                    .addOptions(promoList.map((learner) => {
+                        return {
+                            label: `[${learner.firstname} ${learner.lastname}]`,
+                            description: `Promotion: ${
+                                
+                            }`,
+                            value: `${learner.discord_id}, ${learner.firstname}, ${
+                                learner.lastname
+                            }, ${
+                                interaction.guild.roles.cache.get(learner.roles).name
+                            }, ${interaction.member.displayName}`,
+                        };
+                    })
+            ))*/
+            /* await interaction.reply({
+                 embeds: [selectPromosEmbed],
+                 components: [selectPromoRow],
+                 ephemeral: true,
+             });*/
         }
         if (interaction.isAnySelectMenu()) {
             /*let promoUuid = interaction.
