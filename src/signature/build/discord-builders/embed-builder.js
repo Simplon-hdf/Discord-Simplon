@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.EmbedBuilderClass = void 0;
 const discord_js_1 = require("discord.js");
 class EmbedBuilderClass {
     embed;
@@ -38,6 +39,7 @@ class EmbedBuilderClass {
         return this.embed;
     }
 }
+exports.EmbedBuilderClass = EmbedBuilderClass;
 // How to use : const embed = new EmbedBuilder()
 //   .setTitle('Titre de l\'embed')
 //   .setDescription('Description de l\'embed')

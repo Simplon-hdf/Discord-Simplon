@@ -4,5 +4,9 @@ export enum Routes {
 
     GET_CODE_REQUEST_STATUS = 'placeholder',
 
-    GET_PROMO_BY_USER_ID = 'placeholder',
+    GET_PROMO_BY_USER_ID = '/find/promo/trainer/',
+
+    GET_ROLE_BY_USER_ID = '/find/role/user/',
+
+    GET_ROLE = 'placeholder',
 }

@@ -4,11 +4,9 @@ import axios from "axios";
 
 export class User {
     protected readonly _Uuid: string;
-    protected _roleUuid: string;
 
-    constructor(Uuid: string, roleUuId: string) {
+    constructor(Uuid: string) {
         this._Uuid = Uuid;
-        this._roleUuid = roleUuId;
 
     }
 
@@ -16,9 +14,16 @@ export class User {
         return this._Uuid;
     }
 
-    public getPromoUuId(): any {
-        let routes = Routes.GET_PROMO_BY_USER_ID;
-        let learnerList = axios.get( routes + this._Uuid)
+
+    /*public set promoUuId(promoUuId: string) {
+        this._promoUuid = promoUuId;
+        // TODO : faire requête POST pour inscrire en BDD
+    }*/
+
+    getRoles(): any {
+        const routes = Routes.GET_ROLE_BY_USER_ID;
+
+        let roleList = axios.get( routes + this._Uuid)
             .then( function(response: any) {
                 return response;
             })
@@ -27,20 +32,5 @@ export class User {
                 return error.message;
             })
     }
-
-
-    public get roleUuId(): string {
-        return this._roleUuid;
-    }
-
-    /*public set promoUuId(promoUuId: string) {
-        this._promoUuid = promoUuId;
-        // TODO : faire requête POST pour inscrire en BDD
-    }*/
-
-    public set roleUuId(roleUuId: string) {
-        this._roleUuid = roleUuId;
-    }
-
 
 }

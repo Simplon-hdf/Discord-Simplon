@@ -1,30 +1,33 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.User = void 0;
+const routes_1 = require("../utils/routes");
+const axios_1 = __importDefault(require("axios"));
 class User {
     _Uuid;
-    _roleUuid;
-    _promoUuid;
-    constructor(Uuid, roleUuId, promoUuId) {
+    constructor(Uuid) {
         this._Uuid = Uuid;
-        this._roleUuid = roleUuId;
-        this._promoUuid = promoUuId;
     }
     get id() {
         return this._Uuid;
     }
-    get promoUuId() {
-        return this._promoUuid;
-    }
-    get roleUuId() {
-        return this._roleUuid;
-    }
-    set promoUuId(promoUuId) {
+    /*public set promoUuId(promoUuId: string) {
         this._promoUuid = promoUuId;
         // TODO : faire requête POST pour inscrire en BDD
-    }
-    set roleUuId(roleUuId) {
-        this._roleUuid = roleUuId;
+    }*/
+    getRoles() {
+        const routes = routes_1.Routes.GET_ROLE_BY_USER_ID;
+        let roleList = axios_1.default.get(routes + this._Uuid)
+            .then(function (response) {
+            return response;
+        })
+            .catch(function (error) {
+            console.log('No learners found');
+            return error.message;
+        });
     }
 }
 exports.User = User;

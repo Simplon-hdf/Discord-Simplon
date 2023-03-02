@@ -1,11 +1,11 @@
 import {YamlParser} from "./utils/parsers/yaml-parser";
 import {Routes} from "./utils/routes";
 import {HttpUtils} from "./utils/http";
+import axios from "axios/index";
 
 export class Guild {
 
-    private readonly _id: number;
-    private readonly _name: string;
+    private readonly _id: string;
 
 // Ajouter les méthodes :
     // - SendPrivateMessage(id): void
@@ -15,18 +15,26 @@ export class Guild {
     static YamlConfig = new YamlParser('./config.yml');
 
     // private readonly _config:
-    constructor(id: number, name: string) {
+    constructor(id: string) {
         this._id = id;
-        this._name = name;
-
     }
 
-    get id(): number {
+    get id(): string {
         return this._id;
     }
 
-    get name(): string {
-        return this._name;
+    getTrainerRole(): any {
+        const routes = Routes.GET_ROLE;
+
+
+        let roleList = axios.get( routes + this._id)
+            .then( function(response: any) {
+                return response;
+            })
+            .catch(function(error) {
+                console.log('No learners found');
+                return error.message;
+            })
     }
 
 }

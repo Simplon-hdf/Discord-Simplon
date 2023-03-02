@@ -4,13 +4,14 @@ import {
     ButtonStyle,
     EmbedBuilder,
     GuildMember,
-    Interaction,
+    Interaction, PermissionsBitField,
     StringSelectMenuBuilder
 } from "discord.js";
 import {ButtonBuilderClass} from "./discord-builders/button-builder";
 import {EmbedBuilderClass} from "./discord-builders/embed-builder";
 import {Promo} from "./promo/promo";
 import {Trainer} from "./users/trainer";
+import {Guild} from "./guild";
 
 
 export const onInteraction = async (interaction: Interaction) => {
@@ -35,22 +36,22 @@ export const onInteraction = async (interaction: Interaction) => {
             await interaction.reply({embeds: [beginProcedure], components: [row]});
         }
     } if (interaction.isButton()){
-        const guild = interaction.guild;
-        const trainerRole = guild?.roles.cache.has('1064925613120557196');
 
-        const member = interaction.member as GuildMember;
+            let user;
+            const trainerId = interaction.user.id;
+            console.log(trainerId);
+            const trainer = new Trainer(trainerId);
 
-        if (member) {
-            const roles = member.roles.cache
-            if (trainerRole) {
+            const memberRole= interaction.memberPermissions?.has(PermissionsBitField.Flags.SendMessages);
 
-                let trainer = new Trainer(interaction.member?.user.id ?? '', interaction.member?.roles.toString() ?? '1064925613120557196')
 
-                let trainerPromos = trainer.getPromoUuId();
+            if (memberRole === true) {
+                console.log(trainer.id)
+                let trainerPromos = trainer.getTrainerPromos();
 
                 const selectPromosEmbed = new EmbedBuilder()
                     .setColor(0x0099ff)
-                    .setTitle("Sélection des apprenants pour Rappel")
+                    .setTitle("Sélection de la promo pour Rappel")
                     .setDescription(
                         `\n\n Bonjour ${interaction.member?.user.username}, \n\n Veuillez sélectionner les apprenants à qui il faut rappeler de signer dans la liste de sélection ci-dessous.`
                     )
@@ -72,14 +73,14 @@ export const onInteraction = async (interaction: Interaction) => {
                     ephemeral: true,
                 });
             } if (interaction.isAnySelectMenu()) {
-                let promoUuid = interaction.
-                    let promo = new Promo();
+                /*let promoUuid = interaction.
+                    let promo = new Promo();*/
 
                 const embedReminder = new EmbedBuilder()
                     .setColor(0x0099ff)
                     .setTitle("Sélection des apprenants pour Rappel")
                     .setDescription(
-                        `\n\n Bonjour ${interaction.member?.user.username}, \n\n Veuillez sélectionner les apprenants à qui il faut rappeler de signer dans la liste de sélection ci-dessous.`
+                        `\n\n Bonjour, \n\n Veuillez sélectionner les apprenants à qui il faut rappeler de signer dans la liste de sélection ci-dessous.`
                     )
                     .setThumbnail(
                         "https://cdn-icons-png.flaticon.com/512/4489/4489772.png"
@@ -109,15 +110,21 @@ export const onInteraction = async (interaction: Interaction) => {
                                 };
                             }*/)
                 )
-                await interaction.reply({
-                    embeds: [embedReminder],
-                    components: [selectLearnersRow],
-                    ephemeral: true,
-                });
-            }
-        }
-    } if (interaction.isAnySelectMenu()) {
+                /* await interaction.reply({
+                     embeds: [embedReminder],
+                     components: [selectLearnersRow],
+                     ephemeral: true,
+                 });*/
 
-    }
+
+        }
+
+
+
+
+
+    } /*if (interaction.isAnySelectMenu()) {
+
+    }*/
 
 };

@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ButtonBuilderClass = void 0;
 const discord_js_1 = require("discord.js");
 class ButtonBuilderClass {
     button;
@@ -34,3 +35,4 @@ class ButtonBuilderClass {
         return this.button;
     }
 }
+exports.ButtonBuilderClass = ButtonBuilderClass;
