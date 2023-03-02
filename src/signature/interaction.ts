@@ -42,7 +42,7 @@ export const onInteraction = async (interaction: Interaction) => {
 
             const trainer = new Trainer(trainerId);
 
-            const memberRole= interaction.memberPermissions?.has(PermissionsBitField.Flags.SendMessages);
+            const memberRole= await interaction.memberPermissions?.has(PermissionsBitField.Flags.SendMessages);
 
 
             if (memberRole === true) {
@@ -74,32 +74,27 @@ export const onInteraction = async (interaction: Interaction) => {
                         "https://cdn-icons-png.flaticon.com/512/4489/4489772.png"
                     );
 
-                /*const selectPromoRow = new ActionRowBuilder<StringSelectMenuBuilder>().addComponents(
+                const selectPromoRow = new ActionRowBuilder<StringSelectMenuBuilder>().addComponents(
                     new StringSelectMenuBuilder()
                         .setCustomId('select_promo')
                         .setPlaceholder('Aucune promotion n\'est actuellement selectionnée')
                         .setMinValues(1)
-                        .setMaxValues(promoNames.length)
+                        .setMaxValues(promoList.length)
                         .addOptions(promoList.map((learner) => {
                             return {
-                                label: `[${learner.firstname} ${learner.lastname}]`,
-                                description: `Promotion: ${
-                                    
+                                label: `[${learner.name}]`,
+                                description: `Envoyer un rappel aux apprenants de ${learner.name
                                 }`,
-                                value: `${learner.discord_id}, ${learner.firstname}, ${
-                                    learner.lastname
-                                }, ${
-                                    interaction.guild.roles.cache.get(learner.roles).name
-                                }, ${interaction.member.displayName}`,
+                                value: `${learner.id}`,
                             };
                         })
-                ))*/
-
-               /* await interaction.reply({
+                ))
+                await interaction.reply({
                     embeds: [selectPromosEmbed],
                     components: [selectPromoRow],
                     ephemeral: true,
-                });*/
+                });
+
             } if (interaction.isAnySelectMenu()) {
                 /*let promoUuid = interaction.
                     let promo = new Promo();*/
