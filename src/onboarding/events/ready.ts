@@ -14,10 +14,9 @@ export default {
       const discordClient: DiscordClient = DiscordClient.getInstance();
       const guildManager: GuildsManager = discordClient.getGuildManager();
 
-      const guild = await guildManager.loadGuild(parseInt(element.id));
+      const guild = await guildManager.loadGuild(element.id);
 
       if(guild === undefined){
-        console.log(guild);
         const newGuild: IGuild = new Guild(
           element.id,
           element.name,

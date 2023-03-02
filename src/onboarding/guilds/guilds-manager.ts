@@ -8,14 +8,13 @@ export class GuildsManager {
 
   private guilds?: Guild;
 
-  async loadGuild(guild_uuid: number): Promise<Guild | undefined> {
+  async loadGuild(guild_uuid: string): Promise<Guild | undefined> {
 
-      const guildJSON = await new HttpUtils().get(Routes.GET_GUILD, guild_uuid.toString());
-      console.log(guildJSON.statusCode)
+      const guildJSON = await new HttpUtils().get(Routes.GET_GUILD, guild_uuid);
       if(guildJSON.statusCode === 409){
         return undefined;
       }
-    logger.info("GuildManager => Load guild : " + guild_uuid);
+      logger.info("GuildManager => Load guild : " + guild_uuid);
 
       const {id, name, member_size} = guildJSON;
 
