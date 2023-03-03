@@ -18,24 +18,6 @@ import {Learner} from "./users/learner";
 export const onInteraction = async (interaction: Interaction) => {
 
     if (interaction.isCommand()) {
-        if (interaction.commandName === 'active') {
-            const beginProcedure = new EmbedBuilder()
-                .setColor(0x0099ff)
-                .setTitle("Commencer la procédure de rappel de signature")
-                .setDescription(
-                    `\n\n Bonjour ${interaction.member?.user.username}, \n\n pour commencer la procédure de rappel de signature veuillez cliquer sur le bouton ci-dessous.`
-                )
-                .setThumbnail(
-                    "https://cdn-icons-png.flaticon.com/512/4489/4489772.png"
-                );
-            const row = new ActionRowBuilder<ButtonBuilder>().addComponents(
-                new ButtonBuilder()
-                    .setCustomId("start")
-                    .setLabel("Commencer la procédure !")
-                    .setStyle(ButtonStyle.Success)
-            );
-            await interaction.reply({embeds: [beginProcedure], components: [row]});
-        }
 
     } if (interaction.isButton()){
             const trainerId = interaction.user.id;

@@ -18,9 +18,12 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBit
 command_handler(client, DISCORD_TOKEN, DISCORD_ID);
 event_handler(client);
 
-client.on(
-    "interactionCreate",
-    async (interaction: Interaction) => await onInteraction(interaction)
-);
+
+client.on(Events.InteractionCreate, async (interaction : Interaction) => {
+    if(!interaction.isChatInputCommand()) return;
+    const parsedClient : any = client;
+    const command = parsedClient.commands.get(interaction['commandName']);
+    await command.execute(interaction);
+});
 
 client.login(DISCORD_TOKEN);

@@ -6,18 +6,6 @@ const promo_1 = require("./promo/promo");
 const trainer_1 = require("./users/trainer");
 const onInteraction = async (interaction) => {
     if (interaction.isCommand()) {
-        if (interaction.commandName === 'active') {
-            const beginProcedure = new discord_js_1.EmbedBuilder()
-                .setColor(0x0099ff)
-                .setTitle("Commencer la procédure de rappel de signature")
-                .setDescription(`\n\n Bonjour ${interaction.member?.user.username}, \n\n pour commencer la procédure de rappel de signature veuillez cliquer sur le bouton ci-dessous.`)
-                .setThumbnail("https://cdn-icons-png.flaticon.com/512/4489/4489772.png");
-            const row = new discord_js_1.ActionRowBuilder().addComponents(new discord_js_1.ButtonBuilder()
-                .setCustomId("start")
-                .setLabel("Commencer la procédure !")
-                .setStyle(discord_js_1.ButtonStyle.Success));
-            await interaction.reply({ embeds: [beginProcedure], components: [row] });
-        }
     }
     if (interaction.isButton()) {
         const trainerId = interaction.user.id;
@@ -88,7 +76,7 @@ const onInteraction = async (interaction) => {
                 const embedReminderLearner = new discord_js_1.EmbedBuilder()
                     .setColor(0x0099ff)
                     .setTitle("Rappel de signature")
-                    .setDescription(`Bonjour ! \n\n Votre formateur ${interaction.user.username} vous a envoyé un rappel de signature ! \n\n`)
+                    .setDescription(`Bonjour ! \n\n Votre formateur **${interaction.user.username}** vous a envoyé un rappel de signature ! \n\n`)
                     .setThumbnail("https://cdn-icons-png.flaticon.com/512/4896/4896860.png")
                     .setTimestamp();
                 await (await interaction.client.users.fetch(learnerUuId)).send({
