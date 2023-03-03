@@ -15,7 +15,6 @@ class Trainer extends user_1.User {
         return _promoUuid;
     }
     async getTrainerPromos() {
-        const routes = routes_1.Routes.GET_PROMO_BY_USER_ID;
         const promoList = await new http_1.HttpUtils().get(routes_1.Routes.GET_PROMO_BY_USER_ID, this._Uuid);
         try {
             return promoList.data;

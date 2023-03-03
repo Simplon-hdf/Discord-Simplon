@@ -3,7 +3,7 @@ import {HttpUtils} from "../utils/http";
 
 
 export class Promo {
-    private promoId: string;
+    private readonly promoId: string;
 
     constructor(promoId: string) {
         this.promoId = promoId;
@@ -13,7 +13,7 @@ export class Promo {
     async getLearners(): Promise<any> {
         let learnerList = await new HttpUtils().get(Routes.GET_USERS_BY_PROMO_ID, this.promoId)
         try {
-            return learnerList.data;
+            return learnerList;
         }
         catch(error) {
             console.log(learnerList.error.message)

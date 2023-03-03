@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.onInteraction = void 0;
 const discord_js_1 = require("discord.js");
+const promo_1 = require("./promo/promo");
 const trainer_1 = require("./users/trainer");
 const onInteraction = async (interaction) => {
     if (interaction.isCommand()) {
@@ -57,50 +58,31 @@ const onInteraction = async (interaction) => {
     }
     if (interaction.isAnySelectMenu()) {
         if (interaction.customId === 'select_promo') {
-            let selectedPromoId = interaction.values;
-            console.log(selectedPromoId);
-        }
-        /*let promoUuid = interaction.
-            let promo = new Promo();*/
-        /*const embedReminder = new EmbedBuilder()
-            .setColor(0x0099ff)
-            .setTitle("Sélection des apprenants pour Rappel")
-            .setDescription(
-                `\n\n Bonjour, \n\n Veuillez sélectionner les apprenants à qui il faut rappeler de signer dans la liste de sélection ci-dessous.`
-            )
-            .setThumbnail(
-                "https://cdn-icons-png.flaticon.com/512/4489/4489772.png"
-            );
-
-        const selectLearnersRow = new ActionRowBuilder<StringSelectMenuBuilder>().addComponents(
-            new StringSelectMenuBuilder()
+            let selectedPromo = new promo_1.Promo(interaction.values[0]);
+            let learnerList = await selectedPromo.getLearners();
+            const embedReminder = new discord_js_1.EmbedBuilder()
+                .setColor(0x0099ff)
+                .setTitle("Sélection des apprenants pour Rappel")
+                .setDescription(`\n\n Veuillez sélectionner les apprenants à qui envoyer un rappel dans la liste ci-dessous.`)
+                .setThumbnail("https://cdn-icons-png.flaticon.com/512/4489/4489772.png");
+            const selectLearnersRow = new discord_js_1.ActionRowBuilder().addComponents(new discord_js_1.StringSelectMenuBuilder()
                 .setCustomId("select_learners")
                 .setPlaceholder("Aucune réponse n'est actuellement sélectionnée !")
                 .setMinValues(1)
-                //.setMaxValues(learner_list.length)
-                .addOptions(
-                    {label: 'Option 1', value: 'option_1'},
-                    {label: 'Option 2', value: 'option_2'},
-                    {label: 'Option 3', value: 'option_3'}*/
-        /*learner_list.map((learner) => {
-            return {
-                label: `[${learner.firstname} ${learner.lastname}]`,
-                description: `Formation: ${
-                    interaction.guild.roles.cache.get(learner.roles).name
-                }`,
-                value: `${learner.discord_id}, ${learner.firstname}, ${
-                    learner.lastname
-                }, ${
-                    interaction.guild.roles.cache.get(learner.roles).name
-                }, ${interaction.member.displayName}`,
-            };
-        })
-)*/
-        /* await interaction.reply({
-             embeds: [embedReminder],
-             components: [selectLearnersRow],
-             ephemeral: true,
-         });*/
+                .setMaxValues(learnerList.length)
+                .addOptions(learnerList.map((learner) => {
+                return {
+                    label: `[${learner.username}]`,
+                    description: `Envoyer un rappel à ${learner.username}`,
+                    value: `${learner.id}`,
+                };
+            })));
+            await interaction.reply({
+                embeds: [embedReminder],
+                components: [selectLearnersRow],
+                ephemeral: true,
+            });
+        }
     }
 };
 exports.onInteraction = onInteraction;
