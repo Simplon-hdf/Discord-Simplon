@@ -91,12 +91,10 @@ CREATE TABLE public.channels(
                                 id             SERIAL NOT NULL ,
                                 channel_name   VARCHAR (255) NOT NULL ,
                                 channel_uuid   INT  NOT NULL ,
-                                id_guilds      INT  NOT NULL ,
                                 id_category    INT  NOT NULL  ,
                                 CONSTRAINT channels_PK PRIMARY KEY (id)
 
-    ,CONSTRAINT channels_guilds_FK FOREIGN KEY (id_guilds) REFERENCES public.guilds(id)
-    ,CONSTRAINT channels_category0_FK FOREIGN KEY (id_category) REFERENCES public.category(id)
+    ,CONSTRAINT channels_category_FK FOREIGN KEY (id_category) REFERENCES public.category(id)
 )WITHOUT OIDS;
 
 
@@ -211,6 +209,21 @@ CREATE TABLE public.Appartenir(
 
     ,CONSTRAINT Appartenir_users_FK FOREIGN KEY (id) REFERENCES public.users(id)
     ,CONSTRAINT Appartenir_guilds0_FK FOREIGN KEY (id_guilds) REFERENCES public.guilds(id)
+)WITHOUT OIDS;
+
+
+------------------------------------------------------------
+-- Table: Posseder
+------------------------------------------------------------
+CREATE TABLE public.Posseder(
+                                id            INT  NOT NULL ,
+                                id_guilds     INT  NOT NULL ,
+                                id_category   INT  NOT NULL  ,
+                                CONSTRAINT Posseder_PK PRIMARY KEY (id,id_guilds,id_category)
+
+    ,CONSTRAINT Posseder_channels_FK FOREIGN KEY (id) REFERENCES public.channels(id)
+    ,CONSTRAINT Posseder_guilds0_FK FOREIGN KEY (id_guilds) REFERENCES public.guilds(id)
+    ,CONSTRAINT Posseder_category1_FK FOREIGN KEY (id_category) REFERENCES public.category(id)
 )WITHOUT OIDS;
 
 
