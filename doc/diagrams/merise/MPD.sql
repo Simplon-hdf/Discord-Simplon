@@ -76,10 +76,11 @@ CREATE TABLE public.category(
 ------------------------------------------------------------
 CREATE TABLE public.template(
                                 id            SERIAL NOT NULL ,
-                                id_category   INT    ,
+                                id_category   INT  NOT NULL  ,
                                 CONSTRAINT template_PK PRIMARY KEY (id)
 
     ,CONSTRAINT template_category_FK FOREIGN KEY (id_category) REFERENCES public.category(id)
+    ,CONSTRAINT template_category_AK UNIQUE (id_category)
 )WITHOUT OIDS;
 
 

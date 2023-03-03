@@ -2,12 +2,8 @@ import axios from "axios";
 import {Guild} from "../guilds/guild";
 import {Routes} from "./Routes";
 import {ApiError} from './exceptions/api-error'
-import logger from "./logger";
-import {rejects} from "assert";
-import {req} from "pino-std-serializers";
 
-
-export class HttpUtils{
+export class HttpUtils {
 
   private readonly _urlBase: string;
 
