@@ -3,7 +3,6 @@ import EventEmitter from "events";
 import * as dotenv from "dotenv";
 import command_handler from "./handlers/command_handler";
 import event_handler from "./handlers/event_handler";
-import {onInteraction} from "./interaction";
 
 
 dotenv.config();
