@@ -1,27 +1,26 @@
 import {Routes} from "../utils/routes";
-import axios from "axios/index";
 import {HttpUtils} from "../utils/http";
 
 
 export class Promo {
-    private promoUuId: string;
+    private promoId: string;
 
-    constructor(promoUuId: string) {
-        this.promoUuId = promoUuId;
+    constructor(promoId: string) {
+        this.promoId = promoId;
     }
 
 
-    /*getLearners(): void {
-        let routes = Routes.GET_USERS_BY_PROMO_ID
-        let learnerList = axios.get( routes + this.promoUuId )
-            .then( function(response: any) {
-                return response;
-            })
-            .catch(function(error) {
-                console.log('No learners found');
-                return error.message;
-            })
-    }*/
+    async getLearners(): Promise<any> {
+        let learnerList = await new HttpUtils().get(Routes.GET_USERS_BY_PROMO_ID, this.promoId)
+        try {
+            return learnerList.data;
+        }
+        catch(error) {
+            console.log(learnerList.error.message)
+            return 'fail'
+        }
+    }
+
 
     /*getTrainers(): void {
         let routes = 'placeholder'; //Insert Route

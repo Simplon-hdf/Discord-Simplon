@@ -24,11 +24,6 @@ const onInteraction = async (interaction) => {
         const memberRole = await interaction.memberPermissions?.has(discord_js_1.PermissionsBitField.Flags.SendMessages);
         if (memberRole === true) {
             let trainerPromos = await trainer.getTrainerPromos();
-            /*let promoNames: string[] = []
-            trainerPromos.forEach(((promo: { roles: { role_name: any; }; }) => promoNames.push(promo.roles.role_name)));
-
-            let promoIds: string[] = [];
-            trainerPromos.forEach((promo: { id: string; }) => promoIds.push(promo.id))*/
             let promoList = [];
             trainerPromos.forEach((promo) => {
                 promoList.push({
@@ -36,7 +31,6 @@ const onInteraction = async (interaction) => {
                     "name": promo.roles.role_name
                 });
             });
-            console.log(promoList);
             const selectPromosEmbed = new discord_js_1.EmbedBuilder()
                 .setColor(0x0099ff)
                 .setTitle("Sélection de la promo pour Rappel")
@@ -46,12 +40,12 @@ const onInteraction = async (interaction) => {
                 .setCustomId('select_promo')
                 .setPlaceholder('Aucune promotion n\'est actuellement selectionnée')
                 .setMinValues(1)
-                .setMaxValues(promoList.length)
-                .addOptions(promoList.map((learner) => {
+                .setMaxValues(1)
+                .addOptions(promoList.map((promo) => {
                 return {
-                    label: `[${learner.name}]`,
-                    description: `Envoyer un rappel aux apprenants de ${learner.name}`,
-                    value: `${learner.id}`,
+                    label: `[${promo.name}]`,
+                    description: `Envoyer un rappel aux apprenants de ${promo.name}`,
+                    value: `${promo.id}`,
                 };
             })));
             await interaction.reply({
@@ -60,41 +54,53 @@ const onInteraction = async (interaction) => {
                 ephemeral: true,
             });
         }
-        if (interaction.isAnySelectMenu()) {
-            /*let promoUuid = interaction.
-                let promo = new Promo();*/
-            const embedReminder = new discord_js_1.EmbedBuilder()
-                .setColor(0x0099ff)
-                .setTitle("Sélection des apprenants pour Rappel")
-                .setDescription(`\n\n Bonjour, \n\n Veuillez sélectionner les apprenants à qui il faut rappeler de signer dans la liste de sélection ci-dessous.`)
-                .setThumbnail("https://cdn-icons-png.flaticon.com/512/4489/4489772.png");
-            const selectLearnersRow = new discord_js_1.ActionRowBuilder().addComponents(new discord_js_1.StringSelectMenuBuilder()
+    }
+    if (interaction.isAnySelectMenu()) {
+        if (interaction.customId === 'select_promo') {
+            let selectedPromoId = interaction.values;
+            console.log(selectedPromoId);
+        }
+        /*let promoUuid = interaction.
+            let promo = new Promo();*/
+        /*const embedReminder = new EmbedBuilder()
+            .setColor(0x0099ff)
+            .setTitle("Sélection des apprenants pour Rappel")
+            .setDescription(
+                `\n\n Bonjour, \n\n Veuillez sélectionner les apprenants à qui il faut rappeler de signer dans la liste de sélection ci-dessous.`
+            )
+            .setThumbnail(
+                "https://cdn-icons-png.flaticon.com/512/4489/4489772.png"
+            );
+
+        const selectLearnersRow = new ActionRowBuilder<StringSelectMenuBuilder>().addComponents(
+            new StringSelectMenuBuilder()
                 .setCustomId("select_learners")
                 .setPlaceholder("Aucune réponse n'est actuellement sélectionnée !")
                 .setMinValues(1)
                 //.setMaxValues(learner_list.length)
-                .addOptions({ label: 'Option 1', value: 'option_1' }, { label: 'Option 2', value: 'option_2' }, { label: 'Option 3', value: 'option_3' }
-            /*learner_list.map((learner) => {
-                return {
-                    label: `[${learner.firstname} ${learner.lastname}]`,
-                    description: `Formation: ${
-                        interaction.guild.roles.cache.get(learner.roles).name
-                    }`,
-                    value: `${learner.discord_id}, ${learner.firstname}, ${
-                        learner.lastname
-                    }, ${
-                        interaction.guild.roles.cache.get(learner.roles).name
-                    }, ${interaction.member.displayName}`,
-                };
-            }*/ ));
-            /* await interaction.reply({
-                 embeds: [embedReminder],
-                 components: [selectLearnersRow],
-                 ephemeral: true,
-             });*/
-        }
-    } /*if (interaction.isAnySelectMenu()) {
-
-    }*/
+                .addOptions(
+                    {label: 'Option 1', value: 'option_1'},
+                    {label: 'Option 2', value: 'option_2'},
+                    {label: 'Option 3', value: 'option_3'}*/
+        /*learner_list.map((learner) => {
+            return {
+                label: `[${learner.firstname} ${learner.lastname}]`,
+                description: `Formation: ${
+                    interaction.guild.roles.cache.get(learner.roles).name
+                }`,
+                value: `${learner.discord_id}, ${learner.firstname}, ${
+                    learner.lastname
+                }, ${
+                    interaction.guild.roles.cache.get(learner.roles).name
+                }, ${interaction.member.displayName}`,
+            };
+        })
+)*/
+        /* await interaction.reply({
+             embeds: [embedReminder],
+             components: [selectLearnersRow],
+             ephemeral: true,
+         });*/
+    }
 };
 exports.onInteraction = onInteraction;

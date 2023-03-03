@@ -15,8 +15,6 @@ export class Trainer extends User {
     }
 
     async getTrainerPromos(): Promise<any> {
-        const routes = Routes.GET_PROMO_BY_USER_ID;
-
         const promoList =  await new HttpUtils().get(Routes.GET_PROMO_BY_USER_ID, this._Uuid)
         try {
             return promoList.data;
@@ -25,7 +23,5 @@ export class Trainer extends User {
             console.log(promoList.error.message)
             return 'fail'
         }
-
     }
-
 }
