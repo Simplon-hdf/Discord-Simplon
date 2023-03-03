@@ -12,14 +12,13 @@ import {EmbedBuilderClass} from "./discord-builders/embed-builder";
 import {Promo} from "./promo/promo";
 import {Trainer} from "./users/trainer";
 import {Guild} from "./guild";
+import {Learner} from "./users/learner";
 
 
 export const onInteraction = async (interaction: Interaction) => {
 
     if (interaction.isCommand()) {
-
         if (interaction.commandName === 'active') {
-
             const beginProcedure = new EmbedBuilder()
                 .setColor(0x0099ff)
                 .setTitle("Commencer la procédure de rappel de signature")
@@ -29,16 +28,13 @@ export const onInteraction = async (interaction: Interaction) => {
                 .setThumbnail(
                     "https://cdn-icons-png.flaticon.com/512/4489/4489772.png"
                 );
-
             const row = new ActionRowBuilder<ButtonBuilder>().addComponents(
                 new ButtonBuilder()
                     .setCustomId("start")
                     .setLabel("Commencer la procédure !")
                     .setStyle(ButtonStyle.Success)
             );
-
             await interaction.reply({embeds: [beginProcedure], components: [row]});
-
         }
 
     } if (interaction.isButton()){
@@ -113,7 +109,7 @@ export const onInteraction = async (interaction: Interaction) => {
                         return {
                             label: `[${learner.username}]`,
                             description: `Envoyer un rappel à ${learner.username}`,
-                            value: `${learner.id}`,
+                            value: `${learner.user_uuid}`,
                         };
                     })
             ))
@@ -124,9 +120,30 @@ export const onInteraction = async (interaction: Interaction) => {
             });
         } if (interaction.customId === "select_learners") {
 
+            for (const learnerUuId of interaction.values) {
+                const embedReminderLearner = new EmbedBuilder()
+                    .setColor(0x0099ff)
+                    .setTitle("Rappel de signature")
+                    .setDescription(
+                        `Bonjour ! \n\n Votre formateur **${interaction.user.username}** vous a envoyé un rappel de signature ! \n\n`
+                    )
+                    .setThumbnail("https://cdn-icons-png.flaticon.com/512/4896/4896860.png")
+                    .setTimestamp();
+                await (await interaction.client.users.fetch(learnerUuId)).send({
+                    embeds: [embedReminderLearner],
+                })
+
+                const embedResponse = new EmbedBuilder()
+                    .setColor(0x0099ff)
+                    .setTitle("Merci!")
+                    .setDescription(
+                        `Votre demande a bien été prise en compte.`
+                    )
+
+                await interaction.reply({
+                    embeds: [embedResponse],
+                    ephemeral: true,
+                });
         }
-
-
-    }
-
-};
+        }
+}}

@@ -2,8 +2,8 @@ import {User} from "./user";
 
 
 export class Learner extends User {
-   constructor(Uuid: string) {
-      super(Uuid);
+   constructor(learnerId: string) {
+      super(learnerId);
    }
    codeRequest(trainerUuid: string) {
       return trainerUuid;
