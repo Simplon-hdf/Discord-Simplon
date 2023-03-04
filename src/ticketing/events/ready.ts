@@ -1,9 +1,8 @@
-import { Events } from "discord.js";
-import { client } from "../index";
-
-const ready = client.once(Events.ClientReady, c => {
-	console.log(`Ready! Logged in as ${c.user.tag}`);
-});
+import { Client, Events } from "discord.js";
+import client from "../index";
 
 
-export default ready;
+const clientReady = client.once(Events.ClientReady, (client: Client) => {
+    console.log(`Ready! Logged in as ${client.user?.tag}`);
+  });
+export default clientReady;
