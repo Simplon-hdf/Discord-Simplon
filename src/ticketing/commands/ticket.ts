@@ -1,13 +1,13 @@
-import { ActionRowBuilder, ButtonBuilder, ChatInputCommandInteraction, SlashCommandBuilder } from "discord.js";
+import { ActionRowBuilder, ButtonBuilder, ButtonInteraction, SlashCommandBuilder } from "discord.js";
+import createTicket from "../buttons/ticket/create-ticket";
 
 export default {
   data: new SlashCommandBuilder()
     .setName("ticket")
-    .setDescription("test")
-    .setDMPermission(false),
+    .setDescription("test"),
 
-  run: async (interaction: ChatInputCommandInteraction) => {
-    // const button = new ActionRowBuilder<ButtonBuilder>().addComponents(createTicket.data)
-    // await interaction.reply({ content: "coucou", components: [button] })
+  run: async (interaction: ButtonInteraction) => {
+    const button = new ActionRowBuilder<ButtonBuilder>().addComponents(createTicket.data)
+    await interaction.reply({ content: "coucou", components: [button] })
   },
 };

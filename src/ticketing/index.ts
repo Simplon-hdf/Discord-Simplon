@@ -4,6 +4,7 @@ import {
   GatewayIntentBits,
 } from "discord.js";
 import * as dotenv from "dotenv";
+import button_handler from "./handlers/button_handler";
 import command_handler from "./handlers/command_handler";
 import event_handler from "./handlers/event_handler";
 dotenv.config();
@@ -34,6 +35,7 @@ client.buttons = new Collection();
 
 command_handler(client, DISCORD_TOKEN, DISCORD_ID);
 event_handler(client);
+button_handler(client)
 
 export default client;
 
