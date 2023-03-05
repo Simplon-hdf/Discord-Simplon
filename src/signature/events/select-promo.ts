@@ -8,6 +8,7 @@ import {
 } from "discord.js";
 import {Trainer} from "../users/trainer";
 import EmbedMessage from "../discord-builders/embed-builder";
+import {SelectMenu} from "../discord-builders/select-menu-builder";
 
 export default {
     name: Events.InteractionCreate,
@@ -18,7 +19,7 @@ export default {
         const trainer = new Trainer(trainerId);
         const memberRole= await interaction.memberPermissions?.has(PermissionsBitField.Flags.SendMessages);
 
-        if (memberRole === true) {
+        if (memberRole) {
             let trainerPromos = await trainer.getTrainerPromos();
             let promoList: { id: any; name: any; }[] = []
             trainerPromos.forEach((promo: { id: any; roles: { role_name: any; }; }) => {
@@ -35,20 +36,21 @@ export default {
                 "https://cdn-icons-png.flaticon.com/512/4489/4489772.png"
             );
 
+            let options = promoList.map((promo) => {
+                return {
+                    label: `[${promo.name}]`,
+                    description: `Envoyer un rappel aux apprenants de ${promo.name
+                    }`,
+                    value: `${promo.id}`,
+                };
+            })
             const selectPromoRow = new ActionRowBuilder<StringSelectMenuBuilder>().addComponents(
-                new StringSelectMenuBuilder()
-                    .setCustomId('select_promo')
-                    .setPlaceholder('Aucune promotion n\'est actuellement selectionnée')
-                    .setMinValues(1)
-                    .setMaxValues(1)
-                    .addOptions(promoList.map((promo) => {
-                            return {
-                                label: `[${promo.name}]`,
-                                description: `Envoyer un rappel aux apprenants de ${promo.name
-                                }`,
-                                value: `${promo.id}`,
-                            };
-                        })
+                new SelectMenu(
+                    'select_promo',
+                    'Aucune promotion n\'est actuellement selectionnée',
+                    options,
+                    1,
+                    1
                     ))
             await interaction.reply({
                 embeds: [selectPromosEmbed],

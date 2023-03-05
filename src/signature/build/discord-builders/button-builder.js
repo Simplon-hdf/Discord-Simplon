@@ -2,37 +2,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ButtonBuilderClass = void 0;
 const discord_js_1 = require("discord.js");
-class ButtonBuilderClass {
-    button;
-    constructor() {
-        this.button = new discord_js_1.ButtonBuilder();
-    }
-    setStyle(style) {
-        this.button.setStyle(style);
-        return this;
-    }
-    setLabel(label) {
-        this.button.setLabel(label);
-        return this;
-    }
-    setURL(url) {
-        this.button.setURL(url);
-        return this;
-    }
-    setDisabled(disabled) {
-        this.button.setDisabled(disabled);
-        return this;
-    }
-    setEmoji(emoji) {
-        this.button.setEmoji(emoji);
-        return this;
-    }
-    setCustomId(customId) {
-        this.button.setCustomId(customId);
-        return this;
-    }
-    build() {
-        return this.button;
+class ButtonBuilderClass extends discord_js_1.ButtonBuilder {
+    constructor(customId, style, label, url, emoji) {
+        super();
+        this.setCustomId(customId);
+        this.setStyle(style);
+        this.setLabel(label);
+        this.setURL(url || '');
+        this.setEmoji(emoji || '');
     }
 }
 exports.ButtonBuilderClass = ButtonBuilderClass;

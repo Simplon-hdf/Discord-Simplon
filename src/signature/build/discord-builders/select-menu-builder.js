@@ -1,28 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.SelectMenu = void 0;
 const discord_js_1 = require("discord.js");
-class SelectMenuBuilder {
-    customId;
-    placeholder;
-    options;
-    constructor({ customId, placeholder, options }) {
-        this.customId = customId;
-        this.placeholder = placeholder || '';
-        this.options = options;
-    }
-    setPlaceholder(placeholder) {
-        this.placeholder = placeholder;
-        return this;
-    }
-    build() {
-        const options = this.options.map((option) => ({
-            label: option.label,
-            value: option.value,
-        }));
-        const selectMenu = new discord_js_1.StringSelectMenuBuilder()
-            .setCustomId(this.customId)
-            .setPlaceholder(this.placeholder)
-            .addOptions(options);
-        return new discord_js_1.ActionRowBuilder().addComponents(selectMenu);
+class SelectMenu extends discord_js_1.StringSelectMenuBuilder {
+    constructor(customId, placeholder, options, minValue, maxValue) {
+        super();
+        this.setCustomId(customId);
+        this.setPlaceholder(placeholder);
+        this.setOptions(options);
+        this.setMinValues(minValue || 0);
+        this.setMaxValues(maxValue || 999999);
     }
 }
+exports.SelectMenu = SelectMenu;
