@@ -1,13 +1,45 @@
-import { ActionRowBuilder, ButtonBuilder, ButtonInteraction, SlashCommandBuilder } from "discord.js";
+import {
+  ActionRowBuilder,
+  ButtonBuilder,
+  ChatInputCommandInteraction,
+  SlashCommandBuilder,
+} from "discord.js";
 import createTicket from "../buttons/ticket/create-ticket";
+import EmbedMessage from "../classes/embed-message";
 
 export default {
   data: new SlashCommandBuilder()
     .setName("ticket")
-    .setDescription("test"),
+    .setDescription("Commande relative au sous-commande du bot de ticketing.")
+    .addSubcommand((subcommand) =>
+      subcommand
+        .setName("interface")
+        .setDescription("Envoie l'interface de création de tickets.")
+    )
+    .addSubcommand((subcommand) =>
+      subcommand.setName("test").setDescription("test !")
+    ),
 
-  run: async (interaction: ButtonInteraction) => {
-    const button = new ActionRowBuilder<ButtonBuilder>().addComponents(createTicket.data)
-    await interaction.reply({ content: "coucou", components: [button] })
+  run: async (interaction: ChatInputCommandInteraction) => {
+    if (interaction.options.getSubcommand() === "interface") {
+      const CreateTicketButton =
+        new ActionRowBuilder<ButtonBuilder>().addComponents(createTicket.data);
+
+      const CreateTicketEmbed = new EmbedMessage(
+        "Création d'un ticket",
+        "#ce0033",
+        "Bonjour, pour commencer la création d'un ticket veuillez cliquer sur le bouton ci-dessous.",
+        "https://simplon.co/favicon.png"
+      );
+
+      await interaction.reply({
+        embeds: [CreateTicketEmbed],
+        components: [CreateTicketButton],
+      });
+    }else if (interaction.options.getSubcommand() === "test"){
+      await interaction.reply({
+        content: "test" 
+      })
+    }
   },
 };

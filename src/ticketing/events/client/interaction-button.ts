@@ -1,5 +1,4 @@
-import { BaseInteraction, Events, Interaction } from "discord.js";
-import chalk from "chalk";
+import { Events, Interaction } from "discord.js";
 import client from "../../index.js"
 
 const interactionButton = client.on(Events.InteractionCreate, async (interaction: Interaction) => {
@@ -12,7 +11,7 @@ const interactionButton = client.on(Events.InteractionCreate, async (interaction
     return;
   } else {
     button.run(interaction);
-    console.log(chalk.white(`[BUTTON] ${interaction.guild.name}(${interaction.guild.id}) - ${interaction.user.tag}(${interaction.user.id}) executed ${button.data.data.label}`))
+    console.log(`[BUTTON] ${interaction.guild.name}(${interaction.guild.id}) - ${interaction.user.tag}(${interaction.user.id}) executed ${button.data.data.label}`)
   }
 });
 

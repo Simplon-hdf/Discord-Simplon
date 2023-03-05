@@ -8,7 +8,6 @@ export default async (client: any) => {
     ).filter((file) => file.endsWith(".js"));
     for (const file of buttonFiles) {
       const button = (await import(`../buttons/${category}/${file}`)).default;
-      console.log(button)
       client.buttons.set(button.data.data.custom_id, button);
     }
   }
