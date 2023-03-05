@@ -7,6 +7,7 @@ import {
     Interaction, ButtonInteraction
 } from "discord.js";
 import {Trainer} from "../users/trainer";
+import EmbedMessage from "../discord-builders/embed-builder";
 
 export default {
     name: Events.InteractionCreate,
@@ -27,15 +28,12 @@ export default {
                 })
             })
 
-            const selectPromosEmbed = new EmbedBuilder()
-                .setColor(0x0099ff)
-                .setTitle("Sélection de la promo pour Rappel")
-                .setDescription(
-                    `\n\n Bonjour ${interaction.member?.user.username}, \n\n Veuillez sélectionner les apprenants à qui il faut rappeler de signer dans la liste de sélection ci-dessous.`
-                )
-                .setThumbnail(
-                    "https://cdn-icons-png.flaticon.com/512/4489/4489772.png"
-                );
+            const selectPromosEmbed = new EmbedMessage(
+                "Sélection de la promo pour Rappel",
+                '#0x0099ff',
+                `\n\n Bonjour ${interaction.member?.user.username}, \n\n Veuillez sélectionner les apprenants à qui il faut rappeler de signer dans la liste de sélection ci-dessous.`,
+                "https://cdn-icons-png.flaticon.com/512/4489/4489772.png"
+            );
 
             const selectPromoRow = new ActionRowBuilder<StringSelectMenuBuilder>().addComponents(
                 new StringSelectMenuBuilder()

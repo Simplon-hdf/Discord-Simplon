@@ -1,48 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmbedBuilderClass = void 0;
 const discord_js_1 = require("discord.js");
-class EmbedBuilderClass {
-    embed;
-    constructor() {
-        this.embed = new discord_js_1.EmbedBuilder();
-    }
-    setTitle(title) {
-        this.embed.setTitle(title);
-        return this;
-    }
-    setDescription(description) {
-        this.embed.setDescription(description);
-        return this;
-    }
-    setThumbnail(thumbnailUrl) {
-        this.embed.setThumbnail(thumbnailUrl);
-        return this;
-    }
-    setImage(imageUrl) {
-        this.embed.setImage(imageUrl);
-        return this;
-    }
-    setFooter(text, iconUrl) {
-        this.embed.setFooter({ text: text, iconURL: iconUrl });
-        return this;
-    }
-    setTimestamp(timestamp) {
-        this.embed.setTimestamp(timestamp);
-        return this;
-    }
-    setColor(color) {
-        this.embed.setColor(color);
-        return this;
-    }
-    build() {
-        return this.embed;
+class EmbedMessage extends discord_js_1.EmbedBuilder {
+    constructor(title, color, description, thumbnail) {
+        super();
+        this.setTitle(title);
+        this.setColor(color);
+        this.setThumbnail(thumbnail || "https://simplon.co/favicon.png");
+        this.setDescription(description);
+        this.setTimestamp();
+        this.setFooter({ text: 'Simplon HDF', iconURL: "https://simplon.co/favicon.png" });
     }
 }
-exports.EmbedBuilderClass = EmbedBuilderClass;
-// How to use : const embed = new EmbedBuilder()
-//   .setTitle('Titre de l\'embed')
-//   .setDescription('Description de l\'embed')
-//   .setImage('https://url-de-l-image.com/image.png')
-//   .build();
-// Puis : message.channel.send(embed);
+exports.default = EmbedMessage;

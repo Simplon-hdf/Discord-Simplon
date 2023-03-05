@@ -1,57 +1,15 @@
-import MessageEmbed, {ColorResolvable, EmbedBuilder} from 'discord.js'
+import { EmbedBuilder, HexColorString } from 'discord.js';
 
-export class EmbedBuilderClass {
-    private readonly embed: EmbedBuilder;
-
-    constructor() {
-        this.embed = new EmbedBuilder();
-    }
-
-    public setTitle(title: string): EmbedBuilderClass {
-        this.embed.setTitle(title);
-        return this;
-    }
-
-    public setDescription(description: string): EmbedBuilderClass {
-        this.embed.setDescription(description);
-        return this;
-    }
-
-    public setThumbnail(thumbnailUrl: string): EmbedBuilderClass {
-        this.embed.setThumbnail(thumbnailUrl);
-        return this;
-    }
-
-    public setImage(imageUrl: string): EmbedBuilderClass {
-        this.embed.setImage(imageUrl);
-        return this;
-    }
-
-    public setFooter(text: string, iconUrl?: string): EmbedBuilderClass {
-        this.embed.setFooter({text: text, iconURL: iconUrl});
-        return this;
-    }
-
-    public setTimestamp(timestamp?: Date | number): EmbedBuilderClass {
-        this.embed.setTimestamp(timestamp);
-        return this;
-    }
-
-    public setColor(color: ColorResolvable): EmbedBuilderClass {
-        this.embed.setColor(color);
-        return this;
-    }
-
-    public build(): EmbedBuilder {
-        return this.embed;
+class EmbedMessage extends EmbedBuilder {
+    constructor(title: string, color: HexColorString, description: string, thumbnail?: string) {
+        super();
+        this.setTitle(title)
+        this.setColor(color)
+        this.setThumbnail(thumbnail || "https://simplon.co/favicon.png")
+        this.setDescription(description)
+        this.setTimestamp()
+        this.setFooter({ text: 'Simplon HDF', iconURL: "https://simplon.co/favicon.png"});
     }
 }
 
-
-// How to use : const embed = new EmbedBuilder()
-//   .setTitle('Titre de l\'embed')
-//   .setDescription('Description de l\'embed')
-//   .setImage('https://url-de-l-image.com/image.png')
-//   .build();
-
-// Puis : message.channel.send(embed);
+export default EmbedMessage;
