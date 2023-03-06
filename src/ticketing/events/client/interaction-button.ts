@@ -9,7 +9,7 @@ const interactionButton = client.on(
     const button = client.buttons.get(interaction.customId);
 
     if (!button) {
-      interaction.reply("[INTERACTION_BUTTON] No button provided.");
+      interaction.reply("[ERROR] [INTERACTION_BUTTON] => No button provided.");
       return;
     } else {
       button.run(interaction);

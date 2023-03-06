@@ -33,4 +33,11 @@ export default async (client: any) => {
       );
     }
   }
+
+  setTimeout(() => {
+    console.log("---------------[ EVENT(S) ]---------------")
+    console.table(eventFiles)
+    console.log(`[EVENTS] => ${eventFiles.length} event(s) has been charged !`)
+    console.log(" ")
+  }, 4000)
 };

@@ -31,6 +31,14 @@ export default async (client : any, discord_token?: any, discord_client_id?: any
         const cmd = await import(`../${file}`);
         //console.log(cmd.default);
         client.commands.set(cmd.default.data.name, cmd.default); // Link cmd name to complete module
+
+        setTimeout(() => {
+            console.log(" ")
+            console.log("---------------[ COMMAND(S) ]---------------")
+            console.table(commandFiles)
+            console.log(`[COMMANDS] => ${commandFiles.length} command(s) has been charged !`)
+            console.log(" ")
+          }, 1000)
     }
 
     if(!discord_token && !discord_client_id){
