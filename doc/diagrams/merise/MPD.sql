@@ -57,6 +57,7 @@ CREATE TABLE public.courses(
 
     ,CONSTRAINT courses_guilds_FK FOREIGN KEY (id_guilds) REFERENCES public.guilds(id)
     ,CONSTRAINT courses_roles0_FK FOREIGN KEY (id_roles) REFERENCES public.roles(id)
+    ,CONSTRAINT courses_roles_AK UNIQUE (id_roles)
 )WITHOUT OIDS;
 
 
@@ -64,8 +65,12 @@ CREATE TABLE public.courses(
 -- Table: template
 ------------------------------------------------------------
 CREATE TABLE public.template(
-                                id   SERIAL NOT NULL  ,
+                                id           SERIAL NOT NULL ,
+                                id_courses   INT  NOT NULL  ,
                                 CONSTRAINT template_PK PRIMARY KEY (id)
+
+    ,CONSTRAINT template_courses_FK FOREIGN KEY (id_courses) REFERENCES public.courses(id)
+    ,CONSTRAINT template_courses_AK UNIQUE (id_courses)
 )WITHOUT OIDS;
 
 
@@ -202,8 +207,12 @@ CREATE TABLE public.Config(
 -- Table: channelsStock
 ------------------------------------------------------------
 CREATE TABLE public.channelsStock(
-                                     id   SERIAL NOT NULL  ,
+                                     id          SERIAL NOT NULL ,
+                                     id_guilds   INT  NOT NULL  ,
                                      CONSTRAINT channelsStock_PK PRIMARY KEY (id)
+
+    ,CONSTRAINT channelsStock_guilds_FK FOREIGN KEY (id_guilds) REFERENCES public.guilds(id)
+    ,CONSTRAINT channelsStock_guilds_AK UNIQUE (id_guilds)
 )WITHOUT OIDS;
 
 
