@@ -3,7 +3,7 @@ import client from "../..";
 
 const interactionCommand = client.on(
   Events.InteractionCreate,
-  async (interaction: Interaction) => {
+  (interaction: Interaction) => {
     if (!interaction.isChatInputCommand()) return;
     const parsedClient: any = client;
     const command = parsedClient.commands.get(interaction["commandName"]);

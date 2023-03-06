@@ -4,7 +4,7 @@ import {
   ChatInputCommandInteraction,
   SlashCommandBuilder,
 } from "discord.js";
-import createTicket from "../buttons/ticket/create-ticket";
+import createTicket from "../buttons/create-ticket";
 import EmbedMessage from "../classes/embed-message";
 
 export default {
@@ -15,15 +15,10 @@ export default {
       subcommand
         .setName("interface")
         .setDescription("Envoie l'interface de création de tickets.")
-    )
-    .addSubcommand((subcommand) =>
-      subcommand.setName("test").setDescription("test !")
     ),
-
   run: async (interaction: ChatInputCommandInteraction) => {
     if (interaction.options.getSubcommand() === "interface") {
-      const CreateTicketButton =
-        new ActionRowBuilder<ButtonBuilder>().addComponents(createTicket.data);
+      const CreateTicketButton = new ActionRowBuilder<ButtonBuilder>().addComponents(createTicket.data);
 
       const CreateTicketEmbed = new EmbedMessage(
         "Création d'un ticket",
@@ -36,10 +31,6 @@ export default {
         embeds: [CreateTicketEmbed],
         components: [CreateTicketButton],
       });
-    }else if (interaction.options.getSubcommand() === "test"){
-      await interaction.reply({
-        content: "test" 
-      })
     }
   },
 };
