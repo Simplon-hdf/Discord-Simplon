@@ -1,10 +1,9 @@
 import {
     Events,
     PermissionsBitField,
-    EmbedBuilder,
     ActionRowBuilder,
     StringSelectMenuBuilder,
-    Interaction, ButtonInteraction
+    ButtonInteraction
 } from "discord.js";
 import {Trainer} from "../users/trainer";
 import EmbedMessage from "../discord-builders/embed-builder";
@@ -15,8 +14,8 @@ export default {
     on: true,
     async execute(interaction: ButtonInteraction) {
         if (!interaction.isButton() || interaction['customId'] != 'start' ) return;
-        const trainerId = interaction.user.id;
-        const trainer = new Trainer(trainerId);
+
+        const trainer = new Trainer(interaction.user.id);
         const memberRole= await interaction.memberPermissions?.has(PermissionsBitField.Flags.SendMessages);
 
         if (memberRole) {

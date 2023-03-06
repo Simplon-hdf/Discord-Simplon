@@ -1,4 +1,4 @@
-import {ActionRowBuilder, EmbedBuilder, Events, SelectMenuInteraction, StringSelectMenuBuilder} from "discord.js";
+import {ActionRowBuilder, Events, SelectMenuInteraction, StringSelectMenuBuilder} from "discord.js";
 import {Promo} from "../promo/promo";
 import EmbedMessage from "../discord-builders/embed-builder";
 
@@ -8,15 +8,15 @@ export default {
     async execute(interaction: SelectMenuInteraction) {
         if (!interaction.isAnySelectMenu() || interaction['customId'] != 'select_promo') return;
 
-            let selectedPromo = new Promo(interaction.values[0]);
-            let learnerList = await selectedPromo.getLearners();
+        let selectedPromo = new Promo(interaction.values[0]);
+        let learnerList = await selectedPromo.getLearners();
 
-            const embedReminder = new EmbedMessage(
+        const embedReminder = new EmbedMessage(
                 "Sélection des apprenants pour Rappel",
                 '#0x0099ff',
                 `\n\n Veuillez sélectionner les apprenants à qui envoyer un rappel dans la liste ci-dessous.`,
                 "https://cdn-icons-png.flaticon.com/512/4489/4489772.png"
-            )
+        )
 
             const selectLearnersRow = new ActionRowBuilder<StringSelectMenuBuilder>().addComponents(
                 new StringSelectMenuBuilder()
