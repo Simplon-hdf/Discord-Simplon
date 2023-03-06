@@ -23,11 +23,10 @@ export default {
         )
 
         const row = new ActionRowBuilder<ButtonBuilder>().addComponents(
-            new ButtonBuilderClass(
-                "start",
-                ButtonStyle.Success,
-                "Commencer la procédure !"
-            )
+            new ButtonBuilder()
+                .setCustomId("start")
+                .setLabel("Commencer la procédure !")
+                .setStyle(ButtonStyle.Success)
         );
         await interaction.reply({embeds: [beginProcedure], components: [row]});
     },
