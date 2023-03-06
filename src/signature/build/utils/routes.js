@@ -10,4 +10,5 @@ var Routes;
     Routes["GET_ROLE_BY_USER_ID"] = "/find/role/user/:uuid";
     Routes["GET_ROLE"] = "placeholder";
     Routes["GET_REPORT"] = "/signature/report/:learnerUuid";
+    Routes["GET_TRAINERS"] = "/signature/find/trainer/:uuid";
 })(Routes = exports.Routes || (exports.Routes = {}));

@@ -19,8 +19,26 @@ exports.default = {
             const codeRequestStatus = await learner.getCodeRequestStatus();
             if (codeRequestStatus) {
                 const hasReport = await learner.hasReport();
-                console.log(hasReport);
                 if (!hasReport) {
+                    const trainerList = await learner.getTrainers();
+                    const selectTrainer = new embed_builder_1.default("Sélection du formateur pour rappel", '#0x0099ff', `\n\n Veuillez sélectionner le formateur à qui envoyer un rappel dans la liste ci-dessous.`, "https://cdn-icons-png.flaticon.com/512/4489/4489772.png");
+                    const selectTrainerRow = new discord_js_1.ActionRowBuilder().addComponents(new discord_js_1.StringSelectMenuBuilder()
+                        .setCustomId("select_trainer")
+                        .setPlaceholder("Aucune réponse n'est actuellement sélectionnée !")
+                        .setMinValues(1)
+                        .setMaxValues(1)
+                        .addOptions(trainerList.map((trainer) => {
+                        return {
+                            label: `[${trainer.username}]`,
+                            description: `Envoyer un rappel à ${trainer.username}`,
+                            value: `${trainer.user_uuid}`,
+                        };
+                    })));
+                    await interaction.reply({
+                        embeds: [selectTrainer],
+                        components: [selectTrainerRow],
+                        ephemeral: true,
+                    });
                 }
                 else {
                     const everReport = new embed_builder_1.default('Code déjà demandé!', '#0x0099ff', 'Oups! Il semble que vous ayez déjà demandé le code cette demi-journée, un conseil, parlez-en à vos collègues!', 'https://img.icons8.com/ios-filled/100/null/sad.png');

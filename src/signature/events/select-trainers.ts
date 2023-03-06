@@ -1,4 +1,4 @@
-import {ButtonInteraction, Events, PermissionsBitField} from "discord.js";
+import {ActionRowBuilder, ButtonInteraction, Events, PermissionsBitField, StringSelectMenuBuilder} from "discord.js";
 import {Learner} from "../users/learner";
 import EmbedMessage from "../discord-builders/embed-builder";
 
@@ -19,11 +19,36 @@ export default {
             if (codeRequestStatus) {
 
                 const hasReport = await learner.hasReport();
-                console.log(hasReport);
 
                 if (!hasReport) {
+                    const trainerList = await learner.getTrainers()
 
-                    // TODO : learner.getTrainers();
+                    const selectTrainer = new EmbedMessage(
+                        "Sélection du formateur pour rappel",
+                        '#0x0099ff',
+                        `\n\n Veuillez sélectionner le formateur à qui envoyer un rappel dans la liste ci-dessous.`,
+                        "https://cdn-icons-png.flaticon.com/512/4489/4489772.png"
+                    )
+
+                    const selectTrainerRow = new ActionRowBuilder<StringSelectMenuBuilder>().addComponents(
+                        new StringSelectMenuBuilder()
+                            .setCustomId("select_trainer")
+                            .setPlaceholder("Aucune réponse n'est actuellement sélectionnée !")
+                            .setMinValues(1)
+                            .setMaxValues(1)
+                            .addOptions(trainerList.map((trainer: any) => {
+                                    return {
+                                        label: `[${trainer.username}]`,
+                                        description: `Envoyer un rappel à ${trainer.username}`,
+                                        value: `${trainer.user_uuid}`,
+                                    };
+                                })
+                            ))
+                    await interaction.reply({
+                        embeds: [selectTrainer],
+                        components: [selectTrainerRow],
+                        ephemeral: true,
+                    });
 
                 } else {
                     const everReport = new EmbedMessage(

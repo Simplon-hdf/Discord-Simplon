@@ -21,6 +21,7 @@ class Learner extends user_1.User {
     async hasReport() {
         const hasReport = await new http_1.HttpUtils().get(routes_1.Routes.GET_REPORT, this._Uuid);
         try {
+            console.log(hasReport.data);
             return hasReport;
         }
         catch (error) {
@@ -28,8 +29,15 @@ class Learner extends user_1.User {
             return false;
         }
     }
-    codeRequest(trainerUuid) {
-        return trainerUuid;
+    async getTrainers() {
+        const trainerList = await new http_1.HttpUtils().get(routes_1.Routes.GET_TRAINERS, this._Uuid);
+        try {
+            return trainerList;
+        }
+        catch (error) {
+            console.log(trainerList.error.message);
+            return 'fail';
+        }
     }
 }
 exports.Learner = Learner;

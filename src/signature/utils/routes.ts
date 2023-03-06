@@ -11,6 +11,8 @@ export enum Routes {
     GET_ROLE = 'placeholder',
 
     GET_REPORT = '/signature/report/:learnerUuid',
+
+    GET_TRAINERS = '/signature/find/trainer/:uuid'
 }
 
 

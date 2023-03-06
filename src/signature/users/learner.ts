@@ -22,6 +22,7 @@ export class Learner extends User {
    async hasReport(): Promise<any> {
       const hasReport = await new HttpUtils().get(Routes.GET_REPORT, this._Uuid)
       try {
+         console.log(hasReport.data)
          return hasReport;
       }
       catch (error) {
@@ -29,8 +30,17 @@ export class Learner extends User {
          return false
       }
    }
-   codeRequest(trainerUuid: string) {
-      return trainerUuid;
-   }
+
+   async getTrainers(): Promise<any> {
+      const trainerList = await new HttpUtils().get(Routes.GET_TRAINERS, this._Uuid)
+      try {
+         return trainerList
+      }
+      catch(error) {
+         console.log(trainerList.error.message)
+         return 'fail'
+      }
+}
+
 
 }
