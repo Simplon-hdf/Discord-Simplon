@@ -4,14 +4,15 @@ import {
   TextInputBuilder,
   TextInputStyle,
   ModalSubmitInteraction,
+  StringSelectMenuBuilder,
 } from "discord.js";
-import { HttpUtils } from "../../utils/http";
-import { Routes } from "../../utils/routes";
+import selectMenuPoleSelection from "../select_menu/create-ticket";
+import EmbedMessage from "../../classes/embed-message";
 
 export default {
   data: new ModalBuilder()
     .setCustomId("createTicketModal")
-    .setTitle("Demande de ticket")
+    .setTitle("Création d'un ticket.")
     .addComponents(
       new ActionRowBuilder<TextInputBuilder>().addComponents(
         new TextInputBuilder()
@@ -23,17 +24,22 @@ export default {
       )
     ),
   run: async (interaction: ModalSubmitInteraction) => {
+    const selectMenuPoleSelectionRow =
+      new ActionRowBuilder<StringSelectMenuBuilder>().addComponents(
+        selectMenuPoleSelection.data
+      );
 
-    // const userRequest = interaction.fields.getTextInputValue("userRequest");
-    // await new HttpUtils().post(Routes.REGISTER_NEW_TICKET, 
-    // {
-    //   user_uuid: interaction.user.id,
-    //   role_uuid: "1043613353672716311",
-    //   ticket_tag: userRequest,
-    //   ticket_state: "IDLE",
-    // });
+    const SelectConcernedPole = new EmbedMessage(
+      "Sélection du pôle concerne",
+      "#ce0033",
+      "À fin de finalisée la création de votre ticket veuillez sélectionner le pole concerner par votre demande si aucune réponse ne convient merci de bien vouloir sélectionner **autre pole**.",
+      "https://simplon.co/favicon.png"
+    );
 
-    await interaction.reply("coucou")
-
+    await interaction.reply({
+      embeds: [SelectConcernedPole],
+      components: [selectMenuPoleSelectionRow],
+      ephemeral: true,
+    });
   },
 };
