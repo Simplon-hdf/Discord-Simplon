@@ -18,9 +18,12 @@ export default {
             const codeRequestStatus = await learner.getCodeRequestStatus()
             if (codeRequestStatus) {
 
-                const hasReport = learner.hasReport();
+                const hasReport = await learner.hasReport();
+                console.log(hasReport);
 
                 if (!hasReport) {
+
+                    // TODO : learner.getTrainers();
 
                 } else {
                     const everReport = new EmbedMessage(

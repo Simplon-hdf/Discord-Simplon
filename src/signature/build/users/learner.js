@@ -18,6 +18,16 @@ class Learner extends user_1.User {
             return false;
         }
     }
+    async hasReport() {
+        const hasReport = await new http_1.HttpUtils().get(routes_1.Routes.GET_REPORT, this._Uuid);
+        try {
+            return hasReport;
+        }
+        catch (error) {
+            console.log(hasReport.error.message);
+            return false;
+        }
+    }
     codeRequest(trainerUuid) {
         return trainerUuid;
     }

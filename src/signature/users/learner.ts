@@ -19,7 +19,7 @@ export class Learner extends User {
       }
    }
 
-   async hasReport(): Promise<boolean> {
+   async hasReport(): Promise<any> {
       const hasReport = await new HttpUtils().get(Routes.GET_REPORT, this._Uuid)
       try {
          return hasReport;
