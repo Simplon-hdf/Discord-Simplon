@@ -4,8 +4,8 @@ import {
   ButtonInteraction,
 } from "discord.js";
 import createTicketModal from "../modals/create-ticket";
-import { HttpUtils } from "../utils/http";
-import { Routes } from "../utils/routes";
+import { HttpUtils } from "../../utils/http";
+import { Routes } from "../../utils/routes";
 
 export default {
   data: new ButtonBuilder()

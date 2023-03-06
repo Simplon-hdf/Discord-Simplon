@@ -5,8 +5,8 @@ import {
   TextInputStyle,
   ModalSubmitInteraction,
 } from "discord.js";
-import { HttpUtils } from "../utils/http";
-import { Routes } from "../utils/routes";
+import { HttpUtils } from "../../utils/http";
+import { Routes } from "../../utils/routes";
 
 export default {
   data: new ModalBuilder()
