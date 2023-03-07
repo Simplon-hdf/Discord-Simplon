@@ -34,6 +34,6 @@ export default async (client: any) => {
     
     for (const file of componentsFiles) {
         const component = await import(`../../${file}`);
-        client.components.set(component.default.data.customId, component.default); // Link cmd name to complete module
+        client.components.set(component.default.data.data.custom_id, component.default); // Link cmd name to complete module
     }
 }

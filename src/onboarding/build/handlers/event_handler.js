@@ -1,5 +1,4 @@
 "use strict";
-/// <reference path="../events/ready.ts"/>
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -46,7 +45,6 @@ exports.default = async (client) => {
         catch (error) {
             console.log(error);
         }
-
         return arrayOfFiles;
     }
     for (const file of eventFiles) {

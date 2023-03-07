@@ -1,4 +1,4 @@
-import { Client, Events, GatewayIntentBits, Interaction } from "discord.js";
+import { ButtonInteraction, Client, Events, GatewayIntentBits, Interaction } from "discord.js";
 import EventEmitter from "events";
 import * as dotenv from "dotenv";
 import command_handler from "./handlers/command_handler";
@@ -19,14 +19,12 @@ event_handler(client);
 components_handler(client);
 
 client.on(Events.InteractionCreate, async (interaction : Interaction) => {
+    const parsedClient : any = client;
     if(interaction.isChatInputCommand()) {
-      const parsedClient : any = client;
-      const command = parsedClient.commands.get(interaction['commandName']);
-      command.execute(interaction);
-    } else if (interaction.isButton()) {
-      const parsedClient : any = client;
-      for(const d of parsedClient.components)
-        console.log(d);
+      parsedClient.commands.get(interaction['commandName']).execute(interaction);
+    } else {
+      const castedInteraction : any = interaction;
+      parsedClient.components.get(castedInteraction['customId']).execute(interaction);
     }
 });
 
