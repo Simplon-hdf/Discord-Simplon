@@ -1,7 +1,6 @@
 import { readdirSync } from "fs";
 
 export default async (client: any) => {
-  console.log("ciouc")
   const buttonFiles = readdirSync(
     `${__dirname}/../../build/components/buttons/`
   ).filter((file) => file.endsWith(".js"));

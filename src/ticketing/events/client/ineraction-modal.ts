@@ -14,7 +14,7 @@ const interactionModal = client.on(
     } else {
       modal.run(interaction);
       console.log(
-        `[MODAL] ${interaction.guild.name}(${interaction.guild.id}) - ${interaction.user.tag}(${interaction.user.id}) send modal ${modal.data.data.title}`
+        `[MODAL] ${interaction.guild.name}(${interaction.guild.id}) - ${interaction.user.tag}(${interaction.user.id}) send modal ${modal.data.data.title}.`
       );
     }
   }

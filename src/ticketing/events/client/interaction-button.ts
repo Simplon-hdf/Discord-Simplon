@@ -11,14 +11,14 @@ const interactionButton = client.on(
     if (!button) {
       interaction.reply("[ERROR] [INTERACTION_BUTTON] => No button provided.");
       return;
-    } else {
+    } else { 
       button.run(interaction);
 
       console.log(
-        `[BUTTON] ${interaction.guild.name}(${interaction.guild.id}) - ${interaction.user.tag}(${interaction.user.id}) executed ${button.data.data.label}`
+        `[BUTTON] ${interaction.guild.name}(${interaction.guild.id}) - ${interaction.user.tag}(${interaction.user.id}) executed ${button.data.data.label}.`
       );
     }
   }
-);
+); 
 
 export default interactionButton;

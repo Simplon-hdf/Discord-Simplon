@@ -1,1 +1,4 @@
 api-route-url: http://localhost:3000
+
+ticketRoles:
+  - Admin: 1043613353672716310

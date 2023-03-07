@@ -1,39 +1,53 @@
 import {
-  ActionRowBuilder,
   StringSelectMenuBuilder,
-  StringSelectMenuInteraction,
+  ChannelType
 } from "discord.js";
+import { Guild } from "../../guild";
 import { HttpUtils } from "../../utils/http";
 import { Routes } from "../../utils/routes";
+
+const roles = Guild.YamlConfig.get()["ticketRoles"];
+
+const role = roles.map((role: any) => {
+  let pole = Object.keys(role)[0];
+  let value = role[pole];
+  return {
+    label: `[${pole}]`,
+    description: `Le ticket concernera le pole: ${pole}`,
+    value: `${value}`,
+  };
+});
 
 export default {
   data: new StringSelectMenuBuilder()
     .setCustomId("selectConcernedPole")
     .setPlaceholder("Veuillez sélectionner une réponse")
-    .addOptions(
-      {
-        label: "Test",
-        description: "This is a test",
-        value: "first_option",
-      },
-      {
-        label: "You can select me too",
-        description: "This is also a description",
-        value: "second_option",
-      }
-    ),
+    .addOptions(role),
   run: async (interaction: any) => {
     try {
-      // const userRequest = interaction.fields.getTextInputValue("userRequest");
+
+      const poleSelected = interaction.values[0];
+
       // await new HttpUtils().post(Routes.REGISTER_NEW_TICKET,
       // {
       //   user_uuid: interaction.user.id,
-      //   role_uuid: "1043613353672716311",
-      //   ticket_tag: userRequest,
+      //   role_uuid: poleSelected,
+      //   ticket_tag: "TEST HACEMI",
       //   ticket_state: "IDLE",
       // });
 
-      await interaction.reply("coucou");
+
+      const thread = await interaction.channel.threads.create({
+        name: `[${poleSelected}] - ${interaction.user.username}`,
+        type: ChannelType.PrivateThread,
+        reason: "test",
+      });
+      await thread.members.add(interaction.user.id);
+
+    await interaction.reply({
+      content: "test",
+      ephemeral: true
+    })
     } catch (error) {
       interaction.reply(
         `[ERROR] [SELECT_MENU] => Select menu with customId: ${interaction.customId} occured and error`

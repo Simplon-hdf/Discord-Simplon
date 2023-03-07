@@ -12,9 +12,9 @@ const interactionModal = client.on(
       interaction.reply("[ERROR] [INTERACTION_SELECT_MENU] => No select menu provided.");
       return;
     } else {
-        selectMenu.run(interaction);
+        selectMenu.run(interaction); 
       console.log(
-        `[MODAL] ${interaction.guild.name}(${interaction.guild.id}) - ${interaction.user.tag}(${interaction.user.id}) send modal ${selectMenu.data.data.title}`
+        `[MODAL] ${interaction.guild.name}(${interaction.guild.id}) - ${interaction.user.tag}(${interaction.user.id}) used select menu ${selectMenu.data.data.custom_id}.`
       );
     }
   }
