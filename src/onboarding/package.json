@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc --project tsconfig.json",
+    "start":"tsc --project tsconfig.json && node build/index.js",
     "build:start": "tsc --project tsconfig.json && node build/index.js | pino-pretty -c",
     "test": "mocha && c8 check-coverage --lines 80"
   },
