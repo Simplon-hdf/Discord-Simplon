@@ -34,13 +34,14 @@ export default async (client: any, discord_token?: any, discord_client_id?: any)
         return arrayOfFiles
     }
 
-    logger.info(commandFiles);
 
 
     client.commands = new Collection();
 
     for (const file of commandFiles) {
         const cmd = await import(`../${file}`);
+        logger.info(`Loading command ${cmd.default.data.name}`);
+
         client.commands.set(cmd.default.data.name, cmd.default); // Link cmd name to complete module
     }
 
@@ -53,13 +54,13 @@ export default async (client: any, discord_token?: any, discord_client_id?: any)
 
     (async () => {
         try {
-            console.log('Started refreshing application (/) commands.');
+            logger.info('Started refreshing application (/) commands.');
 
             await rest.put(Routes.applicationCommands(discord_client_id), { body: client.commands.map((x: any) => x.data.toJSON()) }); //Logging commands on RESTAPI (for each values in commands, get data.JSON() to register it
 
-            console.log('Successfully reloaded application (/) commands.');
+            logger.info('Successfully reloaded application (/) commands.');
          } catch (error) {
-            console.error(error);
+            logger.error(error);
         }
     })();
 }

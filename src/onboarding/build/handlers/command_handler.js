@@ -55,10 +55,10 @@ exports.default = async (client, discord_token, discord_client_id) => {
         }
         return arrayOfFiles;
     }
-    logger_1.default.info(commandFiles);
     client.commands = new discord_js_1.Collection();
     for (const file of commandFiles) {
         const cmd = await (_a = `../${file}`, Promise.resolve().then(() => __importStar(require(_a))));
+        logger_1.default.info(`Loading command ${cmd.default.data.name}`);
         client.commands.set(cmd.default.data.name, cmd.default); // Link cmd name to complete module
     }
     if (!discord_token && !discord_client_id) {
@@ -67,12 +67,12 @@ exports.default = async (client, discord_token, discord_client_id) => {
     const rest = new discord_js_1.REST({ version: '10' }).setToken(discord_token);
     (async () => {
         try {
-            console.log('Started refreshing application (/) commands.');
+            logger_1.default.info('Started refreshing application (/) commands.');
             await rest.put(discord_js_1.Routes.applicationCommands(discord_client_id), { body: client.commands.map((x) => x.data.toJSON()) }); //Logging commands on RESTAPI (for each values in commands, get data.JSON() to register it
-            console.log('Successfully reloaded application (/) commands.');
+            logger_1.default.info('Successfully reloaded application (/) commands.');
         }
         catch (error) {
-            console.error(error);
+            logger_1.default.error(error);
         }
     })();
 };

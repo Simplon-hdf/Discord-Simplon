@@ -2,6 +2,7 @@ import { REST, Routes, Collection, Client } from "discord.js";
 import * as fs from "fs";
 import * as path from 'path';
 import * as dotenv from "dotenv";
+import logger from "../utils/logger";
 
 export default async (client: any) => {
     dotenv.config();
@@ -18,7 +19,7 @@ export default async (client: any) => {
                 if (fs.statSync(dirPath + "/" + file).isDirectory()) {
                     arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles)
                 } else {
-                    arrayOfFiles.push(path.join(dirPath, '/', file));
+                    arrayOfFiles.push(path.join(dirPath.replace("build/", ''), "/", file));
                 }
             })
 
@@ -33,7 +34,8 @@ export default async (client: any) => {
 
     
     for (const file of componentsFiles) {
-        const component = await import(`../../${file}`);
+        const component = await import(`../${file}`);
+        logger.info(`Loading component ${component.default.data.data.custom_id}`);
         client.components.set(component.default.data.data.custom_id, component.default); // Link cmd name to complete module
     }
 }

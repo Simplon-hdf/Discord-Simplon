@@ -22,9 +22,13 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs = __importStar(require("fs"));
 const path = __importStar(require("path"));
+const logger_1 = __importDefault(require("../utils/logger"));
 exports.default = async (client) => {
     var _a;
     const dirPath = './build/events/';
@@ -49,6 +53,7 @@ exports.default = async (client) => {
     }
     for (const file of eventFiles) {
         const event = await (_a = '../' + file, Promise.resolve().then(() => __importStar(require(_a))));
+        logger_1.default.info(`Loading event ${event.default.name}`);
         if (event.default.once) {
             client.once(event.default.name, (...args) => event.default.execute(...args));
         }

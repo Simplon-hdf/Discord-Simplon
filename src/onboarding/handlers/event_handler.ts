@@ -1,5 +1,6 @@
 import * as fs from "fs";
 import * as path from "path";
+import logger from "../utils/logger";
 
 export default async (client: any) => {
 
@@ -32,6 +33,8 @@ export default async (client: any) => {
 
   for (const file of eventFiles) {
     const event = await import('../' + file);
+    logger.info(`Loading event ${event.default.name}`);
+
     if (event.default.once) {
       client.once(event.default.name, (...args: any[]) => event.default.execute(...args));
     } else {

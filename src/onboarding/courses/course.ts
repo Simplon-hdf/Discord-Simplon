@@ -2,28 +2,25 @@ import {CategoryTemplate} from "../channels/category/category-template";
 
 export class Course {
 
-  private readonly _id: number;
   private readonly _name: string;
+  private _categoryTemplate?: CategoryTemplate;
 
-  private readonly _categoryTemplate: CategoryTemplate;
 
-
-  constructor(id: number, name: string, categoryTemplate: CategoryTemplate) {
-    this._id = id;
+  constructor(name: string, categoryTemplate?: CategoryTemplate) {
     this._name = name;
     this._categoryTemplate = categoryTemplate;
   }
 
 
-  get id(): number {
-    return this._id;
-  }
-
   get name(): string {
     return this._name;
   }
 
-  get categoryTemplate(): CategoryTemplate {
+  getCategoryTemplate(): CategoryTemplate | undefined{
     return this._categoryTemplate;
+  }
+
+  setCategoryTemplate(categoryTemplate: CategoryTemplate) : void{
+    this._categoryTemplate = categoryTemplate;
   }
 }
