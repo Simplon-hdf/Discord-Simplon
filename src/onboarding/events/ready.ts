@@ -41,6 +41,19 @@ export default {
   }
 }
 
+/**
+ * Enregistre la category de stockage dans la base de données
+ * @param guild Object guild de discord
+ */
+async function registerChannelsStock(guild: DiscordGuild) {
+
+}
+
+/**
+ * Enregistre les channels et les categories dans la base de données
+ * @param guild Object guild de discord
+ * @param guild_id Identifiant de la guild en base de données
+ */
 function registerChannels(guild: DiscordGuild, guild_id: string) {
   // Enregistrement des categories dans la base de données
   const categories = guild.channels.cache.filter((channel) => channel.type === ChannelType.GuildCategory);
