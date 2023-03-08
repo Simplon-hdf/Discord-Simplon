@@ -7,21 +7,25 @@ export default {
     name: Events.InteractionCreate,
     on: true,
     async execute(interaction: ButtonInteraction) {
+
         if (!interaction.isButton() || interaction['customId'] != 'start') return;
 
         const learner = new Learner(interaction.user.id);
         const interactionChannel = interaction.channel?.id as string;
-
-        const memberRole = interaction.guild?.members.me?.permissionsIn(interactionChannel).has(PermissionsBitField.Flags.SendMessages)
+        const memberRole = interaction.guild?.members.me?.permissionsIn(interactionChannel).has(PermissionsBitField.Flags.CreatePrivateThreads);
 
         if (!memberRole) {
+
             const codeRequestStatus = await learner.getCodeRequestStatus()
+
             if (codeRequestStatus) {
 
                 const hasReport = await learner.hasReport();
 
                 if (!hasReport) {
+
                     const trainerList = await learner.getTrainers()
+
 
                     const selectTrainer = new EmbedMessage(
                         "Sélection du formateur pour rappel",
@@ -59,7 +63,6 @@ export default {
                     )
                     await interaction.reply({embeds: [everReport], ephemeral: true})
                 }
-
 
             } else {
                 const isNotActivate = new EmbedMessage(

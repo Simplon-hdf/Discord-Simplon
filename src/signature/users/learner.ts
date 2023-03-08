@@ -22,7 +22,6 @@ export class Learner extends User {
    async hasReport(): Promise<any> {
       const hasReport = await new HttpUtils().get(Routes.GET_REPORT, this._Uuid)
       try {
-         console.log(hasReport.data)
          return hasReport;
       }
       catch (error) {
@@ -40,7 +39,21 @@ export class Learner extends User {
          console.log(trainerList.error.message)
          return 'fail'
       }
-}
+   }
+
+   async codeRequest(trainerUuid: string): Promise<any> {
+      const codeRequest = await new HttpUtils().post(Routes.POST_CODE_REQUEST, {
+            "trainerUuid": trainerUuid
+
+      }, this._Uuid);
+      try {
+         return codeRequest
+      }
+      catch (error) {
+         console.log(codeRequest.error.message)
+         return 'fail'
+      }
+   }
 
 
 }

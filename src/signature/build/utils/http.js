@@ -24,7 +24,7 @@ class HttpUtils {
     }
     async post(route, data, args) {
         return new Promise(async (resolve) => {
-            const formattedRoute = route.replace(/:(\w+)/, (_match, group) => group.replace(/[a-zA-Z]/g, args));
+            const formattedRoute = args === undefined ? route : route.replace(/:(\w+)/, args);
             const request = await axios_1.default.post(this._urlBase + formattedRoute, data);
             if (request.status === 404 || request.status === 500) {
                 throw new api_error_1.ApiError('API error on `POST` request. Error : ' + request.status);

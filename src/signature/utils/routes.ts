@@ -8,13 +8,11 @@ export enum Routes {
 
     GET_ROLE_BY_USER_ID = '/find/role/user/:uuid',
 
-    GET_ROLE = 'placeholder',
-
     GET_REPORT = '/signature/report/:learnerUuid',
 
     GET_TRAINERS = '/signature/find/trainer/:uuid',
 
-    POST_CODE_REQUEST = 'placeholder',
+    POST_CODE_REQUEST = '/signature/codeRequest/:learnerUuid',
 }
 
 

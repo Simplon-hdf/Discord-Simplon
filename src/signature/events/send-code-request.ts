@@ -9,10 +9,10 @@ export default {
     async execute(interaction: SelectMenuInteraction) {
         if (!interaction.isAnySelectMenu() || interaction['customId'] != 'select_trainer') return;
 
-        console.log('ok');
         const trainerUuid = interaction.values[0];
+
         const learner = new Learner(interaction.user.id);
-        const codeRequest = await learner.codeRequest();
+        const codeRequest = await learner.codeRequest(trainerUuid);
 
         const codeRequestEmbed = new EmbedMessage(
             "Merci!",

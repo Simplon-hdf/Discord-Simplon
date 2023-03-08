@@ -21,7 +21,6 @@ class Learner extends user_1.User {
     async hasReport() {
         const hasReport = await new http_1.HttpUtils().get(routes_1.Routes.GET_REPORT, this._Uuid);
         try {
-            console.log(hasReport.data);
             return hasReport;
         }
         catch (error) {
@@ -36,6 +35,18 @@ class Learner extends user_1.User {
         }
         catch (error) {
             console.log(trainerList.error.message);
+            return 'fail';
+        }
+    }
+    async codeRequest(trainerUuid) {
+        const codeRequest = await new http_1.HttpUtils().post(routes_1.Routes.POST_CODE_REQUEST, {
+            "trainerUuid": trainerUuid
+        }, this._Uuid);
+        try {
+            return codeRequest;
+        }
+        catch (error) {
+            console.log(codeRequest.error.message);
             return 'fail';
         }
     }
