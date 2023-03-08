@@ -4,7 +4,7 @@ import {
   ChatInputCommandInteraction,
   SlashCommandBuilder,
 } from "discord.js";
-import createTicket from "../components/buttons/button-creation-ticket";
+import createTicket from "../components/buttons/discord/button-creation-ticket";
 import EmbedMessage from "../classes/embed-message";
 
 export default {
