@@ -1,7 +1,7 @@
 import { readdirSync } from "fs";
 
 export default async (client: any) => {
-  const modalFiles = readdirSync(`${__dirname}/../../build/components/buttons/`).filter(
+  const modalFiles = readdirSync(`${__dirname}/../../build/components/modals/`).filter(
     (file) => file.endsWith(".js")
   );
   for (const file of modalFiles) {
