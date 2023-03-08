@@ -1,33 +1,41 @@
+/// <reference path="../commands/config/create-interfaces.ts" />
+
 import { REST, Routes, Collection, Client } from "discord.js";
 import * as fs from "fs";
 import * as path from 'path';
 import * as dotenv from "dotenv";
+import logger from "../utils/logger";
 
 export default async (client: any, discord_token?: any, discord_client_id?: any) => {
     dotenv.config();
 
-    const commandFiles = getAllFiles('./build/commands/');
+    const commandFiles = getAllFiles('build/commands/');
+
+    console.log(commandFiles);
 
     function getAllFiles(dirPath: any, arrayOfFiles?: any) {
-
-        arrayOfFiles = arrayOfFiles || []
         try {
-
             const files = fs.readdirSync(dirPath)
+
+            arrayOfFiles = arrayOfFiles || []
+
             files.forEach(function (file) {
                 if (fs.statSync(dirPath + "/" + file).isDirectory()) {
                     arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles)
                 } else {
-                    arrayOfFiles.push(path.join("commands/", file));
+                    arrayOfFiles.push(path.join(dirPath.replace("build/", ''), "/", file));
                 }
             })
 
         } catch (error) {
-            console.log(error);
+            logger.error(error);
 
         }
         return arrayOfFiles
     }
+
+    logger.info(commandFiles);
+
 
     client.commands = new Collection();
 
@@ -50,7 +58,7 @@ export default async (client: any, discord_token?: any, discord_client_id?: any)
             await rest.put(Routes.applicationCommands(discord_client_id), { body: client.commands.map((x: any) => x.data.toJSON()) }); //Logging commands on RESTAPI (for each values in commands, get data.JSON() to register it
 
             console.log('Successfully reloaded application (/) commands.');
-        } catch (error) {
+         } catch (error) {
             console.error(error);
         }
     })();

@@ -1,4 +1,5 @@
 "use strict";
+/// <reference path="../commands/config/create-interfaces.ts" />
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -22,33 +23,39 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const discord_js_1 = require("discord.js");
 const fs = __importStar(require("fs"));
 const path = __importStar(require("path"));
 const dotenv = __importStar(require("dotenv"));
+const logger_1 = __importDefault(require("../utils/logger"));
 exports.default = async (client, discord_token, discord_client_id) => {
     var _a;
     dotenv.config();
-    const commandFiles = getAllFiles('./build/commands/');
+    const commandFiles = getAllFiles('build/commands/');
+    console.log(commandFiles);
     function getAllFiles(dirPath, arrayOfFiles) {
-        arrayOfFiles = arrayOfFiles || [];
         try {
             const files = fs.readdirSync(dirPath);
+            arrayOfFiles = arrayOfFiles || [];
             files.forEach(function (file) {
                 if (fs.statSync(dirPath + "/" + file).isDirectory()) {
                     arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles);
                 }
                 else {
-                    arrayOfFiles.push(path.join("commands/", file));
+                    arrayOfFiles.push(path.join(dirPath.replace("build/", ''), "/", file));
                 }
             });
         }
         catch (error) {
-            console.log(error);
+            logger_1.default.error(error);
         }
         return arrayOfFiles;
     }
+    logger_1.default.info(commandFiles);
     client.commands = new discord_js_1.Collection();
     for (const file of commandFiles) {
         const cmd = await (_a = `../${file}`, Promise.resolve().then(() => __importStar(require(_a))));
