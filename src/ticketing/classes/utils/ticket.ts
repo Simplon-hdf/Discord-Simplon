@@ -1,4 +1,6 @@
 export class Ticket {
+  private static instance?: Ticket;
+
   private readonly _userUuid: string;
   private _roleUuid?: string;
   private readonly _ticketTag: string;
@@ -32,7 +34,7 @@ export class Ticket {
     return this._userUuid;
   }
 
-  set roleUuid(uuid: string) {
+  setRoleUuid(uuid: string) {
     this._roleUuid = uuid;
   }
 }
