@@ -1,4 +1,9 @@
-import { StringSelectMenuBuilder, ChannelType, ActionRowBuilder, ButtonBuilder } from "discord.js";
+import {
+  StringSelectMenuBuilder,
+  ChannelType,
+  ActionRowBuilder,
+  ButtonBuilder,
+} from "discord.js";
 import EmbedMessage from "../../classes/embed-message";
 import { DiscordClient } from "../../classes/utils/client";
 import { Guild } from "../../guild";
@@ -27,7 +32,6 @@ export default {
     .addOptions(role),
   run: async (interaction: any) => {
     try {
-
       const poleSelected = interaction.values[0];
       const client = DiscordClient.getInstance();
       const ticket = client.getTicket();
@@ -36,19 +40,13 @@ export default {
         type: ChannelType.PrivateThread,
         reason: ticket?.ticketTag,
       });
-      const ticketCreatedEmbed = new EmbedMessage(
-        "Création de votre ticket",
-        "#ce0033",
-        `\n\n**Votre ticket a bien était crée**.\n\n`
-      );
       const ticketInsideEmbed = new EmbedMessage(
         "Géstion du ticket",
         "#ce0033",
         `\n\n Bonjour ${interaction.user.username}, \nBienvenue sur votre ticket un membre du staff vas s'occuper de votre ticket. \n\n Informations du ticket: \n\n- **Status**: ${ticket?.ticketState}.\n- **Demande**: ${ticket?.ticketTag}.\n- **Utilisateurs**: ${interaction.user.username}.\n- **Pole concerner**: SOON. \n\n Détailler le plus possible votre demande pour que nous puissions au mieux répondre à votre demande.`
       );
 
-      const componentsRow =
-      new ActionRowBuilder<ButtonBuilder>().addComponents(
+      const componentsRow = new ActionRowBuilder<ButtonBuilder>().addComponents(
         buttonCloseTicket.data,
         buttonStatusTicket.data,
         buttonTranscriptTicket.data
@@ -70,12 +68,12 @@ export default {
       });
 
       await interaction.reply({
-        embeds: [ticketCreatedEmbed],
+        content: "✅ Votre ticket a bien était crée.",
         ephemeral: true,
       });
     } catch (error) {
-      interaction.reply(
-        `[ERROR] [SELECT_MENU] => Select menu with customId: ${interaction.customId} occured and error`
+      await interaction.reply(
+        `[ERROR] [SELECT_MENU] => Select-menu with customId: ${interaction.customId} occured and error`
       );
       console.error(error);
     }

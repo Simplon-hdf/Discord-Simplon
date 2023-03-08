@@ -12,7 +12,9 @@ export default {
       console.log(interaction);
       await interaction.reply("fermer");
     } catch (error) {
-      console.error(error);
+      await interaction.reply(
+        `[ERROR] [BUTTON] => Button with customId: ${interaction.customId} occured and error`
+      );
     }
   },
 };

@@ -18,7 +18,9 @@ export default {
     await interaction.showModal(createTicketModal.data);
       
     } catch (error) {
-      console.error(error);
+      interaction.reply(
+        `[ERROR] [BUTTON] => Button with customId: ${interaction.customId} occured and error`
+      );
     }
   },
 };

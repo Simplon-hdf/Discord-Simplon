@@ -12,7 +12,9 @@ export default {
       console.log(interaction)
       await interaction.reply("pb résolu");
     } catch (error) {
-      console.error(error);
+      interaction.reply(
+        `[ERROR] [BUTTON] => Button with customId: ${interaction.customId} occured and error`
+      );
     }
   },
 };

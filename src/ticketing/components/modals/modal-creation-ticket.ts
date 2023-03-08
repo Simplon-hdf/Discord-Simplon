@@ -55,7 +55,9 @@ export default {
       });
 
     } catch (error) {
-      console.error(error);
+      interaction.reply(
+        `[ERROR] [MODAL] => Modal with customId: ${interaction.customId} occured and error`
+      );
     } 
   },
 };
