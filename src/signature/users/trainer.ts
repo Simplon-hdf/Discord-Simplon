@@ -6,9 +6,6 @@ export class Trainer extends User {
     constructor(Uuid: string) {
         super(Uuid);
     }
-    reportForgottenSignature(learnerUuid: string) {
-        return learnerUuid;
-    }
 
     deactivateCodeRequest(_promoUuid: string) {
         return _promoUuid;

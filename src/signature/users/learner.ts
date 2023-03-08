@@ -44,7 +44,6 @@ export class Learner extends User {
    async codeRequest(trainerUuid: string): Promise<any> {
       const codeRequest = await new HttpUtils().post(Routes.POST_CODE_REQUEST, {
             "trainerUuid": trainerUuid
-
       }, this._Uuid);
       try {
          return codeRequest
@@ -54,6 +53,4 @@ export class Learner extends User {
          return 'fail'
       }
    }
-
-
 }
