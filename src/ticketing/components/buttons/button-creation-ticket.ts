@@ -3,7 +3,7 @@ import {
   ButtonStyle,
   ButtonInteraction,
 } from "discord.js";
-import createTicketModal from "../modals/create-ticket";
+import createTicketModal from "../modals/modal-creation-ticket";
 import { HttpUtils } from "../../utils/http";
 import { Routes } from "../../utils/routes";
 

@@ -6,11 +6,12 @@ import {
   ModalSubmitInteraction,
   StringSelectMenuBuilder,
 } from "discord.js";
-import selectMenuPoleSelection from "../select_menu/create-ticket";
+import selectMenuPoleSelection from "../select_menu/select_menu-creation-ticket";
 import EmbedMessage from "../../classes/embed-message";
 import { HttpUtils } from "../../utils/http";
 import { Routes } from "../../utils/routes";
 import { Ticket } from "../../classes/utils/ticket";
+import { DiscordClient } from "../../classes/utils/client";
 
 export default {
   data: new ModalBuilder()
@@ -30,6 +31,10 @@ export default {
     try {
 
       const userRequest = interaction.fields.getTextInputValue('userRequest');
+
+      const client = DiscordClient.getInstance();
+      const ticket = new Ticket(interaction.user.id, userRequest, "IDLE");
+      client.setTicket(ticket)
 
       const selectMenuPoleSelectionRow =
         new ActionRowBuilder<StringSelectMenuBuilder>().addComponents(
