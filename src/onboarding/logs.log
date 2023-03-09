@@ -1,0 +1,812 @@
+{"level":"info","message":"Loading command config","timestamp":"2023-03-09T20:54:39.539Z"}
+{"level":"info","message":"Loading event create-category","timestamp":"2023-03-09T20:54:39.540Z"}
+{"level":"info","message":"Loading component courses-creation","timestamp":"2023-03-09T20:54:39.540Z"}
+{"level":"info","message":"Loading command ping","timestamp":"2023-03-09T20:54:39.559Z"}
+{"level":"info","message":"Loading event channelCreate","timestamp":"2023-03-09T20:54:39.559Z"}
+{"level":"info","message":"Loading component test-button","timestamp":"2023-03-09T20:54:39.559Z"}
+{"level":"info","message":"Loading command test","timestamp":"2023-03-09T20:54:39.560Z"}
+{"level":"info","message":"Started refreshing application (/) commands.","timestamp":"2023-03-09T20:54:39.560Z"}
+{"level":"info","message":"Loading event ready","timestamp":"2023-03-09T20:54:39.561Z"}
+{"level":"info","message":"Loading component courses-ask-name","timestamp":"2023-03-09T20:54:39.561Z"}
+{"level":"info","message":"Loading component selectConcernedPole","timestamp":"2023-03-09T20:54:39.561Z"}
+{"level":"info","message":"Successfully reloaded application (/) commands.","timestamp":"2023-03-09T20:54:39.864Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-09T20:54:40.158Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-09T20:54:40.186Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-09T20:54:40.189Z"}
+{"level":"info","message":"[Registering category] Channels Stock : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.194Z"}
+{"level":"info","message":"[Registering category] Channels Stock : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.205Z"}
+{"level":"info","message":"[Registering category] Salons vocaux : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.207Z"}
+{"level":"info","message":"[Registering category] Channels Stock : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.208Z"}
+{"level":"info","message":"[Registering category] Channels Stock : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.210Z"}
+{"level":"info","message":"[Registering category] template : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.211Z"}
+{"level":"info","message":"[Registering category] vals-p1 : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.213Z"}
+{"level":"info","message":"[Registering category] Salons textuels : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.214Z"}
+{"level":"info","message":"[Registering category] Channels Stock : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.216Z"}
+{"level":"info","message":"[Registering category] Channels Stock : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.217Z"}
+{"level":"info","message":"[Registering category] Channels Stock : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.218Z"}
+{"level":"info","message":"[Registering category] onboarding-test : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.219Z"}
+{"level":"info","message":"[Registering category] Channels Stock : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.220Z"}
+{"level":"info","message":"[Registering category] cda-vals-p1 : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.221Z"}
+{"level":"info","message":"[Registering category] Channels Stock : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.222Z"}
+{"level":"info","message":"[Registering category] Channels Stock : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.223Z"}
+{"level":"info","message":"[Registering category] sdqd : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.226Z"}
+{"level":"info","message":"[Registering category] p-1 : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.227Z"}
+{"level":"info","message":"[Registering category] Channels Stock : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.228Z"}
+{"level":"info","message":"[Registering category] Salons vocaux : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.229Z"}
+{"level":"info","message":"[Registering category] Salons textuels : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.229Z"}
+{"level":"info","message":"[Registering category] Channels Stock : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.230Z"}
+{"level":"info","message":"[Registering category] TSSR : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.231Z"}
+{"level":"info","message":"[Registering category] Blockchain-Vals-P1 : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.231Z"}
+{"level":"info","message":"[Registering category] Channels Stock : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.232Z"}
+{"level":"info","message":"[Registering category] Template : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.232Z"}
+{"level":"info","message":"[Registering category] Channels Stock : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.233Z"}
+{"level":"info","message":"[Registering category] Channels Stock : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.233Z"}
+{"level":"info","message":"[Registering category] CDA : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.233Z"}
+{"level":"info","message":"[Registering category] AIS : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.234Z"}
+{"level":"info","message":"[Registering category] settings-promo : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.234Z"}
+{"level":"info","message":"[Registering category] Channels Stock : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.235Z"}
+{"level":"info","message":"[Registering category] Channels Stock : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.235Z"}
+{"level":"info","message":"[Registering category] cda-vals-p1 : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.235Z"}
+{"level":"info","message":"[Registering channel] 1065920884143038484 : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.725Z"}
+{"level":"info","message":"[Registering channel] 1062113131561762826 : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.726Z"}
+{"level":"info","message":"[Registering channel] 1065920884143038484 : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.727Z"}
+{"level":"info","message":"[Registering channel] 1065985485744377906 : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.728Z"}
+{"level":"info","message":"[Registering channel] 1065949906193363004 : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.729Z"}
+{"level":"info","message":"[Registering channel] 1062113131561762826 : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.730Z"}
+{"level":"info","message":"[Registering channel] 1065985485744377906 : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.730Z"}
+{"level":"info","message":"[Registering channel] 1062113131561762826 : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.731Z"}
+{"level":"info","message":"[Registering channel] 1065949906193363004 : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.732Z"}
+{"level":"info","message":"[Registering channel] 1062113131561762826 : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.733Z"}
+{"level":"info","message":"[Registering channel] 1065920884143038484 : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.734Z"}
+{"level":"info","message":"[Registering channel] 1065920884143038484 : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.735Z"}
+{"level":"info","message":"[Registering channel] 1062113131561762827 : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.736Z"}
+{"level":"info","message":"[Registering channel] null : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.736Z"}
+{"level":"info","message":"[Registering channel] 1065920884143038484 : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.737Z"}
+{"level":"info","message":"[Registering channel] 1065951191596544110 : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.738Z"}
+{"level":"info","message":"[Registering channel] 1062113131561762826 : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.739Z"}
+{"level":"info","message":"[Registering channel] 1065951191596544110 : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.740Z"}
+{"level":"info","message":"[Registering channel] 1062113131561762826 : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.741Z"}
+{"level":"info","message":"[Registering channel] 1065920884143038484 : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.742Z"}
+{"level":"info","message":"[Registering channel] null : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.743Z"}
+{"level":"info","message":"[Registering channel] 1062113131561762826 : Guild => 1062113130232152086","timestamp":"2023-03-09T20:54:40.743Z"}
+{"level":"info","message":"[Registering channel] 1066098558698274949 : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.746Z"}
+{"level":"info","message":"[Registering channel] 1066073454694121614 : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.747Z"}
+{"level":"info","message":"[Registering channel] 1066073454694121614 : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.748Z"}
+{"level":"info","message":"[Registering channel] null : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.749Z"}
+{"level":"info","message":"[Registering channel] 1066100416204513280 : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.750Z"}
+{"level":"info","message":"[Registering channel] 1065287658852585572 : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.750Z"}
+{"level":"info","message":"[Registering channel] 1064937184727154708 : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.751Z"}
+{"level":"info","message":"[Registering channel] 1066103871006593024 : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.752Z"}
+{"level":"info","message":"[Registering channel] 1064635992398635118 : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.753Z"}
+{"level":"info","message":"[Registering channel] 1064635992398635118 : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.753Z"}
+{"level":"info","message":"[Registering channel] 1066103871006593024 : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.754Z"}
+{"level":"info","message":"[Registering channel] 1065287658852585572 : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.755Z"}
+{"level":"info","message":"[Registering channel] 1066076608215130112 : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.756Z"}
+{"level":"info","message":"[Registering channel] 1066098220238905354 : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.756Z"}
+{"level":"info","message":"[Registering channel] 1064635992398635118 : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.757Z"}
+{"level":"info","message":"[Registering channel] 1065287658852585572 : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.758Z"}
+{"level":"info","message":"[Registering channel] 1066076608215130112 : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.759Z"}
+{"level":"info","message":"[Registering channel] 1064635992398635119 : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.759Z"}
+{"level":"info","message":"[Registering channel] 1066098220238905354 : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.760Z"}
+{"level":"info","message":"[Registering channel] 1064937184727154708 : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.761Z"}
+{"level":"info","message":"[Registering channel] null : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.762Z"}
+{"level":"info","message":"[Registering channel] 1065287658852585572 : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.762Z"}
+{"level":"info","message":"[Registering channel] 1064635992398635118 : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.763Z"}
+{"level":"info","message":"[Registering channel] 1066100416204513280 : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.764Z"}
+{"level":"info","message":"[Registering channel] 1066098558698274949 : Guild => 1064635991320690799","timestamp":"2023-03-09T20:54:40.764Z"}
+{"level":"info","message":"Loading command config","timestamp":"2023-03-09T21:03:01.862Z"}
+{"level":"info","message":"Loading event create-category","timestamp":"2023-03-09T21:03:01.863Z"}
+{"level":"info","message":"Loading component courses-creation","timestamp":"2023-03-09T21:03:01.863Z"}
+{"level":"info","message":"Loading command ping","timestamp":"2023-03-09T21:03:01.882Z"}
+{"level":"info","message":"Loading event channelCreate","timestamp":"2023-03-09T21:03:01.882Z"}
+{"level":"info","message":"Loading component test-button","timestamp":"2023-03-09T21:03:01.882Z"}
+{"level":"info","message":"Loading command test","timestamp":"2023-03-09T21:03:01.883Z"}
+{"level":"info","message":"Started refreshing application (/) commands.","timestamp":"2023-03-09T21:03:01.883Z"}
+{"level":"info","message":"Loading event ready","timestamp":"2023-03-09T21:03:01.883Z"}
+{"level":"info","message":"Loading component courses-ask-name","timestamp":"2023-03-09T21:03:01.884Z"}
+{"level":"info","message":"Loading component selectConcernedPole","timestamp":"2023-03-09T21:03:01.884Z"}
+{"level":"info","message":"Successfully reloaded application (/) commands.","timestamp":"2023-03-09T21:03:02.166Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-09T21:03:02.471Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-09T21:03:02.539Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-09T21:03:02.543Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | categories: 18","timestamp":"2023-03-09T21:03:02.567Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-09T21:03:02.600Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | categories: 16","timestamp":"2023-03-09T21:03:02.605Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 22","timestamp":"2023-03-09T21:03:02.615Z"}
+{"level":"info","message":"Loading command config","timestamp":"2023-03-09T21:04:30.501Z"}
+{"level":"info","message":"Loading event create-category","timestamp":"2023-03-09T21:04:30.502Z"}
+{"level":"info","message":"Loading component courses-creation","timestamp":"2023-03-09T21:04:30.502Z"}
+{"level":"info","message":"Loading command ping","timestamp":"2023-03-09T21:04:30.521Z"}
+{"level":"info","message":"Loading event channelCreate","timestamp":"2023-03-09T21:04:30.521Z"}
+{"level":"info","message":"Loading component test-button","timestamp":"2023-03-09T21:04:30.521Z"}
+{"level":"info","message":"Loading command test","timestamp":"2023-03-09T21:04:30.522Z"}
+{"level":"info","message":"Started refreshing application (/) commands.","timestamp":"2023-03-09T21:04:30.522Z"}
+{"level":"info","message":"Loading event ready","timestamp":"2023-03-09T21:04:30.523Z"}
+{"level":"info","message":"Loading component courses-ask-name","timestamp":"2023-03-09T21:04:30.523Z"}
+{"level":"info","message":"Loading component selectConcernedPole","timestamp":"2023-03-09T21:04:30.523Z"}
+{"level":"info","message":"Successfully reloaded application (/) commands.","timestamp":"2023-03-09T21:04:30.840Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-09T21:04:31.148Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-09T21:04:31.173Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-09T21:04:31.177Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | categories: 16","timestamp":"2023-03-09T21:04:31.182Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 22","timestamp":"2023-03-09T21:04:31.210Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | categories: 18","timestamp":"2023-03-09T21:04:31.213Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-09T21:04:31.222Z"}
+{"level":"info","message":"Loading command config","timestamp":"2023-03-09T21:06:12.240Z"}
+{"level":"info","message":"Loading event create-category","timestamp":"2023-03-09T21:06:12.240Z"}
+{"level":"info","message":"Loading component courses-creation","timestamp":"2023-03-09T21:06:12.240Z"}
+{"level":"info","message":"Loading command ping","timestamp":"2023-03-09T21:06:12.260Z"}
+{"level":"info","message":"Loading event channelCreate","timestamp":"2023-03-09T21:06:12.260Z"}
+{"level":"info","message":"Loading component test-button","timestamp":"2023-03-09T21:06:12.260Z"}
+{"level":"info","message":"Loading command test","timestamp":"2023-03-09T21:06:12.261Z"}
+{"level":"info","message":"Started refreshing application (/) commands.","timestamp":"2023-03-09T21:06:12.261Z"}
+{"level":"info","message":"Loading event ready","timestamp":"2023-03-09T21:06:12.262Z"}
+{"level":"info","message":"Loading component courses-ask-name","timestamp":"2023-03-09T21:06:12.262Z"}
+{"level":"info","message":"Loading component selectConcernedPole","timestamp":"2023-03-09T21:06:12.262Z"}
+{"level":"info","message":"Successfully reloaded application (/) commands.","timestamp":"2023-03-09T21:06:12.547Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-09T21:06:13.106Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-09T21:06:13.132Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-09T21:06:13.135Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | categories: 16","timestamp":"2023-03-09T21:06:13.140Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 22","timestamp":"2023-03-09T21:06:13.167Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | categories: 18","timestamp":"2023-03-09T21:06:13.170Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-09T21:06:13.176Z"}
+{"level":"info","message":"Loading command config","timestamp":"2023-03-09T21:08:34.873Z"}
+{"level":"info","message":"Loading event create-category","timestamp":"2023-03-09T21:08:34.874Z"}
+{"level":"info","message":"Loading component courses-creation","timestamp":"2023-03-09T21:08:34.874Z"}
+{"level":"info","message":"Loading command ping","timestamp":"2023-03-09T21:08:34.893Z"}
+{"level":"info","message":"Loading event channelCreate","timestamp":"2023-03-09T21:08:34.893Z"}
+{"level":"info","message":"Loading component test-button","timestamp":"2023-03-09T21:08:34.893Z"}
+{"level":"info","message":"Loading command test","timestamp":"2023-03-09T21:08:34.894Z"}
+{"level":"info","message":"Started refreshing application (/) commands.","timestamp":"2023-03-09T21:08:34.894Z"}
+{"level":"info","message":"Loading event ready","timestamp":"2023-03-09T21:08:34.895Z"}
+{"level":"info","message":"Loading component courses-ask-name","timestamp":"2023-03-09T21:08:34.895Z"}
+{"level":"info","message":"Loading component selectConcernedPole","timestamp":"2023-03-09T21:08:34.895Z"}
+{"level":"info","message":"Successfully reloaded application (/) commands.","timestamp":"2023-03-09T21:08:35.199Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-09T21:08:35.536Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-09T21:08:35.620Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-09T21:08:35.662Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | categories: 18","timestamp":"2023-03-09T21:08:35.665Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-09T21:08:35.698Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | categories: 16","timestamp":"2023-03-09T21:08:35.733Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 22","timestamp":"2023-03-09T21:08:35.745Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: undefined","timestamp":"2023-03-09T21:08:35.748Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: undefined","timestamp":"2023-03-09T21:08:35.763Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: undefined","timestamp":"2023-03-09T21:08:35.791Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: undefined","timestamp":"2023-03-09T21:08:35.820Z"}
+{"level":"info","message":"Loading command config","timestamp":"2023-03-09T21:09:08.190Z"}
+{"level":"info","message":"Loading event create-category","timestamp":"2023-03-09T21:09:08.191Z"}
+{"level":"info","message":"Loading component courses-creation","timestamp":"2023-03-09T21:09:08.191Z"}
+{"level":"info","message":"Loading command ping","timestamp":"2023-03-09T21:09:08.210Z"}
+{"level":"info","message":"Loading event channelCreate","timestamp":"2023-03-09T21:09:08.210Z"}
+{"level":"info","message":"Loading component test-button","timestamp":"2023-03-09T21:09:08.210Z"}
+{"level":"info","message":"Loading command test","timestamp":"2023-03-09T21:09:08.211Z"}
+{"level":"info","message":"Started refreshing application (/) commands.","timestamp":"2023-03-09T21:09:08.211Z"}
+{"level":"info","message":"Loading event ready","timestamp":"2023-03-09T21:09:08.212Z"}
+{"level":"info","message":"Loading component courses-ask-name","timestamp":"2023-03-09T21:09:08.212Z"}
+{"level":"info","message":"Loading component selectConcernedPole","timestamp":"2023-03-09T21:09:08.212Z"}
+{"level":"info","message":"Successfully reloaded application (/) commands.","timestamp":"2023-03-09T21:09:08.554Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-09T21:09:08.781Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-09T21:09:08.807Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-09T21:09:08.812Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | categories: 16","timestamp":"2023-03-09T21:09:08.817Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 22","timestamp":"2023-03-09T21:09:08.845Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | categories: 18","timestamp":"2023-03-09T21:09:08.848Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-09T21:09:08.859Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: undefined","timestamp":"2023-03-09T21:09:08.891Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: undefined","timestamp":"2023-03-09T21:09:08.892Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: undefined","timestamp":"2023-03-09T21:09:08.897Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: undefined","timestamp":"2023-03-09T21:09:08.897Z"}
+{"level":"info","message":"Loading command config","timestamp":"2023-03-09T21:09:39.380Z"}
+{"level":"info","message":"Loading event create-category","timestamp":"2023-03-09T21:09:39.381Z"}
+{"level":"info","message":"Loading component courses-creation","timestamp":"2023-03-09T21:09:39.381Z"}
+{"level":"info","message":"Loading command ping","timestamp":"2023-03-09T21:09:39.400Z"}
+{"level":"info","message":"Loading event channelCreate","timestamp":"2023-03-09T21:09:39.401Z"}
+{"level":"info","message":"Loading component test-button","timestamp":"2023-03-09T21:09:39.401Z"}
+{"level":"info","message":"Loading command test","timestamp":"2023-03-09T21:09:39.401Z"}
+{"level":"info","message":"Started refreshing application (/) commands.","timestamp":"2023-03-09T21:09:39.402Z"}
+{"level":"info","message":"Loading event ready","timestamp":"2023-03-09T21:09:39.402Z"}
+{"level":"info","message":"Loading component courses-ask-name","timestamp":"2023-03-09T21:09:39.402Z"}
+{"level":"info","message":"Loading component selectConcernedPole","timestamp":"2023-03-09T21:09:39.403Z"}
+{"level":"info","message":"Successfully reloaded application (/) commands.","timestamp":"2023-03-09T21:09:39.826Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-09T21:09:40.109Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-09T21:09:40.135Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-09T21:09:40.139Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:09:40.144Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | categories: 16","timestamp":"2023-03-09T21:09:40.144Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 22","timestamp":"2023-03-09T21:09:40.175Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:09:40.177Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | categories: 18","timestamp":"2023-03-09T21:09:40.178Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-09T21:09:40.188Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: undefined","timestamp":"2023-03-09T21:09:40.228Z"}
+{"level":"debug","message":[],"timestamp":"2023-03-09T21:09:40.228Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: undefined","timestamp":"2023-03-09T21:09:40.229Z"}
+{"level":"debug","message":[],"timestamp":"2023-03-09T21:09:40.229Z"}
+{"level":"debug","message":[],"timestamp":"2023-03-09T21:09:40.233Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: undefined","timestamp":"2023-03-09T21:09:40.234Z"}
+{"level":"debug","message":[],"timestamp":"2023-03-09T21:09:40.234Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: undefined","timestamp":"2023-03-09T21:09:40.234Z"}
+{"level":"debug","message":{"channel_name":"moderator-only","channel_uuid":"1065260646599508019","id_guilds":2},"timestamp":"2023-03-09T21:09:40.685Z"}
+{"level":"debug","message":{"channel_name":"rules","channel_uuid":"1065260646599508018","id_guilds":2},"timestamp":"2023-03-09T21:09:40.690Z"}
+{"level":"debug","message":{"channel_name":"fil-rouge","channel_uuid":"1066001472799653979","id_guilds":1},"timestamp":"2023-03-09T21:09:40.696Z"}
+{"level":"debug","message":{"channel_name":"general","channel_uuid":"1066001471683973170","id_guilds":1},"timestamp":"2023-03-09T21:09:40.707Z"}
+{"level":"info","message":"Loading command config","timestamp":"2023-03-09T21:10:08.212Z"}
+{"level":"info","message":"Loading event create-category","timestamp":"2023-03-09T21:10:08.212Z"}
+{"level":"info","message":"Loading component courses-creation","timestamp":"2023-03-09T21:10:08.212Z"}
+{"level":"info","message":"Loading command ping","timestamp":"2023-03-09T21:10:08.231Z"}
+{"level":"info","message":"Loading event channelCreate","timestamp":"2023-03-09T21:10:08.231Z"}
+{"level":"info","message":"Loading component test-button","timestamp":"2023-03-09T21:10:08.232Z"}
+{"level":"info","message":"Loading command test","timestamp":"2023-03-09T21:10:08.232Z"}
+{"level":"info","message":"Started refreshing application (/) commands.","timestamp":"2023-03-09T21:10:08.233Z"}
+{"level":"info","message":"Loading event ready","timestamp":"2023-03-09T21:10:08.233Z"}
+{"level":"info","message":"Loading component courses-ask-name","timestamp":"2023-03-09T21:10:08.233Z"}
+{"level":"info","message":"Loading component selectConcernedPole","timestamp":"2023-03-09T21:10:08.233Z"}
+{"level":"info","message":"Successfully reloaded application (/) commands.","timestamp":"2023-03-09T21:10:08.493Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-09T21:10:08.815Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-09T21:10:08.830Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-09T21:10:08.832Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:10:08.835Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | categories: 16","timestamp":"2023-03-09T21:10:08.835Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 22","timestamp":"2023-03-09T21:10:08.850Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:10:08.853Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | categories: 18","timestamp":"2023-03-09T21:10:08.853Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-09T21:10:08.858Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: undefined","timestamp":"2023-03-09T21:10:08.894Z"}
+{"level":"info","message":"Loading command config","timestamp":"2023-03-09T21:10:35.304Z"}
+{"level":"info","message":"Loading event create-category","timestamp":"2023-03-09T21:10:35.304Z"}
+{"level":"info","message":"Loading component courses-creation","timestamp":"2023-03-09T21:10:35.304Z"}
+{"level":"info","message":"Loading command ping","timestamp":"2023-03-09T21:10:35.323Z"}
+{"level":"info","message":"Loading event channelCreate","timestamp":"2023-03-09T21:10:35.324Z"}
+{"level":"info","message":"Loading component test-button","timestamp":"2023-03-09T21:10:35.324Z"}
+{"level":"info","message":"Loading command test","timestamp":"2023-03-09T21:10:35.325Z"}
+{"level":"info","message":"Started refreshing application (/) commands.","timestamp":"2023-03-09T21:10:35.325Z"}
+{"level":"info","message":"Loading event ready","timestamp":"2023-03-09T21:10:35.325Z"}
+{"level":"info","message":"Loading component courses-ask-name","timestamp":"2023-03-09T21:10:35.325Z"}
+{"level":"info","message":"Loading component selectConcernedPole","timestamp":"2023-03-09T21:10:35.326Z"}
+{"level":"info","message":"Successfully reloaded application (/) commands.","timestamp":"2023-03-09T21:10:35.710Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-09T21:10:36.852Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-09T21:10:36.878Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-09T21:10:36.881Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:10:36.886Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | categories: 16","timestamp":"2023-03-09T21:10:36.887Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 22","timestamp":"2023-03-09T21:10:36.917Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:10:36.919Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | categories: 18","timestamp":"2023-03-09T21:10:36.920Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-09T21:10:36.929Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: undefined","timestamp":"2023-03-09T21:10:36.965Z"}
+{"level":"debug","message":"[]","timestamp":"2023-03-09T21:10:36.966Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: undefined","timestamp":"2023-03-09T21:10:36.966Z"}
+{"level":"debug","message":"[]","timestamp":"2023-03-09T21:10:36.966Z"}
+{"level":"debug","message":"[]","timestamp":"2023-03-09T21:10:36.970Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: undefined","timestamp":"2023-03-09T21:10:36.970Z"}
+{"level":"debug","message":"[]","timestamp":"2023-03-09T21:10:36.971Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: undefined","timestamp":"2023-03-09T21:10:36.971Z"}
+{"level":"debug","message":{"channel_name":"moderator-only","channel_uuid":"1065260646599508019","id_guilds":2},"timestamp":"2023-03-09T21:10:37.427Z"}
+{"level":"debug","message":{"channel_name":"rules","channel_uuid":"1065260646599508018","id_guilds":2},"timestamp":"2023-03-09T21:10:37.432Z"}
+{"level":"debug","message":{"channel_name":"fil-rouge","channel_uuid":"1066001472799653979","id_guilds":1},"timestamp":"2023-03-09T21:10:37.436Z"}
+{"level":"debug","message":{"channel_name":"general","channel_uuid":"1066001471683973170","id_guilds":1},"timestamp":"2023-03-09T21:10:37.447Z"}
+{"level":"info","message":"Loading command config","timestamp":"2023-03-09T21:11:06.243Z"}
+{"level":"info","message":"Loading event create-category","timestamp":"2023-03-09T21:11:06.243Z"}
+{"level":"info","message":"Loading component courses-creation","timestamp":"2023-03-09T21:11:06.244Z"}
+{"level":"info","message":"Loading command ping","timestamp":"2023-03-09T21:11:06.263Z"}
+{"level":"info","message":"Loading event channelCreate","timestamp":"2023-03-09T21:11:06.263Z"}
+{"level":"info","message":"Loading component test-button","timestamp":"2023-03-09T21:11:06.263Z"}
+{"level":"info","message":"Loading command test","timestamp":"2023-03-09T21:11:06.264Z"}
+{"level":"info","message":"Started refreshing application (/) commands.","timestamp":"2023-03-09T21:11:06.264Z"}
+{"level":"info","message":"Loading event ready","timestamp":"2023-03-09T21:11:06.265Z"}
+{"level":"info","message":"Loading component courses-ask-name","timestamp":"2023-03-09T21:11:06.265Z"}
+{"level":"info","message":"Loading component selectConcernedPole","timestamp":"2023-03-09T21:11:06.265Z"}
+{"level":"info","message":"Successfully reloaded application (/) commands.","timestamp":"2023-03-09T21:11:06.686Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-09T21:11:06.938Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-09T21:11:06.965Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-09T21:11:06.969Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:11:06.973Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | categories: 18","timestamp":"2023-03-09T21:11:06.974Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-09T21:11:07.004Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:11:07.007Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | categories: 16","timestamp":"2023-03-09T21:11:07.007Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 22","timestamp":"2023-03-09T21:11:07.016Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: undefined","timestamp":"2023-03-09T21:11:07.035Z"}
+{"level":"debug","message":"[] liste des categories a mettre a jour","timestamp":"2023-03-09T21:11:07.035Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: undefined","timestamp":"2023-03-09T21:11:07.035Z"}
+{"level":"debug","message":"[] liste des categories a mettre a jour","timestamp":"2023-03-09T21:11:07.036Z"}
+{"level":"debug","message":"[] liste des channels a mettre a jour","timestamp":"2023-03-09T21:11:07.038Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: undefined","timestamp":"2023-03-09T21:11:07.038Z"}
+{"level":"debug","message":"[] liste des channels a mettre a jour","timestamp":"2023-03-09T21:11:07.039Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: undefined","timestamp":"2023-03-09T21:11:07.039Z"}
+{"level":"debug","message":{"channel_name":"fil-rouge","channel_uuid":"1066001472799653979","id_guilds":1},"timestamp":"2023-03-09T21:11:07.507Z"}
+{"level":"debug","message":{"channel_name":"general","channel_uuid":"1066001471683973170","id_guilds":1},"timestamp":"2023-03-09T21:11:07.520Z"}
+{"level":"debug","message":{"channel_name":"moderator-only","channel_uuid":"1065260646599508019","id_guilds":2},"timestamp":"2023-03-09T21:11:07.532Z"}
+{"level":"debug","message":{"channel_name":"rules","channel_uuid":"1065260646599508018","id_guilds":2},"timestamp":"2023-03-09T21:11:07.536Z"}
+{"level":"info","message":"Loading command config","timestamp":"2023-03-09T21:11:41.327Z"}
+{"level":"info","message":"Loading event create-category","timestamp":"2023-03-09T21:11:41.328Z"}
+{"level":"info","message":"Loading component courses-creation","timestamp":"2023-03-09T21:11:41.328Z"}
+{"level":"info","message":"Loading command ping","timestamp":"2023-03-09T21:11:41.347Z"}
+{"level":"info","message":"Loading event channelCreate","timestamp":"2023-03-09T21:11:41.347Z"}
+{"level":"info","message":"Loading component test-button","timestamp":"2023-03-09T21:11:41.348Z"}
+{"level":"info","message":"Loading command test","timestamp":"2023-03-09T21:11:41.348Z"}
+{"level":"info","message":"Started refreshing application (/) commands.","timestamp":"2023-03-09T21:11:41.349Z"}
+{"level":"info","message":"Loading event ready","timestamp":"2023-03-09T21:11:41.349Z"}
+{"level":"info","message":"Loading component courses-ask-name","timestamp":"2023-03-09T21:11:41.349Z"}
+{"level":"info","message":"Loading component selectConcernedPole","timestamp":"2023-03-09T21:11:41.349Z"}
+{"level":"info","message":"Successfully reloaded application (/) commands.","timestamp":"2023-03-09T21:11:41.673Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-09T21:11:41.939Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-09T21:11:41.966Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-09T21:11:41.971Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:11:41.977Z"}
+{"level":"info","message":16,"timestamp":"2023-03-09T21:11:41.978Z"}
+{"level":"info","message":22,"timestamp":"2023-03-09T21:11:42.007Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:11:42.010Z"}
+{"level":"info","message":18,"timestamp":"2023-03-09T21:11:42.010Z"}
+{"level":"info","message":25,"timestamp":"2023-03-09T21:11:42.017Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: undefined","timestamp":"2023-03-09T21:11:42.057Z"}
+{"level":"debug","message":"[] liste des categories a mettre a jour","timestamp":"2023-03-09T21:11:42.057Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: undefined","timestamp":"2023-03-09T21:11:42.058Z"}
+{"level":"debug","message":"[] liste des categories a mettre a jour","timestamp":"2023-03-09T21:11:42.058Z"}
+{"level":"debug","message":"[] liste des channels a mettre a jour","timestamp":"2023-03-09T21:11:42.063Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: undefined","timestamp":"2023-03-09T21:11:42.063Z"}
+{"level":"debug","message":"[] liste des channels a mettre a jour","timestamp":"2023-03-09T21:11:42.063Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: undefined","timestamp":"2023-03-09T21:11:42.064Z"}
+{"level":"debug","message":{"channel_name":"moderator-only","channel_uuid":"1065260646599508019","id_guilds":2},"timestamp":"2023-03-09T21:11:42.517Z"}
+{"level":"debug","message":{"channel_name":"rules","channel_uuid":"1065260646599508018","id_guilds":2},"timestamp":"2023-03-09T21:11:42.522Z"}
+{"level":"debug","message":{"channel_name":"fil-rouge","channel_uuid":"1066001472799653979","id_guilds":1},"timestamp":"2023-03-09T21:11:42.528Z"}
+{"level":"debug","message":{"channel_name":"general","channel_uuid":"1066001471683973170","id_guilds":1},"timestamp":"2023-03-09T21:11:42.538Z"}
+{"level":"info","message":"Loading command config","timestamp":"2023-03-09T21:12:05.970Z"}
+{"level":"info","message":"Loading event create-category","timestamp":"2023-03-09T21:12:05.970Z"}
+{"level":"info","message":"Loading component courses-creation","timestamp":"2023-03-09T21:12:05.970Z"}
+{"level":"info","message":"Loading command ping","timestamp":"2023-03-09T21:12:05.989Z"}
+{"level":"info","message":"Loading event channelCreate","timestamp":"2023-03-09T21:12:05.989Z"}
+{"level":"info","message":"Loading component test-button","timestamp":"2023-03-09T21:12:05.990Z"}
+{"level":"info","message":"Loading command test","timestamp":"2023-03-09T21:12:05.990Z"}
+{"level":"info","message":"Started refreshing application (/) commands.","timestamp":"2023-03-09T21:12:05.991Z"}
+{"level":"info","message":"Loading event ready","timestamp":"2023-03-09T21:12:05.991Z"}
+{"level":"info","message":"Loading component courses-ask-name","timestamp":"2023-03-09T21:12:05.991Z"}
+{"level":"info","message":"Loading component selectConcernedPole","timestamp":"2023-03-09T21:12:05.992Z"}
+{"level":"info","message":"Successfully reloaded application (/) commands.","timestamp":"2023-03-09T21:12:06.429Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-09T21:12:06.584Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-09T21:12:06.611Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-09T21:12:06.614Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:12:06.619Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | categories: 16","timestamp":"2023-03-09T21:12:06.619Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 22","timestamp":"2023-03-09T21:12:06.651Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:12:06.653Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | categories: 18","timestamp":"2023-03-09T21:12:06.654Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-09T21:12:06.664Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: undefined","timestamp":"2023-03-09T21:12:06.699Z"}
+{"level":"debug","message":"[] liste des categories a mettre a jour","timestamp":"2023-03-09T21:12:06.699Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: undefined","timestamp":"2023-03-09T21:12:06.702Z"}
+{"level":"debug","message":"[] liste des categories a mettre a jour","timestamp":"2023-03-09T21:12:06.702Z"}
+{"level":"debug","message":"[] liste des channels a mettre a jour","timestamp":"2023-03-09T21:12:06.706Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: undefined","timestamp":"2023-03-09T21:12:06.706Z"}
+{"level":"debug","message":"[] liste des channels a mettre a jour","timestamp":"2023-03-09T21:12:06.707Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: undefined","timestamp":"2023-03-09T21:12:06.707Z"}
+{"level":"debug","message":{"channel_name":"moderator-only","channel_uuid":"1065260646599508019","id_guilds":2},"timestamp":"2023-03-09T21:12:07.160Z"}
+{"level":"debug","message":{"channel_name":"rules","channel_uuid":"1065260646599508018","id_guilds":2},"timestamp":"2023-03-09T21:12:07.166Z"}
+{"level":"debug","message":{"channel_name":"fil-rouge","channel_uuid":"1066001472799653979","id_guilds":1},"timestamp":"2023-03-09T21:12:07.171Z"}
+{"level":"debug","message":{"channel_name":"general","channel_uuid":"1066001471683973170","id_guilds":1},"timestamp":"2023-03-09T21:12:07.184Z"}
+{"level":"info","message":"Loading command config","timestamp":"2023-03-09T21:12:53.392Z"}
+{"level":"info","message":"Loading event create-category","timestamp":"2023-03-09T21:12:53.392Z"}
+{"level":"info","message":"Loading component courses-creation","timestamp":"2023-03-09T21:12:53.392Z"}
+{"level":"info","message":"Loading command ping","timestamp":"2023-03-09T21:12:53.412Z"}
+{"level":"info","message":"Loading event channelCreate","timestamp":"2023-03-09T21:12:53.412Z"}
+{"level":"info","message":"Loading component test-button","timestamp":"2023-03-09T21:12:53.412Z"}
+{"level":"info","message":"Loading command test","timestamp":"2023-03-09T21:12:53.413Z"}
+{"level":"info","message":"Started refreshing application (/) commands.","timestamp":"2023-03-09T21:12:53.413Z"}
+{"level":"info","message":"Loading event ready","timestamp":"2023-03-09T21:12:53.414Z"}
+{"level":"info","message":"Loading component courses-ask-name","timestamp":"2023-03-09T21:12:53.414Z"}
+{"level":"info","message":"Loading component selectConcernedPole","timestamp":"2023-03-09T21:12:53.414Z"}
+{"level":"info","message":"Successfully reloaded application (/) commands.","timestamp":"2023-03-09T21:12:53.749Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-09T21:12:54.036Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-09T21:12:54.064Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-09T21:12:54.067Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:12:54.072Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | categories: 16","timestamp":"2023-03-09T21:12:54.072Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 22","timestamp":"2023-03-09T21:12:54.100Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:12:54.103Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | categories: 18","timestamp":"2023-03-09T21:12:54.103Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-09T21:12:54.111Z"}
+{"level":"info","timestamp":"2023-03-09T21:12:54.147Z"}
+{"level":"debug","message":"[] liste des categories a mettre a jour","timestamp":"2023-03-09T21:12:54.147Z"}
+{"level":"info","timestamp":"2023-03-09T21:12:54.148Z"}
+{"level":"debug","message":"[] liste des categories a mettre a jour","timestamp":"2023-03-09T21:12:54.148Z"}
+{"level":"debug","message":"[] liste des channels a mettre a jour","timestamp":"2023-03-09T21:12:54.152Z"}
+{"level":"info","timestamp":"2023-03-09T21:12:54.152Z"}
+{"level":"debug","message":"[] liste des channels a mettre a jour","timestamp":"2023-03-09T21:12:54.152Z"}
+{"level":"info","timestamp":"2023-03-09T21:12:54.152Z"}
+{"level":"debug","message":{"channel_name":"moderator-only","channel_uuid":"1065260646599508019","id_guilds":2},"timestamp":"2023-03-09T21:12:54.611Z"}
+{"level":"debug","message":{"channel_name":"rules","channel_uuid":"1065260646599508018","id_guilds":2},"timestamp":"2023-03-09T21:12:54.616Z"}
+{"level":"debug","message":{"channel_name":"fil-rouge","channel_uuid":"1066001472799653979","id_guilds":1},"timestamp":"2023-03-09T21:12:54.622Z"}
+{"level":"debug","message":{"channel_name":"general","channel_uuid":"1066001471683973170","id_guilds":1},"timestamp":"2023-03-09T21:12:54.632Z"}
+{"level":"info","message":"Loading command config","timestamp":"2023-03-09T21:13:19.638Z"}
+{"level":"info","message":"Loading event create-category","timestamp":"2023-03-09T21:13:19.639Z"}
+{"level":"info","message":"Loading component courses-creation","timestamp":"2023-03-09T21:13:19.639Z"}
+{"level":"info","message":"Loading command ping","timestamp":"2023-03-09T21:13:19.658Z"}
+{"level":"info","message":"Loading event channelCreate","timestamp":"2023-03-09T21:13:19.658Z"}
+{"level":"info","message":"Loading component test-button","timestamp":"2023-03-09T21:13:19.659Z"}
+{"level":"info","message":"Loading command test","timestamp":"2023-03-09T21:13:19.659Z"}
+{"level":"info","message":"Started refreshing application (/) commands.","timestamp":"2023-03-09T21:13:19.660Z"}
+{"level":"info","message":"Loading event ready","timestamp":"2023-03-09T21:13:19.660Z"}
+{"level":"info","message":"Loading component courses-ask-name","timestamp":"2023-03-09T21:13:19.660Z"}
+{"level":"info","message":"Loading component selectConcernedPole","timestamp":"2023-03-09T21:13:19.660Z"}
+{"level":"info","message":"Successfully reloaded application (/) commands.","timestamp":"2023-03-09T21:13:20.019Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-09T21:13:20.299Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-09T21:13:20.325Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-09T21:13:20.328Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:13:20.334Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | categories: 16","timestamp":"2023-03-09T21:13:20.335Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 22","timestamp":"2023-03-09T21:13:20.362Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:13:20.365Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | categories: 18","timestamp":"2023-03-09T21:13:20.365Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-09T21:13:20.372Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-09T21:13:20.405Z"}
+{"level":"debug","message":"[] liste des categories a mettre a jour","timestamp":"2023-03-09T21:13:20.405Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-09T21:13:20.406Z"}
+{"level":"debug","message":"[] liste des categories a mettre a jour","timestamp":"2023-03-09T21:13:20.406Z"}
+{"level":"debug","message":"[] liste des channels a mettre a jour","timestamp":"2023-03-09T21:13:20.409Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-09T21:13:20.410Z"}
+{"level":"debug","message":"[] liste des channels a mettre a jour","timestamp":"2023-03-09T21:13:20.410Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-09T21:13:20.410Z"}
+{"level":"debug","message":{"channel_name":"moderator-only","channel_uuid":"1065260646599508019","id_guilds":2},"timestamp":"2023-03-09T21:13:20.872Z"}
+{"level":"debug","message":{"channel_name":"rules","channel_uuid":"1065260646599508018","id_guilds":2},"timestamp":"2023-03-09T21:13:20.878Z"}
+{"level":"debug","message":{"channel_name":"fil-rouge","channel_uuid":"1066001472799653979","id_guilds":1},"timestamp":"2023-03-09T21:13:20.884Z"}
+{"level":"debug","message":{"channel_name":"general","channel_uuid":"1066001471683973170","id_guilds":1},"timestamp":"2023-03-09T21:13:20.894Z"}
+{"level":"info","message":"Loading command config","timestamp":"2023-03-09T21:14:29.175Z"}
+{"level":"info","message":"Loading event create-category","timestamp":"2023-03-09T21:14:29.175Z"}
+{"level":"info","message":"Loading component courses-creation","timestamp":"2023-03-09T21:14:29.175Z"}
+{"level":"info","message":"Loading command ping","timestamp":"2023-03-09T21:14:29.194Z"}
+{"level":"info","message":"Loading event channelCreate","timestamp":"2023-03-09T21:14:29.194Z"}
+{"level":"info","message":"Loading component test-button","timestamp":"2023-03-09T21:14:29.195Z"}
+{"level":"info","message":"Loading command test","timestamp":"2023-03-09T21:14:29.195Z"}
+{"level":"info","message":"Started refreshing application (/) commands.","timestamp":"2023-03-09T21:14:29.196Z"}
+{"level":"info","message":"Loading event ready","timestamp":"2023-03-09T21:14:29.196Z"}
+{"level":"info","message":"Loading component courses-ask-name","timestamp":"2023-03-09T21:14:29.196Z"}
+{"level":"info","message":"Loading component selectConcernedPole","timestamp":"2023-03-09T21:14:29.196Z"}
+{"level":"info","message":"Successfully reloaded application (/) commands.","timestamp":"2023-03-09T21:14:29.484Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-09T21:14:29.825Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-09T21:14:29.845Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-09T21:14:29.848Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:14:29.853Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | categories: 16","timestamp":"2023-03-09T21:14:29.854Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 22","timestamp":"2023-03-09T21:14:29.868Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:14:29.870Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | categories: 18","timestamp":"2023-03-09T21:14:29.870Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-09T21:14:29.876Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-09T21:14:29.910Z"}
+{"level":"debug","message":"[] liste des categories a mettre a jour","timestamp":"2023-03-09T21:14:29.910Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-09T21:14:29.911Z"}
+{"level":"debug","message":"[] liste des categories a mettre a jour","timestamp":"2023-03-09T21:14:29.911Z"}
+{"level":"debug","message":"[] liste des channels a mettre a jour","timestamp":"2023-03-09T21:14:29.915Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-09T21:14:29.915Z"}
+{"level":"debug","message":"[] liste des channels a mettre a jour","timestamp":"2023-03-09T21:14:29.916Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-09T21:14:29.916Z"}
+{"level":"info","message":"Loading command config","timestamp":"2023-03-09T21:15:02.395Z"}
+{"level":"info","message":"Loading event create-category","timestamp":"2023-03-09T21:15:02.395Z"}
+{"level":"info","message":"Loading component courses-creation","timestamp":"2023-03-09T21:15:02.395Z"}
+{"level":"info","message":"Loading command ping","timestamp":"2023-03-09T21:15:02.414Z"}
+{"level":"info","message":"Loading event channelCreate","timestamp":"2023-03-09T21:15:02.414Z"}
+{"level":"info","message":"Loading component test-button","timestamp":"2023-03-09T21:15:02.414Z"}
+{"level":"info","message":"Loading command test","timestamp":"2023-03-09T21:15:02.415Z"}
+{"level":"info","message":"Started refreshing application (/) commands.","timestamp":"2023-03-09T21:15:02.415Z"}
+{"level":"info","message":"Loading event ready","timestamp":"2023-03-09T21:15:02.416Z"}
+{"level":"info","message":"Loading component courses-ask-name","timestamp":"2023-03-09T21:15:02.416Z"}
+{"level":"info","message":"Loading component selectConcernedPole","timestamp":"2023-03-09T21:15:02.416Z"}
+{"level":"info","message":"Successfully reloaded application (/) commands.","timestamp":"2023-03-09T21:15:02.705Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-09T21:15:03.015Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-09T21:15:03.041Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-09T21:15:03.044Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:15:03.050Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | categories: 16","timestamp":"2023-03-09T21:15:03.051Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 22","timestamp":"2023-03-09T21:15:03.079Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:15:03.082Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | categories: 18","timestamp":"2023-03-09T21:15:03.082Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-09T21:15:03.090Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-09T21:15:03.110Z"}
+{"level":"debug","message":"[] liste des categories a mettre a jour","timestamp":"2023-03-09T21:15:03.110Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-09T21:15:03.111Z"}
+{"level":"debug","message":"[] liste des categories a mettre a jour","timestamp":"2023-03-09T21:15:03.111Z"}
+{"level":"debug","message":"[] liste des channels a mettre a jour","timestamp":"2023-03-09T21:15:03.113Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-09T21:15:03.113Z"}
+{"level":"debug","message":"[{\"id\":333,\"channel_name\":\"general\",\"channel_uuid\":\"1066073456694808586\",\"id_guilds\":1,\"id_category\":214,\"created_at\":\"2023-03-09T19:23:57.571Z\",\"updated_at\":\"2023-03-09T19:23:57.571Z\"}] liste des channels a mettre a jour","timestamp":"2023-03-09T21:15:03.114Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-09T21:15:03.114Z"}
+{"level":"error","message":"Code de statut:","timestamp":"2023-03-09T21:15:03.667Z"}
+{"error":"Not Found","level":"error","message":"Données de réponse: Cannot POST /api/channels/update/name","statusCode":404,"timestamp":"2023-03-09T21:15:03.667Z"}
+{"connection":"close","content-length":"88","content-type":"application/json; charset=utf-8","date":"Thu, 09 Mar 2023 21:15:03 GMT","etag":"W/\"58-6vS5V9IeKOYXNFNlpcp17uvNXz4\"","level":"error","message":"En-têtes de réponse:","timestamp":"2023-03-09T21:15:03.668Z","x-powered-by":"Express"}
+{"level":"info","message":"Loading command config","timestamp":"2023-03-09T21:17:18.214Z"}
+{"level":"info","message":"Loading event create-category","timestamp":"2023-03-09T21:17:18.214Z"}
+{"level":"info","message":"Loading component courses-creation","timestamp":"2023-03-09T21:17:18.214Z"}
+{"level":"info","message":"Loading command ping","timestamp":"2023-03-09T21:17:18.233Z"}
+{"level":"info","message":"Loading event channelCreate","timestamp":"2023-03-09T21:17:18.234Z"}
+{"level":"info","message":"Loading component test-button","timestamp":"2023-03-09T21:17:18.234Z"}
+{"level":"info","message":"Loading command test","timestamp":"2023-03-09T21:17:18.235Z"}
+{"level":"info","message":"Started refreshing application (/) commands.","timestamp":"2023-03-09T21:17:18.235Z"}
+{"level":"info","message":"Loading event ready","timestamp":"2023-03-09T21:17:18.235Z"}
+{"level":"info","message":"Loading component courses-ask-name","timestamp":"2023-03-09T21:17:18.235Z"}
+{"level":"info","message":"Loading component selectConcernedPole","timestamp":"2023-03-09T21:17:18.236Z"}
+{"level":"info","message":"Successfully reloaded application (/) commands.","timestamp":"2023-03-09T21:17:18.549Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-09T21:17:18.822Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-09T21:17:18.849Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-09T21:17:18.852Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:17:18.857Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | categories: 16","timestamp":"2023-03-09T21:17:18.857Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 22","timestamp":"2023-03-09T21:17:18.888Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:17:18.891Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | categories: 18","timestamp":"2023-03-09T21:17:18.891Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-09T21:17:18.901Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-09T21:17:18.918Z"}
+{"level":"debug","message":"[] liste des categories a mettre a jour","timestamp":"2023-03-09T21:17:18.918Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-09T21:17:18.924Z"}
+{"level":"debug","message":"[] liste des categories a mettre a jour","timestamp":"2023-03-09T21:17:18.924Z"}
+{"level":"debug","message":"[] liste des channels a mettre a jour","timestamp":"2023-03-09T21:17:18.927Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-09T21:17:18.927Z"}
+{"level":"debug","message":"[{\"id\":333,\"channel_name\":\"general\",\"channel_uuid\":\"1066073456694808586\",\"id_guilds\":1,\"id_category\":214,\"created_at\":\"2023-03-09T19:23:57.571Z\",\"updated_at\":\"2023-03-09T19:23:57.571Z\"}] liste des channels a mettre a jour","timestamp":"2023-03-09T21:17:18.927Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-09T21:17:18.927Z"}
+{"level":"error","message":"Code de statut:","timestamp":"2023-03-09T21:17:19.454Z"}
+{"error":"Not Found","level":"error","message":"Données de réponse: Cannot POST /api/channels/update/name","statusCode":404,"timestamp":"2023-03-09T21:17:19.455Z"}
+{"connection":"close","content-length":"88","content-type":"application/json; charset=utf-8","date":"Thu, 09 Mar 2023 21:17:19 GMT","etag":"W/\"58-6vS5V9IeKOYXNFNlpcp17uvNXz4\"","level":"error","message":"En-têtes de réponse:","timestamp":"2023-03-09T21:17:19.455Z","x-powered-by":"Express"}
+{"level":"info","message":"Loading command config","timestamp":"2023-03-09T21:18:50.122Z"}
+{"level":"info","message":"Loading event create-category","timestamp":"2023-03-09T21:18:50.122Z"}
+{"level":"info","message":"Loading component courses-creation","timestamp":"2023-03-09T21:18:50.122Z"}
+{"level":"info","message":"Loading command ping","timestamp":"2023-03-09T21:18:50.141Z"}
+{"level":"info","message":"Loading event channelCreate","timestamp":"2023-03-09T21:18:50.142Z"}
+{"level":"info","message":"Loading component test-button","timestamp":"2023-03-09T21:18:50.142Z"}
+{"level":"info","message":"Loading command test","timestamp":"2023-03-09T21:18:50.143Z"}
+{"level":"info","message":"Started refreshing application (/) commands.","timestamp":"2023-03-09T21:18:50.143Z"}
+{"level":"info","message":"Loading event ready","timestamp":"2023-03-09T21:18:50.143Z"}
+{"level":"info","message":"Loading component courses-ask-name","timestamp":"2023-03-09T21:18:50.143Z"}
+{"level":"info","message":"Loading component selectConcernedPole","timestamp":"2023-03-09T21:18:50.144Z"}
+{"level":"info","message":"Successfully reloaded application (/) commands.","timestamp":"2023-03-09T21:18:50.477Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-09T21:18:50.765Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-09T21:18:50.790Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-09T21:18:50.794Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:18:50.800Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | categories: 16","timestamp":"2023-03-09T21:18:50.801Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 22","timestamp":"2023-03-09T21:18:50.833Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:18:50.836Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | categories: 18","timestamp":"2023-03-09T21:18:50.836Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-09T21:18:50.843Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-09T21:18:50.864Z"}
+{"level":"debug","message":"[] liste des categories a mettre a jour","timestamp":"2023-03-09T21:18:50.864Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-09T21:18:50.865Z"}
+{"level":"debug","message":"[] liste des categories a mettre a jour","timestamp":"2023-03-09T21:18:50.865Z"}
+{"level":"debug","message":"[] liste des channels a mettre a jour","timestamp":"2023-03-09T21:18:50.868Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-09T21:18:50.868Z"}
+{"level":"debug","message":"[{\"id\":333,\"channel_name\":\"general\",\"channel_uuid\":\"1066073456694808586\",\"id_guilds\":1,\"id_category\":214,\"created_at\":\"2023-03-09T19:23:57.571Z\",\"updated_at\":\"2023-03-09T19:23:57.571Z\"}] liste des channels a mettre a jour","timestamp":"2023-03-09T21:18:50.868Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-09T21:18:50.868Z"}
+{"level":"error","message":"Code de statut:","timestamp":"2023-03-09T21:18:51.421Z"}
+{"level":"error","message":"Données de réponse:","timestamp":"2023-03-09T21:18:51.421Z"}
+{"level":"error","message":"Message:","timestamp":"2023-03-09T21:18:51.421Z"}
+{"level":"info","message":"Loading command config","timestamp":"2023-03-09T21:19:35.399Z"}
+{"level":"info","message":"Loading event create-category","timestamp":"2023-03-09T21:19:35.399Z"}
+{"level":"info","message":"Loading component courses-creation","timestamp":"2023-03-09T21:19:35.400Z"}
+{"level":"info","message":"Loading command ping","timestamp":"2023-03-09T21:19:35.419Z"}
+{"level":"info","message":"Loading event channelCreate","timestamp":"2023-03-09T21:19:35.419Z"}
+{"level":"info","message":"Loading component test-button","timestamp":"2023-03-09T21:19:35.419Z"}
+{"level":"info","message":"Loading command test","timestamp":"2023-03-09T21:19:35.420Z"}
+{"level":"info","message":"Started refreshing application (/) commands.","timestamp":"2023-03-09T21:19:35.420Z"}
+{"level":"info","message":"Loading event ready","timestamp":"2023-03-09T21:19:35.421Z"}
+{"level":"info","message":"Loading component courses-ask-name","timestamp":"2023-03-09T21:19:35.421Z"}
+{"level":"info","message":"Loading component selectConcernedPole","timestamp":"2023-03-09T21:19:35.421Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-09T21:19:36.141Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-09T21:19:36.158Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-09T21:19:36.160Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:19:36.162Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | categories: 16","timestamp":"2023-03-09T21:19:36.163Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 22","timestamp":"2023-03-09T21:19:36.178Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:19:36.180Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | categories: 18","timestamp":"2023-03-09T21:19:36.180Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-09T21:19:36.186Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-09T21:19:36.205Z"}
+{"level":"debug","message":"[] liste des categories a mettre a jour","timestamp":"2023-03-09T21:19:36.205Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-09T21:19:36.206Z"}
+{"level":"debug","message":"[] liste des categories a mettre a jour","timestamp":"2023-03-09T21:19:36.206Z"}
+{"level":"debug","message":"[] liste des channels a mettre a jour","timestamp":"2023-03-09T21:19:36.209Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-09T21:19:36.209Z"}
+{"level":"debug","message":"[{\"id\":333,\"channel_name\":\"general\",\"channel_uuid\":\"1066073456694808586\",\"id_guilds\":1,\"id_category\":214,\"created_at\":\"2023-03-09T19:23:57.571Z\",\"updated_at\":\"2023-03-09T19:23:57.571Z\"}] liste des channels a mettre a jour","timestamp":"2023-03-09T21:19:36.210Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-09T21:19:36.210Z"}
+{"level":"info","message":"Successfully reloaded application (/) commands.","timestamp":"2023-03-09T21:19:36.494Z"}
+{"level":"error","message":"Code de statut: 404","timestamp":"2023-03-09T21:19:36.777Z"}
+{"level":"error","message":"Données de réponse: [object Object]","timestamp":"2023-03-09T21:19:36.778Z"}
+{"level":"error","message":"En-têtes de réponse: x-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 88\netag: W/\"58-6vS5V9IeKOYXNFNlpcp17uvNXz4\"\ndate: Thu, 09 Mar 2023 21:19:36 GMT\nconnection: close","timestamp":"2023-03-09T21:19:36.778Z"}
+{"level":"info","message":"Loading command config","timestamp":"2023-03-09T21:20:10.766Z"}
+{"level":"info","message":"Loading event create-category","timestamp":"2023-03-09T21:20:10.767Z"}
+{"level":"info","message":"Loading component courses-creation","timestamp":"2023-03-09T21:20:10.767Z"}
+{"level":"info","message":"Loading command ping","timestamp":"2023-03-09T21:20:10.786Z"}
+{"level":"info","message":"Loading event channelCreate","timestamp":"2023-03-09T21:20:10.786Z"}
+{"level":"info","message":"Loading component test-button","timestamp":"2023-03-09T21:20:10.786Z"}
+{"level":"info","message":"Loading command test","timestamp":"2023-03-09T21:20:10.787Z"}
+{"level":"info","message":"Started refreshing application (/) commands.","timestamp":"2023-03-09T21:20:10.787Z"}
+{"level":"info","message":"Loading event ready","timestamp":"2023-03-09T21:20:10.788Z"}
+{"level":"info","message":"Loading component courses-ask-name","timestamp":"2023-03-09T21:20:10.788Z"}
+{"level":"info","message":"Loading component selectConcernedPole","timestamp":"2023-03-09T21:20:10.788Z"}
+{"level":"info","message":"Successfully reloaded application (/) commands.","timestamp":"2023-03-09T21:20:11.038Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-09T21:20:12.127Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-09T21:20:12.154Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-09T21:20:12.158Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:20:12.162Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | categories: 18","timestamp":"2023-03-09T21:20:12.163Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-09T21:20:12.192Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:20:12.195Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | categories: 16","timestamp":"2023-03-09T21:20:12.195Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 22","timestamp":"2023-03-09T21:20:12.202Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-09T21:20:12.219Z"}
+{"level":"debug","message":"[] liste des categories a mettre a jour","timestamp":"2023-03-09T21:20:12.219Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-09T21:20:12.221Z"}
+{"level":"debug","message":"[] liste des categories a mettre a jour","timestamp":"2023-03-09T21:20:12.221Z"}
+{"level":"debug","message":"[{\"id\":333,\"channel_name\":\"general\",\"channel_uuid\":\"1066073456694808586\",\"id_guilds\":1,\"id_category\":214,\"created_at\":\"2023-03-09T19:23:57.571Z\",\"updated_at\":\"2023-03-09T19:23:57.571Z\"}] liste des channels a mettre a jour","timestamp":"2023-03-09T21:20:12.224Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-09T21:20:12.224Z"}
+{"level":"debug","message":"[] liste des channels a mettre a jour","timestamp":"2023-03-09T21:20:12.225Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-09T21:20:12.225Z"}
+{"level":"error","message":"Code de statut: 404","timestamp":"2023-03-09T21:20:12.763Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":404,\"message\":\"Cannot POST /api/channels/update/name\",\"error\":\"Not Found\"}","timestamp":"2023-03-09T21:20:12.763Z"}
+{"level":"error","message":"En-têtes de réponse: x-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 88\netag: W/\"58-6vS5V9IeKOYXNFNlpcp17uvNXz4\"\ndate: Thu, 09 Mar 2023 21:20:12 GMT\nconnection: close","timestamp":"2023-03-09T21:20:12.764Z"}
+{"level":"info","message":"Loading command config","timestamp":"2023-03-09T21:20:41.538Z"}
+{"level":"info","message":"Loading event create-category","timestamp":"2023-03-09T21:20:41.539Z"}
+{"level":"info","message":"Loading component courses-creation","timestamp":"2023-03-09T21:20:41.539Z"}
+{"level":"info","message":"Loading command ping","timestamp":"2023-03-09T21:20:41.559Z"}
+{"level":"info","message":"Loading event channelCreate","timestamp":"2023-03-09T21:20:41.559Z"}
+{"level":"info","message":"Loading component test-button","timestamp":"2023-03-09T21:20:41.559Z"}
+{"level":"info","message":"Loading command test","timestamp":"2023-03-09T21:20:41.560Z"}
+{"level":"info","message":"Started refreshing application (/) commands.","timestamp":"2023-03-09T21:20:41.560Z"}
+{"level":"info","message":"Loading event ready","timestamp":"2023-03-09T21:20:41.561Z"}
+{"level":"info","message":"Loading component courses-ask-name","timestamp":"2023-03-09T21:20:41.561Z"}
+{"level":"info","message":"Loading component selectConcernedPole","timestamp":"2023-03-09T21:20:41.562Z"}
+{"level":"info","message":"Successfully reloaded application (/) commands.","timestamp":"2023-03-09T21:20:41.860Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-09T21:20:43.065Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-09T21:20:43.078Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-09T21:20:43.080Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:20:43.083Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | categories: 18","timestamp":"2023-03-09T21:20:43.083Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-09T21:20:43.099Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:20:43.101Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | categories: 16","timestamp":"2023-03-09T21:20:43.101Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 22","timestamp":"2023-03-09T21:20:43.106Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-09T21:20:43.126Z"}
+{"level":"debug","message":"[] liste des categories a mettre a jour","timestamp":"2023-03-09T21:20:43.126Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-09T21:20:43.128Z"}
+{"level":"debug","message":"[] liste des categories a mettre a jour","timestamp":"2023-03-09T21:20:43.128Z"}
+{"level":"debug","message":"[{\"id\":333,\"channel_name\":\"general\",\"channel_uuid\":\"1066073456694808586\",\"id_guilds\":1,\"id_category\":214,\"created_at\":\"2023-03-09T19:23:57.571Z\",\"updated_at\":\"2023-03-09T19:23:57.571Z\"}] liste des channels a mettre a jour","timestamp":"2023-03-09T21:20:43.132Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-09T21:20:43.132Z"}
+{"level":"debug","message":"[] liste des channels a mettre a jour","timestamp":"2023-03-09T21:20:43.132Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-09T21:20:43.132Z"}
+{"level":"error","message":"Code de statut: 404","timestamp":"2023-03-09T21:20:43.670Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":404,\"message\":\"Cannot POST /api/channels/update/name\",\"error\":\"Not Found\"}","timestamp":"2023-03-09T21:20:43.670Z"}
+{"level":"error","message":"En-têtes de réponse: \nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 88\netag: W/\"58-6vS5V9IeKOYXNFNlpcp17uvNXz4\"\ndate: Thu, 09 Mar 2023 21:20:43 GMT\nconnection: close","timestamp":"2023-03-09T21:20:43.670Z"}
+{"level":"info","message":"Loading command config","timestamp":"2023-03-09T21:22:02.695Z"}
+{"level":"info","message":"Loading event create-category","timestamp":"2023-03-09T21:22:02.695Z"}
+{"level":"info","message":"Loading component courses-creation","timestamp":"2023-03-09T21:22:02.695Z"}
+{"level":"info","message":"Loading command ping","timestamp":"2023-03-09T21:22:02.714Z"}
+{"level":"info","message":"Loading event channelCreate","timestamp":"2023-03-09T21:22:02.714Z"}
+{"level":"info","message":"Loading component test-button","timestamp":"2023-03-09T21:22:02.715Z"}
+{"level":"info","message":"Loading command test","timestamp":"2023-03-09T21:22:02.715Z"}
+{"level":"info","message":"Started refreshing application (/) commands.","timestamp":"2023-03-09T21:22:02.716Z"}
+{"level":"info","message":"Loading event ready","timestamp":"2023-03-09T21:22:02.716Z"}
+{"level":"info","message":"Loading component courses-ask-name","timestamp":"2023-03-09T21:22:02.716Z"}
+{"level":"info","message":"Loading component selectConcernedPole","timestamp":"2023-03-09T21:22:02.717Z"}
+{"level":"info","message":"Successfully reloaded application (/) commands.","timestamp":"2023-03-09T21:22:03.112Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-09T21:22:03.427Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-09T21:22:03.504Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-09T21:22:03.513Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:22:03.546Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | categories: 16","timestamp":"2023-03-09T21:22:03.547Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 22","timestamp":"2023-03-09T21:22:03.573Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:22:03.577Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | categories: 18","timestamp":"2023-03-09T21:22:03.577Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-09T21:22:03.583Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-09T21:22:03.818Z"}
+{"level":"debug","message":"[] liste des categories a mettre a jour","timestamp":"2023-03-09T21:22:03.818Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-09T21:22:03.819Z"}
+{"level":"debug","message":"[] liste des categories a mettre a jour","timestamp":"2023-03-09T21:22:03.819Z"}
+{"level":"debug","message":"[] liste des channels a mettre a jour","timestamp":"2023-03-09T21:22:03.850Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-09T21:22:03.850Z"}
+{"level":"debug","message":"[{\"id\":333,\"channel_name\":\"general\",\"channel_uuid\":\"1066073456694808586\",\"id_guilds\":1,\"id_category\":214,\"created_at\":\"2023-03-09T19:23:57.571Z\",\"updated_at\":\"2023-03-09T19:23:57.571Z\"}] liste des channels a mettre a jour","timestamp":"2023-03-09T21:22:03.860Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-09T21:22:03.860Z"}
+{"level":"error","message":"Code de statut: 404","timestamp":"2023-03-09T21:22:04.365Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":404,\"message\":\"Cannot POST /api/channels/update/name\",\"error\":\"Not Found\"}","timestamp":"2023-03-09T21:22:04.365Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 88\netag: W/\"58-6vS5V9IeKOYXNFNlpcp17uvNXz4\"\ndate: Thu, 09 Mar 2023 21:22:04 GMT\nconnection: close","timestamp":"2023-03-09T21:22:04.365Z"}
+{"level":"info","message":"Loading command config","timestamp":"2023-03-09T21:22:36.014Z"}
+{"level":"info","message":"Loading event create-category","timestamp":"2023-03-09T21:22:36.014Z"}
+{"level":"info","message":"Loading component courses-creation","timestamp":"2023-03-09T21:22:36.015Z"}
+{"level":"info","message":"Loading command ping","timestamp":"2023-03-09T21:22:36.034Z"}
+{"level":"info","message":"Loading event channelCreate","timestamp":"2023-03-09T21:22:36.034Z"}
+{"level":"info","message":"Loading component test-button","timestamp":"2023-03-09T21:22:36.034Z"}
+{"level":"info","message":"Loading command test","timestamp":"2023-03-09T21:22:36.035Z"}
+{"level":"info","message":"Started refreshing application (/) commands.","timestamp":"2023-03-09T21:22:36.035Z"}
+{"level":"info","message":"Loading event ready","timestamp":"2023-03-09T21:22:36.036Z"}
+{"level":"info","message":"Loading component courses-ask-name","timestamp":"2023-03-09T21:22:36.036Z"}
+{"level":"info","message":"Loading component selectConcernedPole","timestamp":"2023-03-09T21:22:36.036Z"}
+{"level":"info","message":"Successfully reloaded application (/) commands.","timestamp":"2023-03-09T21:22:36.286Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-09T21:22:36.590Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-09T21:22:36.606Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-09T21:22:36.607Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:22:36.610Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | categories: 16","timestamp":"2023-03-09T21:22:36.611Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 22","timestamp":"2023-03-09T21:22:36.624Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:22:36.626Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | categories: 18","timestamp":"2023-03-09T21:22:36.626Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-09T21:22:36.632Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-09T21:22:36.676Z"}
+{"level":"debug","message":"[] liste des categories a mettre a jour","timestamp":"2023-03-09T21:22:36.676Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-09T21:22:36.677Z"}
+{"level":"debug","message":"[] liste des categories a mettre a jour","timestamp":"2023-03-09T21:22:36.677Z"}
+{"level":"debug","message":"[] liste des channels a mettre a jour","timestamp":"2023-03-09T21:22:36.682Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-09T21:22:36.683Z"}
+{"level":"debug","message":"[{\"id\":333,\"channel_name\":\"general\",\"channel_uuid\":\"1066073456694808586\",\"id_guilds\":1,\"id_category\":214,\"created_at\":\"2023-03-09T19:23:57.571Z\",\"updated_at\":\"2023-03-09T19:23:57.571Z\"}] liste des channels a mettre a jour","timestamp":"2023-03-09T21:22:36.683Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-09T21:22:36.683Z"}
+{"level":"info","message":"Loading command config","timestamp":"2023-03-09T21:24:14.410Z"}
+{"level":"info","message":"Loading event create-category","timestamp":"2023-03-09T21:24:14.411Z"}
+{"level":"info","message":"Loading component courses-creation","timestamp":"2023-03-09T21:24:14.411Z"}
+{"level":"info","message":"Loading command ping","timestamp":"2023-03-09T21:24:14.430Z"}
+{"level":"info","message":"Loading event channelCreate","timestamp":"2023-03-09T21:24:14.430Z"}
+{"level":"info","message":"Loading component test-button","timestamp":"2023-03-09T21:24:14.430Z"}
+{"level":"info","message":"Loading command test","timestamp":"2023-03-09T21:24:14.431Z"}
+{"level":"info","message":"Started refreshing application (/) commands.","timestamp":"2023-03-09T21:24:14.431Z"}
+{"level":"info","message":"Loading event ready","timestamp":"2023-03-09T21:24:14.432Z"}
+{"level":"info","message":"Loading component courses-ask-name","timestamp":"2023-03-09T21:24:14.432Z"}
+{"level":"info","message":"Loading component selectConcernedPole","timestamp":"2023-03-09T21:24:14.432Z"}
+{"level":"info","message":"Successfully reloaded application (/) commands.","timestamp":"2023-03-09T21:24:14.877Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-09T21:24:15.108Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-09T21:24:15.136Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-09T21:24:15.140Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:24:15.146Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | categories: 16","timestamp":"2023-03-09T21:24:15.146Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 22","timestamp":"2023-03-09T21:24:15.178Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:24:15.180Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | categories: 18","timestamp":"2023-03-09T21:24:15.180Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-09T21:24:15.186Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-09T21:24:15.227Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-09T21:24:15.228Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-09T21:24:15.232Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-09T21:24:15.232Z"}
+{"level":"debug","message":{"data":{"channel_name":"general","channel_uuid":"1066073456694808586","created_at":"2023-03-09T19:23:57.571Z","id":333,"id_category":214,"id_guilds":1,"updated_at":"2023-03-09T19:23:57.571Z"},"statusCode":200},"timestamp":"2023-03-09T21:24:15.783Z"}
+{"level":"info","message":"Loading command config","timestamp":"2023-03-09T21:24:33.979Z"}
+{"level":"info","message":"Loading event create-category","timestamp":"2023-03-09T21:24:33.979Z"}
+{"level":"info","message":"Loading component courses-creation","timestamp":"2023-03-09T21:24:33.979Z"}
+{"level":"info","message":"Loading command ping","timestamp":"2023-03-09T21:24:33.998Z"}
+{"level":"info","message":"Loading event channelCreate","timestamp":"2023-03-09T21:24:33.998Z"}
+{"level":"info","message":"Loading component test-button","timestamp":"2023-03-09T21:24:33.999Z"}
+{"level":"info","message":"Loading command test","timestamp":"2023-03-09T21:24:33.999Z"}
+{"level":"info","message":"Started refreshing application (/) commands.","timestamp":"2023-03-09T21:24:34.000Z"}
+{"level":"info","message":"Loading event ready","timestamp":"2023-03-09T21:24:34.000Z"}
+{"level":"info","message":"Loading component courses-ask-name","timestamp":"2023-03-09T21:24:34.000Z"}
+{"level":"info","message":"Loading component selectConcernedPole","timestamp":"2023-03-09T21:24:34.001Z"}
+{"level":"info","message":"Successfully reloaded application (/) commands.","timestamp":"2023-03-09T21:24:34.448Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-09T21:24:34.850Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-09T21:24:34.878Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-09T21:24:34.881Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:24:34.886Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | categories: 16","timestamp":"2023-03-09T21:24:34.886Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 22","timestamp":"2023-03-09T21:24:34.914Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:24:34.917Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | categories: 18","timestamp":"2023-03-09T21:24:34.917Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-09T21:24:34.926Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-09T21:24:34.960Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-09T21:24:34.961Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-09T21:24:34.965Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-09T21:24:34.965Z"}
+{"level":"debug","message":"{\"statusCode\":200,\"data\":{\"id\":333,\"channel_name\":\"general\",\"channel_uuid\":\"1066073456694808586\",\"id_guilds\":1,\"id_category\":214,\"created_at\":\"2023-03-09T19:23:57.571Z\",\"updated_at\":\"2023-03-09T19:23:57.571Z\"}}","timestamp":"2023-03-09T21:24:35.516Z"}
+{"level":"info","message":"Loading command config","timestamp":"2023-03-09T21:25:54.211Z"}
+{"level":"info","message":"Loading event create-category","timestamp":"2023-03-09T21:25:54.212Z"}
+{"level":"info","message":"Loading component courses-creation","timestamp":"2023-03-09T21:25:54.212Z"}
+{"level":"info","message":"Loading command ping","timestamp":"2023-03-09T21:25:54.236Z"}
+{"level":"info","message":"Loading event channelCreate","timestamp":"2023-03-09T21:25:54.236Z"}
+{"level":"info","message":"Loading component test-button","timestamp":"2023-03-09T21:25:54.236Z"}
+{"level":"info","message":"Loading command test","timestamp":"2023-03-09T21:25:54.237Z"}
+{"level":"info","message":"Started refreshing application (/) commands.","timestamp":"2023-03-09T21:25:54.237Z"}
+{"level":"info","message":"Loading event ready","timestamp":"2023-03-09T21:25:54.237Z"}
+{"level":"info","message":"Loading component courses-ask-name","timestamp":"2023-03-09T21:25:54.238Z"}
+{"level":"info","message":"Loading component selectConcernedPole","timestamp":"2023-03-09T21:25:54.238Z"}
+{"level":"info","message":"Successfully reloaded application (/) commands.","timestamp":"2023-03-09T21:25:54.513Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-09T21:25:54.946Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-09T21:25:54.973Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-09T21:25:54.977Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:25:54.982Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | categories: 16","timestamp":"2023-03-09T21:25:54.982Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 22","timestamp":"2023-03-09T21:25:55.011Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T21:25:55.014Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | categories: 18","timestamp":"2023-03-09T21:25:55.014Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-09T21:25:55.021Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-09T21:25:55.055Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-09T21:25:55.056Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-09T21:25:55.059Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-09T21:25:55.060Z"}
+{"level":"debug","message":"{\"statusCode\":200,\"data\":{\"id\":333,\"channel_name\":\"general-rename\",\"channel_uuid\":\"1066073456694808586\",\"id_guilds\":1,\"id_category\":214,\"created_at\":\"2023-03-09T19:23:57.571Z\",\"updated_at\":\"2023-03-09T21:25:55.601Z\"}}","timestamp":"2023-03-09T21:25:55.615Z"}

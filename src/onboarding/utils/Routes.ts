@@ -7,5 +7,9 @@ export enum Routes {
   REGISTER_GUILD_CATEGORY = '/api/category/register',
   REGISTER_GUILD_CHANNEL = '/api/channels/register',
   REGISTER_CHANNEL_STOCK = '/api/channels-stock/register/:categoryUUID',
-  GET_CHANNELS_STOCK_EXIST = '/api/channels-stock/exist/:guildUUID'
+  GET_CHANNELS_STOCK_EXIST = '/api/channels-stock/exist/:guildUUID',
+  GET_GUILD_CATEGORY = '/api/category/guilds/:uuid',
+  GET_GUILD_CHANNEL = '/api/channels/guilds/:uuid',
+  UPDATE_CHANNEL_NAME = '/api/channels/update/name',
+  UPDATE_CATEGORY_NAME = '/api/category/update/name',
 }

@@ -39,7 +39,7 @@ export default {
 
       await registerChannelsStock(element, guild_id);
       await registerChannels(element, guild_id);
-
+      await updateChannels(element, guild_id);
 
       discordClient.destroy();
     })
@@ -52,8 +52,6 @@ export default {
  * @param guild_id Identifiant de la guilde en base de données
  */
 async function registerChannelsStock(guild: DiscordGuild, guild_id: string) {
-
-
   const channelsStockExist = await new HttpUtils().get(Routes.GET_CHANNELS_STOCK_EXIST, guild.id);
 
   logger.debug(channelsStockExist);
@@ -87,9 +85,9 @@ async function registerChannels(guild: DiscordGuild, guild_id: string) {
   // Enregistrement des categories dans la base de données
   new Promise(() => {
     const categories = guild.channels.cache.filter((channel) => channel.type === ChannelType.GuildCategory);
+    logger.info("[Registering category] " + " : Guild => name : " + guild.name + ' | id: '  + guild.id + ' | categories: ' + categories.size);
 
     categories.forEach(async (category) => {
-      logger.info("[Registering category] " + category.name + " : Guild => " + guild.id);
       new HttpUtils().post(Routes.REGISTER_GUILD_CATEGORY, {
         category_uuid: category.id,
         category_name: category.name,
@@ -98,17 +96,14 @@ async function registerChannels(guild: DiscordGuild, guild_id: string) {
     });
 
     const channels = guild.channels.cache.filter((channel) => channel.type !== ChannelType.GuildCategory && channel.parent?.type !== ChannelType.GuildText);
+    logger.info("[Registering channels] " + " : Guild => name : " + guild.name + ' | id: '  + guild.id + ' | channels: ' + channels.size);
+
     channels.forEach(async (channel) => {
       setTimeout(async () => {
         const parentId = channel.parentId;
-        logger.info("[Registering channel] " + parentId + " : Guild => " + guild.id);
 
         if(parentId === null){
-          logger.debug({
-            "channel_name" : channel.name,
-            "channel_uuid" : channel.id,
-            "id_guilds": guild_id
-          })
+
           await new HttpUtils().post(Routes.REGISTER_GUILD_CHANNEL, {
             "channel_name" : channel.name,
             "channel_uuid" : channel.id,
@@ -125,5 +120,51 @@ async function registerChannels(guild: DiscordGuild, guild_id: string) {
       }, 500);
     });
   })
+}
 
+async function updateChannels(guild: DiscordGuild, guild_id: string) {
+  const savedCategories = await new HttpUtils().get(Routes.GET_GUILD_CATEGORY, guild.id);
+  const discordCategories = guild.channels.cache.filter((channel) => channel.type === ChannelType.GuildCategory);
+
+  const categoriesToUpdate = savedCategories.data.filter((category: any) => {
+    const discordCategory = discordCategories.find((channel) => channel.id === category.category_uuid);
+    return discordCategory?.name !== category.category_name;
+  });
+
+  logger.info("[Update categories] " + " : Guild => name : " + guild.name + ' | id: '  + guild.id + ' | channels: ' + (categoriesToUpdate.size === undefined ? 0 : categoriesToUpdate.size));
+  // logger.debug(JSON.stringify(categoriesToUpdate) + ' liste des categories a mettre a jour')
+
+
+  for (const category of categoriesToUpdate) {
+    setTimeout(async () => {
+      await new HttpUtils().patch(Routes.UPDATE_CATEGORY_NAME, {
+        category_uuid: category.category_uuid,
+        category_name: category?.name,
+        guilds_id: guild_id
+      });
+    }, 500);
+  }
+
+  const savedChannels = await new HttpUtils().get(Routes.GET_GUILD_CHANNEL, guild.id);
+
+  const discordChannels = guild.channels.cache.filter((channel) => channel.type !== ChannelType.GuildCategory && channel.parent?.type !== ChannelType.GuildText);
+
+  const channelsToUpdate = savedChannels.data.filter((channelPending: any) => {
+    const discordChannel = discordChannels.find((channel) => channel.id === channelPending.channel_uuid);
+    return discordChannel?.name !== channelPending.channel_name;
+  });
+  // logger.debug(JSON.stringify(channelsToUpdate) + ' liste des channels a mettre a jour')
+  logger.info("[Update channels] " + " : Guild => name : " + guild.name + ' | id: '  + guild.id + ' | channels: ' + (channelsToUpdate.size === undefined ? 0 : channelsToUpdate.size) );
+
+  for (const channel of channelsToUpdate) {
+    setTimeout(async () => {
+      const c = await new HttpUtils().patch(Routes.UPDATE_CHANNEL_NAME, {
+        channel_uuid: channel.channel_uuid,
+        channel_name: discordChannels.get(channel.channel_uuid)?.name,
+        guilds_id: guild_id
+      });
+
+      logger.debug(JSON.stringify(c))
+    }, 500);
+  }
 }
