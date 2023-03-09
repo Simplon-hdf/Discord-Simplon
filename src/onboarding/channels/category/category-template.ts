@@ -1,4 +1,4 @@
-import { PromoCategory } from './promo-category';
+import { PromoCategory } from './promo/promo-category';
 
 export class CategoryTemplate {
   private readonly _id: string;

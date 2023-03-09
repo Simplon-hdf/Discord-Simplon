@@ -862,3 +862,34 @@
 {"level":"info","message":"[Update categories]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-09T21:45:51.357Z"}
 {"level":"info","message":"[Update channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-09T21:45:51.360Z"}
 {"level":"debug","message":"{\"statusCode\":200,\"data\":{\"id\":331,\"channel_name\":\"general\",\"channel_uuid\":\"1066001471683973170\",\"id_guilds\":1,\"id_category\":null,\"created_at\":\"2023-03-09T19:23:57.568Z\",\"updated_at\":\"2023-03-09T19:23:57.568Z\"}}","timestamp":"2023-03-09T21:45:51.933Z"}
+{"level":"info","message":"Loading command config","timestamp":"2023-03-09T22:38:23.643Z"}
+{"level":"info","message":"Loading event create-category","timestamp":"2023-03-09T22:38:23.644Z"}
+{"level":"info","message":"Loading component courses-creation","timestamp":"2023-03-09T22:38:23.644Z"}
+{"level":"info","message":"Loading command ping","timestamp":"2023-03-09T22:38:23.663Z"}
+{"level":"info","message":"Loading event channelCreate","timestamp":"2023-03-09T22:38:23.663Z"}
+{"level":"info","message":"Loading component test-button","timestamp":"2023-03-09T22:38:23.663Z"}
+{"level":"info","message":"Loading command test","timestamp":"2023-03-09T22:38:23.664Z"}
+{"level":"info","message":"Started refreshing application (/) commands.","timestamp":"2023-03-09T22:38:23.664Z"}
+{"level":"info","message":"Loading event ready","timestamp":"2023-03-09T22:38:23.665Z"}
+{"level":"info","message":"Loading component courses-ask-name","timestamp":"2023-03-09T22:38:23.665Z"}
+{"level":"info","message":"Loading component selectConcernedPole","timestamp":"2023-03-09T22:38:23.665Z"}
+{"level":"info","message":"Successfully reloaded application (/) commands.","timestamp":"2023-03-09T22:38:24.122Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-09T22:38:25.035Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-09T22:38:25.124Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-09T22:38:25.127Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T22:38:25.180Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | categories: 16","timestamp":"2023-03-09T22:38:25.180Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 22","timestamp":"2023-03-09T22:38:25.206Z"}
+{"level":"debug","message":{"data":true,"statusCode":200},"timestamp":"2023-03-09T22:38:25.210Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | categories: 18","timestamp":"2023-03-09T22:38:25.210Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 24","timestamp":"2023-03-09T22:38:25.222Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-09T22:38:25.478Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-09T22:38:25.480Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-09T22:38:25.515Z"}
+{"level":"info","message":"[Delete categories]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-09T22:38:25.519Z"}
+{"level":"debug","message":"[] liste des channels a supprimer","timestamp":"2023-03-09T22:38:25.524Z"}
+{"level":"info","message":"[Delete channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-09T22:38:25.524Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-09T22:38:25.529Z"}
+{"level":"info","message":"[Delete categories]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-09T22:38:25.532Z"}
+{"level":"debug","message":"[] liste des channels a supprimer","timestamp":"2023-03-09T22:38:25.534Z"}
+{"level":"info","message":"[Delete channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-09T22:38:25.534Z"}

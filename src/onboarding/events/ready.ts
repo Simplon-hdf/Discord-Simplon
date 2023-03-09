@@ -5,6 +5,7 @@ import { Guild, IGuild } from '../guilds/guild';
 import logger from '../utils/logger';
 import { HttpUtils } from '../utils/http';
 import { Routes } from '../utils/Routes';
+import { Category } from '../channels/category/category';
 
 export default {
   name: Events.ClientReady,
@@ -39,6 +40,7 @@ export default {
       await registerChannelsStock(element, guild_id);
       await registerChannels(element, guild_id);
       await updateChannels(element, guild_id);
+      await deleteChannels(element);
 
       discordClient.destroy();
     });
@@ -66,11 +68,11 @@ async function registerChannelsStock(guild: DiscordGuild, guild_id: string) {
     });
 
     logger.info('[Registering category] Register channels stock category');
-    await new HttpUtils().post(Routes.REGISTER_GUILD_CATEGORY, {
-      category_uuid: channelsStock.id,
-      category_name: channelsStock.name,
-      guilds_id: guild_id,
-    });
+    await DiscordClient.getInstance(guild_id)
+      .getCategoryManager()
+      .registerCategory(
+        new Category(guild_id, channelsStock.id, channelsStock.name),
+      );
 
     await new HttpUtils().post(
       Routes.REGISTER_CHANNEL_STOCK,
@@ -88,32 +90,24 @@ async function registerChannelsStock(guild: DiscordGuild, guild_id: string) {
 async function registerChannels(guild: DiscordGuild, guild_id: string) {
   // Enregistrement des categories dans la base de données
   new Promise(() => {
-    const categories = guild.channels.cache.filter(
-      (channel) => channel.type === ChannelType.GuildCategory,
-    );
+    // Recupère la liste des categories
+    const categories = getDiscordCategories(guild);
+
     logger.info(
       '[Registering category] ' +
         ' : Guild => name : ' +
         guild.name +
         ' | id: ' +
-        guild.id +
-        ' | categories: ' +
-        categories.size,
+        guild.id,
     );
-
     categories.forEach(async (category) => {
-      new HttpUtils().post(Routes.REGISTER_GUILD_CATEGORY, {
-        category_uuid: category.id,
-        category_name: category.name,
-        guilds_id: guild_id,
-      });
+      await DiscordClient.getInstance(guild_id)
+        .getCategoryManager()
+        .registerCategory(new Category(guild_id, category.id, category.name));
     });
 
-    const channels = guild.channels.cache.filter(
-      (channel) =>
-        channel.type !== ChannelType.GuildCategory &&
-        channel.parent?.type !== ChannelType.GuildText,
-    );
+    // Recupère la liste des channels n'étant pas des categories et des threads
+    const channels = getDiscordChannels(guild);
     logger.info(
       '[Registering channels] ' +
         ' : Guild => name : ' +
@@ -147,14 +141,17 @@ async function registerChannels(guild: DiscordGuild, guild_id: string) {
   });
 }
 
+/**
+ * Mets à jour le nom des channels et des categories dans la base de données
+ * @param guild Object guild de discord
+ * @param guild_id Identifiant de la guild en base de données
+ */
 async function updateChannels(guild: DiscordGuild, guild_id: string) {
-  const savedCategories = await new HttpUtils().get(
-    Routes.GET_GUILD_CATEGORY,
-    guild.id,
-  );
-  const discordCategories = guild.channels.cache.filter(
-    (channel) => channel.type === ChannelType.GuildCategory,
-  );
+  const savedCategories = await DiscordClient.getInstance(guild_id)
+    .getGuildManager()
+    .getGuildCategories(guild_id);
+
+  const discordCategories = getDiscordCategories(guild);
 
   const categoriesToUpdate = savedCategories.data.filter((category: any) => {
     const discordCategory = discordCategories.find(
@@ -184,16 +181,11 @@ async function updateChannels(guild: DiscordGuild, guild_id: string) {
     }, 500);
   }
 
-  const savedChannels = await new HttpUtils().get(
-    Routes.GET_GUILD_CHANNEL,
-    guild.id,
-  );
+  const savedChannels = await DiscordClient.getInstance(guild_id)
+    .getGuildManager()
+    .getGuidChannels(guild_id);
 
-  const discordChannels = guild.channels.cache.filter(
-    (channel) =>
-      channel.type !== ChannelType.GuildCategory &&
-      channel.parent?.type !== ChannelType.GuildText,
-  );
+  const discordChannels = getDiscordChannels(guild);
 
   const channelsToUpdate = savedChannels.data.filter((channelPending: any) => {
     const discordChannel = discordChannels.find(
@@ -223,14 +215,16 @@ async function updateChannels(guild: DiscordGuild, guild_id: string) {
   }
 }
 
+/**
+ * Supprime les channels et les categories dans la base de données s'ils n'existent plus sur discord
+ * @param guild Object guild de discord
+ * @param guild_id Identifiant de la guild en base de données
+ */
 async function deleteChannels(guild: DiscordGuild) {
-  const savedCategories = await new HttpUtils().get(
-    Routes.GET_GUILD_CATEGORY,
-    guild.id,
-  );
-  const discordCategories = guild.channels.cache.filter(
-    (channel) => channel.type === ChannelType.GuildCategory,
-  );
+  const savedCategories = await DiscordClient.getInstance(guild.id)
+    .getGuildManager()
+    .getGuildCategories(guild.id);
+  const discordCategories = getDiscordCategories(guild);
 
   const categoriesToDelete = savedCategories.data.filter((category: any) =>
     Array.from(discordCategories.values()).includes(category.category_uuid),
@@ -255,22 +249,19 @@ async function deleteChannels(guild: DiscordGuild) {
     }, 500);
   }
 
-  const savedChannels = await new HttpUtils().get(
-    Routes.GET_GUILD_CHANNEL,
-    guild.id,
-  );
-  const discordChannels = guild.channels.cache.filter(
-    (channel) =>
-      channel.type !== ChannelType.GuildCategory &&
-      channel.parent?.type !== ChannelType.GuildText,
-  );
+  const savedChannels = await DiscordClient.getInstance(guild.id)
+    .getGuildManager()
+    .getGuidChannels(guild.id);
+
+  const discordChannels = getDiscordChannels(guild);
 
   const channelsToDelete = savedChannels.data.filter((channelPending: any) =>
     Array.from(discordChannels.values()).includes(channelPending.channel_uuid),
   );
-  logger.debug(
-    JSON.stringify(channelsToDelete) + ' liste des channels a supprimer',
-  );
+
+  // logger.debug(
+  //   JSON.stringify(channelsToDelete) + ' liste des channels a supprimer',
+  // );
   logger.info(
     '[Delete channels] ' +
       ' : Guild => name : ' +
@@ -291,4 +282,18 @@ async function deleteChannels(guild: DiscordGuild) {
       logger.debug(JSON.stringify(c));
     }, 500);
   }
+}
+
+function getDiscordCategories(guild: DiscordGuild) {
+  return guild.channels.cache.filter(
+    (channel) => channel.type === ChannelType.GuildCategory,
+  );
+}
+
+function getDiscordChannels(guild: DiscordGuild) {
+  return guild.channels.cache.filter(
+    (channel) =>
+      channel.type !== ChannelType.GuildCategory &&
+      channel.parent?.type !== ChannelType.GuildText,
+  );
 }

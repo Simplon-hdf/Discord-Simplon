@@ -1,6 +1,6 @@
-import { Channel } from '../channel';
-import { Permission } from '../../permission';
-import { User } from '../../users/user';
+import { Channel } from '../../channel/channel';
+import { Permission } from '../../../permission';
+import { User } from '../../../users/user';
 
 export class PromoCategory {
   private readonly _id: number;

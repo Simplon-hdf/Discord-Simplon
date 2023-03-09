@@ -1,5 +1,5 @@
 import { PromoRole } from './promo-role';
-import { PromoCategory } from '../../channels/category/promo-category';
+import { PromoCategory } from '../../channels/category/promo/promo-category';
 
 export class Promo {
   private readonly _id: number;
