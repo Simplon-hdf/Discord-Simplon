@@ -38,7 +38,7 @@ export default async (client : any, discord_token?: any, discord_client_id?: any
             console.table(commandFiles)
             console.log(`[COMMANDS] => ${commandFiles.length} command(s) has been charged !`)
             console.log(" ")
-          }, 1000)
+          }, 1500)
     }
 
     if(!discord_token && !discord_client_id){

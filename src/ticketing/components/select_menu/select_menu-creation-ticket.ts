@@ -48,7 +48,7 @@ export default {
       await thread.members.add(interaction.user.id);
       await new HttpUtils().post(Routes.REGISTER_NEW_TICKET, {
         user_uuid: interaction.user.id,
-        role_uuid: "1082218878475714570",
+        role_uuid: poleSelected,
         ticket_tag: ticket?.ticketTag,
         ticket_state: "IDLE",
       });
@@ -60,6 +60,7 @@ export default {
       );
 
       await thread.send({
+        content: `<@&${poleSelected}>`,
         embeds: [ticketInsideEmbed],
         components: [componentsRow],
       });

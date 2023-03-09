@@ -39,5 +39,5 @@ export default async (client: any) => {
     console.table(eventFiles)
     console.log(`[EVENTS] => ${eventFiles.length} event(s) has been charged !`)
     console.log(" ")
-  }, 4000)
+  }, 2000)
 };

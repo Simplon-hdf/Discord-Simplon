@@ -23,6 +23,5 @@ export default async (client: any) => {
     console.log("---------------[ COMPONENT(S) ]---------------")
     console.table(componentsFolders)
     console.log(`[COMPONENTS] => ${componentsFolders.length} Components(s) folder has been charged !`)
-    console.log(" ")
   }, 1000)
 };
