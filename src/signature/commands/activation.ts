@@ -23,17 +23,9 @@ export default {
 
         const row = new ActionRowBuilder<ButtonBuilder>().addComponents(
             new ButtonBuilder()
-                .setCustomId("trainer")
-                .setLabel("Rappeler un apprenant")
+                .setCustomId("activation")
+                .setLabel("Commencer la procédure")
                 .setStyle(ButtonStyle.Success),
-            new ButtonBuilder()
-                .setCustomId('learner')
-                .setLabel("Demander le code")
-                .setStyle(ButtonStyle.Danger),
-            new ButtonBuilder()
-                .setCustomId("deactivate_code_request")
-                .setStyle(ButtonStyle.Secondary)
-                .setLabel("Cliquez ici pour activer / désactiver la fonction de Code Request pour les apprenants")
         )
         await interaction.reply({embeds: [beginProcedure], components: [row]});
     },

@@ -9,4 +9,5 @@ var Routes;
     Routes["GET_REPORT"] = "/signature/report/:learnerUuid";
     Routes["GET_TRAINERS"] = "/signature/find/trainer/:uuid";
     Routes["POST_CODE_REQUEST"] = "/signature/codeRequest/:learnerUuid";
+    Routes["DEACTIVATE"] = "placeholder";
 })(Routes = exports.Routes || (exports.Routes = {}));

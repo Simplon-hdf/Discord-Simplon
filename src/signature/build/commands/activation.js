@@ -12,15 +12,9 @@ exports.default = {
     async execute(interaction) {
         const beginProcedure = new embed_builder_1.default("Commencer la procédure de rappel de signature", "#0x0099ff", `\n\n Bonjour ${interaction.member?.user.username}, \n\n pour commencer la procédure de rappel de signature veuillez cliquer sur le bouton ci-dessous.`, "https://cdn-icons-png.flaticon.com/512/4489/4489772.png");
         const row = new discord_js_1.ActionRowBuilder().addComponents(new discord_js_1.ButtonBuilder()
-            .setCustomId("trainer")
-            .setLabel("Rappeler un apprenant")
-            .setStyle(discord_js_1.ButtonStyle.Success), new discord_js_1.ButtonBuilder()
-            .setCustomId('learner')
-            .setLabel("Demander le code")
-            .setStyle(discord_js_1.ButtonStyle.Danger), new discord_js_1.ButtonBuilder()
-            .setCustomId("deactivate_code_request")
-            .setStyle(discord_js_1.ButtonStyle.Secondary)
-            .setLabel("Cliquez ici pour désactiver la fonction de Code Request pour les apprenants"));
+            .setCustomId("activation")
+            .setLabel("Commencer la procédure")
+            .setStyle(discord_js_1.ButtonStyle.Success));
         await interaction.reply({ embeds: [beginProcedure], components: [row] });
     },
 };
