@@ -10,7 +10,7 @@ exports.default = {
     name: discord_js_1.Events.InteractionCreate,
     on: true,
     async execute(interaction) {
-        if (!interaction.isAnySelectMenu() || interaction['customId'] != 'select_trainer')
+        if (!interaction.isAnySelectMenu() || interaction['customId'] !== 'select_trainer')
             return;
         const trainerUuid = interaction.values[0];
         const learner = new learner_1.Learner(interaction.user.id);

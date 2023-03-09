@@ -3,12 +3,11 @@ import {
     ButtonBuilder,
     ButtonStyle,
     ChatInputCommandInteraction,
-    EmbedBuilder,
-    Interaction,
+
     SlashCommandBuilder
 } from 'discord.js';
 import EmbedMessage from "../discord-builders/embed-builder";
-import {ButtonBuilderClass} from "../discord-builders/button-builder";
+
 
 export default {
     data: new SlashCommandBuilder()
@@ -24,10 +23,14 @@ export default {
 
         const row = new ActionRowBuilder<ButtonBuilder>().addComponents(
             new ButtonBuilder()
-                .setCustomId("start")
-                .setLabel("Commencer la procédure !")
-                .setStyle(ButtonStyle.Success)
-        );
+                .setCustomId("trainer")
+                .setLabel("Rappeler un apprenant")
+                .setStyle(ButtonStyle.Success),
+            new ButtonBuilder()
+                .setCustomId('learner')
+                .setLabel("Demander le code")
+                .setStyle(ButtonStyle.Danger)
+        )
         await interaction.reply({embeds: [beginProcedure], components: [row]});
     },
 };

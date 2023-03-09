@@ -10,12 +10,12 @@ exports.default = {
     name: discord_js_1.Events.InteractionCreate,
     on: true,
     async execute(interaction) {
-        if (!interaction.isButton() || interaction['customId'] != 'start')
-            return;
         const learner = new learner_1.Learner(interaction.user.id);
         const interactionChannel = interaction.channel?.id;
-        const memberRole = interaction.guild?.members.me?.permissionsIn(interactionChannel).has(discord_js_1.PermissionsBitField.Flags.CreatePrivateThreads);
-        if (!memberRole) {
+        const learnerRole = interaction.guild?.members.me?.permissionsIn(interactionChannel).has(discord_js_1.PermissionsBitField.Flags.CreatePrivateThreads);
+        if (!learnerRole) {
+            if (!interaction.isButton() || interaction['customId'] !== 'learner')
+                return;
             const codeRequestStatus = await learner.getCodeRequestStatus();
             if (codeRequestStatus) {
                 const hasReport = await learner.hasReport();

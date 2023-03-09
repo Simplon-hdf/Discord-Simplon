@@ -6,7 +6,7 @@ export default {
     on: true,
     async execute(interaction: SelectMenuInteraction) {
 
-        if (!interaction.isAnySelectMenu() || interaction['customId'] != 'select_learners') return;
+        if (!interaction.isAnySelectMenu() || interaction['customId'] !== 'select_learners') return;
 
         for (const learnerUuId of interaction.values) {
             const embedReminderLearner = new EmbedMessage(

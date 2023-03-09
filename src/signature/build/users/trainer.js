@@ -8,9 +8,6 @@ class Trainer extends user_1.User {
     constructor(Uuid) {
         super(Uuid);
     }
-    reportForgottenSignature(learnerUuid) {
-        return learnerUuid;
-    }
     deactivateCodeRequest(_promoUuid) {
         return _promoUuid;
     }

@@ -11,11 +11,11 @@ exports.default = {
     name: discord_js_1.Events.InteractionCreate,
     on: true,
     async execute(interaction) {
-        if (!interaction.isButton() || interaction['customId'] != 'start')
+        if (!interaction.isButton() || interaction['customId'] !== 'trainer')
             return;
         const trainer = new trainer_1.Trainer(interaction.user.id);
-        const memberRole = await interaction.memberPermissions?.has(discord_js_1.PermissionsBitField.Flags.SendMessages);
-        if (memberRole) {
+        const trainerRole = await interaction.memberPermissions?.has(discord_js_1.PermissionsBitField.Flags.CreatePrivateThreads);
+        if (trainerRole) {
             let trainerPromos = await trainer.getTrainerPromos();
             let promoList = [];
             trainerPromos.forEach((promo) => {

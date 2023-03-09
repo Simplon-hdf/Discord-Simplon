@@ -13,13 +13,14 @@ export default {
     name: Events.InteractionCreate,
     on: true,
     async execute(interaction: ButtonInteraction) {
-        if (!interaction.isButton() || interaction['customId'] != 'start' ) return;
+        if (!interaction.isButton() || interaction['customId'] !== 'trainer' ) return;
 
         const trainer = new Trainer(interaction.user.id);
-        const memberRole= await interaction.memberPermissions?.has(PermissionsBitField.Flags.SendMessages);
+        const trainerRole= await interaction.memberPermissions?.has(PermissionsBitField.Flags.CreatePrivateThreads);
 
-        if (memberRole) {
+        if (trainerRole) {
             let trainerPromos = await trainer.getTrainerPromos();
+
             let promoList: { id: any; name: any; }[] = []
             trainerPromos.forEach((promo: { id: any; roles: { role_name: any; }; }) => {
                 promoList.push({

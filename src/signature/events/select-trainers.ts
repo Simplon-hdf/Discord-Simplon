@@ -3,18 +3,18 @@ import {Learner} from "../users/learner";
 import EmbedMessage from "../discord-builders/embed-builder";
 
 
+
 export default {
     name: Events.InteractionCreate,
     on: true,
     async execute(interaction: ButtonInteraction) {
-
-        if (!interaction.isButton() || interaction['customId'] != 'start') return;
-
-        const learner = new Learner(interaction.user.id);
+        const learner = new Learner(interaction.user.id)
         const interactionChannel = interaction.channel?.id as string;
-        const memberRole = interaction.guild?.members.me?.permissionsIn(interactionChannel).has(PermissionsBitField.Flags.CreatePrivateThreads);
+        const learnerRole = interaction.guild?.members.me?.permissionsIn(interactionChannel).has(PermissionsBitField.Flags.CreatePrivateThreads);
 
-        if (!memberRole) {
+        if (!learnerRole) {
+        if (!interaction.isButton() || interaction['customId'] !== 'learner') return;
+
 
             const codeRequestStatus = await learner.getCodeRequestStatus()
 

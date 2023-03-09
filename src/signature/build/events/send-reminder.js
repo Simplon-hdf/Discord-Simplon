@@ -9,7 +9,7 @@ exports.default = {
     name: discord_js_1.Events.InteractionCreate,
     on: true,
     async execute(interaction) {
-        if (!interaction.isAnySelectMenu() || interaction['customId'] != 'select_learners')
+        if (!interaction.isAnySelectMenu() || interaction['customId'] !== 'select_learners')
             return;
         for (const learnerUuId of interaction.values) {
             const embedReminderLearner = new embed_builder_1.default("Rappel de signature", '#0x0099ff', `Bonjour ! \n\n Votre formateur **${interaction.user.username}** vous a envoyé un rappel de signature ! \n\n`, "https://cdn-icons-png.flaticon.com/512/4896/4896860.png");

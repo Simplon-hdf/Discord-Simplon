@@ -10,7 +10,7 @@ exports.default = {
     name: discord_js_1.Events.InteractionCreate,
     on: true,
     async execute(interaction) {
-        if (!interaction.isAnySelectMenu() || interaction['customId'] != 'select_promo')
+        if (!interaction.isAnySelectMenu() || interaction['customId'] !== 'select_promo')
             return;
         let selectedPromo = new promo_1.Promo(interaction.values[0]);
         let learnerList = await selectedPromo.getLearners();

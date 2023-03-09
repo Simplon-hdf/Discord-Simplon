@@ -6,7 +6,7 @@ export default {
     name: Events.InteractionCreate,
     on: true,
     async execute(interaction: SelectMenuInteraction) {
-        if (!interaction.isAnySelectMenu() || interaction['customId'] != 'select_promo') return;
+        if (!interaction.isAnySelectMenu() || interaction['customId'] !== 'select_promo') return;
 
         let selectedPromo = new Promo(interaction.values[0]);
         let learnerList = await selectedPromo.getLearners();

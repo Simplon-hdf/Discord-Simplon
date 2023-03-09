@@ -7,7 +7,7 @@ export default {
     name: Events.InteractionCreate,
     on: true,
     async execute(interaction: SelectMenuInteraction) {
-        if (!interaction.isAnySelectMenu() || interaction['customId'] != 'select_trainer') return;
+        if (!interaction.isAnySelectMenu() || interaction['customId'] !== 'select_trainer') return;
 
         const trainerUuid = interaction.values[0];
 
