@@ -9,9 +9,9 @@ import { DiscordClient } from "../../classes/utils/client";
 import { Guild } from "../../guild";
 import { HttpUtils } from "../../utils/http";
 import { Routes } from "../../utils/routes";
-import buttonCloseTicket from "../buttons/discord/button-close-ticket";
-import buttonStatusTicket from "../buttons/discord/button-status-ticket";
-import buttonTranscriptTicket from "../buttons/discord/button-transcript-ticket";
+import buttonCloseTicket from "../buttons/button-close-ticket";
+import buttonStatusTicket from "../buttons/button-status-ticket";
+import buttonTranscriptTicket from "../buttons/button-transcript-ticket";
 
 const roles = Guild.YamlConfig.get()["ticketRoles"];
 
@@ -35,32 +35,29 @@ export default {
       const poleSelected = interaction.values[0];
       const client = DiscordClient.getInstance();
       const ticket = client.getTicket();
+      const ticketInsideEmbed = new EmbedMessage(
+        "Géstion du ticket",
+        "#ce0033",
+        `\n\n Bonjour ${interaction.user.username}, \nBienvenue sur votre ticket un membre du staff vas s'occuper de votre ticket. \n\n Informations du ticket: \n\n- **Status**: En attente.\n- **Demande**: ${ticket?.ticketTag}.\n- **Utilisateurs**: ${interaction.user.username}.\n- **Pole concerner**: SOON. \n\n Détailler le plus possible votre demande pour que nous puissions au mieux répondre à votre demande.`
+      );
       const thread = await interaction?.channel?.threads.create({
         name: `[${ticket?.ticketState}] - ${interaction.user.username} | ${ticket?.ticketTag}`,
         type: ChannelType.PrivateThread,
         reason: ticket?.ticketTag,
       });
-      const ticketInsideEmbed = new EmbedMessage(
-        "Géstion du ticket",
-        "#ce0033",
-        `\n\n Bonjour ${interaction.user.username}, \nBienvenue sur votre ticket un membre du staff vas s'occuper de votre ticket. \n\n Informations du ticket: \n\n- **Status**: ${ticket?.ticketState}.\n- **Demande**: ${ticket?.ticketTag}.\n- **Utilisateurs**: ${interaction.user.username}.\n- **Pole concerner**: SOON. \n\n Détailler le plus possible votre demande pour que nous puissions au mieux répondre à votre demande.`
-      );
+      await thread.members.add(interaction.user.id);
+      await new HttpUtils().post(Routes.REGISTER_NEW_TICKET, {
+        user_uuid: interaction.user.id,
+        role_uuid: "1082218878475714570",
+        ticket_tag: ticket?.ticketTag,
+        ticket_state: "IDLE",
+      });
 
       const componentsRow = new ActionRowBuilder<ButtonBuilder>().addComponents(
         buttonCloseTicket.data,
         buttonStatusTicket.data,
         buttonTranscriptTicket.data
       );
-
-      // await new HttpUtils().post(Routes.REGISTER_NEW_TICKET,
-      // {
-      //   user_uuid: interaction.user.id,
-      //   role_uuid: poleSelected,
-      //   ticket_tag: ticket?.ticketTag,
-      //   ticket_state: "IDLE",
-      // });
-
-      await thread.members.add(interaction.user.id);
 
       await thread.send({
         embeds: [ticketInsideEmbed],

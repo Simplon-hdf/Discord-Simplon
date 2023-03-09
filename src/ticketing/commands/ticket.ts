@@ -4,7 +4,7 @@ import {
   ChatInputCommandInteraction,
   SlashCommandBuilder,
 } from "discord.js";
-import createTicket from "../components/buttons/discord/button-creation-ticket";
+import createTicket from "../components/buttons/button-creation-ticket";
 import EmbedMessage from "../classes/embed-message";
 
 export default {
@@ -19,7 +19,6 @@ export default {
   run: async (interaction: ChatInputCommandInteraction) => {
     if (interaction.options.getSubcommand() === "interface") {
       const CreateTicketButton = new ActionRowBuilder<ButtonBuilder>().addComponents(createTicket.data);
-
       const CreateTicketEmbed = new EmbedMessage(
         "Création d'un ticket",
         "#ce0033",

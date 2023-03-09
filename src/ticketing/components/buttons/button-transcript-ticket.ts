@@ -10,7 +10,7 @@ export default {
   run: async (interaction: ButtonInteraction) => {
     try {
       console.log(interaction);
-      await interaction.reply("pb résolu");
+      await interaction.reply("transcript");
     } catch (error) {
       interaction.reply(
         `[ERROR] [BUTTON] => Button with customId: ${interaction.customId} occured and error`

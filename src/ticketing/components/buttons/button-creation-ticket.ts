@@ -3,7 +3,7 @@ import {
   ButtonStyle,
   ButtonInteraction,
 } from "discord.js";
-import createTicketModal from "../../modals/modal-creation-ticket";
+import createTicketModal from "../modals/modal-creation-ticket";
 
 export default {
   data: new ButtonBuilder()
