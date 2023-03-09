@@ -14,6 +14,6 @@ export class YamlParser {
     }
 
     get() : any{
-        return YAML.parse(fs.readFileSync(this.path, 'utf8'));
+        return YAML.parse(fs.readFileSync(this.path, 'utf-8'));
     }
 }

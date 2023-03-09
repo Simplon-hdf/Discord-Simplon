@@ -1,4 +1,8 @@
 api-route-url: http://localhost:3000
 
+simplon-icon: https://simplon.co/favicon.png
+simplon-color: "#ce0033"
+
 ticketRoles:
-  - Admin: 1043613353672716310
+  - Admin: "1064911985252245514"
+  
