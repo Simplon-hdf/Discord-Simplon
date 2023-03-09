@@ -7,10 +7,6 @@ export class Trainer extends User {
         super(Uuid);
     }
 
-    deactivateCodeRequest(_promoUuid: string) {
-        return _promoUuid;
-    }
-
     async getTrainerPromos(): Promise<any> {
         const promoList =  await new HttpUtils().get(Routes.GET_PROMO_BY_USER_ID, this._Uuid)
         try {
@@ -18,6 +14,18 @@ export class Trainer extends User {
         }
         catch (error) {
             console.log(promoList.error.message)
+            return 'fail'
+        }
+    }
+
+    async deactivateCodeRequest(): Promise<any> {
+        const deactivation = await new HttpUtils().get(Routes.DEACTIVATE, this._Uuid)
+
+        try {
+            return deactivation
+        }
+        catch(error) {
+            console.log(deactivation.error.message)
             return 'fail'
         }
     }

@@ -29,7 +29,11 @@ export default {
             new ButtonBuilder()
                 .setCustomId('learner')
                 .setLabel("Demander le code")
-                .setStyle(ButtonStyle.Danger)
+                .setStyle(ButtonStyle.Danger),
+            new ButtonBuilder()
+                .setCustomId("deactivate_code_request")
+                .setStyle(ButtonStyle.Secondary)
+                .setLabel("Cliquez ici pour activer / désactiver la fonction de Code Request pour les apprenants")
         )
         await interaction.reply({embeds: [beginProcedure], components: [row]});
     },

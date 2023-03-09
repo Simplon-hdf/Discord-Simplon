@@ -11,6 +11,8 @@ export enum Routes {
     GET_TRAINERS = '/signature/find/trainer/:uuid',
 
     POST_CODE_REQUEST = '/signature/codeRequest/:learnerUuid',
+
+    DEACTIVATE = 'placeholder',
 }
 
 

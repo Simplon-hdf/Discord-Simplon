@@ -3,16 +3,18 @@ import {
     PermissionsBitField,
     ActionRowBuilder,
     StringSelectMenuBuilder,
-    ButtonInteraction
+    ButtonInteraction, ButtonBuilder, ButtonStyle
 } from "discord.js";
 import {Trainer} from "../users/trainer";
 import EmbedMessage from "../discord-builders/embed-builder";
 import {SelectMenu} from "../discord-builders/select-menu-builder";
+import {ButtonBuilderClass} from "../discord-builders/button-builder";
 
 export default {
     name: Events.InteractionCreate,
     on: true,
     async execute(interaction: ButtonInteraction) {
+
         if (!interaction.isButton() || interaction['customId'] !== 'trainer' ) return;
 
         const trainer = new Trainer(interaction.user.id);
@@ -44,6 +46,7 @@ export default {
                     value: `${promo.id}`,
                 };
             })
+
             const selectPromoRow = new ActionRowBuilder<StringSelectMenuBuilder>().addComponents(
                 new SelectMenu(
                     'select_promo',
@@ -52,6 +55,7 @@ export default {
                     1,
                     1
                     ))
+
             await interaction.reply({
                 embeds: [selectPromosEmbed],
                 components: [selectPromoRow],

@@ -17,7 +17,10 @@ exports.default = {
             .setStyle(discord_js_1.ButtonStyle.Success), new discord_js_1.ButtonBuilder()
             .setCustomId('learner')
             .setLabel("Demander le code")
-            .setStyle(discord_js_1.ButtonStyle.Danger));
+            .setStyle(discord_js_1.ButtonStyle.Danger), new discord_js_1.ButtonBuilder()
+            .setCustomId("deactivate_code_request")
+            .setStyle(discord_js_1.ButtonStyle.Secondary)
+            .setLabel("Cliquez ici pour désactiver la fonction de Code Request pour les apprenants"));
         await interaction.reply({ embeds: [beginProcedure], components: [row] });
     },
 };
