@@ -4,14 +4,12 @@ export class Permission {
   private readonly _flag: string;
   private _state: boolean;
 
-
   constructor(id: number, desc: string, flag: string, state: boolean) {
     this._id = id;
     this._desc = desc;
     this._flag = flag;
     this._state = state;
   }
-
 
   get id(): number {
     return this._id;

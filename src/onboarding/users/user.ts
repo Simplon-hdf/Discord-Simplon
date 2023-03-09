@@ -1,5 +1,4 @@
 export class User {
-
   private readonly _id: number;
   private readonly _pseudo: string;
 

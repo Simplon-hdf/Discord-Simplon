@@ -12,4 +12,6 @@ export enum Routes {
   GET_GUILD_CHANNEL = '/api/channels/guilds/:uuid',
   UPDATE_CHANNEL_NAME = '/api/channels/update/name',
   UPDATE_CATEGORY_NAME = '/api/category/update/name',
+  DELETE_CHANNEL = '/api/channels/delete/:uuid',
+  DELETE_CATEGORY = '/api/category/delete/:uuid',
 }

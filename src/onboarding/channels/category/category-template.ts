@@ -1,7 +1,6 @@
-import {PromoCategory} from "./promo-category";
+import { PromoCategory } from './promo-category';
 
 export class CategoryTemplate {
-
   private readonly _id: string;
   private _name: string;
   private readonly _channels_id: List<string> = new List<string>();
@@ -25,11 +24,11 @@ export class CategoryTemplate {
     return this._channels_id;
   }
 
-  addChannel(id: string) : void{
-    this._channels_id.add(id)
+  addChannel(id: string): void {
+    this._channels_id.add(id);
   }
 
-  removeChannel(id: string) : void {
+  removeChannel(id: string): void {
     this._channels_id.remove(id);
   }
 }

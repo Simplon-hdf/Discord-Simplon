@@ -1,9 +1,8 @@
-import * as fs from "fs";
+import * as fs from 'fs';
 import YAML from 'yaml';
 
 export class YamlParser {
   private readonly _path: string;
-
 
   constructor(path: string) {
     this._path = path;
@@ -13,7 +12,7 @@ export class YamlParser {
     return this._path;
   }
 
-  get() : any{
+  get(): any {
     return YAML.parse(fs.readFileSync(this._path, 'utf-8'));
   }
 }

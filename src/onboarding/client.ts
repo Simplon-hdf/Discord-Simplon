@@ -1,12 +1,11 @@
-import {GuildsManager} from "./guilds/guilds-manager";
-import {CourseManager} from "./courses/course-manager";
+import { GuildsManager } from './guilds/guilds-manager';
+import { CourseManager } from './courses/course-manager';
 
 export class DiscordClient {
-
   private readonly _token: string;
-  private static instance? : DiscordClient;
+  private static instance?: DiscordClient;
 
-  private readonly guildManager : GuildsManager;
+  private readonly guildManager: GuildsManager;
 
   private readonly coursesManager: CourseManager;
 
@@ -16,10 +15,8 @@ export class DiscordClient {
     this._token = token;
   }
 
-
-
-  static getInstance(token: string) : DiscordClient {
-    if(!DiscordClient.instance || DiscordClient.instance._token !== token){
+  static getInstance(token: string): DiscordClient {
+    if (!DiscordClient.instance || DiscordClient.instance._token !== token) {
       DiscordClient.instance = new DiscordClient(token);
     }
     return DiscordClient.instance;
@@ -40,5 +37,4 @@ export class DiscordClient {
   destroy(): void {
     DiscordClient.instance = undefined;
   }
-
 }
