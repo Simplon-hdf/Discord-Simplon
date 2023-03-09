@@ -27,7 +27,7 @@ export class HttpUtils {
   async post (route: Routes, data: any, args?: string): Promise<any> {
     return new Promise(async (resolve) => {
       const formattedRoute: string = args === undefined ? route : route.replace(/:(\w+)/,  args);
-      const request = await axios.post(this._urlBase + formattedRoute, data);
+      const request = data === undefined ? await axios.post(this._urlBase + formattedRoute) : await axios.post(this._urlBase + formattedRoute, data);
 
       if(request.status === 404 || request.status === 500){
         throw new ApiError('API error on `POST` request. Error : ' + request.status);

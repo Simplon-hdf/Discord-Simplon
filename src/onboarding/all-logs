@@ -1,0 +1,18 @@
+[
+  'commands/config/create-interfaces.js',
+  'commands/ping.js',
+  'commands/test.js'
+]
+[16:46:30.055] [32mINFO[39m (53402): [36mLoading command config[39m
+[16:46:30.056] [32mINFO[39m (53402): [36mLoading event create-category[39m
+[16:46:30.056] [32mINFO[39m (53402): [36mLoading component courses-creation[39m
+[16:46:30.100] [32mINFO[39m (53402): [36mLoading command ping[39m
+[16:46:30.100] [32mINFO[39m (53402): [36mLoading event channelCreate[39m
+[16:46:30.100] [32mINFO[39m (53402): [36mLoading component test-button[39m
+[16:46:30.101] [32mINFO[39m (53402): [36mLoading command test[39m
+[16:46:30.101] [32mINFO[39m (53402): [36mStarted refreshing application (/) commands.[39m
+[16:46:30.102] [32mINFO[39m (53402): [36mLoading event ready[39m
+[16:46:30.102] [32mINFO[39m (53402): [36mLoading component courses-ask-name[39m
+[16:46:30.102] [32mINFO[39m (53402): [36mLoading component selectConcernedPole[39m
+[16:46:30.352] [32mINFO[39m (53402): [36mSuccessfully reloaded application (/) commands.[39m
+[16:46:30.687] [32mINFO[39m (53402): [36mReady! Logged in as OnBoarding#4250[39m

@@ -3,6 +3,7 @@ import {HttpUtils} from "../utils/http";
 import {Routes} from "../utils/Routes";
 import {ApiError} from "../utils/exceptions/api-error";
 import logger from "../utils/logger";
+import {log} from "util";
 
 export class GuildsManager {
 
@@ -10,7 +11,8 @@ export class GuildsManager {
 
   async loadGuild(guild_uuid: string): Promise<any> {
 
-      const guildJSON = await new HttpUtils().get(Routes.GET_GUILD, guild_uuid);
+      const guildJSON = await new HttpUtils().get(Routes.GET_GUILD, guild_uuid)
+        .catch(e => logger.error(e.cause));
       if(guildJSON.statusCode === 409){
         return undefined;
       }
@@ -26,7 +28,8 @@ export class GuildsManager {
   }
 
   async registerGuild(guild: IGuild): Promise<any>{
-    const guildJSON = await new HttpUtils().post(Routes.CREATE_GUILD, guild + '\n');
+    const guildJSON = await new HttpUtils().post(Routes.CREATE_GUILD, JSON.parse(JSON.stringify(guild)))
+      .catch(e => logger.error(e.cause));
 
     logger.info("GuildManager => Register new guild");
 

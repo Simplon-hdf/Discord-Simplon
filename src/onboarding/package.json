@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc --project tsconfig.json",
     "start": "tsc --project tsconfig.json && node build/index.js",
-    "build:start": "tsc --project tsconfig.json && node build/index.js | pino-pretty -c",
+    "build:start": "tsc --project tsconfig.json && node build/index.js | pino-pretty -c | tee -a ./all-logs",
     "test": "mocha && c8 check-coverage --lines 80"
   },
   "author": "",
