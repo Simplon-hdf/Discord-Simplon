@@ -36,11 +36,9 @@ export default {
 
       guild_id === undefined ? guild_id = guild.data.id : null;
 
-      registerChannels(element, guild_id).then(async () => {
 
-        logger.debug(guild)
-        await registerChannelsStock(element, guild_id);
-      });
+      await registerChannelsStock(element, guild_id);
+      await registerChannels(element, guild_id);
 
 
       discordClient.destroy();
@@ -58,26 +56,25 @@ async function registerChannelsStock(guild: DiscordGuild, guild_id: string) {
 
   const channelsStockExist = await new HttpUtils().get(Routes.GET_CHANNELS_STOCK_EXIST, guild.id);
 
+  logger.debug(channelsStockExist);
 
   if(!channelsStockExist.data) {
-    return
+    const channelsStock = await guild.channels.create({
+      name: 'Channels Stock',
+      type: ChannelType.GuildCategory,
+      position: 100
+    })
+
+    logger.info('[Registering category] Register channels stock category')
+    await new HttpUtils().post(Routes.REGISTER_GUILD_CATEGORY, {
+      category_uuid: channelsStock.id,
+      category_name: channelsStock.name,
+      guilds_id: guild_id
+    });
+
+    await new HttpUtils().post(Routes.REGISTER_CHANNEL_STOCK, undefined, channelsStock.id);
+
   }
-
-  const channelsStock = await guild.channels.create({
-    name: 'Channels Stock',
-    type: ChannelType.GuildCategory,
-    position: 100
-  })
-
-  logger.info('[Registering category] Register channels stock category')
-  await new HttpUtils().post(Routes.REGISTER_GUILD_CATEGORY, {
-    category_uuid: channelsStock.id,
-    category_name: channelsStock.name,
-    guilds_id: guild_id
-  });
-
-  await new HttpUtils().post(Routes.REGISTER_CHANNEL_STOCK, undefined, channelsStock.id);
-
 
 }
 
@@ -92,35 +89,40 @@ async function registerChannels(guild: DiscordGuild, guild_id: string) {
     const categories = guild.channels.cache.filter((channel) => channel.type === ChannelType.GuildCategory);
 
     categories.forEach(async (category) => {
-      // logger.info("[Registering category] " + category.name + " : Guild => " + guild.id);
+      logger.info("[Registering category] " + category.name + " : Guild => " + guild.id);
       new HttpUtils().post(Routes.REGISTER_GUILD_CATEGORY, {
         category_uuid: category.id,
         category_name: category.name,
         guilds_id: guild_id
-      }).then(() => {
-        // Enregistrement des channels dans la base de données
-        const channels = guild.channels.cache.filter((channel) => channel.type !== ChannelType.GuildCategory && channel.parent?.type !== ChannelType.GuildText);
-        channels.forEach(async (channel) => {
-
-          const parentId = channel.parentId;
-          // logger.info("[Registering channel] " + parentId + " : Guild => " + guild.id);
-
-          if(parentId === null){
-            await new HttpUtils().post(Routes.REGISTER_GUILD_CHANNEL, {
-              "channel_name" : channel.name,
-              "channel_uuid" : channel.id,
-              "id_guilds": guild_id
-            });
-          }else {
-            await new HttpUtils().post(Routes.REGISTER_GUILD_CHANNEL, {
-              "channel_name" : channel.name,
-              "channel_uuid" : channel.id,
-              "id_guilds": guild_id,
-              "category_uuid": parentId
-            });
-          }
-        });
       });
+    });
+
+    const channels = guild.channels.cache.filter((channel) => channel.type !== ChannelType.GuildCategory && channel.parent?.type !== ChannelType.GuildText);
+    channels.forEach(async (channel) => {
+      setTimeout(async () => {
+        const parentId = channel.parentId;
+        logger.info("[Registering channel] " + parentId + " : Guild => " + guild.id);
+
+        if(parentId === null){
+          logger.debug({
+            "channel_name" : channel.name,
+            "channel_uuid" : channel.id,
+            "id_guilds": guild_id
+          })
+          await new HttpUtils().post(Routes.REGISTER_GUILD_CHANNEL, {
+            "channel_name" : channel.name,
+            "channel_uuid" : channel.id,
+            "id_guilds": guild_id
+          });
+        }else {
+          await new HttpUtils().post(Routes.REGISTER_GUILD_CHANNEL, {
+            "channel_name" : channel.name,
+            "channel_uuid" : channel.id,
+            "id_guilds": guild_id,
+            "category_uuid": parentId
+          });
+        }
+      }, 500);
     });
   })
 
