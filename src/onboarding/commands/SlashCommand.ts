@@ -2,7 +2,7 @@ import { SlashCommandBuilder, CommandInteraction } from "discord.js";
 
 export abstract class SlashCommand {
   
-  abstract data: any;
+  protected abstract data: any;
 
   abstract execute(interaction: CommandInteraction): void;
 
