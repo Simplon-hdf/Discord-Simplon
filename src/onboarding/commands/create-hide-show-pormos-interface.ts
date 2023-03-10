@@ -12,7 +12,7 @@ export default {
       const guild_roles: any[] = (await new HttpUtils().get(Routes.GET_ROLES_BY_GUILD_UUID, interaction.guildId as string));
       const guild_courses: any[] = (await new HttpUtils().get(Routes.GET_COURSES_BY_GUILD_UUID, interaction.guildId as string))['data'];
   
-      const row = new ActionRowBuilder<StringSelectMenuBuilder>();
+      const components : ActionRowBuilder<StringSelectMenuBuilder>[] = [];
   
       for (const course of guild_courses) {
         const associated_promos: any[] = [...ongoing_promos.filter(promo => promo['id_courses'] == course['id'])];
@@ -26,8 +26,8 @@ export default {
           break;
         const parsedClient: any = interaction.client;
         parsedClient.components.set(select_menu.data.data.custom_id, select_menu);
-        row.addComponents(select_menu.data);
+        components.push(new ActionRowBuilder<StringSelectMenuBuilder>().addComponents(select_menu.data));
       }
-      await interaction.reply({content: 'Menu de selection des promos : ', components: [row]});
+      await interaction.reply({content: 'Menu de selection des promos : ', components: components});
     },
 }
