@@ -5,9 +5,9 @@ import { UtilsManager } from "../utils/UtilsManager";
 
 export default async () => {
 
-  const eventFiles: [] = getAllFiles('./build/events/');
+  const eventFiles: string[] = getAllFiles('./build/events/');
 
-  function getAllFiles(dirPath: any, arrayOfFiles: any = []) {
+  function getAllFiles(dirPath: string, arrayOfFiles: string[] = []) {
     try {
       const files = fs.readdirSync(dirPath);
       files.forEach(function (file) {
