@@ -1,8 +1,9 @@
 import axios from "axios";
-import {Guild} from "../guild";
+import {Guild} from "../guilds/guild";
 import {Routes} from "./Routes";
+import {ApiError} from './exceptions/api-error'
 
-export class HttpUtils<T> {
+export class HttpUtils {
 
   private readonly _urlBase: string;
 
@@ -10,14 +11,30 @@ export class HttpUtils<T> {
     this._urlBase = Guild.YamlConfig.get()['api-route-url'];
   }
 
-  async get (route: Routes): Promise<T> {
-    const obj = await axios.get(this._urlBase + route);
+  async get (route: Routes, args?: string): Promise<any>{
+    return new Promise(async (resolve) => {
+      const formattedRoute: string = args === undefined ? route : route.replace(/:(\w+)/,  args);
+      const request = await axios.get(this._urlBase + formattedRoute);
+      if(request.status === 404 || request.status === 500){
+        throw new ApiError('API error on `GET` request. Error : ' + request.status);
+      }
 
-    try{
-      const convertedObj = obj as T;
-      return convertedObj;
-    }catch (Exception) {
-      throw new Error('Object not correspond to request');
-    }
+      resolve(request.data);
+
+    })
+  }
+
+  async post (route: Routes, data: any, args?: string): Promise<any> {
+    return new Promise(async (resolve) => {
+      const formattedRoute: string = args === undefined ? route : route.replace(/:(\w+)/,  args);
+      const request = await axios.post(this._urlBase + formattedRoute, data);
+
+      if(request.status === 404 || request.status === 500){
+        throw new ApiError('API error on `POST` request. Error : ' + request.status);
+      }
+
+      resolve(request.data);
+    })
+
   }
 }
