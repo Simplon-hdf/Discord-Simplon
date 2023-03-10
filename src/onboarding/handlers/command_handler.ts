@@ -3,8 +3,6 @@ import * as fs from "fs";
 import * as path from 'path';
 import * as dotenv from "dotenv";
 import { UtilsManager } from "../utils/UtilsManager";
-import { SlashCommand } from "../commands/SlashCommand";
-import TestCommand from "../commands/Test-Command";
 
 export default async (client: any, discord_token?: any, discord_client_id?: any) => {
   dotenv.config();
@@ -15,7 +13,6 @@ export default async (client: any, discord_token?: any, discord_client_id?: any)
 
     arrayOfFiles = arrayOfFiles || []
     try {
-
       const files = fs.readdirSync(dirPath)
       files.forEach(function (file) {
         if (fs.statSync(dirPath + "/" + file).isDirectory()) {
@@ -36,6 +33,8 @@ export default async (client: any, discord_token?: any, discord_client_id?: any)
 
   for (const file of commandFiles) {
     const cmd_import = await import(`../${file}`);
+    if ((file as string).includes("SlashCommand"))
+      continue;
     try {
       UtilsManager.add_command(new cmd_import.default); // Link cmd name to complete module
     } catch {
@@ -43,7 +42,7 @@ export default async (client: any, discord_token?: any, discord_client_id?: any)
     }
   }
 
-  if (!discord_token && !discord_client_id) {
+  if (!discord_token || !discord_client_id) {
     throw new Error('Discord id or token is undefined');
 
   }
