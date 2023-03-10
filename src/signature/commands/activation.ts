@@ -11,7 +11,7 @@ import EmbedMessage from "../discord-builders/embed-builder";
 
 export default {
     data: new SlashCommandBuilder()
-        .setName('active')
+        .setName('signature')
         .setDescription('Run this commands to activate the bot'),
     async execute(interaction: ChatInputCommandInteraction) {
         const beginProcedure = new EmbedMessage(
