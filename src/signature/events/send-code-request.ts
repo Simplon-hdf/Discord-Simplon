@@ -10,7 +10,6 @@ export default {
         if (!interaction.isAnySelectMenu() || interaction['customId'] !== 'select_trainer') return;
 
         const trainerUuid = interaction.values[0];
-
         const learner = new Learner(interaction.user.id);
         const codeRequest = await learner.codeRequest(trainerUuid);
 
@@ -25,6 +24,9 @@ export default {
             embeds: [codeRequestEmbed],
             ephemeral: true,
         });
+
+        setTimeout(() => interaction.deleteReply(), 30000);
+
 
         if (codeRequest) {
             const trainerCodeRequest = new EmbedMessage(

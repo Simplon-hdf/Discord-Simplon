@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc --project tsconfig.json",
-    "start": "tsc --project tsconfig.json && node build/index.js"
+    "start": "rm -rf ./build && tsc --project tsconfig.json && node build/index.js"
   },
   "author": "",
   "license": "ISC",

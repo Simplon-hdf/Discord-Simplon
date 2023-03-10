@@ -18,8 +18,8 @@ class Trainer extends user_1.User {
             return 'fail';
         }
     }
-    async deactivateCodeRequest() {
-        const deactivation = await new http_1.HttpUtils().get(routes_1.Routes.DEACTIVATE, this._Uuid);
+    async deactivateCodeRequest(promoId) {
+        const deactivation = await new http_1.HttpUtils().get(routes_1.Routes.CHANGE_STATUS, promoId);
         try {
             return deactivation;
         }

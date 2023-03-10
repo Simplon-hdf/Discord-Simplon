@@ -21,6 +21,7 @@ exports.default = {
                 embeds: [embedResponse],
                 ephemeral: true,
             });
+            setTimeout(() => interaction.deleteReply(), 30000);
         }
     }
 };

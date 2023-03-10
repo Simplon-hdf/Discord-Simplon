@@ -8,6 +8,7 @@ export default {
 
         if (!interaction.isAnySelectMenu() || interaction['customId'] !== 'select_learners') return;
 
+
         for (const learnerUuId of interaction.values) {
             const embedReminderLearner = new EmbedMessage(
                 "Rappel de signature",
@@ -31,6 +32,7 @@ export default {
                 embeds: [embedResponse],
                 ephemeral: true,
             });
+            setTimeout(() => interaction.deleteReply(), 30000);
         }
     }
 }

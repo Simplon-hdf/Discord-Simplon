@@ -3,12 +3,12 @@ import {
     PermissionsBitField,
     ActionRowBuilder,
     StringSelectMenuBuilder,
-    ButtonInteraction, ButtonBuilder, ButtonStyle
+    ButtonInteraction,
 } from "discord.js";
 import {Trainer} from "../users/trainer";
 import EmbedMessage from "../discord-builders/embed-builder";
 import {SelectMenu} from "../discord-builders/select-menu-builder";
-import {ButtonBuilderClass} from "../discord-builders/button-builder";
+
 import {Learner} from "../users/learner";
 
 export default {
@@ -54,6 +54,7 @@ export default {
                 components: [selectPromoRow],
                 ephemeral: true,
             });
+            setTimeout(() => interaction.deleteReply(), 60000);
         } else {
             if (!interaction.isButton() || interaction['customId'] !== 'activation') return;
             const learner = new Learner(interaction.user.id)
@@ -87,6 +88,7 @@ export default {
                         components: [selectTrainerRow],
                         ephemeral: true,
                     });
+                    setTimeout(() => interaction.deleteReply(), 60000);
                 } else {
                     const everReport = new EmbedMessage(
                         'Code déjà demandé!',
@@ -95,6 +97,7 @@ export default {
                         'https://img.icons8.com/ios-filled/100/null/sad.png'
                     )
                     await interaction.reply({embeds: [everReport], ephemeral: true})
+                    setTimeout(() => interaction.deleteReply(), 60000);
                 }
             } else {
                 const isNotActivate = new EmbedMessage(
@@ -104,6 +107,7 @@ export default {
                     "https://img.icons8.com/ios-filled/100/null/sad.png"
                 )
                 await interaction.reply({ embeds: [isNotActivate], ephemeral: true });
+                setTimeout(() => interaction.deleteReply(), 60000);
             }
         }
     }

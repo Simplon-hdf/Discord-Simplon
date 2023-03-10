@@ -39,13 +39,13 @@ exports.default = {
                 components: [selectPromoRow],
                 ephemeral: true,
             });
+            setTimeout(() => interaction.deleteReply(), 60000);
         }
         else {
             if (!interaction.isButton() || interaction['customId'] !== 'activation')
                 return;
             const learner = new learner_1.Learner(interaction.user.id);
             const codeRequestStatus = await learner.getCodeRequestStatus();
-            console.log(codeRequestStatus);
             if (codeRequestStatus) {
                 const hasReport = await learner.hasReport();
                 if (!hasReport) {
@@ -68,15 +68,18 @@ exports.default = {
                         components: [selectTrainerRow],
                         ephemeral: true,
                     });
+                    setTimeout(() => interaction.deleteReply(), 60000);
                 }
                 else {
                     const everReport = new embed_builder_1.default('Code déjà demandé!', '#0x0099ff', 'Oups! Il semble que vous ayez déjà demandé le code cette demi-journée, un conseil, parlez-en à vos collègues!', 'https://img.icons8.com/ios-filled/100/null/sad.png');
                     await interaction.reply({ embeds: [everReport], ephemeral: true });
+                    setTimeout(() => interaction.deleteReply(), 60000);
                 }
             }
             else {
                 const isNotActivate = new embed_builder_1.default('Demande de code indisponible !', '#0x0099ff', `Désolé ${interaction.user.username}, il semble que le code vous ai déjà été donné!`, "https://img.icons8.com/ios-filled/100/null/sad.png");
                 await interaction.reply({ embeds: [isNotActivate], ephemeral: true });
+                setTimeout(() => interaction.deleteReply(), 60000);
             }
         }
     }

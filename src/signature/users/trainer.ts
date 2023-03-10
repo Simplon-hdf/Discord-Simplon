@@ -18,9 +18,8 @@ export class Trainer extends User {
         }
     }
 
-    async deactivateCodeRequest(): Promise<any> {
-        const deactivation = await new HttpUtils().get(Routes.DEACTIVATE, this._Uuid)
-
+    async deactivateCodeRequest(promoId: string): Promise<any> {
+        const deactivation = await new HttpUtils().get(Routes.CHANGE_STATUS, promoId)
         try {
             return deactivation
         }

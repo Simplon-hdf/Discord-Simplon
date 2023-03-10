@@ -12,7 +12,7 @@ export enum Routes {
 
     POST_CODE_REQUEST = '/signature/codeRequest/:learnerUuid',
 
-    DEACTIVATE = 'placeholder',
+    CHANGE_STATUS = '/signature/codeRequest/changeStatus/:promoId',
 }
 
 

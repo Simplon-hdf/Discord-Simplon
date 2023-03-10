@@ -20,6 +20,7 @@ exports.default = {
             embeds: [codeRequestEmbed],
             ephemeral: true,
         });
+        setTimeout(() => interaction.deleteReply(), 30000);
         if (codeRequest) {
             const trainerCodeRequest = new embed_builder_1.default("Code Request!", '#0x0099ff', `\n \n Bonjour! Vos apprenants réclament le code! `, "https://cdn-icons-png.flaticon.com/512/4896/4896860.png");
             await (await interaction.client.users.fetch(trainerUuid)).send({

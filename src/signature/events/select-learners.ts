@@ -1,6 +1,14 @@
-import {ActionRowBuilder, Events, SelectMenuInteraction, StringSelectMenuBuilder} from "discord.js";
+import {
+    ActionRowBuilder,
+    ButtonBuilder,
+    ButtonStyle,
+    Events,
+    SelectMenuInteraction,
+    StringSelectMenuBuilder
+} from "discord.js";
 import {Promo} from "../promo/promo";
 import EmbedMessage from "../discord-builders/embed-builder";
+import {Trainer} from "../users/trainer";
 
 export default {
     name: Events.InteractionCreate,
@@ -10,12 +18,20 @@ export default {
 
         let selectedPromo = new Promo(interaction.values[0]);
         let learnerList = await selectedPromo.getLearners();
+        const trainer = new Trainer(interaction.user.id);
 
         const embedReminder = new EmbedMessage(
                 "Sélection des apprenants pour Rappel",
                 '#0x0099ff',
                 `\n\n Veuillez sélectionner les apprenants à qui envoyer un rappel dans la liste ci-dessous.`,
                 "https://cdn-icons-png.flaticon.com/512/4489/4489772.png"
+        )
+
+        const deactivateButton = new ActionRowBuilder<ButtonBuilder>().addComponents(
+            new ButtonBuilder()
+                .setCustomId('deactivate')
+                .setLabel(`désactiver la code request`)
+                .setStyle(ButtonStyle.Danger),
         )
 
             const selectLearnersRow = new ActionRowBuilder<StringSelectMenuBuilder>().addComponents(
@@ -33,9 +49,11 @@ export default {
                         })
                     ))
             await interaction.reply({
+                content: interaction.values[0],
                 embeds: [embedReminder],
-                components: [selectLearnersRow],
+                components: [selectLearnersRow, deactivateButton],
                 ephemeral: true,
             });
+        setTimeout(() => interaction.deleteReply(), 60000);
     }
 }
