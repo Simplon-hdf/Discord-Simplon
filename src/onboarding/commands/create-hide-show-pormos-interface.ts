@@ -5,15 +5,13 @@ import manageViewPromoMenu from "../components/select_menu/manage-view-promo";
 
 export default {
     data: new SlashCommandBuilder()
-        .setName('generate-interface')
+        .setName('generate-interface-displprom')
         .setDescription('Cette commande permet de créer une interface servant à selectionner les promos visibiles'),
     async execute(interaction : CommandInteraction) {
       const ongoing_promos: any[] = (await new HttpUtils().get(Routes.GET_ONGOING_PROMOS_BY_GUILD_UUID, interaction.guildId as string));
       const guild_roles: any[] = (await new HttpUtils().get(Routes.GET_ROLES_BY_GUILD_UUID, interaction.guildId as string));
       const guild_courses: any[] = (await new HttpUtils().get(Routes.GET_COURSES_BY_GUILD_UUID, interaction.guildId as string))['data'];
-  
       const components : ActionRowBuilder<StringSelectMenuBuilder>[] = [];
-  
       for (const course of guild_courses) {
         const associated_promos: any[] = [...ongoing_promos.filter(promo => promo['id_courses'] == course['id'])];
         const associated_roles: any[] = [];

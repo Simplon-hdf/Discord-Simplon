@@ -32,6 +32,7 @@ const dotenv = __importStar(require("dotenv"));
 const command_handler_1 = __importDefault(require("./handlers/command_handler"));
 const event_handler_1 = __importDefault(require("./handlers/event_handler"));
 const components_handler_1 = __importDefault(require("./handlers/components_handler"));
+const ProcedureManager_1 = require("./utils/procedures/ProcedureManager");
 dotenv.config();
 process.setMaxListeners(0);
 events_1.default.setMaxListeners(0);
@@ -41,6 +42,7 @@ const client = new discord_js_1.Client({ intents: [discord_js_1.GatewayIntentBit
 (0, command_handler_1.default)(client, DISCORD_TOKEN, DISCORD_ID);
 (0, event_handler_1.default)(client);
 (0, components_handler_1.default)(client);
+client.procedureManager = new ProcedureManager_1.ProcedureManager();
 client.on(discord_js_1.Events.InteractionCreate, async (interaction) => {
     const parsedClient = client;
     if (interaction.isChatInputCommand()) {
