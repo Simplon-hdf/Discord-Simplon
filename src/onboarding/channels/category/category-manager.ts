@@ -12,11 +12,11 @@ export class CategoryManager {
     );
 
     if (categoryJSON.statusCode === 409) {
-      throw new ApiError('API response is empty on register category');
+      return;
     }
 
     logger.debug(
-      '[Registering channel] ' +
+      '[Registering category] ' +
         ' : Guild => name : ' +
         category.getCategoryName() +
         ' | id: ' +
@@ -24,6 +24,45 @@ export class CategoryManager {
         ' | categories: ' +
         category.getGuildUuid(),
     );
+
+    return categoryJSON;
+  }
+
+  async updateCategoryName(category: ICategory) {
+    const categoryJSON = await new HttpUtils().patch(
+      Routes.UPDATE_CATEGORY_NAME,
+      JSON.parse(JSON.stringify(category)),
+    );
+
+    if (categoryJSON.statusCode === 409) {
+      return;
+    }
+
+    logger.debug(
+      '[Updating category name] ' +
+        ' : Guild => name : ' +
+        category.getCategoryName() +
+        ' | id: ' +
+        category.getCategoryUuid() +
+        ' | categories: ' +
+        category.getGuildUuid(),
+    );
+
+    return categoryJSON;
+  }
+
+  async deleteCategory(categoryUUID: string) {
+    const categoryJSON = await new HttpUtils().delete(
+      Routes.DELETE_CATEGORY,
+      null,
+      categoryUUID,
+    );
+
+    if (categoryJSON.statusCode === 409) {
+      return;
+    }
+
+    logger.debug('[Deleting category] ' + ' : Guild => name : ' + categoryUUID);
 
     return categoryJSON;
   }

@@ -6,6 +6,7 @@ import logger from '../utils/logger';
 import { HttpUtils } from '../utils/http';
 import { Routes } from '../utils/Routes';
 import { Category } from '../channels/category/category';
+import { Channel } from '../channels/channel/channel';
 
 export default {
   name: Events.ClientReady,
@@ -58,7 +59,7 @@ async function registerChannelsStock(guild: DiscordGuild, guild_id: string) {
     guild.id,
   );
 
-  logger.debug(channelsStockExist);
+  // logger.debug(channelsStockExist);
 
   if (!channelsStockExist.data) {
     const channelsStock = await guild.channels.create({
@@ -122,20 +123,16 @@ async function registerChannels(guild: DiscordGuild, guild_id: string) {
       setTimeout(async () => {
         const parentId = channel.parentId;
 
-        if (parentId === null) {
-          await new HttpUtils().post(Routes.REGISTER_GUILD_CHANNEL, {
-            channel_name: channel.name,
-            channel_uuid: channel.id,
-            id_guilds: guild_id,
-          });
-        } else {
-          await new HttpUtils().post(Routes.REGISTER_GUILD_CHANNEL, {
-            channel_name: channel.name,
-            channel_uuid: channel.id,
-            id_guilds: guild_id,
-            category_uuid: parentId,
-          });
-        }
+        await DiscordClient.getInstance(guild_id)
+          .getChannelManager()
+          .registerChannel(
+            new Channel(
+              channel.id,
+              channel.name,
+              guild_id,
+              parentId === undefined ? parentId : undefined,
+            ),
+          );
       }, 500);
     });
   });
@@ -173,11 +170,15 @@ async function updateChannels(guild: DiscordGuild, guild_id: string) {
 
   for (const category of categoriesToUpdate) {
     setTimeout(async () => {
-      await new HttpUtils().patch(Routes.UPDATE_CATEGORY_NAME, {
-        category_uuid: category.category_uuid,
-        category_name: category?.name,
-        guilds_id: guild_id,
-      });
+      await DiscordClient.getInstance(guild_id)
+        .getCategoryManager()
+        .updateCategoryName(
+          new Category(
+            guild_id,
+            category.category_uuid,
+            category.category_name,
+          ),
+        );
     }, 500);
   }
 
@@ -206,11 +207,11 @@ async function updateChannels(guild: DiscordGuild, guild_id: string) {
 
   for (const channel of channelsToUpdate) {
     setTimeout(async () => {
-      const c = await new HttpUtils().patch(Routes.UPDATE_CHANNEL_NAME, {
-        channel_uuid: channel.channel_uuid,
-        channel_name: discordChannels.get(channel.channel_uuid)?.name,
-        guilds_id: guild_id,
-      });
+      await DiscordClient.getInstance(guild_id)
+        .getChannelManager()
+        .updateChannelName(
+          new Channel(channel.channel_uuid, channel.channel_name, guild_id),
+        );
     }, 500);
   }
 }
@@ -241,11 +242,9 @@ async function deleteChannels(guild: DiscordGuild) {
 
   for (const category of categoriesToDelete) {
     setTimeout(async () => {
-      await new HttpUtils().delete(
-        Routes.DELETE_CATEGORY,
-        undefined,
-        category.id,
-      );
+      await DiscordClient.getInstance(guild.id)
+        .getCategoryManager()
+        .deleteCategory(category.id);
     }, 500);
   }
 
@@ -274,14 +273,16 @@ async function deleteChannels(guild: DiscordGuild) {
 
   for (const channel of channelsToDelete) {
     setTimeout(async () => {
-      const c = await new HttpUtils().delete(
-        Routes.DELETE_CHANNEL,
-        undefined,
-        channel.id,
-      );
-      logger.debug(JSON.stringify(c));
+      await DiscordClient.getInstance(guild.id)
+        .getChannelManager()
+        .deleteChannel(channel.id);
     }, 500);
   }
+}
+
+async function registerUsers(guild: DiscordGuild, guild_id: string) {
+  const users = guild.members.cache.filter((user) => !user.user.bot);
+  const userRegistered = await DiscordClient.getInstance(guild_id);
 }
 
 function getDiscordCategories(guild: DiscordGuild) {
