@@ -5,7 +5,7 @@ import manageViewPromoMenu from "../components/select_menu/manage-view-promo";
 import { SlashCommand } from "./SlashCommand";
 
 export default class CreatePromoSelectorMenuCommand extends SlashCommand {
-  data = new SlashCommandBuilder()
+  protected data = new SlashCommandBuilder()
     .setName('generate-interface-displprom')
     .setDescription('Cette commande permet de créer une interface servant à selectionner les promos visibiles')
 

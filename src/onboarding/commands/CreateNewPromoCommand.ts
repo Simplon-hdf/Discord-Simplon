@@ -6,7 +6,7 @@ import { UtilsManager } from "../utils/UtilsManager";
 import { SlashCommand } from "./SlashCommand";
 
 export default class CreateNewPromoCommand extends SlashCommand {
-    data = new SlashCommandBuilder()
+    protected data = new SlashCommandBuilder()
         .setName('generate-interface')
         .setDescription('Cette commande permet de créer une interface servant à selectionner les promos visibiles')
         
