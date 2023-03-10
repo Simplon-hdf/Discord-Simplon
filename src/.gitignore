@@ -1,8 +1,6 @@
 node_modules/
 package-lock.json
 
+build/
+
 onboarding/.env
-onboarding/build/
-onboarding/build/commands
-onboarding/build/events
-onboarding/build/handlers

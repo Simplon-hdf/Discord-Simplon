@@ -1,24 +1,20 @@
-export class Config{
-  private readonly _id: number;
+export class Config implements IConfig{
   private _course_creation_channel_id: number;
   private _class_creation_channel_id: number;
   private _identification_verification_channel: number;
   private _classes_selection_channel_id: number;
-  private readonly _factories_names: List<string>;
+  private _factories_names: List<string>;
 
-  constructor(id: number, course_creation_channel_id: number, class_creation_channel_id: number, identification_verification_channel: number, classes_selection_channel_id: number, factories_name: List<string>) {
-    this._id = id;
+  constructor(course_creation_channel_id: number, class_creation_channel_id: number, identification_verification_channel: number, classes_selection_channel_id: number) {
     this._course_creation_channel_id = course_creation_channel_id;
     this._class_creation_channel_id = class_creation_channel_id;
     this._identification_verification_channel = identification_verification_channel;
     this._classes_selection_channel_id = classes_selection_channel_id;
-    this._factories_names = factories_name;
+    this._factories_names = new List<string>();
   }
 
 
-  get id(): number {
-    return this._id;
-  }
+
 
   get course_creation_channel_id(): number {
     return this._course_creation_channel_id;
