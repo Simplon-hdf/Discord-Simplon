@@ -4,17 +4,20 @@ import { GuildsManager } from '../guilds/guilds-manager';
 import { Guild, IGuild } from '../guilds/guild';
 import logger from '../utils/logger';
 import { HttpUtils } from '../utils/http';
-import { Routes } from '../utils/Routes';
+import { HttpRoutes } from '../utils/routes/http-routes';
 import { Category } from '../channels/category/category';
 import { Channel } from '../channels/channel/channel';
 import { User } from '../users/user';
 import EventEmitter from 'events';
+import { RedisManager } from '../utils/redis-manager';
+import { RedisRoutes } from '../utils/routes/redis-routes';
 
 export default {
   name: Events.ClientReady,
   once: true,
   execute(client: Client) {
     logger.info('Ready! Logged in as ' + client.user?.tag);
+    RedisManager.getInstance().connect();
     client.guilds.cache.forEach(async (element) => {
       // Récupération de l'instance du bot pour initialiser la guild
       const discordClient: DiscordClient = DiscordClient.getInstance(
@@ -59,33 +62,42 @@ export default {
  */
 async function registerChannelsStock(guild: DiscordGuild, guild_id: string) {
   const channelsStockExist = await new HttpUtils().get(
-    Routes.GET_CHANNELS_STOCK_EXIST,
+    HttpRoutes.GET_CHANNELS_STOCK_EXIST,
     guild.id,
   );
 
   // logger.debug(channelsStockExist);
 
   if (!channelsStockExist.data) {
-    const channelsStock = await guild.channels.create({
-      name: 'Channels Stock',
-      type: ChannelType.GuildCategory,
-      position: 100,
-    });
+    const channelsStock = guild.channels
+      .create({
+        name: 'Channels Stock',
+        type: ChannelType.GuildCategory,
+        position: 100,
+      })
+      .then(async (channel) => {
+        const category = new Category(guild?.id, channel.id, channel.name);
+        await RedisManager.getInstance().set(
+          RedisRoutes.LAST_CREATED_CATEGORY,
+          JSON.stringify(category),
+        );
 
-    new EventEmitter().emit('channel-create', channelsStock, guild.client);
+        await RedisManager.getInstance().set(
+          RedisRoutes.LAST_CREATED_CATEGORY,
+          JSON.stringify(category),
+        );
 
-    logger.info('[Registering category] Register channels stock category');
-    await DiscordClient.getInstance(guild_id)
-      .getCategoryManager()
-      .registerCategory(
-        new Category(guild.id, channelsStock.id, channelsStock.name),
-      );
+        logger.info('[Registering category] Register channels stock category');
+        await DiscordClient.getInstance(guild_id)
+          .getCategoryManager()
+          .registerCategory(category);
 
-    await new HttpUtils().post(
-      Routes.REGISTER_CHANNEL_STOCK,
-      undefined,
-      channelsStock.id,
-    );
+        await new HttpUtils().post(
+          HttpRoutes.REGISTER_CHANNEL_STOCK,
+          undefined,
+          channel.id,
+        );
+      });
   }
 }
 

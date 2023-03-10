@@ -1,6 +1,6 @@
 import { IGuild } from './guild';
 import { HttpUtils } from '../utils/http';
-import { Routes } from '../utils/Routes';
+import { HttpRoutes } from '../utils/routes/http-routes';
 import { ApiError } from '../utils/exceptions/api-error';
 import logger from '../utils/logger';
 import { log } from 'util';
@@ -8,7 +8,7 @@ import { log } from 'util';
 export class GuildsManager {
   async getGuildCategories(uuid: string): Promise<any> {
     const guildJSON = await new HttpUtils().get(
-      Routes.GET_GUILD_CATEGORY,
+      HttpRoutes.GET_GUILD_CATEGORY,
       uuid,
     );
     if (guildJSON.statusCode === 409) {
@@ -20,7 +20,10 @@ export class GuildsManager {
   }
 
   async getGuidChannels(uuid: string): Promise<any> {
-    const guildJSON = await new HttpUtils().get(Routes.GET_GUILD_CHANNEL, uuid);
+    const guildJSON = await new HttpUtils().get(
+      HttpRoutes.GET_GUILD_CHANNEL,
+      uuid,
+    );
     if (guildJSON.statusCode === 409) {
       return undefined;
     }
@@ -30,7 +33,10 @@ export class GuildsManager {
   }
 
   async loadGuild(guild_uuid: string): Promise<any> {
-    const guildJSON = await new HttpUtils().get(Routes.GET_GUILD, guild_uuid);
+    const guildJSON = await new HttpUtils().get(
+      HttpRoutes.GET_GUILD,
+      guild_uuid,
+    );
     if (guildJSON.statusCode === 409) {
       return undefined;
     }
@@ -41,7 +47,7 @@ export class GuildsManager {
 
   async registerGuild(guild: IGuild): Promise<any> {
     const guildJSON = await new HttpUtils().post(
-      Routes.CREATE_GUILD,
+      HttpRoutes.CREATE_GUILD,
       JSON.parse(JSON.stringify(guild)),
     );
 

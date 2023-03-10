@@ -1,6 +1,6 @@
 import { Config } from '../config/config';
 import { YamlParser } from '../utils/parsers/yaml-parser';
-import { Routes } from '../utils/Routes';
+import { HttpRoutes } from '../utils/routes/http-routes';
 import { HttpUtils } from '../utils/http';
 
 export interface IGuild {

@@ -1,13 +1,13 @@
 import { ICategory } from './category';
 import { HttpUtils } from '../../utils/http';
-import { Routes } from '../../utils/Routes';
+import { HttpRoutes } from '../../utils/routes/http-routes';
 import { ApiError } from '../../utils/exceptions/api-error';
 import logger from '../../utils/logger';
 
 export class CategoryManager {
   async registerCategory(category: ICategory) {
     const categoryJSON = await new HttpUtils().post(
-      Routes.REGISTER_GUILD_CATEGORY,
+      HttpRoutes.REGISTER_GUILD_CATEGORY,
       JSON.parse(JSON.stringify(category)),
     );
 
@@ -30,7 +30,7 @@ export class CategoryManager {
 
   async updateCategoryName(category: ICategory) {
     const categoryJSON = await new HttpUtils().patch(
-      Routes.UPDATE_CATEGORY_NAME,
+      HttpRoutes.UPDATE_CATEGORY_NAME,
       JSON.parse(JSON.stringify(category)),
     );
 
@@ -53,7 +53,7 @@ export class CategoryManager {
 
   async deleteCategory(categoryUUID: string) {
     const categoryJSON = await new HttpUtils().delete(
-      Routes.DELETE_CATEGORY,
+      HttpRoutes.DELETE_CATEGORY,
       null,
       categoryUUID,
     );

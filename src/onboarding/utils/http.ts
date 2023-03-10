@@ -1,6 +1,6 @@
 import axios, { AxiosInstance } from 'axios';
 import { Guild } from '../guilds/guild';
-import { Routes } from './Routes';
+import { HttpRoutes } from './routes/http-routes';
 import { ApiError } from './exceptions/api-error';
 import logger from './logger';
 
@@ -11,7 +11,7 @@ export class HttpUtils {
     this._urlBase = Guild.YamlConfig.get()['api-route-url'];
   }
 
-  async get(route: Routes, args?: string): Promise<any> {
+  async get(route: HttpRoutes, args?: string): Promise<any> {
     return new Promise(async (resolve) => {
       const formattedRoute: string =
         args === undefined ? route : route.replace(/:(\w+)/, args);
@@ -24,7 +24,7 @@ export class HttpUtils {
     });
   }
 
-  async post(route: Routes, data: any, args?: string): Promise<any> {
+  async post(route: HttpRoutes, data: any, args?: string): Promise<any> {
     return new Promise(async (resolve) => {
       const formattedRoute: string =
         args === undefined ? route : route.replace(/:(\w+)/, args);
@@ -41,7 +41,7 @@ export class HttpUtils {
     });
   }
 
-  async patch(route: Routes, data: any, args?: string): Promise<any> {
+  async patch(route: HttpRoutes, data: any, args?: string): Promise<any> {
     return new Promise(async (resolve) => {
       const formattedRoute: string =
         args === undefined ? route : route.replace(/:(\w+)/, args);
@@ -58,7 +58,7 @@ export class HttpUtils {
     });
   }
 
-  async delete(route: Routes, data: any, args?: string): Promise<any> {
+  async delete(route: HttpRoutes, data: any, args?: string): Promise<any> {
     return new Promise(async (resolve) => {
       const formattedRoute: string =
         args === undefined ? route : route.replace(/:(\w+)/, args);

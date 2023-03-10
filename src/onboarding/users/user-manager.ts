@@ -1,12 +1,12 @@
 import { IUser } from './user';
 import logger from '../utils/logger';
 import { HttpUtils } from '../utils/http';
-import { Routes } from '../utils/Routes';
+import { HttpRoutes } from '../utils/routes/http-routes';
 
 export class UserManager {
   async registerUser(user: IUser) {
     const userJSON = await new HttpUtils().post(
-      Routes.CREATE_USER,
+      HttpRoutes.CREATE_USER,
       JSON.parse(JSON.stringify(user)),
     );
 
@@ -21,7 +21,7 @@ export class UserManager {
 
   async getUsersByGuild(guild_uuid: string): Promise<any> {
     const userJSON = await new HttpUtils().get(
-      Routes.GET_USER_BY_GUILD,
+      HttpRoutes.GET_USER_BY_GUILD,
       guild_uuid,
     );
     if (userJSON.statusCode === 409) {
@@ -33,7 +33,7 @@ export class UserManager {
   }
 
   async getUserByUuid(user_uuid: string): Promise<any> {
-    const userJSON = await new HttpUtils().get(Routes.GET_USER, user_uuid);
+    const userJSON = await new HttpUtils().get(HttpRoutes.GET_USER, user_uuid);
     if (userJSON.statusCode === 409) {
       return;
     }
@@ -43,7 +43,7 @@ export class UserManager {
   }
 
   async deleteUserByUuid(user_uuid: string, guild_uuid: string): Promise<any> {
-    const userJSON = await new HttpUtils().delete(Routes.DELETE_USER, {
+    const userJSON = await new HttpUtils().delete(HttpRoutes.DELETE_USER, {
       user_uuid: user_uuid,
       guild_uuid: guild_uuid,
     });

@@ -1,4 +1,4 @@
-export enum Routes {
+export enum HttpRoutes {
   GET_GUILD_CONFIG = '/api/guilds/config',
   GET_GUILD = '/api/guilds/:uuid',
   CREATE_GUILD = '/api/guilds/register',

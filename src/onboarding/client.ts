@@ -7,7 +7,7 @@ import { Client } from 'discord.js';
 import EventEmitter from 'events';
 
 export class DiscordClient {
-  private readonly _token: string;
+  private readonly _token?: string;
   private static instance?: DiscordClient;
 
   private readonly guildManager: GuildsManager;
@@ -24,7 +24,7 @@ export class DiscordClient {
 
   private eventEmitter: EventEmitter;
 
-  constructor(token: string) {
+  constructor(token?: string) {
     this.guildManager = new GuildsManager();
     this.coursesManager = new CourseManager();
     this.categoryManager = new CategoryManager();
@@ -34,8 +34,11 @@ export class DiscordClient {
     this._token = token;
   }
 
-  static getInstance(token: string): DiscordClient {
+  static getInstance(token?: string): DiscordClient {
     if (!DiscordClient.instance || DiscordClient.instance._token !== token) {
+      if (token === undefined) {
+        DiscordClient.instance = new DiscordClient();
+      }
       DiscordClient.instance = new DiscordClient(token);
     }
     return DiscordClient.instance;
@@ -64,7 +67,7 @@ export class DiscordClient {
   getEventEmitter(): EventEmitter {
     return this.eventEmitter;
   }
-  getToken(): string {
+  getToken(): string | undefined {
     return this._token;
   }
 

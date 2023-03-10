@@ -8,7 +8,7 @@ import {
   TextInputStyle,
 } from 'discord.js';
 import { HttpUtils } from '../../../utils/http';
-import { Routes } from '../../../utils/Routes';
+import { HttpRoutes } from '../../../utils/routes/http-routes';
 import logger from '../../../utils/logger';
 import CoursesCreation from '../../buttons/courses/courses-creation';
 import { Course } from '../../../courses/course';
@@ -36,7 +36,7 @@ export default {
     const guild_uuid = interaction.guildId;
 
     const courses = await new HttpUtils()
-      .get(Routes.GET_COURSES_BY_GUILD, guild_uuid!)
+      .get(HttpRoutes.GET_COURSES_BY_GUILD, guild_uuid!)
       .catch(logger.error);
 
     const courses_name = courses.data.map((course: any) =>
@@ -66,7 +66,7 @@ export default {
     );
 
     const channelStock = new HttpUtils().get(
-      Routes.GET_CHANNELS_STOCK,
+      HttpRoutes.GET_CHANNELS_STOCK,
       guild_uuid!,
     );
 

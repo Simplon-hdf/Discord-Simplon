@@ -1,13 +1,13 @@
 import { IChannel } from './channel';
 import { HttpUtils } from '../../utils/http';
-import { Routes } from '../../utils/Routes';
+import { HttpRoutes } from '../../utils/routes/http-routes';
 import { ApiError } from '../../utils/exceptions/api-error';
 import logger from '../../utils/logger';
 
 export class ChannelManager {
   async registerChannel(channel: IChannel) {
     const channelJSON = await new HttpUtils().post(
-      Routes.REGISTER_GUILD_CHANNEL,
+      HttpRoutes.REGISTER_GUILD_CHANNEL,
       JSON.parse(JSON.stringify(channel)),
     );
 
@@ -32,7 +32,7 @@ export class ChannelManager {
 
   async updateChannelName(channel: IChannel) {
     const channelJSON = await new HttpUtils().patch(
-      Routes.UPDATE_CHANNEL_NAME,
+      HttpRoutes.UPDATE_CHANNEL_NAME,
       JSON.parse(JSON.stringify(channel)),
     );
 
@@ -55,7 +55,7 @@ export class ChannelManager {
 
   async deleteChannel(channelUUID: string) {
     const channelJSON = await new HttpUtils().delete(
-      Routes.DELETE_CHANNEL,
+      HttpRoutes.DELETE_CHANNEL,
       null,
       channelUUID,
     );
