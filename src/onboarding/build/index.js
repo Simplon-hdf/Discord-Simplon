@@ -33,6 +33,7 @@ const command_handler_1 = __importDefault(require("./handlers/command_handler"))
 const event_handler_1 = __importDefault(require("./handlers/event_handler"));
 const components_handler_1 = __importDefault(require("./handlers/components_handler"));
 const ProcedureManager_1 = require("./utils/procedures/ProcedureManager");
+const UtilsManager_1 = require("./utils/UtilsManager");
 dotenv.config();
 process.setMaxListeners(0);
 events_1.default.setMaxListeners(0);
@@ -46,7 +47,7 @@ client.procedureManager = new ProcedureManager_1.ProcedureManager();
 client.on(discord_js_1.Events.InteractionCreate, async (interaction) => {
     const parsedClient = client;
     if (interaction.isChatInputCommand()) {
-        parsedClient.commands.get(interaction['commandName']).execute(interaction);
+        UtilsManager_1.UtilsManager.get_command(interaction['commandName'])?.execute(interaction);
     }
     else {
         const castedInteraction = interaction;
