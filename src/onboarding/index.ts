@@ -15,7 +15,7 @@ const DISCORD_TOKEN = process.env.DISCORD_TOKEN;
 const DISCORD_ID = process.env.DISCORD_ID;
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.DirectMessages, GatewayIntentBits.GuildMessages, GatewayIntentBits.GuildMembers, GatewayIntentBits.GuildInvites] });
-command_handler(client, DISCORD_TOKEN, DISCORD_ID);
+command_handler(DISCORD_TOKEN, DISCORD_ID);
 event_handler(client);
 components_handler(client);
 (client as any).procedureManager = new ProcedureManager();
