@@ -14,8 +14,13 @@ export class User implements IUser {
 
   private readonly promo_name?: string | undefined;
 
-
-  constructor(user_uuid: string, username: string, mail: string, role_uuid: string, promo_name?: string) {
+  constructor(
+    user_uuid: string,
+    username: string,
+    mail: string,
+    role_uuid: string,
+    promo_name?: string,
+  ) {
     this.user_uuid = user_uuid;
     this.username = username;
     this.mail = mail;
@@ -23,19 +28,19 @@ export class User implements IUser {
     this.promo_name = promo_name;
   }
 
-  getUserUuid(){
+  getUserUuid() {
     return this.user_uuid;
   }
 
-  getUsername(){
+  getUsername() {
     return this.username;
   }
 
-  getMail(){
+  getMail() {
     return this.mail;
   }
 
-  getRoleUuid(){
+  getRoleUuid() {
     return this.role_uuid;
   }
 

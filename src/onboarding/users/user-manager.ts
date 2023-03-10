@@ -1,7 +1,7 @@
-import {IUser} from "./user";
-import logger from "../utils/logger";
-import {HttpUtils} from "../utils/http";
-import {Routes} from "../utils/Routes";
+import { IUser } from './user';
+import logger from '../utils/logger';
+import { HttpUtils } from '../utils/http';
+import { Routes } from '../utils/Routes';
 
 export class UserManager {
   async registerUser(user: IUser) {
@@ -20,7 +20,10 @@ export class UserManager {
   }
 
   async getUsersByGuild(guild_uuid: string): Promise<any> {
-    const userJSON = await new HttpUtils().get(Routes.GET_USER_BY_GUILD, guild_uuid);
+    const userJSON = await new HttpUtils().get(
+      Routes.GET_USER_BY_GUILD,
+      guild_uuid,
+    );
     if (userJSON.statusCode === 409) {
       return;
     }
@@ -42,7 +45,7 @@ export class UserManager {
   async deleteUserByUuid(user_uuid: string, guild_uuid: string): Promise<any> {
     const userJSON = await new HttpUtils().delete(Routes.DELETE_USER, {
       user_uuid: user_uuid,
-      guild_uuid: guild_uuid
+      guild_uuid: guild_uuid,
     });
     if (userJSON.statusCode === 409) {
       return;

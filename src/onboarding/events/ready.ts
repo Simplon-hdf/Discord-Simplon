@@ -7,7 +7,8 @@ import { HttpUtils } from '../utils/http';
 import { Routes } from '../utils/Routes';
 import { Category } from '../channels/category/category';
 import { Channel } from '../channels/channel/channel';
-import {User} from "../users/user";
+import { User } from '../users/user';
+import EventEmitter from 'events';
 
 export default {
   name: Events.ClientReady,
@@ -15,9 +16,11 @@ export default {
   execute(client: Client) {
     logger.info('Ready! Logged in as ' + client.user?.tag);
     client.guilds.cache.forEach(async (element) => {
+      // Récupération de l'instance du bot pour initialiser la guild
       const discordClient: DiscordClient = DiscordClient.getInstance(
         element.id,
       );
+      DiscordClient.getInstance('channel-create').setClient(client);
       const guildManager: GuildsManager = discordClient.getGuildManager();
       let guild_id: any;
 
@@ -69,11 +72,13 @@ async function registerChannelsStock(guild: DiscordGuild, guild_id: string) {
       position: 100,
     });
 
+    new EventEmitter().emit('channel-create', channelsStock, guild.client);
+
     logger.info('[Registering category] Register channels stock category');
     await DiscordClient.getInstance(guild_id)
       .getCategoryManager()
       .registerCategory(
-        new Category(guild_id, channelsStock.id, channelsStock.name),
+        new Category(guild.id, channelsStock.id, channelsStock.name),
       );
 
     await new HttpUtils().post(
@@ -105,7 +110,7 @@ async function registerChannels(guild: DiscordGuild, guild_id: string) {
     categories.forEach(async (category) => {
       await DiscordClient.getInstance(guild_id)
         .getCategoryManager()
-        .registerCategory(new Category(guild_id, category.id, category.name));
+        .registerCategory(new Category(guild.id, category.id, category.name));
     });
 
     // Recupère la liste des channels n'étant pas des categories et des threads
@@ -138,7 +143,6 @@ async function registerChannels(guild: DiscordGuild, guild_id: string) {
     });
   });
 }
-
 
 /**
  * Mets à jour le nom des channels et des categories dans la base de données

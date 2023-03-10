@@ -2,7 +2,9 @@ import { GuildsManager } from './guilds/guilds-manager';
 import { CourseManager } from './courses/course-manager';
 import { CategoryManager } from './channels/category/category-manager';
 import { ChannelManager } from './channels/channel/channel-manager';
-import {UserManager} from "./users/user-manager";
+import { UserManager } from './users/user-manager';
+import { Client } from 'discord.js';
+import EventEmitter from 'events';
 
 export class DiscordClient {
   private readonly _token: string;
@@ -18,12 +20,17 @@ export class DiscordClient {
 
   private readonly userManager: UserManager;
 
+  private client?: Client;
+
+  private eventEmitter: EventEmitter;
+
   constructor(token: string) {
     this.guildManager = new GuildsManager();
     this.coursesManager = new CourseManager();
     this.categoryManager = new CategoryManager();
     this.channelManager = new ChannelManager();
     this.userManager = new UserManager();
+    this.eventEmitter = new EventEmitter();
     this._token = token;
   }
 
@@ -53,8 +60,24 @@ export class DiscordClient {
   getUserManager(): UserManager {
     return this.userManager;
   }
+
+  getEventEmitter(): EventEmitter {
+    return this.eventEmitter;
+  }
   getToken(): string {
     return this._token;
+  }
+
+  isInstanciated(): boolean {
+    return DiscordClient.instance === undefined;
+  }
+
+  getClient(): Client | undefined {
+    return this.client;
+  }
+
+  setClient(client: Client): void {
+    this.client = client;
   }
 
   destroy(): void {
