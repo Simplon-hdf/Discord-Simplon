@@ -1,41 +1,37 @@
 import * as fs from "fs";
 import * as path from "path";
+import DiscordEvent from "../events/DiscordEvent";
+import { UtilsManager } from "../utils/UtilsManager";
 
-export default async (client: any) => {
+export default async () => {
 
-  const dirPath = './build/events/';
+  const eventFiles: [] = getAllFiles('./build/events/');
 
-  const eventFiles: [] = getAllFiles(dirPath);
-
-
-  function getAllFiles(dirPath: any, arrayOfFiles?: any) {
-    arrayOfFiles = arrayOfFiles || []
-
+  function getAllFiles(dirPath: any, arrayOfFiles: any = []) {
     try {
-      const files = fs.readdirSync(dirPath)
-
+      const files = fs.readdirSync(dirPath);
       files.forEach(function (file) {
-        if (fs.statSync(dirPath + "/" + file).isDirectory()) {
-          arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles)
-        } else {
-          arrayOfFiles.push(path.join("events/", file));
-        }
-      })
+        if (fs.statSync(dirPath + "/" + file).isDirectory()) { arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles); }
+        else { arrayOfFiles.push(path.join("events/", file)); }
+      });
     } catch (error) {
-      console.log(error); 
-
+      console.log(error);
     }
-
-    return arrayOfFiles
+    return arrayOfFiles;
   }
 
-
   for (const file of eventFiles) {
-    const event = await import('../' + file);
-    if (event.default.once) {
-      client.once(event.default.name, (...args: any[]) => event.default.execute(...args));
-    } else {
-      client.on(event.default.name, (...args: any[]) => event.default.execute(...args));
+    if ((file as string).includes("DiscordEvent"))
+      continue;
+    try {
+      const event: DiscordEvent = (new (await import(`../${file}`)).default);
+      if (event.get_method() == 'once')
+        UtilsManager.get_client().once(event.get_type() as any, () => event.execute());
+      else
+        UtilsManager.get_client().on(event.get_type() as any, () => event.execute());
+      UtilsManager.add_event(event);
+    } catch {
+      console.log(`${file} command can't be load (maybe it's not a constructor)`);
     }
   }
 }
