@@ -3,12 +3,13 @@ import { getUserRolesByInteraction } from "../../utils/user";
 
 
 export default {
+  datas: new Map<String, StringSelectMenuBuilder>(),
   data: new StringSelectMenuBuilder(),
   async execute(interaction: StringSelectMenuInteraction) {
+    const select_menu = this.datas.get(interaction.customId);
     const selected_values = interaction.values;
-    const user_roles = getUserRolesByInteraction(interaction);
     const user_role_manager = interaction.guild?.members.resolve(interaction.user.id)?.roles;
-    for (const option of this.data.options) {
+    for (const option of select_menu?.options!) {
       const option_value: string = option.data.value as string;
       if (selected_values.includes(option_value)) {
         user_role_manager?.add(option_value);
@@ -24,6 +25,7 @@ export default {
     }, 2000);
   },
   async build(course_name: string, associated_roles: any[]) {
+    this.data = new StringSelectMenuBuilder();
     this.data.setPlaceholder(course_name);
     this.data.setCustomId(`course-${course_name}`);
     for (const associated_role of associated_roles) {
@@ -36,5 +38,6 @@ export default {
       return;
     this.data.setMinValues(0);
     this.data.setMaxValues(this.data.options.length >= 25 ? 20 : this.data.options.length);
+    this.datas.set(this.data.data.custom_id!, this.data);
   }
 }
