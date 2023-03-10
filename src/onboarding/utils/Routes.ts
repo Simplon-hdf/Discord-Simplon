@@ -14,4 +14,8 @@ export enum Routes {
   UPDATE_CATEGORY_NAME = '/api/category/update/name',
   DELETE_CHANNEL = '/api/channels/delete/:uuid',
   DELETE_CATEGORY = '/api/category/delete/:uuid',
+  CREATE_USER = '/api/users/register',
+  GET_USER_BY_GUILD = '/api/users/guilds/:uuid',
+  GET_USER = '/api/users/:uuid',
+  DELETE_USER = '/api/users/delete/',
 }

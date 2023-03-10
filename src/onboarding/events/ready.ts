@@ -7,6 +7,7 @@ import { HttpUtils } from '../utils/http';
 import { Routes } from '../utils/Routes';
 import { Category } from '../channels/category/category';
 import { Channel } from '../channels/channel/channel';
+import {User} from "../users/user";
 
 export default {
   name: Events.ClientReady,
@@ -137,6 +138,7 @@ async function registerChannels(guild: DiscordGuild, guild_id: string) {
     });
   });
 }
+
 
 /**
  * Mets à jour le nom des channels et des categories dans la base de données
