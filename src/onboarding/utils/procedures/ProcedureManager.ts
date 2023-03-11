@@ -1,17 +1,19 @@
-import { Guild, GuildMember } from "discord.js";
+import { GuildMember } from "discord.js";
 import { Procedure } from "./procedure";
 
 export class ProcedureManager {
 
-  private _procedures: Map<String, Procedure>;
+  private _procedures: Map<String, Procedure> = new Map<String, Procedure>();
 
-  constructor() {
-    this._procedures = new Map<String, Procedure>;
+  async register_procedure(procedure: Procedure) {
+    this._procedures.set(await procedure.get_name(), procedure);
   }
 
-  async register_procedure(procedure_name: string, procedure: Procedure) {
-    this._procedures.set(procedure_name, procedure);
+  async delete_procedure(procedure_name: string) {
+    this._procedures.delete(procedure_name);
   }
+
+  // Getters
 
   async get_procedures(): Promise<Map<String, Procedure>> {
     return this._procedures;

@@ -28,7 +28,7 @@ const fs = __importStar(require("fs"));
 const path = __importStar(require("path"));
 const dotenv = __importStar(require("dotenv"));
 const UtilsManager_1 = require("../utils/UtilsManager");
-exports.default = async (client, discord_token, discord_client_id) => {
+exports.default = async (discord_token, discord_client_id) => {
     var _a;
     dotenv.config();
     const commandFiles = getAllFiles('./build/commands/');
@@ -36,7 +36,7 @@ exports.default = async (client, discord_token, discord_client_id) => {
         arrayOfFiles = arrayOfFiles || [];
         try {
             const files = fs.readdirSync(dirPath);
-            files.forEach(function (file) {
+            files.forEach((file) => {
                 if (fs.statSync(dirPath + "/" + file).isDirectory()) {
                     arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles);
                 }
@@ -50,28 +50,22 @@ exports.default = async (client, discord_token, discord_client_id) => {
         }
         return arrayOfFiles;
     }
-    client.commands = new discord_js_1.Collection();
     for (const file of commandFiles) {
-        const cmd_import = await (_a = `../${file}`, Promise.resolve().then(() => __importStar(require(_a))));
         if (file.includes("SlashCommand"))
             continue;
         try {
-            UtilsManager_1.UtilsManager.add_command(new cmd_import.default); // Link cmd name to complete module
+            UtilsManager_1.UtilsManager.add_command(new (await (_a = `../${file}`, Promise.resolve().then(() => __importStar(require(_a))))).default); // Link cmd name to complete module
         }
         catch {
             console.log(`${file} command can't be load (must because it's not a constructor)`);
         }
     }
-    if (!discord_token || !discord_client_id) {
-        throw new Error('Discord id or token is undefined');
-    }
-    const rest = new discord_js_1.REST({ version: '10' }).setToken(discord_token);
     (async () => {
         try {
             console.log('Started refreshing application (/) commands.');
             const serialized_commands = Array.from(UtilsManager_1.UtilsManager.get_commands().values())
-                .map(slash_command => slash_command.data.toJSON());
-            await rest.put(discord_js_1.Routes.applicationCommands(discord_client_id), { body: serialized_commands }); //Logging commands on RESTAPI (for each values in commands, get data.JSON() to register it
+                .map(slash_command => slash_command.get_data().toJSON());
+            await new discord_js_1.REST({ version: '10' }).setToken(discord_token).put(discord_js_1.Routes.applicationCommands(discord_client_id), { body: serialized_commands }); //Logging commands on RESTAPI (for each values in commands, get data.JSON() to register it
             console.log('Successfully reloaded application (/) commands.');
         }
         catch (error) {

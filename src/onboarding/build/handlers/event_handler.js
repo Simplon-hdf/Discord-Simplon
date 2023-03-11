@@ -25,12 +25,11 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs = __importStar(require("fs"));
 const path = __importStar(require("path"));
-exports.default = async (client) => {
+const UtilsManager_1 = require("../utils/UtilsManager");
+exports.default = async () => {
     var _a;
-    const dirPath = './build/events/';
-    const eventFiles = getAllFiles(dirPath);
-    function getAllFiles(dirPath, arrayOfFiles) {
-        arrayOfFiles = arrayOfFiles || [];
+    const eventFiles = getAllFiles('./build/events/');
+    function getAllFiles(dirPath, arrayOfFiles = []) {
         try {
             const files = fs.readdirSync(dirPath);
             files.forEach(function (file) {
@@ -48,12 +47,18 @@ exports.default = async (client) => {
         return arrayOfFiles;
     }
     for (const file of eventFiles) {
-        const event = await (_a = '../' + file, Promise.resolve().then(() => __importStar(require(_a))));
-        if (event.default.once) {
-            client.once(event.default.name, (...args) => event.default.execute(...args));
+        if (file.includes("DiscordEvent"))
+            continue;
+        try {
+            const event = (new (await (_a = `../${file}`, Promise.resolve().then(() => __importStar(require(_a))))).default);
+            if (event.get_method() == 'once')
+                UtilsManager_1.UtilsManager.get_client().once(event.get_type(), () => event.execute());
+            else
+                UtilsManager_1.UtilsManager.get_client().on(event.get_type(), () => event.execute());
+            UtilsManager_1.UtilsManager.add_event(event);
         }
-        else {
-            client.on(event.default.name, (...args) => event.default.execute(...args));
+        catch {
+            console.log(`${file} command can't be load (maybe it's not a constructor)`);
         }
     }
 };

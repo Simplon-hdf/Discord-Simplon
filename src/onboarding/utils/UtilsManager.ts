@@ -58,7 +58,27 @@ export class UtilsManager {
     return this._components.get(component_id);
   }
 
+  // ProcedureManager
+
+  public static get_procedureManagers(): Map<String, ProcedureManager> | undefined {
+    return this._procedureManagers;
+  }
+
+  public static get_procedureManager(guildId: string): ProcedureManager | undefined {
+    return this._procedureManagers.get(guildId);
+  }
+
   // Setters
+
+  // ProcedureManager
+
+  public static add_procedureManager(guildId: string) {
+    this._procedureManagers.set(guildId, new ProcedureManager());
+  }
+
+  public static remove_procedureManager(guildId: string) {
+    this._procedureManagers.delete(guildId);
+  }
 
   // Events
 

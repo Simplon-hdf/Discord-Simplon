@@ -14,6 +14,7 @@ export default class ReadyEvent extends DiscordEvent {
     const client = UtilsManager.get_client();
     console.info('Ready! Logged in as ' + client.user?.tag);
     client.guilds.cache.forEach(async (element) => {
+      UtilsManager.add_procedureManager(element.id);
       const discordClient: DiscordClient = DiscordClient.getInstance();
       const guildManager: GuildsManager = discordClient.getGuildManager();
 
