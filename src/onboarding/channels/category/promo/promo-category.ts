@@ -1,6 +1,6 @@
-import {Channel} from "../channel";
-import {Permission} from "../../permission";
-import {User} from "../../users/user";
+import { Channel } from '../../channel/channel';
+import { Permission } from '../../../permission';
+import { User } from '../../../users/user';
 
 export class PromoCategory {
   private readonly _id: number;
@@ -10,12 +10,10 @@ export class PromoCategory {
 
   private _invitationLink: string;
 
-
   constructor(id: number, invitation_link: string) {
     this._id = id;
     this._invitationLink = invitation_link;
   }
-
 
   get id(): number {
     return this._id;
@@ -36,7 +34,6 @@ export class PromoCategory {
   get invitationLink(): string {
     return this._invitationLink;
   }
-
 
   set invitationLink(value: string) {
     this._invitationLink = value;

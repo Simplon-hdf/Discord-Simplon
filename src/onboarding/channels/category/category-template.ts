@@ -1,20 +1,15 @@
-import {PromoCategory} from "./promo-category";
+import { PromoCategory } from './promo/promo-category';
 
 export class CategoryTemplate {
-
-  private readonly _id: number;
+  private readonly _id: string;
   private _name: string;
-  private readonly _channels_id: List<number> = new List<number>();
-  private readonly _promoCategory: PromoCategory;
-
-  constructor(id: number, name: string, promoCategory: PromoCategory) {
+  private readonly _channels_id: List<string> = new List<string>();
+  constructor(id: string, name: string) {
     this._id = id;
     this._name = name;
-    this._promoCategory = promoCategory;
   }
 
-
-  get id(): number {
+  get id(): string {
     return this._id;
   }
 
@@ -25,19 +20,15 @@ export class CategoryTemplate {
     this._name = value;
   }
 
-  get promoCategory(): PromoCategory {
-    return this._promoCategory;
-  }
-
-  get channelsId(): List<number> {
+  get channelsId(): List<string> {
     return this._channels_id;
   }
 
-  addChannel(id: number) : void{
-    this._channels_id.add(id)
+  addChannel(id: string): void {
+    this._channels_id.add(id);
   }
 
-  removeChannel(id: number) : void {
+  removeChannel(id: string): void {
     this._channels_id.remove(id);
   }
 }

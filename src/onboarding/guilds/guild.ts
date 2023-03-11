@@ -1,22 +1,18 @@
-import {Config} from "../config/config";
-import {YamlParser} from "../utils/parsers/yaml-parser";
-import {Routes} from "../utils/Routes";
-import {HttpUtils} from "../utils/http";
+import { Config } from '../config/config';
+import { YamlParser } from '../utils/parsers/yaml-parser';
+import { HttpRoutes } from '../utils/routes/http-routes';
+import { HttpUtils } from '../utils/http';
 
 export interface IGuild {
   getGuildUuid(): string;
   getGuildName(): string;
   getMemberSize(): number;
-
-
 }
 
-export class Guild implements IGuild{
-
+export class Guild implements IGuild {
   private readonly guild_uuid: string;
   private readonly guild_name: string;
   private member_size: number;
-
 
   static YamlConfig = new YamlParser('./config.yml');
 
@@ -27,7 +23,6 @@ export class Guild implements IGuild{
     this.member_size = member_size;
   }
 
-
   getGuildUuid(): string {
     return this.guild_uuid;
   }
@@ -35,7 +30,6 @@ export class Guild implements IGuild{
   getGuildName(): string {
     return this.guild_name;
   }
-
 
   getMemberSize(): number {
     return this.member_size;

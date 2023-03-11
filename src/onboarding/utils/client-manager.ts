@@ -1,19 +1,30 @@
-import { Client, Events } from "discord.js";
-import { SlashCommand } from "../commands/SlashCommand";
-import CustomComponent from "../components/CustomComponent";
-import DiscordEvent from "../events/DiscordEvent";
-import command_handler from "../handlers/command-handler";
-import components_handler from "../handlers/components-handler";
-import event_handler from "../handlers/event-handler";
-import { ProcedureManager } from "./procedures/ProcedureManager";
+import { Client, Events } from 'discord.js';
+import { SlashCommand } from '../commands/SlashCommand';
+import CustomComponent from '../components/CustomComponent';
+import DiscordEvent from '../events/DiscordEvent';
+import command_handler from '../handlers/command-handler';
+import components_handler from '../handlers/components-handler';
+import event_handler from '../handlers/event-handler';
+import { ProcedureManager } from './procedures/ProcedureManager';
 
 export class ClientManager {
-
   private static _client: Client;
-  private static _commands: Map<String, SlashCommand> = new Map<String, SlashCommand>();
-  private static _events: Map<Events, DiscordEvent> = new Map<Events, DiscordEvent>();
-  private static _components: Map<String, CustomComponent> = new Map<String, CustomComponent>();
-  private static _procedureManagers: Map<String, ProcedureManager> = new Map<String, ProcedureManager>();
+  private static _commands: Map<string, SlashCommand> = new Map<
+    string,
+    SlashCommand
+  >();
+  private static _events: Map<Events, DiscordEvent> = new Map<
+    Events,
+    DiscordEvent
+  >();
+  private static _components: Map<string, CustomComponent> = new Map<
+    string,
+    CustomComponent
+  >();
+  private static _procedureManagers: Map<string, ProcedureManager> = new Map<
+    string,
+    ProcedureManager
+  >();
 
   public static init(client: Client, discord_token: any, discord_id: any) {
     this._client = client;
@@ -30,7 +41,7 @@ export class ClientManager {
 
   // Commands
 
-  public static get_commands(): Map<String, SlashCommand> {
+  public static get_commands(): Map<string, SlashCommand> {
     return this._commands;
   }
 
@@ -50,21 +61,27 @@ export class ClientManager {
 
   // Components
 
-  public static get_components(): Map<String, CustomComponent> {
+  public static get_components(): Map<string, CustomComponent> {
     return this._components;
   }
 
-  public static get_component(component_id: string): CustomComponent | undefined {
+  public static get_component(
+    component_id: string,
+  ): CustomComponent | undefined {
     return this._components.get(component_id);
   }
 
   // ProcedureManager
 
-  public static get_procedureManagers(): Map<String, ProcedureManager> | undefined {
+  public static get_procedureManagers():
+    | Map<string, ProcedureManager>
+    | undefined {
     return this._procedureManagers;
   }
 
-  public static get_procedureManager(guildId: string): ProcedureManager | undefined {
+  public static get_procedureManager(
+    guildId: string,
+  ): ProcedureManager | undefined {
     return this._procedureManagers.get(guildId);
   }
 

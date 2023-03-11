@@ -1,20 +1,23 @@
-export class Config implements IConfig{
+export class Config implements IConfig {
   private _course_creation_channel_id: number;
   private _class_creation_channel_id: number;
   private _identification_verification_channel: number;
   private _classes_selection_channel_id: number;
   private _factories_names: List<string>;
 
-  constructor(course_creation_channel_id: number, class_creation_channel_id: number, identification_verification_channel: number, classes_selection_channel_id: number) {
+  constructor(
+    course_creation_channel_id: number,
+    class_creation_channel_id: number,
+    identification_verification_channel: number,
+    classes_selection_channel_id: number,
+  ) {
     this._course_creation_channel_id = course_creation_channel_id;
     this._class_creation_channel_id = class_creation_channel_id;
-    this._identification_verification_channel = identification_verification_channel;
+    this._identification_verification_channel =
+      identification_verification_channel;
     this._classes_selection_channel_id = classes_selection_channel_id;
     this._factories_names = new List<string>();
   }
-
-
-
 
   get course_creation_channel_id(): number {
     return this._course_creation_channel_id;
@@ -48,16 +51,15 @@ export class Config implements IConfig{
     this._classes_selection_channel_id = value;
   }
 
-
   get factories_names(): List<string> {
     return this._factories_names;
   }
 
-  addFactory(factory_name: string){
+  addFactory(factory_name: string) {
     this._factories_names.add(factory_name);
   }
 
-  removeFactory(factory_name: string){
+  removeFactory(factory_name: string) {
     this._factories_names.remove(factory_name);
   }
 }

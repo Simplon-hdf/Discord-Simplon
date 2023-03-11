@@ -1,5 +1,5 @@
-import { PromoRole } from "./promo-role";
-import {PromoCategory} from "../../channels/category/promo-category";
+import { PromoRole } from './promo-role';
+import { PromoCategory } from '../../channels/category/promo/promo-category';
 
 export class Promo {
   private readonly _id: number;
@@ -14,7 +14,16 @@ export class Promo {
 
   private _promoRole: PromoRole;
 
-  constructor(id: number, name: string, factory: string, categoryId: string, startDate: Date, endDate: Date, promoCategory: PromoCategory, promoRole: PromoRole) {
+  constructor(
+    id: number,
+    name: string,
+    factory: string,
+    categoryId: string,
+    startDate: Date,
+    endDate: Date,
+    promoCategory: PromoCategory,
+    promoRole: PromoRole,
+  ) {
     this._id = id;
     this._name = name;
     this._factory = factory;
@@ -25,11 +34,9 @@ export class Promo {
     this._promoRole = promoRole;
   }
 
-
   get id(): number {
     return this._id;
   }
-
 
   get name(): string {
     return this._name;
@@ -66,10 +73,7 @@ export class Promo {
   /**
    * Permet d'arrêter la promo si elle est en cours.
    */
-  end(): void {
-
-  }
-
+  end(): void {}
 
   get categoryId(): string {
     return this._categoryId;
@@ -87,7 +91,7 @@ export class Promo {
     this._learnersIds = value;
   }
 
-  addTrainer(id: number) : void {
+  addTrainer(id: number): void {
     this._trainersIds.add(id);
   }
 
@@ -103,10 +107,9 @@ export class Promo {
     this._learnersIds.add(id);
   }
 
-  removeLearner(id: number) : void {
+  removeLearner(id: number): void {
     this._learnersIds.remove(id);
   }
-
 
   get promoCategory(): PromoCategory {
     return this._promoCategory;
