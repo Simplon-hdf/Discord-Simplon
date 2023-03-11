@@ -1,8 +1,6 @@
-export class ApiError extends Error{
-
-
+export class ApiError extends Error {
   constructor(message: string) {
-    super(message)
+    super(message);
     Object.setPrototypeOf(this, ApiError.prototype);
   }
 }

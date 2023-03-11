@@ -1,16 +1,14 @@
-import { Permission } from "../../permission";
+import { Permission } from '../../permission';
 
 export class PromoRole {
   private readonly _id: number;
   private _name: string;
   private _permission: List<Permission> = new List<Permission>();
 
-
   constructor(id: number, name: string) {
     this._id = id;
     this._name = name;
   }
-
 
   get id(): number {
     return this._id;
@@ -28,7 +26,7 @@ export class PromoRole {
     return this._permission;
   }
 
-  addPermission(perm: Permission) : void {
+  addPermission(perm: Permission): void {
     this._permission.add(perm);
   }
 
