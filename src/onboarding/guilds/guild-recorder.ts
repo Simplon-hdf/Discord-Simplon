@@ -1,5 +1,5 @@
-import { ChannelType, Guild as DiscordGuild } from 'discord.js';
-import { Guild } from './guild';
+import { ChannelType, Client, Guild as DiscordGuild } from 'discord.js';
+import { Guild, IGuild } from './guild';
 import { HttpUtils } from '../utils/http';
 import { HttpRoutes } from '../utils/routes/http-routes';
 import { Category } from '../channels/category/category';
@@ -32,16 +32,27 @@ export class GuildRecorder {
       this.discordGuild.memberCount,
     );
 
-    this.categoryManager = DiscordClient.getInstance(
-      this.guildId,
-    ).getCategoryManager();
+    this.categoryManager = DiscordClient.getInstance().getCategoryManager();
+    this.channelManager = DiscordClient.getInstance().getChannelManager();
+    this.guildManager = DiscordClient.getInstance().getGuildManager();
+  }
 
-    this.channelManager = DiscordClient.getInstance(
-      this.guildId,
-    ).getChannelManager();
-    this.guildManager = DiscordClient.getInstance(
-      this.guildId,
-    ).getGuildManager();
+  async loadAndRegisterGuild(client: Client) {
+    DiscordClient.getInstance('channel-create').setClient(client);
+    const guildManager: GuildsManager = this.guildManager;
+
+    const guild = await guildManager.loadGuild(this.guildId);
+
+    if (guild === undefined) {
+      // Enregistrement des guilds dans la base de données
+      const newGuild: IGuild = new Guild(
+        this.guildId,
+        this.guildName,
+        this.discordGuild.memberCount,
+      );
+
+      await guildManager.registerGuild(newGuild);
+    }
   }
 
   /**
@@ -58,7 +69,7 @@ export class GuildRecorder {
     // logger.debug(channelsStockExist);
 
     if (!channelsStockExist.data) {
-      const channelsStock = this.discordGuild.channels
+      this.discordGuild.channels
         .create({
           name: 'Channels Stock',
           type: ChannelType.GuildCategory,

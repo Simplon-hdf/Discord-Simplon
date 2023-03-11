@@ -26,40 +26,33 @@ export default class ReadyEvent extends DiscordEvent {
     await RedisManager.getInstance().connect();
     const guilds = client.guilds.cache;
 
+    await this.deleteGuilds(client);
+
     for (const element of guilds.values()) {
-      const discordClient: DiscordClient = DiscordClient.getInstance(
-        element.id,
-      );
-      DiscordClient.getInstance('channel-create').setClient(client);
-      const guildManager: GuildsManager = discordClient.getGuildManager();
-      let guild_id: any;
-
-      const guild = await guildManager.loadGuild(element.id);
-
-      if (guild === undefined) {
-        // Enregistrement des guilds dans la base de données
-        const newGuild: IGuild = new Guild(
-          element.id,
-          element.name,
-          element.memberCount,
-        );
-
-        const responseGuild = await guildManager.registerGuild(newGuild);
-
-        // Récupération de l'id en base de données de la guild
-        guild_id = responseGuild.data.id;
-      }
-
-      guild_id === undefined ? (guild_id = guild.data.id) : null;
-
       const guildRecorder: GuildRecorder = new GuildRecorder(element);
 
+      await guildRecorder.loadAndRegisterGuild(client);
       await guildRecorder.registerChannelsStock();
       await guildRecorder.registerChannels();
       await guildRecorder.updateChannels();
       await guildRecorder.deleteChannels();
+    }
+  }
 
-      discordClient.destroy();
+  async deleteGuilds(client: Client) {
+    const guilds = await DiscordClient.getInstance()
+      .getGuildManager()
+      .getGuilds();
+    const guildsDiscord = client.guilds.cache;
+    for (const guild of guilds) {
+      if (!guildsDiscord.has(guild.guild_uuid)) {
+        logger.info(
+          '[Delete guild] ' + guild.guild_name + ' [' + guild.guild_uuid + ']',
+        );
+        await DiscordClient.getInstance()
+          .getGuildManager()
+          .deleteGuild(guild.guild_uuid);
+      }
     }
   }
 }

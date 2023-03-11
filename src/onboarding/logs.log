@@ -2619,3 +2619,83 @@
 {"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-11T22:13:06.722Z"}
 {"level":"info","message":"[Delete channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-11T22:13:06.722Z"}
 {"level":"debug","message":"[Updating channel name]  : Guild => name : choisir-les-promos | id: 1083350322380021831 | categories: 1083350322380021831","timestamp":"2023-03-11T22:13:07.290Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-11T22:59:53.953Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-11T22:59:54.056Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de Cédric | id: 1062113130232152086","timestamp":"2023-03-11T22:59:54.125Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 22","timestamp":"2023-03-11T22:59:54.159Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-11T22:59:54.404Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-11T22:59:54.404Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-11T22:59:54.452Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-11T22:59:54.452Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-11T22:59:54.455Z"}
+{"level":"info","message":"[Delete categories]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-11T22:59:54.456Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-11T22:59:54.458Z"}
+{"level":"info","message":"[Delete channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-11T22:59:54.458Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-11T23:09:35.567Z"}
+{"level":"error","message":"Code de statut: 404","timestamp":"2023-03-11T23:09:35.586Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-11T23:10:51.203Z"}
+{"level":"error","message":"Code de statut: 404","timestamp":"2023-03-11T23:10:51.233Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-11T23:11:26.511Z"}
+{"level":"info","message":"[Delete guild] undefined [1064635991320690799  ]","timestamp":"2023-03-11T23:11:26.618Z"}
+{"level":"info","message":"GuildManager => Delete guild","timestamp":"2023-03-11T23:11:26.628Z"}
+{"level":"info","message":"[Delete guild] undefined [guild_uuid_test  ]","timestamp":"2023-03-11T23:11:26.629Z"}
+{"level":"info","message":"GuildManager => Delete guild","timestamp":"2023-03-11T23:11:26.634Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-11T23:11:26.638Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de Cédric | id: 1062113130232152086","timestamp":"2023-03-11T23:11:26.699Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 22","timestamp":"2023-03-11T23:11:26.737Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-11T23:11:26.994Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-11T23:11:26.995Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-11T23:11:27.024Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-11T23:11:27.025Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-11T23:11:27.029Z"}
+{"level":"info","message":"[Delete categories]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-11T23:11:27.029Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-11T23:11:27.032Z"}
+{"level":"info","message":"[Delete channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-11T23:11:27.032Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-11T23:13:03.634Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-11T23:13:35.188Z"}
+{"level":"debug","message":"Guilds in database: 3","timestamp":"2023-03-11T23:13:35.220Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-11T23:13:54.997Z"}
+{"level":"debug","message":"Guilds in database: [{\"id\":1,\"guild_uuid\":\"1064635991320690799\",\"guild_name\":\"Serveur de XiliTra\",\"member_size\":9,\"config_id\":null,\"created_at\":\"2023-03-08T10:05:31.506Z\",\"updated_at\":\"2023-03-08T10:05:31.506Z\"},{\"id\":2,\"guild_uuid\":\"1062113130232152086\",\"guild_name\":\"Serveur de Cédric\",\"member_size\":14,\"config_id\":null,\"created_at\":\"2023-03-08T10:05:31.506Z\",\"updated_at\":\"2023-03-08T10:05:31.506Z\"},{\"id\":3,\"guild_uuid\":\"guild_uuid_test\",\"guild_name\":\"guild_name_test\",\"member_size\":1,\"config_id\":null,\"created_at\":\"2023-03-08T10:09:45.066Z\",\"updated_at\":\"2023-03-08T10:09:45.066Z\"}]","timestamp":"2023-03-11T23:13:55.030Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-11T23:15:03.433Z"}
+{"level":"debug","message":"Guilds in database: [{\"id\":1,\"guild_uuid\":\"1064635991320690799\",\"guild_name\":\"Serveur de XiliTra\",\"member_size\":9,\"config_id\":null,\"created_at\":\"2023-03-08T10:05:31.506Z\",\"updated_at\":\"2023-03-08T10:05:31.506Z\"},{\"id\":2,\"guild_uuid\":\"1062113130232152086\",\"guild_name\":\"Serveur de Cédric\",\"member_size\":14,\"config_id\":null,\"created_at\":\"2023-03-08T10:05:31.506Z\",\"updated_at\":\"2023-03-08T10:05:31.506Z\"},{\"id\":3,\"guild_uuid\":\"guild_uuid_test\",\"guild_name\":\"guild_name_test\",\"member_size\":1,\"config_id\":null,\"created_at\":\"2023-03-08T10:09:45.066Z\",\"updated_at\":\"2023-03-08T10:09:45.066Z\"}]","timestamp":"2023-03-11T23:15:03.449Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-11T23:22:22.424Z"}
+{"level":"info","message":"[Delete guild] Serveur de XiliTra [1064635991320690799]","timestamp":"2023-03-11T23:22:22.469Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-11T23:22:22.509Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-11T23:22:22.509Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sat, 11 Mar 2023 23:22:22 GMT\nconnection: close","timestamp":"2023-03-11T23:22:22.510Z"}
+{"level":"info","message":"GuildManager => Delete guild","timestamp":"2023-03-11T23:22:22.510Z"}
+{"level":"info","message":"[Delete guild] guild_name_test [guild_uuid_test]","timestamp":"2023-03-11T23:22:22.510Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-11T23:22:22.518Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-11T23:22:22.519Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sat, 11 Mar 2023 23:22:22 GMT\nconnection: close","timestamp":"2023-03-11T23:22:22.519Z"}
+{"level":"info","message":"GuildManager => Delete guild","timestamp":"2023-03-11T23:22:22.519Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-11T23:22:22.522Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de Cédric | id: 1062113130232152086","timestamp":"2023-03-11T23:22:22.560Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 22","timestamp":"2023-03-11T23:22:22.579Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-11T23:22:22.791Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-11T23:22:22.792Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-11T23:22:22.819Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-11T23:22:22.819Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-11T23:22:22.823Z"}
+{"level":"info","message":"[Delete categories]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-11T23:22:22.823Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-11T23:22:22.825Z"}
+{"level":"info","message":"[Delete channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-11T23:22:22.826Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-11T23:24:29.542Z"}
+{"level":"info","message":"[Delete guild] Serveur de XiliTra [1064635991320690799]","timestamp":"2023-03-11T23:24:29.645Z"}
+{"level":"info","message":"GuildManager => Delete guild","timestamp":"2023-03-11T23:24:29.675Z"}
+{"level":"info","message":"[Delete guild] guild_name_test [guild_uuid_test]","timestamp":"2023-03-11T23:24:29.676Z"}
+{"level":"info","message":"GuildManager => Delete guild","timestamp":"2023-03-11T23:24:29.745Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-11T23:24:29.749Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de Cédric | id: 1062113130232152086","timestamp":"2023-03-11T23:24:29.808Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 22","timestamp":"2023-03-11T23:24:29.846Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-11T23:24:30.111Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-11T23:24:30.112Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-11T23:24:30.141Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-11T23:24:30.141Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-11T23:24:30.144Z"}
+{"level":"info","message":"[Delete categories]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-11T23:24:30.145Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-11T23:24:30.147Z"}
+{"level":"info","message":"[Delete channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-11T23:24:30.147Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-11T23:27:12.389Z"}
+{"level":"info","message":"[Delete guild] Serveur de Cédric [1062113130232152086]","timestamp":"2023-03-11T23:27:12.422Z"}
+{"level":"info","message":"GuildManager => Delete guild","timestamp":"2023-03-11T23:27:12.508Z"}
