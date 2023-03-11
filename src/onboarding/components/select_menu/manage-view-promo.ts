@@ -1,12 +1,18 @@
-import { StringSelectMenuBuilder, StringSelectMenuInteraction, StringSelectMenuOptionBuilder } from "discord.js";
+import { APIBaseComponent, ComponentBuilder, ComponentType, StringSelectMenuBuilder, StringSelectMenuInteraction, StringSelectMenuOptionBuilder } from "discord.js";
 import { getUserRolesByInteraction } from "../../utils/user";
+import CustomComponent from "../CustomComponent";
 
 
-export default {
-  datas: new Map<String, StringSelectMenuBuilder>(),
-  data: new StringSelectMenuBuilder(),
+export default class ManagePromoViewMenu extends CustomComponent {
+  protected customId: string = "";
+  protected component: StringSelectMenuBuilder = new StringSelectMenuBuilder();
+  protected data: any = {};
+
+
   async execute(interaction: StringSelectMenuInteraction) {
-    const select_menu = this.datas.get(interaction.customId);
+    await interaction.reply('temp');
+    /*
+    const select_menu = this.data.get(interaction.customId);
     const selected_values = interaction.values;
     const user_role_manager = interaction.guild?.members.resolve(interaction.user.id)?.roles;
     for (const option of select_menu?.options!) {
@@ -23,7 +29,7 @@ export default {
         await interaction.deleteReply();
       } catch { }
     }, 2000);
-  },
+  }
   async build(course_name: string, associated_roles: any[]) {
     this.data = new StringSelectMenuBuilder();
     this.data.setPlaceholder(course_name);
@@ -38,6 +44,7 @@ export default {
       return;
     this.data.setMinValues(0);
     this.data.setMaxValues(this.data.options.length >= 25 ? 20 : this.data.options.length);
-    this.datas.set(this.data.data.custom_id!, this.data);
+    this.data.set(this.data.data.custom_id!, this.data);
+    */
   }
 }

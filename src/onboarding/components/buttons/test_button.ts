@@ -1,15 +1,17 @@
-import { ActionRowBuilder, ButtonBuilder, ButtonStyle, CommandInteraction, StringSelectMenuBuilder, StringSelectMenuInteraction, StringSelectMenuOptionBuilder } from "discord.js";
-import { ProcedureManager } from "../../utils/procedures/ProcedureManager";
-import { getUserRolesByInteraction } from "../../utils/user";
-import test_buttontwo from "../buttons/test_button2";
+import { ButtonBuilder, ButtonInteraction, ButtonStyle, ComponentBuilder, StringSelectMenuInteraction } from "discord.js";
+import CustomComponent from "../CustomComponent";
 
-export default {
+export default class TestButton extends CustomComponent {
 
-  data: new ButtonBuilder()
-  .setCustomId('test-b')
-  .setStyle(ButtonStyle.Success)
-  .setLabel("Je suis un test qui doit imperativement réussir"),
-  async execute(interaction: StringSelectMenuInteraction) {
-    await interaction.reply({components: [new ActionRowBuilder<ButtonBuilder>().addComponents(test_buttontwo.data)]});
+  protected data: any;
+  protected customId: string = "test-button";
+  protected component: ComponentBuilder = new ButtonBuilder()
+    .setCustomId(this.customId)
+    .setStyle(ButtonStyle.Success)
+    .setLabel("Bonjour toi")
+
+  async execute(interaction: ButtonInteraction) {
+    console.log("Oui");
+    await interaction.reply('Oui');
   }
 }
