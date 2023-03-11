@@ -1,7 +1,7 @@
 import { Client, Events, GatewayIntentBits, Interaction } from "discord.js";
 import EventEmitter from "events";
 import * as dotenv from "dotenv";
-import { ClientManager } from "./utils/client_manager";
+import { ClientManager } from "./utils/client-manager";
 
 dotenv.config();
 process.setMaxListeners(0);

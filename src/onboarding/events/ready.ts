@@ -2,7 +2,7 @@ import { Events } from "discord.js";
 import { DiscordClient } from "../client";
 import { Guild, IGuild } from "../guilds/guild";
 import { GuildsManager } from "../guilds/guilds-manager";
-import { ClientManager } from "../utils/client_manager";
+import { ClientManager } from "../utils/client-manager";
 import DiscordEvent from "./DiscordEvent";
 
 export default class ReadyEvent extends DiscordEvent {

@@ -29,7 +29,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const discord_js_1 = require("discord.js");
 const events_1 = __importDefault(require("events"));
 const dotenv = __importStar(require("dotenv"));
-const client_manager_1 = require("./utils/client_manager");
+const client_manager_1 = require("./utils/client-manager");
 dotenv.config();
 process.setMaxListeners(0);
 events_1.default.setMaxListeners(0);

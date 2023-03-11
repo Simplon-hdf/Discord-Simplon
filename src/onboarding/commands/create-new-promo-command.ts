@@ -1,5 +1,5 @@
 import { ActionRowBuilder, ButtonBuilder, CommandInteraction, Interaction, SlashCommandBuilder } from "discord.js";
-import { ClientManager } from "../utils/client_manager";
+import { ClientManager } from "../utils/client-manager";
 import { SlashCommand } from "./SlashCommand";
 
 export default class CreateNewPromoCommand extends SlashCommand {

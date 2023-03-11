@@ -4,7 +4,7 @@ import { HttpUtils } from "../utils/http";
 import { Procedure } from "../utils/procedures/procedure";
 import { ProcedureManager } from "../utils/procedures/ProcedureManager";
 import { Routes } from "../utils/Routes";
-import { ClientManager } from "../utils/client_manager";
+import { ClientManager } from "../utils/client-manager";
 import { SlashCommand } from "./SlashCommand";
 
 export default class CreatePromoSelectorMenuCommand extends SlashCommand {

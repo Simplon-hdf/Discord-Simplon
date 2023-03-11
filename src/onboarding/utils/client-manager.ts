@@ -2,9 +2,9 @@ import { Client, Events } from "discord.js";
 import { SlashCommand } from "../commands/SlashCommand";
 import CustomComponent from "../components/CustomComponent";
 import DiscordEvent from "../events/DiscordEvent";
-import command_handler from "../handlers/command_handler";
-import components_handler from "../handlers/components_handler";
-import event_handler from "../handlers/event_handler";
+import command_handler from "../handlers/command-handler";
+import components_handler from "../handlers/components-handler";
+import event_handler from "../handlers/event-handler";
 import { ProcedureManager } from "./procedures/ProcedureManager";
 
 export class ClientManager {

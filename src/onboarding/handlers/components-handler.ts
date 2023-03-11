@@ -2,7 +2,7 @@ import * as fs from "fs";
 import * as path from 'path';
 import * as dotenv from "dotenv";
 import CustomComponent from "../components/CustomComponent";
-import { ClientManager } from "../utils/client_manager";
+import { ClientManager } from "../utils/client-manager";
 
 export default async () => {
   dotenv.config();

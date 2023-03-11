@@ -2,7 +2,7 @@ import { REST, Routes, Collection, Client } from "discord.js";
 import * as fs from "fs";
 import * as path from 'path';
 import * as dotenv from "dotenv";
-import { ClientManager } from "../utils/client_manager";
+import { ClientManager } from "../utils/client-manager";
 
 export default async (discord_token: any, discord_client_id: any) => {
   dotenv.config();
