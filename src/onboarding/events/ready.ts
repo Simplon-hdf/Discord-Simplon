@@ -11,7 +11,7 @@ import { User } from '../users/user';
 import EventEmitter from 'events';
 import { RedisManager } from '../utils/redis-manager';
 import { RedisRoutes } from '../utils/routes/redis-routes';
-import DiscordEvent from './DiscordEvent';
+import DiscordEvent from './discord-event';
 import { ClientManager } from '../utils/client-manager';
 import { GuildRecorder } from '../guilds/guild-recorder';
 

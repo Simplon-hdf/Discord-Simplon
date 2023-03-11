@@ -1,7 +1,7 @@
 import { Events, Interaction } from 'discord.js';
 import logger from '../utils/logger';
 import { DiscordClient } from '../client';
-import DiscordEvent from './DiscordEvent';
+import DiscordEvent from './discord-event';
 
 export default class ChannelCreateEvent extends DiscordEvent {
   protected data: any;

@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import DiscordEvent from '../events/DiscordEvent';
+import DiscordEvent from '../events/discord-event';
 import { ClientManager } from '../utils/client-manager';
 
 export default async () => {

@@ -2595,3 +2595,27 @@
 {"level":"info","message":"[Registering category] Register channels stock category","timestamp":"2023-03-10T21:40:13.271Z"}
 {"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083866928944255006 | categories: 1064635991320690799","timestamp":"2023-03-10T21:40:13.464Z"}
 {"level":"info","message":"Ready! Logged in as Onboarding-Bot#3018","timestamp":"2023-03-11T15:42:00.816Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-11T22:13:05.446Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-11T22:13:05.924Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de Cédric | id: 1062113130232152086","timestamp":"2023-03-11T22:13:06.043Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 22","timestamp":"2023-03-11T22:13:06.101Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-11T22:13:06.465Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-11T22:13:06.465Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-11T22:13:06.629Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-11T22:13:06.629Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-11T22:13:06.633Z"}
+{"level":"info","message":"[Delete categories]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-11T22:13:06.634Z"}
+{"level":"info","message":"GuildManager => Load guild : 1062113130232152086\n","timestamp":"2023-03-11T22:13:06.636Z"}
+{"level":"info","message":"[Delete channels]  : Guild => name : Serveur de Cédric | id: 1062113130232152086 | channels: 0","timestamp":"2023-03-11T22:13:06.636Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-11T22:13:06.638Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799","timestamp":"2023-03-11T22:13:06.640Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-11T22:13:06.654Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-11T22:13:06.714Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-11T22:13:06.714Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-11T22:13:06.717Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-11T22:13:06.717Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-11T22:13:06.719Z"}
+{"level":"info","message":"[Delete categories]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-11T22:13:06.720Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-11T22:13:06.722Z"}
+{"level":"info","message":"[Delete channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-11T22:13:06.722Z"}
+{"level":"debug","message":"[Updating channel name]  : Guild => name : choisir-les-promos | id: 1083350322380021831 | categories: 1083350322380021831","timestamp":"2023-03-11T22:13:07.290Z"}

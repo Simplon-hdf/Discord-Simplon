@@ -99,7 +99,7 @@ export class Promo {
     this._trainersIds.remove(id);
   }
 
-  get learnersIds(): List<number> {
+  getLearnersIds(): List<number> {
     return this._learnersIds;
   }
 

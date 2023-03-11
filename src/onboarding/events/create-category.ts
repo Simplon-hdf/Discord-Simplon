@@ -3,7 +3,7 @@ import logger from '../utils/logger';
 import { DiscordClient } from '../client';
 import { RedisManager } from '../utils/redis-manager';
 import { RedisRoutes } from '../utils/routes/redis-routes';
-import DiscordEvent from './DiscordEvent';
+import DiscordEvent from './discord-event';
 
 export default class CategoryCreateEvent extends DiscordEvent {
   protected data: any;
