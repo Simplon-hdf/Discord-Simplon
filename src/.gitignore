@@ -4,3 +4,9 @@ package-lock.json
 build/
 
 onboarding/.env
+
+.env
+onboarding/dist
+onboarding/dist/commands
+onboarding/dist/events
+onboarding/dist/handlers
