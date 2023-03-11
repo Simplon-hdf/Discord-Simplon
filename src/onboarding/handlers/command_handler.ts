@@ -4,10 +4,8 @@ import * as path from 'path';
 import * as dotenv from "dotenv";
 import { UtilsManager } from "../utils/UtilsManager";
 
-export default async (discord_token?: any, discord_client_id?: any) => {
+export default async (discord_token: any, discord_client_id: any) => {
   dotenv.config();
-
-  if (!discord_token || !discord_client_id) throw new Error('Discord id or token is undefined');
 
   const commandFiles = getAllFiles('./build/commands/');
 
@@ -26,7 +24,7 @@ export default async (discord_token?: any, discord_client_id?: any) => {
   }
 
   for (const file of commandFiles) {
-    if ((file as string).includes("SlashCommand"))
+    if (file.includes("SlashCommand"))
       continue;
     try {
       UtilsManager.add_command(new (await import(`../${file}`)).default); // Link cmd name to complete module
