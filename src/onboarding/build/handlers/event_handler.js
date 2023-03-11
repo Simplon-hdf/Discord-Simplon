@@ -25,7 +25,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs = __importStar(require("fs"));
 const path = __importStar(require("path"));
-const UtilsManager_1 = require("../utils/UtilsManager");
+const client_manager_1 = require("../utils/client_manager");
 exports.default = async () => {
     var _a;
     const eventFiles = getAllFiles('./build/events/');
@@ -52,10 +52,10 @@ exports.default = async () => {
         try {
             const event = (new (await (_a = `../${file}`, Promise.resolve().then(() => __importStar(require(_a))))).default);
             if (event.get_method() == 'once')
-                UtilsManager_1.UtilsManager.get_client().once(event.get_type(), () => event.execute());
+                client_manager_1.ClientManager.get_client().once(event.get_type(), () => event.execute());
             else
-                UtilsManager_1.UtilsManager.get_client().on(event.get_type(), () => event.execute());
-            UtilsManager_1.UtilsManager.add_event(event);
+                client_manager_1.ClientManager.get_client().on(event.get_type(), () => event.execute());
+            client_manager_1.ClientManager.add_event(event);
         }
         catch {
             console.log(`${file} command can't be load (maybe it's not a constructor)`);

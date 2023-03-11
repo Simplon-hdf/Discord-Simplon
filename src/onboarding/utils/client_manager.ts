@@ -7,7 +7,7 @@ import components_handler from "../handlers/components_handler";
 import event_handler from "../handlers/event_handler";
 import { ProcedureManager } from "./procedures/ProcedureManager";
 
-export class UtilsManager {
+export class ClientManager {
 
   private static _client: Client;
   private static _commands: Map<String, SlashCommand> = new Map<String, SlashCommand>();

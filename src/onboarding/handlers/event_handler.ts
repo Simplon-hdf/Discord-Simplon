@@ -1,7 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
 import DiscordEvent from "../events/DiscordEvent";
-import { UtilsManager } from "../utils/UtilsManager";
+import { ClientManager } from "../utils/client_manager";
 
 export default async () => {
 
@@ -26,10 +26,10 @@ export default async () => {
     try {
       const event: DiscordEvent = (new (await import(`../${file}`)).default);
       if (event.get_method() == 'once')
-        UtilsManager.get_client().once(event.get_type() as any, () => event.execute());
+        ClientManager.get_client().once(event.get_type() as any, () => event.execute());
       else
-        UtilsManager.get_client().on(event.get_type() as any, () => event.execute());
-      UtilsManager.add_event(event);
+        ClientManager.get_client().on(event.get_type() as any, () => event.execute());
+      ClientManager.add_event(event);
     } catch {
       console.log(`${file} command can't be load (maybe it's not a constructor)`);
     }

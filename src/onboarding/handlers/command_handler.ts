@@ -2,7 +2,7 @@ import { REST, Routes, Collection, Client } from "discord.js";
 import * as fs from "fs";
 import * as path from 'path';
 import * as dotenv from "dotenv";
-import { UtilsManager } from "../utils/UtilsManager";
+import { ClientManager } from "../utils/client_manager";
 
 export default async (discord_token: any, discord_client_id: any) => {
   dotenv.config();
@@ -27,7 +27,7 @@ export default async (discord_token: any, discord_client_id: any) => {
     if (file.includes("SlashCommand"))
       continue;
     try {
-      UtilsManager.add_command(new (await import(`../${file}`)).default); // Link cmd name to complete module
+      ClientManager.add_command(new (await import(`../${file}`)).default); // Link cmd name to complete module
     } catch {
       console.log(`${file} command can't be load (must because it's not a constructor)`);
     }
@@ -38,7 +38,7 @@ export default async (discord_token: any, discord_client_id: any) => {
     try {
       console.log('Started refreshing application (/) commands.');
 
-      const serialized_commands = Array.from(UtilsManager.get_commands().values())
+      const serialized_commands = Array.from(ClientManager.get_commands().values())
         .map(slash_command => slash_command.get_data().toJSON());
       await new REST({ version: '10' }).setToken(discord_token).put(Routes.applicationCommands(discord_client_id), { body: serialized_commands }); //Logging commands on RESTAPI (for each values in commands, get data.JSON() to register it
 

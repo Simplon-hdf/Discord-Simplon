@@ -1,7 +1,4 @@
-import { APIBaseComponent, CommandInteraction, ComponentBuilder, ComponentType, StringSelectMenuBuilder, StringSelectMenuInteraction, StringSelectMenuOptionBuilder } from "discord.js";
-import { ProcedureManager } from "../../utils/procedures/ProcedureManager";
-import { getUserRolesByInteraction } from "../../utils/user";
-import { UtilsManager } from "../../utils/UtilsManager";
+import { StringSelectMenuBuilder, StringSelectMenuInteraction, StringSelectMenuOptionBuilder } from "discord.js";
 import CustomComponent from "../CustomComponent";
 
 

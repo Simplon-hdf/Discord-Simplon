@@ -4,7 +4,7 @@ import { HttpUtils } from "../utils/http";
 import { Procedure } from "../utils/procedures/procedure";
 import { ProcedureManager } from "../utils/procedures/ProcedureManager";
 import { Routes } from "../utils/Routes";
-import { UtilsManager } from "../utils/UtilsManager";
+import { ClientManager } from "../utils/client_manager";
 import { SlashCommand } from "./SlashCommand";
 
 export default class CreatePromoSelectorMenuCommand extends SlashCommand {
@@ -30,7 +30,7 @@ export default class CreatePromoSelectorMenuCommand extends SlashCommand {
       select_menu.build(course['course_name'], associated_roles);
       if (select_menu_component.options.length == 0)
         break;
-      UtilsManager.add_component(select_menu);
+      ClientManager.add_component(select_menu);
       components.push(new ActionRowBuilder<StringSelectMenuBuilder>().addComponents(select_menu_component));
     }
     

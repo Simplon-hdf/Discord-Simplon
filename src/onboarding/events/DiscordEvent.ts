@@ -1,5 +1,4 @@
 import { Events } from "discord.js";
-import { UtilsManager } from "../utils/UtilsManager";
 
 export default abstract class DiscordEvent {
 

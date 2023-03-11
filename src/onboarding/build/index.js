@@ -29,20 +29,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const discord_js_1 = require("discord.js");
 const events_1 = __importDefault(require("events"));
 const dotenv = __importStar(require("dotenv"));
-const UtilsManager_1 = require("./utils/UtilsManager");
+const client_manager_1 = require("./utils/client_manager");
 dotenv.config();
 process.setMaxListeners(0);
 events_1.default.setMaxListeners(0);
 const DISCORD_TOKEN = process.env.DISCORD_TOKEN;
 const DISCORD_ID = process.env.DISCORD_ID;
 const client = new discord_js_1.Client({ intents: [discord_js_1.GatewayIntentBits.Guilds, discord_js_1.GatewayIntentBits.DirectMessages, discord_js_1.GatewayIntentBits.GuildMessages, discord_js_1.GatewayIntentBits.GuildMembers, discord_js_1.GatewayIntentBits.GuildInvites] });
-UtilsManager_1.UtilsManager.init(client, DISCORD_TOKEN, DISCORD_ID);
+client_manager_1.ClientManager.init(client, DISCORD_TOKEN, DISCORD_ID);
 client.on(discord_js_1.Events.InteractionCreate, async (interaction) => {
     if (interaction.isChatInputCommand()) {
-        UtilsManager_1.UtilsManager.get_command(interaction['commandName'])?.execute(interaction);
+        client_manager_1.ClientManager.get_command(interaction['commandName'])?.execute(interaction);
     }
     else {
-        UtilsManager_1.UtilsManager.get_component(interaction['customId'])?.execute(interaction);
+        client_manager_1.ClientManager.get_component(interaction['customId'])?.execute(interaction);
     }
 });
 client.login(DISCORD_TOKEN);

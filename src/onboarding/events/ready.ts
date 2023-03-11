@@ -2,7 +2,7 @@ import { Events } from "discord.js";
 import { DiscordClient } from "../client";
 import { Guild, IGuild } from "../guilds/guild";
 import { GuildsManager } from "../guilds/guilds-manager";
-import { UtilsManager } from "../utils/UtilsManager";
+import { ClientManager } from "../utils/client_manager";
 import DiscordEvent from "./DiscordEvent";
 
 export default class ReadyEvent extends DiscordEvent {
@@ -11,10 +11,10 @@ export default class ReadyEvent extends DiscordEvent {
   protected method: string = 'once';
 
   execute(): void {
-    const client = UtilsManager.get_client();
+    const client = ClientManager.get_client();
     console.info('Ready! Logged in as ' + client.user?.tag);
     client.guilds.cache.forEach(async (element) => {
-      UtilsManager.add_procedureManager(element.id);
+      ClientManager.add_procedureManager(element.id);
       const discordClient: DiscordClient = DiscordClient.getInstance();
       const guildManager: GuildsManager = discordClient.getGuildManager();
 
