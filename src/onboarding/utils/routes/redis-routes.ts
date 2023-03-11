@@ -1,3 +1,0 @@
-export enum RedisRoutes {
-  LAST_CREATED_CATEGORY = 'LAST_CREATED_CATEGORY',
-}
