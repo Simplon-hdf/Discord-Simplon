@@ -1,15 +1,25 @@
 import {
+  APIBaseComponent,
+  ComponentBuilder,
+  ComponentType,
+  ModalBuilder,
   StringSelectMenuBuilder,
   StringSelectMenuInteraction,
 } from 'discord.js';
 import { DiscordClient } from '../../../client';
+import { SlashCommand } from '../../../commands/SlashCommand';
 import logger from '../../../utils/logger';
+import CustomComponent from '../../CustomComponent';
 
-export default {
-  data: new StringSelectMenuBuilder()
+export default class SelectConcernedPole extends CustomComponent {
+  
+  protected customId: string = "";
+  protected data: any;
+  protected component: ComponentBuilder = new StringSelectMenuBuilder()
     .setCustomId('selectConcernedPole')
-    .setPlaceholder('Veuillez sélectionner une réponse'),
-  execute: async (interaction: StringSelectMenuInteraction) => {
+    .setPlaceholder('Veuillez sélectionner une réponse')
+
+  async execute (interaction: StringSelectMenuInteraction) {
     const client = DiscordClient.getInstance(interaction.user.id);
 
     const course = client.getCoursesManager().getCourse();
@@ -18,5 +28,5 @@ export default {
       content: interaction.values.toString(),
       ephemeral: true,
     });
-  },
+  }
 };

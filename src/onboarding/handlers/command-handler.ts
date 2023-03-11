@@ -14,7 +14,7 @@ export default async (discord_token: any, discord_client_id: any) => {
       const files = fs.readdirSync(dirPath);
       files.forEach((file) => {
         if (fs.statSync(dirPath + "/" + file).isDirectory()) { arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles); }
-        else { arrayOfFiles.push(path.join("commands/", file)); }
+        else { arrayOfFiles.push(path.join(dirPath, '/', file)); }
       });
     } catch (error) {
       console.log(error);
@@ -26,8 +26,8 @@ export default async (discord_token: any, discord_client_id: any) => {
     if (file.includes("SlashCommand"))
       continue;
     try {
-      ClientManager.add_command(new (await import(`../${file}`)).default); // Link cmd name to complete module
-    } catch {
+      ClientManager.add_command(new (await import(`../../${file}`)).default); // Link cmd name to complete module
+    } catch (error) {
       console.log(`${file} command can't be load (must because it's not a constructor)`);
     }
   }

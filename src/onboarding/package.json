@@ -20,6 +20,7 @@
     "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.8.4",
+    "redis": "^4.6.5",
     "winston": "^3.8.2",
     "yaml": "^2.2.1"
   },

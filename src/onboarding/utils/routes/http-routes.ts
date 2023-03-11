@@ -18,4 +18,8 @@ export enum HttpRoutes {
   GET_USER_BY_GUILD = '/api/users/guilds/:uuid',
   GET_USER = '/api/users/:uuid',
   DELETE_USER = '/api/users/delete/',
+  GET_COURSES_BY_GUILD_UUID = '/api/courses/guilds/:uuid',
+  GET_ONGOING_PROMOS_BY_GUILD_UUID = '/api/promo/guild/:uuid/state/true',
+  GET_ROLES_BY_GUILD_UUID = '/api/roles/guilds/:uuid',
+  GET_PROMOS_BY_GUILD_UUID = '/api/promo/guild/:uuid'
 }

@@ -5,23 +5,26 @@ import {
   SlashCommandBuilder,
 } from 'discord.js';
 import EmbedMessage from '../../embeds/embed-message';
-import coursesCreation from '../../components/buttons/courses/courses-creation';
+import CourseCreationButton from '../../components/buttons/courses/courses-creation';
+import { SlashCommand } from '../SlashCommand';
 
-export default {
-  data: new SlashCommandBuilder()
+export default class CreateInterfaceCommand extends SlashCommand {
+
+  protected data = new SlashCommandBuilder()
     .setName('config')
     .setDescription("Permet d'ajouter les interfaces de configuration")
     .addSubcommand((subcommand) => {
       return subcommand
         .setName('formation')
         .setDescription("Permet de creer l'interface de creation de formation");
-    }),
+    });
+  
   async execute(interaction: ChatInputCommandInteraction) {
     if (!interaction.isCommand()) return;
 
     if (interaction.options.getSubcommand() === 'formation') {
       const component = new ActionRowBuilder<ButtonBuilder>().addComponents(
-        coursesCreation.data,
+        new CourseCreationButton().get_component().data as ButtonBuilder,
       );
 
       const embed = new EmbedMessage(
@@ -33,5 +36,5 @@ export default {
 
       await interaction.reply({ embeds: [embed], components: [component] });
     }
-  },
+  }
 };

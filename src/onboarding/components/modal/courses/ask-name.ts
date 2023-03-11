@@ -1,24 +1,18 @@
-import {
-  ActionRowBuilder,
-  ButtonBuilder,
-  ModalBuilder,
-  ModalSubmitInteraction,
-  StringSelectMenuBuilder,
-  TextInputBuilder,
-  TextInputStyle,
-} from 'discord.js';
+import { ActionRowBuilder, ModalBuilder, ModalSubmitInteraction, StringSelectMenuBuilder, TextInputBuilder, TextInputStyle } from 'discord.js';
 import { HttpUtils } from '../../../utils/http';
 import { HttpRoutes } from '../../../utils/routes/http-routes';
 import logger from '../../../utils/logger';
-import CoursesCreation from '../../buttons/courses/courses-creation';
 import { Course } from '../../../courses/course';
-import { CategoryTemplate } from '../../../channels/category/category-template';
 import { DiscordClient } from '../../../client';
 import EmbedMessage from '../../../embeds/embed-message';
-import selectChannels from '../../select-menu/courses/select-channels';
+import SelectConcernedPole from '../../select-menu/courses/select-channels';
+import CustomComponent from '../../CustomComponent';
 
-export default {
-  data: new ModalBuilder()
+export default class AskNameModal extends CustomComponent {
+  protected customId: string = "courses-ask-name";
+  protected data: any;
+
+  protected component = new ModalBuilder()
     .setTitle('Nom de la formation')
     .setCustomId('courses-ask-name')
     .addComponents(
@@ -30,8 +24,8 @@ export default {
           .setStyle(TextInputStyle.Short)
           .setRequired(true),
       ),
-    ),
-  execute: async (interaction: ModalSubmitInteraction) => {
+    )
+  async execute (interaction: ModalSubmitInteraction) {
     const name = interaction.fields.getTextInputValue('courses-name');
     const guild_uuid = interaction.guildId;
 
@@ -71,7 +65,7 @@ export default {
     );
 
     const menu = new ActionRowBuilder<StringSelectMenuBuilder>().addComponents(
-      selectChannels.data.setOptions({
+      (new SelectConcernedPole().get_component().data as StringSelectMenuBuilder).setOptions({
         label: 'test',
         value: 'test',
         description: 'test',
@@ -83,5 +77,5 @@ export default {
       components: [menu],
       ephemeral: true,
     });
-  },
+  }
 };

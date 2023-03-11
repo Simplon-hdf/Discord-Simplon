@@ -11,11 +11,16 @@ import { User } from '../users/user';
 import EventEmitter from 'events';
 import { RedisManager } from '../utils/redis-manager';
 import { RedisRoutes } from '../utils/routes/redis-routes';
+import DiscordEvent from './DiscordEvent';
+import { ClientManager } from '../utils/client-manager';
 
-export default {
-  name: Events.ClientReady,
-  once: true,
-  execute(client: Client) {
+export default class ReadyEvent extends DiscordEvent{
+  protected data: any;
+  protected type: Events = Events.ClientReady;
+  protected method: string = 'once';
+
+  async execute() {
+    const client = ClientManager.get_client();
     logger.info('Ready! Logged in as ' + client.user?.tag);
     RedisManager.getInstance().connect();
     client.guilds.cache.forEach(async (element) => {
@@ -52,7 +57,7 @@ export default {
 
       discordClient.destroy();
     });
-  },
+  }
 };
 
 /**

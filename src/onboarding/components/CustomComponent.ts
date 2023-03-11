@@ -1,10 +1,10 @@
-import { ComponentBuilder, Interaction } from "discord.js";
+import { ComponentBuilder, Interaction, ModalBuilder } from "discord.js";
 
 export default abstract class CustomComponent {
 
   protected abstract customId: string;
   protected abstract data: any; 
-  protected abstract component: ComponentBuilder;
+  protected abstract component: ComponentBuilder | ModalBuilder;
 
   public abstract execute(interaction: Interaction): void;
  
@@ -16,7 +16,7 @@ export default abstract class CustomComponent {
     return this.data;
   }
 
-  public get_component(): ComponentBuilder {
+  public get_component(): ComponentBuilder | ModalBuilder {
     return this.component;
   }
 

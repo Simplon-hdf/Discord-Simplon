@@ -3,7 +3,7 @@ import ManagePromoViewMenu from "../components/select_menu/manage-view-promo";
 import { HttpUtils } from "../utils/http";
 import { Procedure } from "../utils/procedures/procedure";
 import { ProcedureManager } from "../utils/procedures/ProcedureManager";
-import { Routes } from "../utils/Routes";
+import { HttpRoutes } from "../utils/routes/http-routes";
 import { ClientManager } from "../utils/client-manager";
 import { SlashCommand } from "./SlashCommand";
 
@@ -14,9 +14,9 @@ export default class CreatePromoSelectorMenuCommand extends SlashCommand {
     .setDescription('Cette commande permet de créer une interface servant à selectionner les promos visibiles')
 
   async execute(interaction: CommandInteraction) {
-    const ongoing_promos: any[] = (await new HttpUtils().get(Routes.GET_ONGOING_PROMOS_BY_GUILD_UUID, interaction.guildId as string));
-    const guild_roles: any[] = (await new HttpUtils().get(Routes.GET_ROLES_BY_GUILD_UUID, interaction.guildId as string));
-    const guild_courses: any[] = (await new HttpUtils().get(Routes.GET_COURSES_BY_GUILD_UUID, interaction.guildId as string))['data'];
+    const ongoing_promos: any[] = (await new HttpUtils().get(HttpRoutes.GET_ONGOING_PROMOS_BY_GUILD_UUID, interaction.guildId as string));
+    const guild_roles: any[] = (await new HttpUtils().get(HttpRoutes.GET_ROLES_BY_GUILD_UUID, interaction.guildId as string));
+    const guild_courses: any[] = (await new HttpUtils().get(HttpRoutes.GET_COURSES_BY_GUILD_UUID, interaction.guildId as string))['data'];
     const components: ActionRowBuilder<StringSelectMenuBuilder>[] = [];
     
     for (const course of guild_courses) {
