@@ -9,8 +9,7 @@ export default async (discord_token: any, discord_client_id: any) => {
 
   const commandFiles = getAllFiles('./build/commands/');
 
-  function getAllFiles(dirPath: any, arrayOfFiles?: any) {
-    arrayOfFiles = arrayOfFiles || []
+  function getAllFiles(dirPath: any, arrayOfFiles: any = []) {
     try {
       const files = fs.readdirSync(dirPath);
       files.forEach((file) => {
@@ -32,7 +31,6 @@ export default async (discord_token: any, discord_client_id: any) => {
       console.log(`${file} command can't be load (must because it's not a constructor)`);
     }
   }
-
 
   (async () => {
     try {
