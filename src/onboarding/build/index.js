@@ -29,26 +29,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const discord_js_1 = require("discord.js");
 const events_1 = __importDefault(require("events"));
 const dotenv = __importStar(require("dotenv"));
-const command_handler_1 = __importDefault(require("./handlers/command_handler"));
-const event_handler_1 = __importDefault(require("./handlers/event_handler"));
-const components_handler_1 = __importDefault(require("./handlers/components_handler"));
+const client_manager_1 = require("./utils/client-manager");
 dotenv.config();
 process.setMaxListeners(0);
 events_1.default.setMaxListeners(0);
 const DISCORD_TOKEN = process.env.DISCORD_TOKEN;
 const DISCORD_ID = process.env.DISCORD_ID;
 const client = new discord_js_1.Client({ intents: [discord_js_1.GatewayIntentBits.Guilds, discord_js_1.GatewayIntentBits.DirectMessages, discord_js_1.GatewayIntentBits.GuildMessages, discord_js_1.GatewayIntentBits.GuildMembers, discord_js_1.GatewayIntentBits.GuildInvites] });
-(0, command_handler_1.default)(client, DISCORD_TOKEN, DISCORD_ID);
-(0, event_handler_1.default)(client);
-(0, components_handler_1.default)(client);
+client_manager_1.ClientManager.init(client, DISCORD_TOKEN, DISCORD_ID);
 client.on(discord_js_1.Events.InteractionCreate, async (interaction) => {
-    const parsedClient = client;
     if (interaction.isChatInputCommand()) {
-        parsedClient.commands.get(interaction['commandName']).execute(interaction);
+        client_manager_1.ClientManager.get_command(interaction['commandName'])?.execute(interaction);
     }
     else {
-        const castedInteraction = interaction;
-        parsedClient.components.get(castedInteraction['customId']).execute(interaction);
+        client_manager_1.ClientManager.get_component(interaction['customId'])?.execute(interaction);
     }
 });
 client.login(DISCORD_TOKEN);

@@ -1,15 +1,18 @@
 import { StringSelectMenuBuilder, StringSelectMenuInteraction, StringSelectMenuOptionBuilder } from "discord.js";
-import { getUserRolesByInteraction } from "../../utils/user";
+import CustomComponent from "../CustomComponent";
 
 
-export default {
-  datas: new Map<String, StringSelectMenuBuilder>(),
-  data: new StringSelectMenuBuilder(),
+export default class ManagePromoViewMenu extends CustomComponent {
+  protected customId: string = "";
+  protected component: StringSelectMenuBuilder = new StringSelectMenuBuilder();
+  protected data: any;
+
+
   async execute(interaction: StringSelectMenuInteraction) {
-    const select_menu = this.datas.get(interaction.customId);
+    
     const selected_values = interaction.values;
     const user_role_manager = interaction.guild?.members.resolve(interaction.user.id)?.roles;
-    for (const option of select_menu?.options!) {
+    for (const option of this.component.options!) {
       const option_value: string = option.data.value as string;
       if (selected_values.includes(option_value)) {
         user_role_manager?.add(option_value);
@@ -23,21 +26,22 @@ export default {
         await interaction.deleteReply();
       } catch { }
     }, 2000);
-  },
-  async build(course_name: string, associated_roles: any[]) {
-    this.data = new StringSelectMenuBuilder();
-    this.data.setPlaceholder(course_name);
-    this.data.setCustomId(`course-${course_name}`);
+    
+  }
+  build(course_name: string, associated_roles: any[]) {
+    this.component.setPlaceholder(course_name);
+    this.customId = `course-${course_name}`;
+    this.component.setCustomId(`course-${course_name}`);
     for (const associated_role of associated_roles) {
-      this.data.addOptions(
+      this.component.addOptions(
         new StringSelectMenuOptionBuilder()
           .setLabel(associated_role['role_name'])
           .setValue(associated_role['role_uuid']));
     }
-    if (this.data.options.length == 0)
+    if (this.component.options.length == 0)
       return;
-    this.data.setMinValues(0);
-    this.data.setMaxValues(this.data.options.length >= 25 ? 20 : this.data.options.length);
-    this.datas.set(this.data.data.custom_id!, this.data);
+    this.component.setMinValues(0);
+    this.component.setMaxValues(this.component.options.length >= 25 ? 20 : this.component.options.length);
   }
+
 }
