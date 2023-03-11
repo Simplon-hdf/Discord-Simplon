@@ -9,7 +9,7 @@ export default async (discord_token: any, discord_client_id: any) => {
 
   const commandFiles = getAllFiles('./build/commands/');
 
-  function getAllFiles(dirPath: any, arrayOfFiles: any = []) {
+  function getAllFiles(dirPath: string, arrayOfFiles: string[] = []) {
     try {
       const files = fs.readdirSync(dirPath);
       files.forEach((file) => {

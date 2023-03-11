@@ -10,10 +10,9 @@ export default async () => {
   const componentsFiles: string[] = getAllFiles('./build/components/');
 
   function getAllFiles(dirPath: string, arrayOfFiles: string[] = []) {
-    arrayOfFiles = arrayOfFiles || []
     try {
       const files = fs.readdirSync(dirPath);
-      files.forEach(function (file) {
+      files.forEach((file) => { 
         if (fs.statSync(dirPath + "/" + file).isDirectory()) { arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles); }
         else { arrayOfFiles.push(path.join(dirPath, '/', file)); }
       });
