@@ -1,10 +1,17 @@
-import { CommandInteraction, GuildMember, Interaction, InteractionType } from "discord.js";
+import {
+  CommandInteraction,
+  GuildMember,
+  Interaction,
+  InteractionType,
+} from 'discord.js';
 
 export class Procedure {
-
   private _name: string;
   private _user: GuildMember;
-  private _interactions: Map<Number, Interaction> = new Map<Number, Interaction>();
+  private _interactions: Map<number, Interaction> = new Map<
+    number,
+    Interaction
+  >();
 
   constructor(name: string, interaction: Interaction) {
     this._user = interaction.guild?.members.resolve(interaction.user.id)!;
@@ -18,22 +25,19 @@ export class Procedure {
     this._interactions.set(this._interactions.keys.length, new_interaction);
   }
 
-  async delete_step() {
-
-  }
+  async delete_step() {}
 
   // Getters
 
-  async get_interaction(id: Number): Promise<Interaction | null> {
+  async get_interaction(id: number): Promise<Interaction | null> {
     return this._interactions.get(id) || null;
   }
 
-  async get_user() : Promise<GuildMember> {
+  async get_user(): Promise<GuildMember> {
     return this._user;
   }
 
-  async get_name(): Promise<String> {
+  async get_name(): Promise<string> {
     return this._name;
   }
-
 }

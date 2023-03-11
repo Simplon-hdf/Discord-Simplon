@@ -21,5 +21,5 @@ export enum HttpRoutes {
   GET_COURSES_BY_GUILD_UUID = '/api/courses/guilds/:uuid',
   GET_ONGOING_PROMOS_BY_GUILD_UUID = '/api/promo/guild/:uuid/state/true',
   GET_ROLES_BY_GUILD_UUID = '/api/roles/guilds/:uuid',
-  GET_PROMOS_BY_GUILD_UUID = '/api/promo/guild/:uuid'
+  GET_PROMOS_BY_GUILD_UUID = '/api/promo/guild/:uuid',
 }

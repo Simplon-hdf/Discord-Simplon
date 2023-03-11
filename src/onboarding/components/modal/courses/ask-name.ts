@@ -1,4 +1,11 @@
-import { ActionRowBuilder, ModalBuilder, ModalSubmitInteraction, StringSelectMenuBuilder, TextInputBuilder, TextInputStyle } from 'discord.js';
+import {
+  ActionRowBuilder,
+  ModalBuilder,
+  ModalSubmitInteraction,
+  StringSelectMenuBuilder,
+  TextInputBuilder,
+  TextInputStyle,
+} from 'discord.js';
 import { HttpUtils } from '../../../utils/http';
 import { HttpRoutes } from '../../../utils/routes/http-routes';
 import logger from '../../../utils/logger';
@@ -9,7 +16,7 @@ import SelectConcernedPole from '../../select-menu/courses/select-channels';
 import CustomComponent from '../../CustomComponent';
 
 export default class AskNameModal extends CustomComponent {
-  protected customId: string = "courses-ask-name";
+  protected customId = 'courses-ask-name';
   protected data: any;
 
   protected component = new ModalBuilder()
@@ -24,8 +31,8 @@ export default class AskNameModal extends CustomComponent {
           .setStyle(TextInputStyle.Short)
           .setRequired(true),
       ),
-    )
-  async execute (interaction: ModalSubmitInteraction) {
+    );
+  async execute(interaction: ModalSubmitInteraction) {
     const name = interaction.fields.getTextInputValue('courses-name');
     const guild_uuid = interaction.guildId;
 
@@ -65,7 +72,10 @@ export default class AskNameModal extends CustomComponent {
     );
 
     const menu = new ActionRowBuilder<StringSelectMenuBuilder>().addComponents(
-      (new SelectConcernedPole().get_component().data as StringSelectMenuBuilder).setOptions({
+      (
+        new SelectConcernedPole().get_component()
+          .data as StringSelectMenuBuilder
+      ).setOptions({
         label: 'test',
         value: 'test',
         description: 'test',
@@ -78,4 +88,4 @@ export default class AskNameModal extends CustomComponent {
       ephemeral: true,
     });
   }
-};
+}

@@ -8,10 +8,9 @@ import DiscordEvent from './DiscordEvent';
 export default class CategoryCreateEvent extends DiscordEvent {
   protected data: any;
   protected type: Events = Events.ChannelCreate;
-  protected method: string = 'on';
+  protected method = 'on';
 
-  async execute()
-  {
+  async execute() {
     const id = this.data['channelID'].toString().replace(/[^0-9]/g, '');
     const client = DiscordClient.getInstance().getClient();
     const categoryCached = await RedisManager.getInstance().get(
@@ -20,4 +19,4 @@ export default class CategoryCreateEvent extends DiscordEvent {
 
     logger.debug(categoryCached);
   }
-};
+}

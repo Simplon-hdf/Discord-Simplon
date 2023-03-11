@@ -6,7 +6,7 @@ import DiscordEvent from './DiscordEvent';
 export default class ChannelCreateEvent extends DiscordEvent {
   protected data: any;
   protected type: Events = Events.ChannelCreate;
-  protected method: string = 'on';
+  protected method = 'on';
 
   async execute() {
     logger.debug(typeof this.data['channelID'].toString());
@@ -17,4 +17,4 @@ export default class ChannelCreateEvent extends DiscordEvent {
     //   return;
     // }
   }
-};
+}

@@ -9,7 +9,6 @@ import CourseCreationButton from '../../components/buttons/courses/courses-creat
 import { SlashCommand } from '../SlashCommand';
 
 export default class CreateInterfaceCommand extends SlashCommand {
-
   protected data = new SlashCommandBuilder()
     .setName('config')
     .setDescription("Permet d'ajouter les interfaces de configuration")
@@ -18,7 +17,7 @@ export default class CreateInterfaceCommand extends SlashCommand {
         .setName('formation')
         .setDescription("Permet de creer l'interface de creation de formation");
     });
-  
+
   async execute(interaction: ChatInputCommandInteraction) {
     if (!interaction.isCommand()) return;
 
@@ -37,4 +36,4 @@ export default class CreateInterfaceCommand extends SlashCommand {
       await interaction.reply({ embeds: [embed], components: [component] });
     }
   }
-};
+}

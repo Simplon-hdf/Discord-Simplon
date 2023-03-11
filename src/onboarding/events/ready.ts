@@ -14,17 +14,18 @@ import { RedisRoutes } from '../utils/routes/redis-routes';
 import DiscordEvent from './DiscordEvent';
 import { ClientManager } from '../utils/client-manager';
 
-export default class ReadyEvent extends DiscordEvent{
+export default class ReadyEvent extends DiscordEvent {
   protected data: any;
   protected type: Events = Events.ClientReady;
-  protected method: string = 'once';
+  protected method = 'once';
 
   async execute() {
     const client = ClientManager.get_client();
     logger.info('Ready! Logged in as ' + client.user?.tag);
-    RedisManager.getInstance().connect();
-    client.guilds.cache.forEach(async (element) => {
-      // Récupération de l'instance du bot pour initialiser la guild
+    await RedisManager.getInstance().connect();
+    const guilds = client.guilds.cache;
+
+    for (const element of guilds.values()) {
       const discordClient: DiscordClient = DiscordClient.getInstance(
         element.id,
       );
@@ -56,9 +57,9 @@ export default class ReadyEvent extends DiscordEvent{
       await deleteChannels(element);
 
       discordClient.destroy();
-    });
+    }
   }
-};
+}
 
 /**
  * Enregistre la category de stockage dans la base de données

@@ -12,14 +12,13 @@ import logger from '../../../utils/logger';
 import CustomComponent from '../../CustomComponent';
 
 export default class SelectConcernedPole extends CustomComponent {
-  
-  protected customId: string = "";
+  protected customId = '';
   protected data: any;
   protected component: ComponentBuilder = new StringSelectMenuBuilder()
     .setCustomId('selectConcernedPole')
-    .setPlaceholder('Veuillez sélectionner une réponse')
+    .setPlaceholder('Veuillez sélectionner une réponse');
 
-  async execute (interaction: StringSelectMenuInteraction) {
+  async execute(interaction: StringSelectMenuInteraction) {
     const client = DiscordClient.getInstance(interaction.user.id);
 
     const course = client.getCoursesManager().getCourse();
@@ -29,4 +28,4 @@ export default class SelectConcernedPole extends CustomComponent {
       ephemeral: true,
     });
   }
-};
+}

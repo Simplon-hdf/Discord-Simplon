@@ -1,17 +1,22 @@
-import { ButtonBuilder, ButtonInteraction, ButtonStyle, ComponentBuilder, ModalBuilder } from 'discord.js';
+import {
+  ButtonBuilder,
+  ButtonInteraction,
+  ButtonStyle,
+  ComponentBuilder,
+  ModalBuilder,
+} from 'discord.js';
 import EmbedMessage from '../../../embeds/embed-message';
 import askNameModal from '../../modal/courses/ask-name';
 import logger from '../../../utils/logger';
 import CustomComponent from '../../CustomComponent';
 
 export default class CourseCreationButton extends CustomComponent {
-  
   protected data: any;
-  protected customId: string = 'courses-creation';
+  protected customId = 'courses-creation';
   protected component: ComponentBuilder = new ButtonBuilder()
     .setCustomId('courses-creation')
     .setLabel('Creer une formation')
-    .setStyle(ButtonStyle.Primary)
+    .setStyle(ButtonStyle.Primary);
 
   async execute(interaction: ButtonInteraction) {
     const embed = new EmbedMessage(
@@ -21,10 +26,12 @@ export default class CourseCreationButton extends CustomComponent {
     );
 
     try {
-      await interaction.showModal(new askNameModal().get_component().data as ModalBuilder);
+      await interaction.showModal(
+        new askNameModal().get_component().data as ModalBuilder,
+      );
     } catch (e: any) {
       logger.error(e);
       throw new Error(e.message);
     }
   }
-};
+}
