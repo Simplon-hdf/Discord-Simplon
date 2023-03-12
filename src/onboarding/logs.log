@@ -2699,3 +2699,492 @@
 {"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-11T23:27:12.389Z"}
 {"level":"info","message":"[Delete guild] Serveur de Cédric [1062113130232152086]","timestamp":"2023-03-11T23:27:12.422Z"}
 {"level":"info","message":"GuildManager => Delete guild","timestamp":"2023-03-11T23:27:12.508Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-11T23:36:20.609Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-11T23:37:03.732Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-11T23:37:03.768Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799","timestamp":"2023-03-11T23:37:03.790Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-11T23:37:03.813Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-11T23:38:24.449Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-11T23:38:24.486Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799","timestamp":"2023-03-11T23:38:24.492Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-11T23:38:24.531Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-11T23:38:24.592Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-11T23:38:45.733Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-11T23:38:45.839Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799","timestamp":"2023-03-11T23:38:45.887Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-11T23:38:45.915Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-11T23:39:21.668Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-11T23:39:21.749Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799","timestamp":"2023-03-11T23:39:21.781Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-11T23:39:21.804Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-12T14:03:10.167Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-12T14:03:10.279Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799","timestamp":"2023-03-12T14:03:10.333Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-12T14:03:10.384Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-12T14:15:11.944Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-12T14:15:11.992Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799","timestamp":"2023-03-12T14:15:12.013Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-12T14:15:12.038Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-12T14:15:12.280Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-12T14:15:36.695Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-12T14:15:36.802Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799","timestamp":"2023-03-12T14:15:36.855Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-12T14:15:36.904Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-12T14:16:24.854Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-12T14:16:24.959Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799","timestamp":"2023-03-12T14:16:25.016Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-12T14:16:25.067Z"}
+{"level":"info","message":"[Registering category] Register channels stock category","timestamp":"2023-03-12T14:16:25.328Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-12T14:16:25.367Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-12T14:16:25.368Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:16:25.370Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-12T14:27:57.024Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-12T14:27:57.060Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799","timestamp":"2023-03-12T14:27:57.084Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-12T14:27:57.108Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-12T14:27:57.341Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-12T14:27:57.342Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.344Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.344Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.344Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1084259150214733956 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.345Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.346Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.346Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.347Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083742973017194626 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.347Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.347Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.347Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.348Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083465628398133248 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.348Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.348Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.348Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.349Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : TSSR | id: 1066100416204513280 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.349Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.349Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.349Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.350Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1084480019281219616 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.350Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.351Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.351Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.351Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Blockchain-Vals-P1 | id: 1066076608215130112 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.351Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.351Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.352Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.352Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : catcat | id: 1083732841881415741 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.352Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.352Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.352Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.352Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083463676511670465 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.352Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.353Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.353Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.353Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Template | id: 1064937184727154708 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.354Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.354Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.354Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.355Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : TestCategory | id: 1083731822527127643 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.355Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.355Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.355Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.355Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083731445748604928 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.356Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.356Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.356Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.356Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : wdafSf | id: 1083734216598098000 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.356Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.357Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.357Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.357Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083729543673692250 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.357Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.357Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.358Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.358Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : cacdab | id: 1083734848545501295 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.358Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.358Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.359Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.359Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083470079997526166 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.359Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.360Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.360Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.360Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083450800157753474 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.360Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.361Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.361Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.361Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083866079635439677 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.361Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.361Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.361Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.362Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083730649988481105 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.362Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.362Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.362Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.362Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : test-caatt | id: 1083732382441545809 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.362Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.363Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.363Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.363Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : test-cat | id: 1083732228422516817 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.363Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.363Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.363Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.363Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : fwWFWF | id: 1083865854174838794 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.364Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.364Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.364Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.364Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : CDA | id: 1066098220238905354 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.364Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.364Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.365Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.365Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : AIS | id: 1066098558698274949 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.365Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.365Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.365Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.365Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : settings-promo | id: 1065287658852585572 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.365Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.366Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.366Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.366Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083470247027281991 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.366Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.366Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.366Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.366Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083741358256291952 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.366Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.367Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.367Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.367Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1084258722257326110 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.367Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.367Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.367Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.367Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : r6yjttsgn | id: 1083734634199785472 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.368Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.368Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.368Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.368Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083462460486463589 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.368Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.369Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.369Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.369Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083741662091694201 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.369Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.369Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.369Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.369Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : deawad | id: 1083733857469218826 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.370Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.370Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.370Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.370Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : adwag | id: 1083735047607165018 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.370Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.371Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.371Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.371Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : cda-vals-p1 | id: 1066073454694121614 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.372Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.372Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.372Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.372Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : dwad | id: 1083732989399273623 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.372Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.373Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.373Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.373Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : sdqd | id: 1066096947884204152 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.373Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.373Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.373Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.373Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1084479817266761808 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.373Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.373Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.373Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.374Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : adgaedg | id: 1083741921991729222 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.374Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.374Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.374Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.374Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : p-1 | id: 1066103871006593024 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.374Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.374Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.374Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.374Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083466435910701076 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.374Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.374Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.375Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.375Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1084476686046867556 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.375Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.375Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.375Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.375Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Salons vocaux | id: 1064635992398635119 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.375Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.375Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.375Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.375Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083741537780908072 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.375Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.376Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.376Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.376Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1084259301025136791 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.376Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.376Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.376Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.376Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1084259060750237706 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.376Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.376Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.376Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.376Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083866928944255006 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.376Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.377Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.377Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.377Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : acsCasc | id: 1083742083740876947 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.377Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.377Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.377Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.377Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083741234494976060 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.377Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.377Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.377Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.377Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1084479713348694136 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.377Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.378Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.378Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.378Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083730927366185000 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.378Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.378Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.378Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.378Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Salons textuels | id: 1064635992398635118 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.378Z"}
+{"level":"info","message":"[Registering category] Register channels stock category","timestamp":"2023-03-12T14:27:57.379Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.382Z"}
+{"level":"error","message":"Données de réponse: {\"statusCode\":500,\"message\":\"Internal server error\"}","timestamp":"2023-03-12T14:27:57.382Z"}
+{"level":"error","message":"En-têtes de réponse: \n\nx-powered-by: Express\ncontent-type: application/json; charset=utf-8\ncontent-length: 52\netag: W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\"\ndate: Sun, 12 Mar 2023 14:27:57 GMT\nconnection: close","timestamp":"2023-03-12T14:27:57.382Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1084482921353715722 | categories: 1064635991320690799","timestamp":"2023-03-12T14:27:57.382Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-12T14:27:57.389Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-12T14:27:57.389Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-12T14:27:57.391Z"}
+{"level":"info","message":"[Delete categories]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-12T14:27:57.392Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-12T14:27:57.393Z"}
+{"level":"info","message":"[Delete channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-12T14:27:57.393Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:27:57.634Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-12T14:37:00.981Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-12T14:37:01.018Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-12T14:37:43.068Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-12T14:37:43.104Z"}
+{"level":"debug","message":{"error":"Guild not exist","statusCode":404},"timestamp":"2023-03-12T14:37:43.105Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-12T14:37:54.725Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-12T14:37:54.761Z"}
+{"level":"debug","message":"{\"statusCode\":404,\"error\":\"Guild not exist\"}","timestamp":"2023-03-12T14:37:54.761Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-12T14:39:16.490Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-12T14:39:16.524Z"}
+{"level":"debug","message":"{\"statusCode\":404,\"error\":\"Guild not exist\"}","timestamp":"2023-03-12T14:39:16.524Z"}
+{"level":"info","message":"GuildManager => Register new guild","timestamp":"2023-03-12T14:39:16.823Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-12T14:39:49.498Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-12T14:39:49.535Z"}
+{"level":"debug","message":"{\"statusCode\":200,\"data\":{\"id\":4,\"guild_uuid\":\"1064635991320690799\",\"guild_name\":\"Serveur de XiliTra\",\"member_size\":9,\"config_id\":null,\"created_at\":\"2023-03-12T14:39:16.533Z\",\"updated_at\":\"2023-03-12T14:39:16.533Z\"}}","timestamp":"2023-03-12T14:39:49.536Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799","timestamp":"2023-03-12T14:39:49.572Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-12T14:39:49.621Z"}
+{"level":"info","message":"[Registering category] Register channels stock category","timestamp":"2023-03-12T14:39:49.884Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-12T14:39:49.886Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-12T14:39:49.886Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-12T14:39:49.924Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-12T14:39:49.924Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1084259301025136791 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.953Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : wdafSf | id: 1083734216598098000 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.965Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083729543673692250 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.966Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : cacdab | id: 1083734848545501295 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.966Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083470079997526166 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.967Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083450800157753474 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.968Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : acsCasc | id: 1083742083740876947 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.968Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : sdqd | id: 1066096947884204152 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.968Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083730927366185000 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.969Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : TSSR | id: 1066100416204513280 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.970Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1084480019281219616 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.970Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Blockchain-Vals-P1 | id: 1066076608215130112 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.970Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : catcat | id: 1083732841881415741 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.971Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083463676511670465 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.971Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Template | id: 1064937184727154708 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.971Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : TestCategory | id: 1083731822527127643 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.972Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083731445748604928 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.972Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083866079635439677 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.976Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083741358256291952 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.989Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : r6yjttsgn | id: 1083734634199785472 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.990Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083462460486463589 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.990Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083741662091694201 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.990Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : deawad | id: 1083733857469218826 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.991Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : adwag | id: 1083735047607165018 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.991Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : cda-vals-p1 | id: 1066073454694121614 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.991Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : dwad | id: 1083732989399273623 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.991Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-12T14:39:49.992Z"}
+{"level":"info","message":"[Delete categories]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-12T14:39:49.992Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1084259060750237706 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.993Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083730649988481105 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.993Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1084482921353715722 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.994Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : test-caatt | id: 1083732382441545809 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.994Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : AIS | id: 1066098558698274949 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.994Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : settings-promo | id: 1065287658852585572 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.994Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083470247027281991 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.995Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1084258722257326110 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:49.995Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-12T14:39:49.998Z"}
+{"level":"info","message":"[Delete channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-12T14:39:49.998Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1084479817266761808 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:50.000Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Salons vocaux | id: 1064635992398635119 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:50.013Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083741537780908072 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:50.013Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Salons textuels | id: 1064635992398635118 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:50.013Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : test-cat | id: 1083732228422516817 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:50.013Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : fwWFWF | id: 1083865854174838794 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:50.014Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : CDA | id: 1066098220238905354 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:50.014Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083866928944255006 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:50.014Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : adgaedg | id: 1083741921991729222 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:50.015Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083741234494976060 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:50.015Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : p-1 | id: 1066103871006593024 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:50.015Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1084259150214733956 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:50.015Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083742973017194626 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:50.015Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083466435910701076 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:50.016Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1084479713348694136 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:50.016Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1084476686046867556 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:50.016Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083465628398133248 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:50.016Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1084485910034391211 | categories: 1064635991320690799","timestamp":"2023-03-12T14:39:50.025Z"}
+{"level":"error","message":"Code de statut: 500","timestamp":"2023-03-12T14:39:50.155Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-12T15:13:06.393Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-12T15:13:06.493Z"}
+{"level":"debug","message":"{\"statusCode\":200,\"data\":{\"id\":4,\"guild_uuid\":\"1064635991320690799\",\"guild_name\":\"Serveur de XiliTra\",\"member_size\":9,\"config_id\":null,\"created_at\":\"2023-03-12T14:39:16.533Z\",\"updated_at\":\"2023-03-12T14:39:16.533Z\"}}","timestamp":"2023-03-12T15:13:06.494Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799","timestamp":"2023-03-12T15:13:06.541Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 25","timestamp":"2023-03-12T15:13:06.591Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : acsCasc | id: 1083742083740876947 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.876Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083465628398133248 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.877Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : TSSR | id: 1066100416204513280 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.878Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1084480019281219616 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.879Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1084259301025136791 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.880Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : adgaedg | id: 1083741921991729222 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.881Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Blockchain-Vals-P1 | id: 1066076608215130112 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.884Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : catcat | id: 1083732841881415741 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.885Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083463676511670465 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.885Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Template | id: 1064937184727154708 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.886Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : TestCategory | id: 1083731822527127643 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.886Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083731445748604928 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.887Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : wdafSf | id: 1083734216598098000 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.887Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083729543673692250 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.887Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1084485910034391211 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.888Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : cacdab | id: 1083734848545501295 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.888Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083470079997526166 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.889Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083450800157753474 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.889Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083866079635439677 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.889Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083730649988481105 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.890Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1084482921353715722 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.890Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : test-caatt | id: 1083732382441545809 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.890Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : test-cat | id: 1083732228422516817 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.891Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : fwWFWF | id: 1083865854174838794 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.891Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : CDA | id: 1066098220238905354 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.892Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : AIS | id: 1066098558698274949 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.892Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : settings-promo | id: 1065287658852585572 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.892Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083470247027281991 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.892Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083741358256291952 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.893Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1084258722257326110 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.893Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : r6yjttsgn | id: 1083734634199785472 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.893Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083462460486463589 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.893Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083741662091694201 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.894Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : deawad | id: 1083733857469218826 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.894Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : adwag | id: 1083735047607165018 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.894Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : cda-vals-p1 | id: 1066073454694121614 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.894Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : dwad | id: 1083732989399273623 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.895Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-12T15:13:06.896Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-12T15:13:06.896Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : sdqd | id: 1066096947884204152 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.897Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : p-1 | id: 1066103871006593024 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.898Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1084259150214733956 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.898Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Salons vocaux | id: 1064635992398635119 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.898Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083741537780908072 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.898Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Salons textuels | id: 1064635992398635118 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.899Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1084479817266761808 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.899Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083866928944255006 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.900Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1084259060750237706 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.901Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1084479713348694136 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.904Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083466435910701076 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.906Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083730927366185000 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.906Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083742973017194626 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.907Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1083741234494976060 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.907Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1084476686046867556 | categories: 1064635991320690799","timestamp":"2023-03-12T15:13:06.907Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-12T15:13:06.927Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-12T15:13:06.927Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-12T15:13:06.932Z"}
+{"level":"info","message":"[Delete categories]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-12T15:13:06.932Z"}
+{"level":"info","message":"GuildManager => Load guild : 1064635991320690799\n","timestamp":"2023-03-12T15:13:06.938Z"}
+{"level":"info","message":"[Delete channels]  : Guild => name : Serveur de XiliTra | id: 1064635991320690799 | channels: 0","timestamp":"2023-03-12T15:13:06.938Z"}
+{"level":"debug","message":"[Registering channel]  : Guild => name : demande_identification | id: 1065190827925721109 | categories: 1065190827925721109","timestamp":"2023-03-12T15:13:07.394Z"}
+{"level":"debug","message":"[Registering channel]  : Guild => name : choisir-les-promos | id: 1083730827457859654 | categories: 1083730827457859654","timestamp":"2023-03-12T15:13:07.414Z"}
+{"level":"debug","message":"[Registering channel]  : Guild => name : fil-rouge | id: 1064937263361966120 | categories: 1064937263361966120","timestamp":"2023-03-12T15:13:07.415Z"}
+{"level":"debug","message":"[Registering channel]  : Guild => name : general | id: 1066103873783205928 | categories: 1066103873783205928","timestamp":"2023-03-12T15:13:07.415Z"}
+{"level":"debug","message":"[Registering channel]  : Guild => name : general | id: 1066076609574088725 | categories: 1066076609574088725","timestamp":"2023-03-12T15:13:07.416Z"}
+{"level":"debug","message":"[Registering channel]  : Guild => name : general | id: 1066098222222819450 | categories: 1066098222222819450","timestamp":"2023-03-12T15:13:07.416Z"}
+{"level":"debug","message":"[Registering channel]  : Guild => name : information_courses | id: 1065195382650449960 | categories: 1065195382650449960","timestamp":"2023-03-12T15:13:07.416Z"}
+{"level":"debug","message":"[Registering channel]  : Guild => name : fil-rouge | id: 1066076610689777744 | categories: 1066076610689777744","timestamp":"2023-03-12T15:13:07.416Z"}
+{"level":"debug","message":"[Registering channel]  : Guild => name : general | id: 1064937231397175478 | categories: 1064937231397175478","timestamp":"2023-03-12T15:13:07.416Z"}
+{"level":"debug","message":"[Registering channel]  : Guild => name : interface-promo | id: 1065287871256330280 | categories: 1065287871256330280","timestamp":"2023-03-12T15:13:07.417Z"}
+{"level":"debug","message":"[Registering channel]  : Guild => name : onboarding-selector | id: 1065567366643200040 | categories: 1065567366643200040","timestamp":"2023-03-12T15:13:07.417Z"}
+{"level":"debug","message":"[Registering channel]  : Guild => name : general | id: 1066100417861255288 | categories: 1066100417861255288","timestamp":"2023-03-12T15:13:07.417Z"}
+{"level":"debug","message":"[Registering channel]  : Guild => name : general | id: 1066098560040456254 | categories: 1066098560040456254","timestamp":"2023-03-12T15:13:07.417Z"}
+{"level":"debug","message":"[Registering channel]  : Guild => name : fil-rouge | id: 1066098562183725086 | categories: 1066098562183725086","timestamp":"2023-03-12T15:13:07.418Z"}
+{"level":"debug","message":"[Registering channel]  : Guild => name : general-rename | id: 1066073456694808586 | categories: 1066073456694808586","timestamp":"2023-03-12T15:13:07.418Z"}
+{"level":"debug","message":"[Registering channel]  : Guild => name : fil-rouge | id: 1066100419320872991 | categories: 1066100419320872991","timestamp":"2023-03-12T15:13:07.418Z"}
+{"level":"debug","message":"[Registering channel]  : Guild => name : interface-formation | id: 1064999597191221348 | categories: 1064999597191221348","timestamp":"2023-03-12T15:13:07.418Z"}
+{"level":"debug","message":"[Registering channel]  : Guild => name : verification-identifications | id: 1066039778920890398 | categories: 1066039778920890398","timestamp":"2023-03-12T15:13:07.435Z"}
+{"level":"debug","message":"[Registering channel]  : Guild => name : fil-rouge | id: 1066103872340377730 | categories: 1066103872340377730","timestamp":"2023-03-12T15:13:07.453Z"}
+{"level":"debug","message":"[Registering channel]  : Guild => name : config-test | id: 1064986496681123983 | categories: 1064986496681123983","timestamp":"2023-03-12T15:13:07.453Z"}
+{"level":"debug","message":"[Registering channel]  : Guild => name : Général | id: 1064635992398635121 | categories: 1064635992398635121","timestamp":"2023-03-12T15:13:07.454Z"}
+{"level":"debug","message":"[Registering channel]  : Guild => name : fil-rouge | id: 1066098223535640737 | categories: 1066098223535640737","timestamp":"2023-03-12T15:13:07.454Z"}
+{"level":"debug","message":"[Registering channel]  : Guild => name : créer-une-promo | id: 1083770471989903420 | categories: 1083770471989903420","timestamp":"2023-03-12T15:13:07.454Z"}
+{"level":"debug","message":"[Registering channel]  : Guild => name : fil-rouge | id: 1066073458158600244 | categories: 1066073458158600244","timestamp":"2023-03-12T15:13:07.454Z"}
+{"level":"debug","message":"[Registering channel]  : Guild => name : fil-rouge | id: 1066001472799653979 | categories: 1066001472799653979","timestamp":"2023-03-12T15:13:07.455Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-12T15:15:17.222Z"}
+{"level":"info","message":"[Delete guild] Serveur de XiliTra [1064635991320690799]","timestamp":"2023-03-12T15:15:17.253Z"}
+{"level":"info","message":"GuildManager => Delete guild","timestamp":"2023-03-12T15:15:17.444Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-12T15:16:37.579Z"}
+{"level":"info","message":"GuildManager => Load guild : 1084238188471652422\n","timestamp":"2023-03-12T15:16:37.596Z"}
+{"level":"debug","message":"{\"statusCode\":404,\"error\":\"Guild not exist\"}","timestamp":"2023-03-12T15:16:37.597Z"}
+{"level":"info","message":"GuildManager => Register new guild","timestamp":"2023-03-12T15:16:37.620Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de TEST | id: 1084238188471652422","timestamp":"2023-03-12T15:16:37.624Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de TEST | id: 1084238188471652422 | channels: 2","timestamp":"2023-03-12T15:16:37.627Z"}
+{"level":"info","message":"GuildManager => Load guild : 1084238188471652422\n","timestamp":"2023-03-12T15:16:37.632Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de TEST | id: 1084238188471652422 | channels: 0","timestamp":"2023-03-12T15:16:37.632Z"}
+{"level":"info","message":"GuildManager => Load guild : 1084238188471652422\n","timestamp":"2023-03-12T15:16:37.635Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de TEST | id: 1084238188471652422 | channels: 0","timestamp":"2023-03-12T15:16:37.636Z"}
+{"level":"info","message":"GuildManager => Load guild : 1084238188471652422\n","timestamp":"2023-03-12T15:16:37.639Z"}
+{"level":"info","message":"[Delete categories]  : Guild => name : Serveur de TEST | id: 1084238188471652422 | channels: 0","timestamp":"2023-03-12T15:16:37.639Z"}
+{"level":"info","message":"GuildManager => Load guild : 1084238188471652422\n","timestamp":"2023-03-12T15:16:37.642Z"}
+{"level":"info","message":"[Delete channels]  : Guild => name : Serveur de TEST | id: 1084238188471652422 | channels: 0","timestamp":"2023-03-12T15:16:37.642Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Salons textuels | id: 1084238189180493854 | categories: 1084238188471652422","timestamp":"2023-03-12T15:16:37.649Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Salons vocaux | id: 1084238189180493855 | categories: 1084238188471652422","timestamp":"2023-03-12T15:16:37.661Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Test | id: 1084494892954308669 | categories: 1084238188471652422","timestamp":"2023-03-12T15:16:37.662Z"}
+{"level":"info","message":"[Registering category] Register channels stock category","timestamp":"2023-03-12T15:16:38.094Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1084495171414130718 | categories: 1084238188471652422","timestamp":"2023-03-12T15:16:38.115Z"}
+{"level":"debug","message":"[Registering channel]  : Guild => name : Général | id: 1084238189180493857 | categories: 1084238189180493857","timestamp":"2023-03-12T15:16:38.147Z"}
+{"level":"debug","message":"[Registering channel]  : Guild => name : général | id: 1084238189180493856 | categories: 1084238189180493856","timestamp":"2023-03-12T15:16:38.159Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-12T15:19:12.428Z"}
+{"level":"info","message":"GuildManager => Load guild : 1084238188471652422\n","timestamp":"2023-03-12T15:19:12.464Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de TEST | id: 1084238188471652422","timestamp":"2023-03-12T15:19:12.469Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de TEST | id: 1084238188471652422 | channels: 2","timestamp":"2023-03-12T15:19:12.486Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Salons textuels | id: 1084238189180493854 | categories: 1084238188471652422","timestamp":"2023-03-12T15:19:12.492Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Salons vocaux | id: 1084238189180493855 | categories: 1084238188471652422","timestamp":"2023-03-12T15:19:12.493Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Test | id: 1084494892954308669 | categories: 1084238188471652422","timestamp":"2023-03-12T15:19:12.494Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1084495171414130718 | categories: 1084238188471652422","timestamp":"2023-03-12T15:19:12.495Z"}
+{"level":"info","message":"GuildManager => Load guild : 1084238188471652422\n","timestamp":"2023-03-12T15:19:12.496Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de TEST | id: 1084238188471652422 | channels: 0","timestamp":"2023-03-12T15:19:12.496Z"}
+{"level":"info","message":"GuildManager => Load guild : 1084238188471652422\n","timestamp":"2023-03-12T15:19:12.501Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de TEST | id: 1084238188471652422 | channels: 0","timestamp":"2023-03-12T15:19:12.501Z"}
+{"level":"info","message":"GuildManager => Load guild : 1084238188471652422\n","timestamp":"2023-03-12T15:19:12.505Z"}
+{"level":"info","message":"[Delete categories]  : Guild => name : Serveur de TEST | id: 1084238188471652422 | channels: 0","timestamp":"2023-03-12T15:19:12.505Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Test | id: 1084495460535898234 | categories: 1084238188471652422","timestamp":"2023-03-12T15:19:12.507Z"}
+{"level":"info","message":"GuildManager => Load guild : 1084238188471652422\n","timestamp":"2023-03-12T15:19:12.509Z"}
+{"level":"info","message":"[Delete channels]  : Guild => name : Serveur de TEST | id: 1084238188471652422 | channels: 0","timestamp":"2023-03-12T15:19:12.509Z"}
+{"level":"debug","message":"[Registering channel]  : Guild => name : général | id: 1084238189180493856 | categories: 1084238189180493856","timestamp":"2023-03-12T15:19:12.991Z"}
+{"level":"debug","message":"[Registering channel]  : Guild => name : Général | id: 1084238189180493857 | categories: 1084238189180493857","timestamp":"2023-03-12T15:19:12.992Z"}
+{"level":"info","message":"Ready! Logged in as OnBoarding#4250","timestamp":"2023-03-12T15:19:31.340Z"}
+{"level":"info","message":"GuildManager => Load guild : 1084238188471652422\n","timestamp":"2023-03-12T15:19:31.377Z"}
+{"level":"info","message":"[Registering category]  : Guild => name : Serveur de TEST | id: 1084238188471652422","timestamp":"2023-03-12T15:19:31.383Z"}
+{"level":"info","message":"[Registering channels]  : Guild => name : Serveur de TEST | id: 1084238188471652422 | channels: 2","timestamp":"2023-03-12T15:19:31.402Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Salons textuels | id: 1084238189180493854 | categories: 1084238188471652422","timestamp":"2023-03-12T15:19:31.409Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Salons vocaux | id: 1084238189180493855 | categories: 1084238188471652422","timestamp":"2023-03-12T15:19:31.410Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Test | id: 1084494892954308669 | categories: 1084238188471652422","timestamp":"2023-03-12T15:19:31.411Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Channels Stock | id: 1084495171414130718 | categories: 1084238188471652422","timestamp":"2023-03-12T15:19:31.412Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Test | id: 1084495460535898234 | categories: 1084238188471652422","timestamp":"2023-03-12T15:19:31.413Z"}
+{"level":"info","message":"GuildManager => Load guild : 1084238188471652422\n","timestamp":"2023-03-12T15:19:31.414Z"}
+{"level":"info","message":"[Update categories]  : Guild => name : Serveur de TEST | id: 1084238188471652422 | channels: 0","timestamp":"2023-03-12T15:19:31.414Z"}
+{"level":"info","message":"GuildManager => Load guild : 1084238188471652422\n","timestamp":"2023-03-12T15:19:31.418Z"}
+{"level":"info","message":"[Update channels]  : Guild => name : Serveur de TEST | id: 1084238188471652422 | channels: 0","timestamp":"2023-03-12T15:19:31.419Z"}
+{"level":"info","message":"GuildManager => Load guild : 1084238188471652422\n","timestamp":"2023-03-12T15:19:31.423Z"}
+{"level":"info","message":"[Delete categories]  : Guild => name : Serveur de TEST | id: 1084238188471652422 | channels: 0","timestamp":"2023-03-12T15:19:31.423Z"}
+{"level":"info","message":"GuildManager => Load guild : 1084238188471652422\n","timestamp":"2023-03-12T15:19:31.427Z"}
+{"level":"info","message":"[Delete channels]  : Guild => name : Serveur de TEST | id: 1084238188471652422 | channels: 0","timestamp":"2023-03-12T15:19:31.428Z"}
+{"level":"debug","message":"[Registering category]  : Guild => name : Teeest | id: 1084495842855112764 | categories: 1084238188471652422","timestamp":"2023-03-12T15:19:31.798Z"}
+{"level":"debug","message":"[Registering channel]  : Guild => name : général | id: 1084238189180493856 | categories: 1084238189180493856","timestamp":"2023-03-12T15:19:31.908Z"}
+{"level":"debug","message":"[Registering channel]  : Guild => name : Général | id: 1084238189180493857 | categories: 1084238189180493857","timestamp":"2023-03-12T15:19:31.909Z"}

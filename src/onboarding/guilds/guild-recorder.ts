@@ -43,7 +43,7 @@ export class GuildRecorder {
 
     const guild = await guildManager.loadGuild(this.guildId);
 
-    if (guild === undefined) {
+    if (guild.statusCode === 404) {
       // Enregistrement des guilds dans la base de données
       const newGuild: IGuild = new Guild(
         this.guildId,

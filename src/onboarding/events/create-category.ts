@@ -10,13 +10,14 @@ export default class CategoryCreateEvent extends DiscordEvent {
   protected type: Events = Events.ChannelCreate;
   protected method = 'on';
 
-  async execute() {
-    const id = this.data['channelID'].toString().replace(/[^0-9]/g, '');
-    const client = DiscordClient.getInstance().getClient();
-    const categoryCached = await RedisManager.getInstance().get(
-      RedisRoutes.LAST_CREATED_CATEGORY,
-    );
-
-    logger.debug(categoryCached);
+  async execute(channel: any) {
+    console.log(channel);
+    // const id = this.data.toString().replace(/[^0-9]/g, '');
+    // const client = DiscordClient.getInstance().getClient();
+    // const categoryCached = await RedisManager.getInstance().get(
+    //   RedisRoutes.LAST_CREATED_CATEGORY,
+    // );
+    //
+    // logger.debug(categoryCached);
   }
 }

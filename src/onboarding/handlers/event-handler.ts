@@ -27,12 +27,12 @@ export default async () => {
     try {
       const event: DiscordEvent = new (await import(`../${file}`)).default();
       if (event.get_method() == 'once')
-        ClientManager.get_client().once(event.get_type() as any, () =>
-          event.execute(),
+        ClientManager.get_client().once(event.get_type() as any, (...args) =>
+          event.execute(args),
         );
       else
-        ClientManager.get_client().on(event.get_type() as any, () =>
-          event.execute(),
+        ClientManager.get_client().on(event.get_type() as any, (...args: any) =>
+          event.execute(args),
         );
       ClientManager.add_event(event);
     } catch {
