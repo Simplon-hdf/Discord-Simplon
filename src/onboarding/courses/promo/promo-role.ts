@@ -34,7 +34,7 @@ export class PromoRole {
     this._permission.remove(perm);
   }
 
-  set permission(value: List<Permission>) {
+  setPermission(value: List<Permission>) {
     this._permission = value;
   }
 }

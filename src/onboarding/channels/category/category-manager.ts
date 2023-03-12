@@ -11,10 +11,6 @@ export class CategoryManager {
       JSON.parse(JSON.stringify(category)),
     );
 
-    if (categoryJSON.statusCode === 409) {
-      return;
-    }
-
     logger.debug(
       '[Registering category] ' +
         ' : Guild => name : ' +

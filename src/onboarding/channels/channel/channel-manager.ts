@@ -13,7 +13,7 @@ export class ChannelManager {
 
     // logger.debug(JSON.stringify(channel));
 
-    if (channelJSON.statusCode === 409) {
+    if (channelJSON.statusCode === 404) {
       return channelJSON;
     }
 

@@ -11,9 +11,7 @@ export class GuildsManager {
       HttpRoutes.GET_GUILD_CATEGORY,
       uuid,
     );
-    if (guildJSON.statusCode === 409) {
-      return undefined;
-    }
+
     logger.info('GuildManager => Load guild : ' + uuid + '\n');
 
     return guildJSON;
@@ -24,9 +22,6 @@ export class GuildsManager {
       HttpRoutes.GET_GUILD_CHANNEL,
       uuid,
     );
-    if (guildJSON.statusCode === 409) {
-      return undefined;
-    }
     logger.info('GuildManager => Load guild : ' + uuid + '\n');
 
     return guildJSON;
@@ -37,9 +32,6 @@ export class GuildsManager {
       HttpRoutes.GET_GUILD,
       guild_uuid,
     );
-    if (guildJSON.statusCode === 409) {
-      return undefined;
-    }
     logger.info('GuildManager => Load guild : ' + guild_uuid + '\n');
 
     return guildJSON;
@@ -53,10 +45,23 @@ export class GuildsManager {
 
     logger.info('GuildManager => Register new guild');
 
-    if (guildJSON.statusCode === 409) {
-      throw new ApiError('API response is empty on register guild');
-    }
+    return guildJSON;
+  }
+
+  async deleteGuild(guild_uuid: string): Promise<any> {
+    const guildJSON = await new HttpUtils().delete(
+      HttpRoutes.DELETE_GUILD,
+      undefined,
+      guild_uuid,
+    );
+
+    logger.info('GuildManager => Delete guild');
 
     return guildJSON;
+  }
+
+  getGuilds(): Promise<any> {
+    const guilds = new HttpUtils().get(HttpRoutes.GET_GUILDS);
+    return guilds;
   }
 }
