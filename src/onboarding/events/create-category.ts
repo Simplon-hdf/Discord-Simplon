@@ -11,7 +11,7 @@ export default class CategoryCreateEvent extends DiscordEvent {
   protected method = 'on';
 
   async execute(channel: any) {
-    console.log(channel);
+    console.log(channel[0].name);
     // const id = this.data.toString().replace(/[^0-9]/g, '');
     // const client = DiscordClient.getInstance().getClient();
     // const categoryCached = await RedisManager.getInstance().get(
