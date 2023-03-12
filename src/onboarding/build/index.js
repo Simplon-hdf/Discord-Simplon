@@ -35,6 +35,7 @@ process.setMaxListeners(0);
 events_1.default.setMaxListeners(0);
 const DISCORD_TOKEN = process.env.DISCORD_TOKEN;
 const DISCORD_ID = process.env.DISCORD_ID;
+console.log(DISCORD_TOKEN);
 const client = new discord_js_1.Client({
     intents: [
         discord_js_1.GatewayIntentBits.Guilds,
