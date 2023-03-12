@@ -24,7 +24,7 @@ export default class ReadyEvent extends DiscordEvent {
     const client = ClientManager.get_client();
     logger.info('Ready! Logged in as ' + client.user?.tag);
     await RedisManager.getInstance().connect();
-    const guilds = client.guilds.cache;
+    const guilds: any = client.guilds.cache;
 
     await this.deleteGuilds(client);
 
