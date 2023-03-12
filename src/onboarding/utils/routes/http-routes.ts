@@ -25,4 +25,8 @@ export enum HttpRoutes {
   GET_ONGOING_PROMOS_BY_GUILD_UUID = '/api/promo/guild/:uuid/state/true',
   GET_ROLES_BY_GUILD_UUID = '/api/roles/guilds/:uuid',
   GET_PROMOS_BY_GUILD_UUID = '/api/promo/guild/:uuid',
+  REGISTER_COURSES = '/api/courses/register',
+  REGISTER_ROLES = '/api/roles/register',
+  REGISTER_PROMOS = '/api/promo/register',
+  GET_COURSES = '/api/courses/guilds/:uuid',
 }

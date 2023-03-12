@@ -1,23 +1,29 @@
-import { CategoryTemplate } from '../channels/category/category-template';
+export interface ICourse {
+  getCourseName(): string;
+  getRoleUuid(): string;
+  getGuildUuid(): string;
+}
 
-export class Course {
-  private readonly _name: string;
-  private _categoryTemplate?: CategoryTemplate;
+export class Course implements ICourse {
+  private readonly course_name: string;
+  private readonly role_uuid: string;
+  private readonly guild_uuid: string;
 
-  constructor(name: string, categoryTemplate?: CategoryTemplate) {
-    this._name = name;
-    this._categoryTemplate = categoryTemplate;
+  constructor(course_name: string, role_uuid: string, guild_uuid: string) {
+    this.course_name = course_name;
+    this.role_uuid = role_uuid;
+    this.guild_uuid = guild_uuid;
   }
 
-  get name(): string {
-    return this._name;
+  getCourseName(): string {
+    return this.course_name;
   }
 
-  getCategoryTemplate(): CategoryTemplate | undefined {
-    return this._categoryTemplate;
+  getGuildUuid(): string {
+    return this.guild_uuid;
   }
 
-  setCategoryTemplate(categoryTemplate: CategoryTemplate): void {
-    this._categoryTemplate = categoryTemplate;
+  getRoleUuid(): string {
+    return this.role_uuid;
   }
 }

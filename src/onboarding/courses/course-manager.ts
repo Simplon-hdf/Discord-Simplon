@@ -1,13 +1,29 @@
-import { Course } from './course';
+import { ICourse } from './course';
+import { HttpUtils } from '../utils/http';
+import { HttpRoutes } from '../utils/routes/http-routes';
+import logger from '../utils/logger';
 
 export class CourseManager {
-  private _courses?: Course;
+  async registerCourse(course: ICourse): Promise<any> {
+    const coursesJSON = new HttpUtils().post(
+      HttpRoutes.REGISTER_COURSES,
+      course,
+    );
 
-  setCourse(course: Course): void {
-    this._courses = course;
+    logger.info(
+      '[Registering course] ' +
+        ' : Course => name : ' +
+        course.getCourseName() +
+        ' | id: ' +
+        course.getRoleUuid() +
+        ' | guild: ' +
+        course.getGuildUuid() +
+        '\n',
+    );
+    return coursesJSON;
   }
 
-  getCourse(): Course | undefined {
-    return this._courses;
+  async getCourses(guildUUID: string): Promise<any> {
+    return new HttpUtils().get(HttpRoutes.GET_COURSES, guildUUID);
   }
 }
