@@ -35,7 +35,15 @@ process.setMaxListeners(0);
 events_1.default.setMaxListeners(0);
 const DISCORD_TOKEN = process.env.DISCORD_TOKEN;
 const DISCORD_ID = process.env.DISCORD_ID;
-const client = new discord_js_1.Client({ intents: [discord_js_1.GatewayIntentBits.Guilds, discord_js_1.GatewayIntentBits.DirectMessages, discord_js_1.GatewayIntentBits.GuildMessages, discord_js_1.GatewayIntentBits.GuildMembers, discord_js_1.GatewayIntentBits.GuildInvites] });
+const client = new discord_js_1.Client({
+    intents: [
+        discord_js_1.GatewayIntentBits.Guilds,
+        discord_js_1.GatewayIntentBits.DirectMessages,
+        discord_js_1.GatewayIntentBits.GuildMessages,
+        discord_js_1.GatewayIntentBits.GuildMembers,
+        discord_js_1.GatewayIntentBits.GuildInvites,
+    ],
+});
 client_manager_1.ClientManager.init(client, DISCORD_TOKEN, DISCORD_ID);
 client.on(discord_js_1.Events.InteractionCreate, async (interaction) => {
     if (interaction.isChatInputCommand()) {
