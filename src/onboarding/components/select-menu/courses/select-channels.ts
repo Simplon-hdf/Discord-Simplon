@@ -21,11 +21,11 @@ export default class SelectConcernedPole extends CustomComponent {
   async execute(interaction: StringSelectMenuInteraction) {
     const client = DiscordClient.getInstance(interaction.user.id);
 
-    const course = client.getCoursesManager().getCourse();
-    logger.info(course?.name);
-    await interaction.reply({
-      content: interaction.values.toString(),
-      ephemeral: true,
-    });
+    // const course = client.getCoursesManager().getCourse();
+    // logger.info(course?.name);
+    // await interaction.reply({
+    //   content: interaction.values.toString(),
+    //   ephemeral: true,
+    // });
   }
 }
