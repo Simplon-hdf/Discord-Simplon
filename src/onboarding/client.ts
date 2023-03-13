@@ -5,6 +5,7 @@ import { ChannelManager } from './channels/channel/channel-manager';
 import { UserManager } from './users/user-manager';
 import { Client } from 'discord.js';
 import EventEmitter from 'events';
+import { RoleManager } from './roles/role-manager';
 
 export class DiscordClient {
   private readonly _token?: string;
@@ -20,6 +21,8 @@ export class DiscordClient {
 
   private readonly userManager: UserManager;
 
+  private readonly roleManager: RoleManager;
+
   private client?: Client;
 
   private eventEmitter: EventEmitter;
@@ -30,6 +33,7 @@ export class DiscordClient {
     this.categoryManager = new CategoryManager();
     this.channelManager = new ChannelManager();
     this.userManager = new UserManager();
+    this.roleManager = new RoleManager();
     this.eventEmitter = new EventEmitter();
     this._token = token;
   }
@@ -42,6 +46,10 @@ export class DiscordClient {
       DiscordClient.instance = new DiscordClient(token);
     }
     return DiscordClient.instance;
+  }
+
+  getRoleManager(): RoleManager {
+    return this.roleManager;
   }
 
   getCoursesManager(): CourseManager {

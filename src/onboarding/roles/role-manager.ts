@@ -14,4 +14,38 @@ export class RoleManager {
 
     return roleJSON;
   }
+
+  async getRoles(guild_uuid: string): Promise<any> {
+    const rolesJSON = await new HttpUtils().get(
+      HttpRoutes.GET_ROLES_BY_GUILD_UUID,
+      guild_uuid,
+    );
+
+    logger.info('RoleManager => Load roles');
+
+    return rolesJSON;
+  }
+
+  async deleteRole(role_uuid: string): Promise<any> {
+    const roleJSON = await new HttpUtils().delete(
+      HttpRoutes.DELETE_ROLE,
+      undefined,
+      role_uuid,
+    );
+
+    logger.info('RoleManager => Delete role');
+
+    return roleJSON;
+  }
+
+  async updateRole(role: IRole): Promise<any> {
+    const roleJSON = await new HttpUtils().patch(
+      HttpRoutes.UPDATE_ROLE,
+      JSON.parse(JSON.stringify(role)),
+    );
+
+    logger.info('RoleManager => Update role');
+
+    return roleJSON;
+  }
 }

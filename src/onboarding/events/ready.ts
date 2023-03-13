@@ -36,6 +36,9 @@ export default class ReadyEvent extends DiscordEvent {
       await guildRecorder.registerChannels();
       await guildRecorder.updateChannels();
       await guildRecorder.deleteChannels();
+      await guildRecorder.registerRoles();
+      await guildRecorder.updateRoles();
+      await guildRecorder.deleteRoles();
     }
   }
 

@@ -30,4 +30,7 @@ export enum HttpRoutes {
   REGISTER_PROMOS = '/api/promo/register',
   GET_COURSES = '/api/courses/guilds/:uuid',
   REGISTER_ROLE = '/api/roles/register',
+  GET_ROLES_BY_UUID = '/api/roles/guilds/:uuid',
+  DELETE_ROLE = '/api/roles/:uuid',
+  UPDATE_ROLE = '/api/roles/update',
 }

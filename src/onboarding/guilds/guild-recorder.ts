@@ -11,6 +11,8 @@ import { Channel } from '../channels/channel/channel';
 import { CategoryManager } from '../channels/category/category-manager';
 import { ChannelManager } from '../channels/channel/channel-manager';
 import { GuildsManager } from './guilds-manager';
+import { RoleManager } from '../roles/role-manager';
+import { Role } from '../roles/role';
 
 export class GuildRecorder {
   private readonly discordGuild: DiscordGuild;
@@ -21,6 +23,8 @@ export class GuildRecorder {
   private readonly categoryManager: CategoryManager;
   private readonly channelManager: ChannelManager;
   private readonly guildManager: GuildsManager;
+
+  private readonly roleManager: RoleManager;
 
   constructor(discordGuild: DiscordGuild) {
     this.discordGuild = discordGuild;
@@ -35,6 +39,7 @@ export class GuildRecorder {
     this.categoryManager = DiscordClient.getInstance().getCategoryManager();
     this.channelManager = DiscordClient.getInstance().getChannelManager();
     this.guildManager = DiscordClient.getInstance().getGuildManager();
+    this.roleManager = DiscordClient.getInstance().getRoleManager();
   }
 
   async loadAndRegisterGuild(client: Client) {
@@ -289,6 +294,90 @@ export class GuildRecorder {
       }, 500);
     }
   }
+
+  async registerRoles() {
+    const roles = this.discordGuild.roles.cache;
+    logger.info(
+      '[Registering roles] ' +
+        ' : Guild => name : ' +
+        this.guildName +
+        ' | id: ' +
+        this.guildId +
+        ' | roles: ' +
+        roles.size,
+    );
+
+    for (const role of roles.values()) {
+      setTimeout(async () => {
+        await this.roleManager.registerRole(
+          new Role(role.id, role.name, this.guildId, role.color.toString()),
+        );
+      }, 500);
+    }
+  }
+
+  async updateRoles() {
+    const savedRoles = await this.roleManager.getRoles(this.guildId);
+
+    const discordRoles = this.discordGuild.roles.cache;
+
+    const rolesToUpdate = savedRoles.data.filter((savedRole: any) => {
+      const discordRole = discordRoles.find(
+        (role) => role.id === savedRole.role_uuid,
+      );
+      return discordRole?.name !== savedRole.role_name;
+    });
+
+    logger.info(
+      '[Update roles] ' +
+        ' : Guild => name : ' +
+        this.guildName +
+        ' | id: ' +
+        this.guildId +
+        ' | roles: ' +
+        (rolesToUpdate.size === undefined ? 0 : rolesToUpdate.size),
+    );
+
+    for (const role of rolesToUpdate) {
+      setTimeout(async () => {
+        await this.roleManager.updateRole(
+          new Role(
+            role.role_uuid,
+            role.role_name,
+            this.guildId,
+            role.role_color,
+          ),
+        );
+      }, 500);
+    }
+  }
+
+  async deleteRoles() {
+    const savedRoles = await this.roleManager.getRoles(this.guildId);
+
+    const discordRoles = this.discordGuild.roles.cache;
+
+    const rolesToDelete = savedRoles.data.filter((savedRole: any) =>
+      Array.from(discordRoles.values()).includes(savedRole.role_uuid),
+    );
+
+    logger.info(
+      '[Delete roles] ' +
+        ' : Guild => name : ' +
+        this.guildName +
+        ' | id: ' +
+        this.guildId +
+        ' | roles: ' +
+        (rolesToDelete.size === undefined ? 0 : rolesToDelete.size),
+    );
+
+    for (const role of rolesToDelete) {
+      setTimeout(async () => {
+        await this.roleManager.deleteRole(role.id);
+      }, 500);
+    }
+  }
+
   getDiscordCategories() {
     return this.discordGuild.channels.cache.filter(
       (channel) => channel.type === ChannelType.GuildCategory,
